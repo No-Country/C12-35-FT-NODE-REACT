@@ -6,5 +6,5 @@ export default {
   },
   create: async () => {
     throw Error;
-  },
+  }
 };

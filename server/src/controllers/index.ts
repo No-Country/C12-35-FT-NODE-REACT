@@ -4,5 +4,5 @@ import utils from "../utils";
 
 export default {
   getCharcaters: utils.catched(getCharcaters),
-  createCharacter: utils.catched(createCharacter),
+  createCharacter: utils.catched(createCharacter)
 };
