@@ -1,9 +1,9 @@
-import express, { Request, Response, NextFunction } from "express";
+import express, { Express, Request, Response, NextFunction } from "express";
 import morgan from "morgan";
-import router from "./routes";
+import router from "@/routes";
 import { ClientError } from "./utils/errors";
 
-const server = express();
+const server: Express = express();
 
 server.use(morgan("dev"));
 server.use(express.json());

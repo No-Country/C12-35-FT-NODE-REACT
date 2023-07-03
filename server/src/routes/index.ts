@@ -1,11 +1,8 @@
 import { Router } from "express";
-import ctrl from "../controllers";
-import middlewares from "../middlewares";
+import characterRouter from "@/components/characters/routes";
 
 const router = Router();
 
-router.get("/", ctrl.getCharcaters);
-
-router.post("/", middlewares.validationCharacter, ctrl.createCharacter);
+router.use("/characters", characterRouter);
 
 export default router;
