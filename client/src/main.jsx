@@ -4,5 +4,11 @@ import App from "./App.jsx"
 import "@/assets/css/format.css"
 import "@/assets/fonts/fonts.css"
 import "react-toastify/dist/ReactToastify.css"
+import { Provider } from "react-redux"
+import { store } from "./store/store.js"
 
-ReactDOM.createRoot(document.getElementById("root")).render(<App />)
+ReactDOM.createRoot(document.getElementById("root")).render(
+  <Provider store={store}>
+    <App />
+  </Provider>
+)
