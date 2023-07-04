@@ -1,8 +1,8 @@
 import { Router } from "express";
-import characterRouter from "@/components/characters/routes";
+import userRouter from "../components/users/routes";
 
 const router = Router();
 
-router.use("/characters", characterRouter);
+router.use("/users", userRouter);
 
 export default router;

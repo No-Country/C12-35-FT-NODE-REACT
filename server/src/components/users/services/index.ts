@@ -1,4 +1,4 @@
-import { User } from "@/components/users/entities/User.entity";
+import { User } from "../../../components/users/entities/User.entity";
 import { user1, user2 } from "../data/fakeUsers";
 import getUsers from "./getUsers.service";
 import createUsers from "./createUser.service";
