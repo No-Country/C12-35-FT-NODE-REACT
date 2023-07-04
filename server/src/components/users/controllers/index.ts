@@ -1,6 +1,6 @@
 import getUsers from "./getUsers.controller";
 import createUser from "./createUser.controller";
-import utils from "@/utils";
+import utils from "../../../utils";
 
 export default {
   getUsers: utils.catched(getUsers),

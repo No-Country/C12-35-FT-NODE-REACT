@@ -1,4 +1,4 @@
-import { AppDataSource } from "@/services/DataSource";
+import { AppDataSource } from "../../../services/DataSource";
 import { User as UserEntity } from "../entities/User.entity";
 import { User } from "../models/Users";
 
