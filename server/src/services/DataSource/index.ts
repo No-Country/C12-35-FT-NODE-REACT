@@ -3,13 +3,16 @@ dotenv.config();
 import "reflect-metadata";
 import { DataSource } from "typeorm";
 import { entities } from "./entities";
+import { EnvVariables } from "./DataSource.interface";
+
+const envVariables: EnvVariables = process.env as unknown as EnvVariables;
 
 export const AppDataSource = new DataSource({
-  type: process.env.DB_TYPE as any,
+  type: "postgres",
   host: process.env.DB_HOST,
-  port: process.env.DB_PORT as unknown as number,
-  username: process.env.DB_USERNAME,
-  password: process.env.DB_PASSWORD,
+  port: envVariables.DB_PORT,
+  username: envVariables.DB_USERNAME,
+  password: envVariables.DB_PASSWORD,
   database: process.env.DB_NAME,
   entities: entities,
   synchronize: true,
