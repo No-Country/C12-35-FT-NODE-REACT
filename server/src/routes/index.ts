@@ -1,8 +1,14 @@
 import { Router } from "express";
 import userRouter from "../components/users/routes";
+import accountsRouter from "../components/accounts/routes";
+import transactionRouter from "../components/transactions/routes";
+import transactionHistoryRouter from "../components/transactionHistories/routes";
 
 const router = Router();
 
 router.use("/users", userRouter);
+router.use("/accounts", accountsRouter);
+router.use("/transactions", transactionRouter);
+router.use("/transactionHistory", transactionHistoryRouter);
 
 export default router;
