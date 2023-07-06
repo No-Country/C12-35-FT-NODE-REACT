@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function CustomInput({id, label, type, formik}) {
+export default function FormInput({id, label, type, formik}) {
 
   return (
     <div>
