@@ -4,7 +4,7 @@ import * as yup from 'yup';
 import FormButtonNext from "@/components/FormButtonNext";
 import FormButtonSubmit from "@/components/FormButtonSubmit";
 import FormStage from "@/components/FormStage";
-
+import { Card } from '@/components/Card';
 
 const formStages = [
     {   
@@ -126,6 +126,7 @@ function RegisterForm() {
 
         </div>
 
+            <Card />
 
     </form>
 
