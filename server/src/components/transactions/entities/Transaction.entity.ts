@@ -1,5 +1,6 @@
-import { Column, Entity, PrimaryGeneratedColumn, ManyToOne } from "typeorm";
+import { Column, Entity, PrimaryGeneratedColumn, ManyToOne, OneToMany } from "typeorm";
 import { Account } from "../../accounts/entities/Account.entity";
+import { PaymentGateway } from "../../paymentGateways/entities/PaymentGateway.entity";
 
 @Entity()
 export class Transaction {
@@ -17,4 +18,7 @@ export class Transaction {
 
   @ManyToOne(() => Account, (account) => account.id)
   accounts!: Account[];
+
+  @OneToMany(() => PaymentGateway, (paymentGateway) => paymentGateway.id)
+  paymentGateway!: PaymentGateway[];
 }

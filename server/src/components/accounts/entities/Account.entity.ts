@@ -1,6 +1,7 @@
 import { Column, Entity, ManyToOne, PrimaryGeneratedColumn, OneToMany } from "typeorm";
 import { User } from "../../users/entities/User.entity";
 import { Transaction } from "../../transactions/entities/Transaction.entity";
+import { TransactionHistory } from "../../transactionHistories/entities/TransactionHistory.entity";
 @Entity()
 export class Account {
   @PrimaryGeneratedColumn()
@@ -20,4 +21,7 @@ export class Account {
 
   @OneToMany(() => Transaction, (transaction) => transaction.id)
   transactions!: Transaction[];
+
+  @OneToMany(() => TransactionHistory, (transactionHistory) => transactionHistory.id)
+  transactionHistory!: TransactionHistory[];
 }
