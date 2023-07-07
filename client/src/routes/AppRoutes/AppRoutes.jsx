@@ -1,10 +1,9 @@
 import React from "react"
 import { Route, Routes } from "react-router-dom"
 
-import { RejectIsAuthenticated, AuthRequire } from "@/layouts"
+import { AuthRequire, RejectIsAuthenticated } from "@/layouts"
+import { LoginForm, RegisterForm } from "@/modules"
 import { Home } from "@/pages"
-import { LoginForm } from "@/pages/LoginForm"
-import { RegisterForm } from "@/pages/RegisterForm"
 import { Main } from "./style"
 
 const AppRoutes = () => {
@@ -27,6 +26,7 @@ const AppRoutes = () => {
         <Route path='/srv' element={<RejectIsAuthenticated />}></Route>
       </Routes>
     </Main>
-
+  )
+}
 
 export default AppRoutes

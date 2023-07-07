@@ -1,3 +1,4 @@
 export * from "./Home/RecentActivity"
 export * from "./Home"
-export * from "./index"
+export * from "./LoginForm"
+export * from "./RegisterForm"
