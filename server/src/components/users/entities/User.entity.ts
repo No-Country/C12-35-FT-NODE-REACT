@@ -1,4 +1,4 @@
-import { Column, Entity, PrimaryGeneratedColumn, OneToMany } from "typeorm";
+import { Column, Entity, PrimaryGeneratedColumn, OneToOne } from "typeorm";
 import { Account } from "../../accounts/entities/Account.entity";
 
 @Entity()
@@ -45,6 +45,6 @@ export class User {
   @Column()
   last_name!: string;
 
-  @OneToMany(() => Account, (account) => account.id)
+  @OneToOne(() => Account, (account) => account.id)
   accounts!: Account[];
 }

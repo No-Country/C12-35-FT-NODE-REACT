@@ -1,4 +1,4 @@
-import { Column, Entity, ManyToOne, PrimaryGeneratedColumn, OneToMany } from "typeorm";
+import { Column, Entity, PrimaryGeneratedColumn, OneToMany, OneToOne, JoinColumn } from "typeorm";
 import { User } from "../../users/entities/User.entity";
 import { Transaction } from "../../transactions/entities/Transaction.entity";
 import { TransactionHistory } from "../../transactionHistories/entities/TransactionHistory.entity";
@@ -16,7 +16,8 @@ export class Account {
   @Column()
   type!: string;
 
-  @ManyToOne(() => User, (user) => user.id)
+  @OneToOne(() => User, (user) => user.id)
+  @JoinColumn()
   users!: User[];
 
   @OneToMany(() => Transaction, (transaction) => transaction.id)
