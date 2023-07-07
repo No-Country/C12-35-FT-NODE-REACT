@@ -13,7 +13,7 @@ export const HomeWrap = styled.div`
 export const LeftWrap = styled.div`
   width: 50%;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   flex-direction: column;
   align-items: center;
 `
@@ -21,5 +21,5 @@ export const LeftWrap = styled.div`
 export const RigthWrap = styled.div`
   width: 50%;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
 `
