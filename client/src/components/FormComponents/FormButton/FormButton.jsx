@@ -1,7 +1,7 @@
 import React from "react";
 
-function FormButtonNext({id, handler}) {
+function FormButton({id, handler}) {
   return <button id={id} type='button' onClick={handler}>Siguiente</button>
 }
 
-export default FormButtonNext;
+export default FormButton;

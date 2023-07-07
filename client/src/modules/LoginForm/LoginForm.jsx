@@ -1,8 +1,7 @@
 import React from "react";
 import { useFormik } from "formik";
 import * as yup from 'yup';
-import CustomInput from "../../components/CustomInput";
-import FormButtonSubmit from "../../components/FormButtonSubmit";
+import {FormInput, FormSubmit} from '@/components';
 
 
 
@@ -26,11 +25,11 @@ function LoginForm() {
   return (
     <form>
 
-        <CustomInput label={'Email'} id={'email'} type='email' formik={formik} />
+        <FormInput label={'Email'} id={'email'} type='email' formik={formik} />
 
-        <CustomInput label={'Contraseña'} id={'password'} type='text' formik={formik} />
+        <FormInput label={'Contraseña'} id={'password'} type='text' formik={formik} />
 
-        <FormButtonSubmit msg='Acceder'/>
+        <FormSubmit msg='Acceder'/>
 
     </form>
   )

@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import {useFormik} from 'formik';
 import * as yup from 'yup';
-import FormButtonNext from "@/components/FormButtonNext";
-import FormButtonSubmit from "@/components/FormButtonSubmit";
-import FormStage from "@/components/FormStage";
+import { FormSubmit, FormButton } from "@/components";
+
+import FormStage from './FormStage';
 
 
 const formStages = [
@@ -109,19 +109,19 @@ function RegisterForm() {
         <div>
             {    
                 formik.values.firstName && formik.values.lastName && formik.values.email && stageIndex === 0
-                ? <FormButtonNext id='btnStageOne' handler={handleNextStage} /> : null    
+                ? <FormButton id='btnStageOne' handler={handleNextStage} /> : null    
             }
             {
                 formik.values.password && formik.values.phoneNumber && stageIndex === 1
-                ?<FormButtonNext id='btnStageTwo' handler={handleNextStage} /> : null
+                ?<FormButton id='btnStageTwo' handler={handleNextStage} /> : null
             }
             {
                 formik.values.country && formik.values.documentType && formik.values.documentNumber && formik.values.birthdate && stageIndex === 2
-                ?<FormButtonNext id='btnStageThree' handler={handleNextStage} /> : null
+                ?<FormButton id='btnStageThree' handler={handleNextStage} /> : null
             }
             {
                 formik.values.address && formik.values.localAddress && formik.values.postalCode 
-                ? <FormButtonSubmit msg={'Registrar'}/> : null
+                ? <FormSubmit msg={'Registrar'}/> : null
             }
 
         </div>
