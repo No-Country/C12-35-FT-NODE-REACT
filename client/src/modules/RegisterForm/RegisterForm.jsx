@@ -1,10 +1,17 @@
 import React, { useState } from "react";
 import {useFormik} from 'formik';
 import * as yup from 'yup';
+<<<<<<< HEAD:client/src/pages/RegisterForm/RegisterForm.jsx
 import FormButtonNext from "@/components/FormButtonNext";
 import FormButtonSubmit from "@/components/FormButtonSubmit";
 import FormStage from "@/components/FormStage";
 import { Card } from '@/components/Card';
+=======
+import { FormSubmit, FormButton } from "@/components";
+
+import FormStage from './FormStage';
+
+>>>>>>> f3ab2847576ea7828a4a8eabaa2ed8db4cfea4d3:client/src/modules/RegisterForm/RegisterForm.jsx
 
 const formStages = [
     {   
@@ -109,19 +116,19 @@ function RegisterForm() {
         <div>
             {    
                 formik.values.firstName && formik.values.lastName && formik.values.email && stageIndex === 0
-                ? <FormButtonNext id='btnStageOne' handler={handleNextStage} /> : null    
+                ? <FormButton id='btnStageOne' handler={handleNextStage} /> : null    
             }
             {
                 formik.values.password && formik.values.phoneNumber && stageIndex === 1
-                ?<FormButtonNext id='btnStageTwo' handler={handleNextStage} /> : null
+                ?<FormButton id='btnStageTwo' handler={handleNextStage} /> : null
             }
             {
                 formik.values.country && formik.values.documentType && formik.values.documentNumber && formik.values.birthdate && stageIndex === 2
-                ?<FormButtonNext id='btnStageThree' handler={handleNextStage} /> : null
+                ?<FormButton id='btnStageThree' handler={handleNextStage} /> : null
             }
             {
                 formik.values.address && formik.values.localAddress && formik.values.postalCode 
-                ? <FormButtonSubmit msg={'Registrar'}/> : null
+                ? <FormSubmit msg={'Registrar'}/> : null
             }
 
         </div>

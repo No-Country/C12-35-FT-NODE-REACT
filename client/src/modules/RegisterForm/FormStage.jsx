@@ -1,6 +1,6 @@
 import React from "react";
 
-import CustomInput from "./CustomInput";
+import { FormInput } from "@/components";
 
 function FormStage({fields, formObject}) {
   return <>
@@ -9,7 +9,7 @@ function FormStage({fields, formObject}) {
             fields.map((field, index)=>(
                 <div key={index}>
                 
-                    <CustomInput  label={field.label} id={field.id} type={field.type} formik={formObject} />
+                    <FormInput  label={field.label} id={field.id} type={field.type} formik={formObject} />
                 </div>
             ))
         }

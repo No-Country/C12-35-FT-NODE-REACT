@@ -3,14 +3,14 @@ import { Route, Routes } from "react-router-dom"
 
 
 
-import { RegisterForm } from "@/pages/RegisterForm"
-import { LoginForm } from "../../pages/LoginForm"
+import { RegisterForm } from '@/modules/RegisterForm'
+import { LoginForm } from "@/modules/LoginForm"
 
 const AppRoutes = () => {
   return (
     <Routes>
-      <Route path='/' element={<RegisterForm/>} />
-      <Route path="/login" element={<LoginForm/>} />
+      <Route path='/testregister' element={<RegisterForm/>} />
+      <Route path="/testlogin" element={<LoginForm/>} />
       <Route path='*' element={<div>ERROR PAGE</div>} />
     </Routes>
   )
