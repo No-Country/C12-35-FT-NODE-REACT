@@ -27,7 +27,6 @@ const AppRoutes = () => {
         <Route path='/srv' element={<RejectIsAuthenticated />}></Route>
       </Routes>
     </Main>
-  )
-}
+
 
 export default AppRoutes

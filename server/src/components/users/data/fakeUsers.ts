@@ -14,7 +14,8 @@ export const user1: User = {
   document_number: "AB123456",
   birthdate: new Date(1990, 0, 1),
   first_name: "John",
-  last_name: "Doe"
+  last_name: "Doe",
+  accounts: []
 };
 
 export const user2: User = {
@@ -31,5 +32,6 @@ export const user2: User = {
   document_number: "CD987654",
   birthdate: new Date(1985, 5, 15),
   first_name: "Jane",
-  last_name: "Smith"
+  last_name: "Smith",
+  accounts: []
 };
