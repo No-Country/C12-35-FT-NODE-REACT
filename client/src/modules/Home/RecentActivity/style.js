@@ -3,8 +3,7 @@ import styled from "styled-components"
 export const Wrapper = styled.div`
   width: 100%;
   height: 800px;
-  max-width: 500px;
-  margin: 20px;
+  max-width: 550px;
 `
 
 export const Wrap = styled.div`
