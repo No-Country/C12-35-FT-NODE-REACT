@@ -1,4 +1,7 @@
+export * from "./Home/Header"
+export * from "./Home/News"
 export * from "./Home/RecentActivity"
 export * from "./Home"
 export * from "./LoginForm"
 export * from "./RegisterForm"
+export * from "./index"

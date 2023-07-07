@@ -6,5 +6,5 @@ export const Main = styled.main`
 
 export const MainContainer = styled.div`
   max-width: 1500px;
-  margin: auto;
+  margin: 50px auto;
 `
