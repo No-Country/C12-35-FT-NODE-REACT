@@ -2,6 +2,7 @@ import { Column, Entity, PrimaryGeneratedColumn, OneToMany, OneToOne, JoinColumn
 import { User } from "../../users/entities/User.entity";
 import { Transaction } from "../../transactions/entities/Transaction.entity";
 import { TransactionHistory } from "../../transactionHistories/entities/TransactionHistory.entity";
+import { Card } from "../../cards/entities/Card.entity";
 @Entity()
 export class Account {
   @PrimaryGeneratedColumn()
@@ -25,4 +26,7 @@ export class Account {
 
   @OneToMany(() => TransactionHistory, (transactionHistory) => transactionHistory.id)
   transactionHistory!: TransactionHistory[];
+
+  @OneToMany(() => Card, (card) => card.id)
+  cards!: Card[];
 }
