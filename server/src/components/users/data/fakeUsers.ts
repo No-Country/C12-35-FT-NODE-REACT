@@ -15,7 +15,8 @@ export const user1: User = {
   birthdate: new Date(1990, 0, 1),
   first_name: "John",
   last_name: "Doe",
-  accounts: []
+  accounts: [],
+  verified: false
 };
 
 export const user2: User = {
@@ -33,5 +34,6 @@ export const user2: User = {
   birthdate: new Date(1985, 5, 15),
   first_name: "Jane",
   last_name: "Smith",
-  accounts: []
+  accounts: [],
+  verified: false
 };

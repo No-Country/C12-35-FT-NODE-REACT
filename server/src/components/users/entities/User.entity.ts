@@ -45,6 +45,9 @@ export class User {
   @Column()
   last_name!: string;
 
+  @Column({ default: false })
+  verified!: boolean;
+
   @OneToOne(() => Account, (account) => account.id)
   accounts!: Account[];
 }
