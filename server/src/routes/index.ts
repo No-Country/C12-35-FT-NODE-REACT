@@ -4,6 +4,7 @@ import accountsRouter from "../components/accounts/routes";
 import transactionRouter from "../components/transactions/routes";
 import transactionHistoryRouter from "../components/transactionHistories/routes";
 import paymentGatewayRouter from "../components/paymentGateways/routes";
+import cardRouter from "../components/cards/routes";
 import authRoutes from "../services/Auth/routes";
 
 const router = Router();
@@ -13,6 +14,7 @@ router.use("/accounts", accountsRouter);
 router.use("/transactions", transactionRouter);
 router.use("/transactionHistory", transactionHistoryRouter);
 router.use("/paymentGateway", paymentGatewayRouter);
+router.use("/cards", cardRouter);
 
 // la ruta /auth es únicamente para el testeo y entendimiento de auth
 router.use("/auth", authRoutes);
