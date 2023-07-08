@@ -1,14 +1,12 @@
 import jwt from "jsonwebtoken";
-import { SECRET } from "./config";
+import { SECRET } from "../../config/envs";
 import { ClientError } from "../../utils/errors";
-import userDb from "./data/user.db";
-import Encryp from "../Encryp";
 
 class AuthService {
   async saveToken(id: string) {
     try {
-      // if (!SECRET) throw new ClientError("Debe configurarse un secret de authentificación");
-      const token = jwt.sign({ id }, "key", {
+      if (!SECRET) throw new ClientError("Debe configurarse un secret de authentificación");
+      const token = jwt.sign({ id }, SECRET, {
         expiresIn: 60 * 60 * 24
       });
       return token;
@@ -21,7 +19,7 @@ class AuthService {
     // espera recibir el req.headers["access-token"]
     try {
       if (!token) throw new ClientError("No se proporcionó un token", 404);
-      const decoded = jwt.verify(token, "key");
+      const decoded = jwt.verify(token, SECRET);
       return decoded;
     } catch (error: any) {
       throw new ClientError(error, 404);

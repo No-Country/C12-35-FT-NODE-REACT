@@ -13,6 +13,8 @@ router.use("/accounts", accountsRouter);
 router.use("/transactions", transactionRouter);
 router.use("/transactionHistory", transactionHistoryRouter);
 router.use("/paymentGateway", paymentGatewayRouter);
+
+// la ruta /auth es únicamente para el testeo y entendimiento de auth
 router.use("/auth", authRoutes);
 
 export default router;

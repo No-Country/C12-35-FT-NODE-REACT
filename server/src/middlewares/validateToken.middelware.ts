@@ -1,10 +1,6 @@
-import { NextFunction, Request, Response } from "express";
+import { NextFunction, Response } from "express";
 import { ClientError } from "../utils/errors";
 import Auth from "../services/Auth";
-
-interface AuthenticatedRequest extends Request {
-  token: string;
-}
 
 export default async (req: any, _res: Response, next: NextFunction) => {
   try {
