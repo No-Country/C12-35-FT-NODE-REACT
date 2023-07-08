@@ -1,6 +1,7 @@
 import { AppDataSource } from "../DataSource/config";
+import { DBInterface } from "./interface";
 
-export class DB {
+export class DB implements DBInterface {
   private model: any;
   constructor(model: any) {
     this.model = model;
@@ -24,10 +25,17 @@ export class DB {
     }
   }
 
-  async findSome(data: any) {
+  async findBy(data: any) {
     try {
-      const user = await AppDataSource.getRepository(this.model).findOne({ where: { data } });
-      return user;
+      return await AppDataSource.getRepository(this.model).findBy(data);
+    } catch (error: any) {
+      throw new Error(error);
+    }
+  }
+
+  async findOne(data: any) {
+    try {
+      return await AppDataSource.getRepository(this.model).findOne({ where: data });
     } catch (error: any) {
       throw new Error(error);
     }
