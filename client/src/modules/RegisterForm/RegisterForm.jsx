@@ -1,17 +1,9 @@
 import React, { useState } from "react";
 import {useFormik} from 'formik';
 import * as yup from 'yup';
-<<<<<<< HEAD:client/src/pages/RegisterForm/RegisterForm.jsx
-import FormButtonNext from "@/components/FormButtonNext";
-import FormButtonSubmit from "@/components/FormButtonSubmit";
-import FormStage from "@/components/FormStage";
+import FormStage from "./FormStage";
 import { Card } from '@/components/Card';
-=======
 import { FormSubmit, FormButton } from "@/components";
-
-import FormStage from './FormStage';
-
->>>>>>> f3ab2847576ea7828a4a8eabaa2ed8db4cfea4d3:client/src/modules/RegisterForm/RegisterForm.jsx
 
 const formStages = [
     {   
