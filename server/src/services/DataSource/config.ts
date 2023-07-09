@@ -1,16 +1,15 @@
-import dotenv from "dotenv";
-dotenv.config();
 import "reflect-metadata";
 import { DataSource } from "typeorm";
 import { entities } from "./entities";
 import { EnvVariables } from "./interface";
+import { DB_HOST, DB_USERNAME, DB_PASSWORD, DB_NAME, DB_PORT } from "../../config/envs";
 
 const envVariables: EnvVariables = {
-  DB_HOST: process.env.DB_HOST || "localhost",
-  DB_USERNAME: process.env.DB_USERNAME || "postgres",
-  DB_PASSWORD: process.env.DB_PASSWORD || "",
-  DB_NAME: process.env.DB_NAME || "postgres",
-  DB_PORT: process.env.DB_PORT || "5432"
+  DB_HOST,
+  DB_USERNAME,
+  DB_PASSWORD,
+  DB_NAME,
+  DB_PORT
 };
 
 export const AppDataSource: DataSource = new DataSource({
