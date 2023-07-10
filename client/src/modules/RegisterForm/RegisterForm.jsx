@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import {useFormik} from 'formik';
 import * as yup from 'yup';
 import FormStage from "./FormStage";
-import { Card } from '@/components/Card';
+import { MyCards } from '@/modules';
 import { FormSubmit, FormButton } from "@/components";
 
 const formStages = [
@@ -125,7 +125,7 @@ function RegisterForm() {
 
         </div>
 
-            <Card />
+            <div style={{width:'600px', padding:'20px'}}><MyCards /></div>
 
     </form>
 
