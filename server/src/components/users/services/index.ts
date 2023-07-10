@@ -4,6 +4,8 @@ import getUsers from "./getUsers.service";
 import createUsers from "./createUser.service";
 import getUserById from "./getUsersById.service";
 import verifyUser from "./verifyUser.service";
+import deleteUser from "./deleteUser.service";
+import updateUser from "./updateUser.service";
 
 class UserService {
   private fakeUsers: User[] = [user1, user2];
@@ -25,6 +27,14 @@ class UserService {
   async verifyUser(id: number) {
     const verifiedUser = await verifyUser(id);
     return verifiedUser;
+  }
+  async deleteUser(id: number) {
+    const userDeleted = await deleteUser(id);
+    return userDeleted;
+  }
+  async updateUser(id: number, user: User) {
+    const userUpdated = await updateUser(id, user);
+    return userUpdated;
   }
 }
 export default new UserService();
