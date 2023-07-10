@@ -8,4 +8,6 @@ router.get("/", ctrl.getUsers);
 
 router.post("/", middlewares.encryptPassword, ctrl.createUser);
 
+router.get("/verify/:id", ctrl.verifyUser);
+
 export default router;
