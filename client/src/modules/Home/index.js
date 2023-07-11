@@ -1,4 +1,5 @@
 export * from "./Header"
 export * from "./News"
 export * from "./RecentActivity"
+export * from "./MyCards"
 export * from "./index"

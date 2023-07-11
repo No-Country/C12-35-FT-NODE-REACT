@@ -1,0 +1,9 @@
+import { ITransactionHistory } from "../models/TransactionsHistory";
+import { Request, Response } from "express";
+import response from "../../../utils/response";
+import TransactionHistoryService from "../services";
+
+export default async (req: Request, res: Response): Promise<Response<ITransactionHistory[], Record<string, any>>> => {
+  const data = await TransactionHistoryService.updateTransactionHistory(parseInt(req.params.id), req.body);
+  return response(res, 200, data);
+};
