@@ -6,7 +6,7 @@ const router = Router();
 
 router.get("/", ctrl.getUsers);
 
-router.post("/", middlewares.encryptPassword, ctrl.createUser);
+router.post("/", middlewares.validateDuplicate, middlewares.encryptPassword, ctrl.createUser);
 
 router.get("/verify/:id", ctrl.verifyUser);
 

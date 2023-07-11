@@ -1,7 +1,7 @@
 import { AppDataSource } from "../DataSource/config";
 import { DBInterface } from "./interface";
 
-export class DB implements DBInterface {
+export default class DB implements DBInterface {
   private model: any;
   constructor(model: any) {
     this.model = model;
