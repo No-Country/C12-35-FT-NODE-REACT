@@ -1,4 +1,5 @@
 import React from "react";
+import { Stage } from "./style";
 
 import { FormInput } from "@/components";
 
@@ -7,10 +8,10 @@ function FormStage({fields, formObject}) {
 
         {
             fields.map((field, index)=>(
-                <div key={index}>
+                <Stage key={index}>
                 
                     <FormInput  label={field.label} id={field.id} type={field.type} formik={formObject} />
-                </div>
+                </Stage>
             ))
         }
 

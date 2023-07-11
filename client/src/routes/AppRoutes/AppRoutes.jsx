@@ -2,7 +2,8 @@ import React from "react"
 import { Route, Routes } from "react-router-dom"
 
 import { AuthRequire, RejectIsAuthenticated } from "@/layouts"
-import { LoginForm, RegisterForm } from "@/modules"
+import { LoginForm } from "../../modules/Forms/Login"
+import { FormRegister } from "../../modules/Forms/Register"
 import { Home } from "@/pages"
 import { Main, MainContainer } from "./style"
 
@@ -12,7 +13,7 @@ const AppRoutes = () => {
       <MainContainer>
         <Routes>
           {/* Public routes */}
-          <Route path='/srv' element={<RegisterForm />} />
+          <Route path='/srv' element={< FormRegister />} />
           <Route path='/srv/login' element={<LoginForm />} />
 
           {/* Error routes */}
