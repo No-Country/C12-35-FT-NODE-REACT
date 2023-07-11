@@ -1,8 +1,6 @@
 import { Router } from "express";
 import AuthService from "../";
 import db from "../data/user.db";
-import Encryp from "../../Encryp";
-import { ClientError } from "../../../utils/errors";
 import middlewares from "../../../middlewares";
 
 const router = Router();
@@ -39,9 +37,9 @@ router.post("/", async (req: any, res: any) => {
     if (!user) throw new Error("user dosen't exist");
     const token = await AuthService.saveToken(user.id);
     console.log(token);
-    const authPassword: any = await Encryp.validate(password, user.password);
+    // const authPassword: any = await Encryp.validate(password, user.password);
     const check = await AuthService.validateToken(token);
-    res.status(200).json({ auth: true, user, token, check, authPassword });
+    res.status(200).json({ auth: true, user, token });
   } catch (error: any) {
     res.status(400).json({ auth: false, error: error });
   }

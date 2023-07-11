@@ -1,14 +1,9 @@
-import React from "react";
-import { useFormik } from "formik";
 import * as yup from 'yup';
-import {FormInput, FormSubmit} from '@/components';
 
 
-
-
-function LoginForm() {
-
-    const formik = useFormik({
+export const loginConfig = (loginUser) => { 
+    
+    return {
         initialValues:{
             email: '',
             password: ''
@@ -19,20 +14,7 @@ function LoginForm() {
         }),
         onSubmit: values =>{
             console.log(values)
+            loginUser(values)
         }
-    })
-
-  return (
-    <form>
-
-        <FormInput label={'Email'} id={'email'} type='email' formik={formik} />
-
-        <FormInput label={'Contraseña'} id={'password'} type='text' formik={formik} />
-
-        <FormSubmit msg='Acceder'/>
-
-    </form>
-  )
+    }
 }
-
-export default LoginForm;
