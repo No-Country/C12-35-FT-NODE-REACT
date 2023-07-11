@@ -1,12 +1,15 @@
-import styled from "styled-components";
+import styled from "styled-components"
+import { Link } from "react-router-dom"
 
 export const HeaderWrapper = styled.div`
   position: absolute;
   top: 0;
+  z-index: 10;
   background-color: #2e2e2e;
   color: #fff;
   padding: 0 5%;
-  width: 100%;
+  margin: 0;
+  width: 100vw;
   height: 80px;
 `
 
@@ -26,7 +29,7 @@ export const LogoWrapper = styled.img`
 export const NavWrapper = styled.h2`
 `
 
-export const NavItem = styled.span`
+export const NavItem = styled(Link)`
   color: #d9d9d9;
   font-size: .9rem;
   font-weight: 700;
@@ -37,7 +40,7 @@ export const GroupDirectButton = styled.div`
   gap: 10px;
 `
 
-export const IngresarButton = styled.div`
+export const IngresarButton = styled(Link)`
   font-size: .9rem;
   font-weight: 700;
   color: #4bffb3;
@@ -47,7 +50,7 @@ export const IngresarButton = styled.div`
   display: flex;
   align-items: center;
 `
-export const CrearButton = styled.div`
+export const CrearButton = styled(Link)`
   font-size: .9rem;
   font-weight: 700;
   color: #2e2e2e;

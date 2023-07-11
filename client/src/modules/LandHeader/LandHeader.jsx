@@ -1,5 +1,5 @@
-import { DirectAccessButton } from "@/components"
-import React from "react"
+import { DirectAccessButton } from "@/components";
+import React from "react";
 import {
   GroupDirectButton,
   HeaderWrap,
@@ -9,29 +9,12 @@ import {
   NavItem,
   IngresarButton,
   CrearButton
-} from "./style"
-import { BiSolidBell } from "react-icons/bi"
-import { IoPersonCircle } from "react-icons/io5"
+} from "./style";
 import imagotipo from '@/assets/images/logos/Imagotipo.svg';
 
-export default function Header() {
+export default function LandHeader() {
   const user = null; //placeholder para la llamada a la redux store y verificación del user
 
-  //constants
-  const directAccess = [
-    {
-      id: 1,
-      slug: "notifications",
-      icon: <BiSolidBell />
-    },
-    {
-      id: 2,
-      slug: "profile",
-      icon: <IoPersonCircle />
-    }
-  ]
-
-  //constants
   const logButtons = [
     {
       id: 1,
