@@ -4,7 +4,9 @@ const StyledMyCards = styled.section`
   background-color: #ccc;
   color: #444;
   padding: 10px;
-  border-radius: 4px;
+  border-radius: 20px;
+  margin: 20px 0px;
+  max-width: 400px;
   h2 {
     margin-bottom: 10px;
   }
