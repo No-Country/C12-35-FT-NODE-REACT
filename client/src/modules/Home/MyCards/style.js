@@ -1,12 +1,11 @@
-import styled from 'styled-components';
+import styled from "styled-components"
 
 const StyledMyCards = styled.section`
-  background-color: #ccc;
   color: #444;
   padding: 10px;
   border-radius: 20px;
-  margin: 20px 0px;
-  max-width: 400px;
+  box-shadow: 1px 1px 20px 1px rgba(0, 0, 0, 0.15);
+
   h2 {
     margin-bottom: 10px;
   }
@@ -14,6 +13,6 @@ const StyledMyCards = styled.section`
     overflow: hidden;
     white-space: nowrap;
   }
-`;
+`
 
-export default StyledMyCards;
+export default StyledMyCards
