@@ -11,8 +11,9 @@ export const NewsWrapper = styled.div`
 export const NewsWrap = styled.div`
   width: 100%;
   height: 100%;
-  border-radius: 20px;
-  box-shadow: 1px 1px 20px 1px rgba(0, 0, 0, 0.15);
+  border-radius: var(--radius-cards);
+  box-shadow: var(--shadow-primary);
+  background-color: var(--background-card);
 `
 
 export const NewsTitle = styled.h3``

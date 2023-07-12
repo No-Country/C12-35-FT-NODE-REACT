@@ -1,18 +1,9 @@
 import styled from "styled-components"
 
-const StyledMyCards = styled.section`
-  color: #444;
+export const StyledMyCards = styled.section`
+  color: var(--text-primary);
   padding: 10px;
-  border-radius: 20px;
-  box-shadow: 1px 1px 20px 1px rgba(0, 0, 0, 0.15);
-
-  h2 {
-    margin-bottom: 10px;
-  }
-  div {
-    overflow: hidden;
-    white-space: nowrap;
-  }
+  background-color: var(--background-card);
+  border-radius: var(--radius-cards);
+  box-shadow: var(--shadow-primary);
 `
-
-export default StyledMyCards
