@@ -3,7 +3,6 @@ import styled from "styled-components"
 export const NewsWrapper = styled.div`
   width: 100%;
   height: 180px;
-  max-width: 400px;
   display: flex;
   flex-direction: column;
   gap: 5px;

@@ -1,16 +1,14 @@
-import user  from "@@/config/endpoints/User"
+import user from "@@/config/endpoints/User"
+import axios from "axios"
 
-import axios from 'axios';
+const { login, register } = user
 
-const {login, register} = user
-
-
-export const registerUser = (values/* , setState */) => {
+export const registerUser = (values /* , setState */) => {
   axios
-    .post(register,values)
+    .post(register, values)
     .then((res) => {
       console.log(res)
-      console.log('registrado')
+      console.log("registrado")
       //setState(res.data)
       //location.replace("/")
     })
@@ -21,18 +19,16 @@ export const registerUser = (values/* , setState */) => {
     })
 }
 
-export const loginUser = (values/* , setState */) => {
+export const loginUser = (values /* , setState */) => {
   axios
-  .post(login, values)
-    .then(res => {
+    .post(login, values)
+    .then((res) => {
       console.log(res)
       console.log("logueado")
       //location.replace("/")
-
     })
-    .catch(err => {
+    .catch((err) => {
       console.log(err.response)
       console.log("error al loguearse")
     })
-
 }

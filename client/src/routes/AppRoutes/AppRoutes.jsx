@@ -1,9 +1,9 @@
-import React from "react";
-import { Route, Routes } from "react-router-dom";
-import { AuthRequire, RejectIsAuthenticated } from "@/layouts";
-import { LoginForm, RegisterForm } from "@/modules";
-import { Landing, Home } from "@/pages";
-import { Main, MainContainer } from "./style";
+import React from "react"
+import { Route, Routes } from "react-router-dom"
+import { AuthRequire, RejectIsAuthenticated } from "@/layouts"
+import { Landing, Home } from "@/pages"
+import { Main, MainContainer } from "./style"
+import { Login, Register } from "@/modules"
 
 const AppRoutes = () => {
   return (
@@ -19,12 +19,15 @@ const AppRoutes = () => {
           <Route path='*' element={<div>ERROR PAGE</div>} />
 
           {/* Auth required routes */}
-          <Route path='/home' element={<AuthRequire />}>
+          <Route path='/app' element={<AuthRequire />}>
             <Route index element={<Home />} />
           </Route>
 
           {/* Not passing if authenticated routes */}
-          <Route path='/srv' element={<RejectIsAuthenticated />}></Route>
+          <Route path='/srv' element={<RejectIsAuthenticated />}>
+            <Route index element={<Register />} />
+            <Route path='/srv/login' element={<Login />} />
+          </Route>
         </Routes>
       </MainContainer>
     </Main>

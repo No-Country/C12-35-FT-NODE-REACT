@@ -8,13 +8,15 @@ export const HeaderWrapper = styled.div`
   padding: 0 5%;
   width: 100%;
   height: 80px;
+  grid-column: 3 / 13;
+  grid-row: 1 / 2;
 `
 
 export const HeaderWrap = styled.div`
   width: 100%;
   height: 100%;
   display: flex;
-  align-items: center;
+  align-items: flex-end;
   justify-content: space-between;
   font-family: "Poppins";
 `
