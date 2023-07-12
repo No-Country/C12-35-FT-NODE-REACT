@@ -16,7 +16,7 @@ router.use("/transactions", transactionRouter);
 router.use("/transactionHistory", transactionHistoryRouter);
 router.use("/paymentGateway", paymentGatewayRouter);
 router.use("/cards", cardRouter);
-router.use("/", LoginRoutes);
+router.use("/login", LoginRoutes);
 
 // la ruta /auth es únicamente para el testeo y entendimiento de tokens
 router.use("/auth", authRoutes);
