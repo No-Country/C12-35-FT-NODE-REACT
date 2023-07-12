@@ -1,10 +1,9 @@
 import styled from "styled-components"
-import { Link } from "react-router-dom"
 
 export const HeaderWrapper = styled.div`
   width: 100%;
   height: 80px;
-  grid-column: 3 / 13;
+  grid-column: 6 / 25;
   grid-row: 1 / 2;
 `
 
@@ -26,4 +25,5 @@ export const WelcomeUser = styled.span`
 export const GroupDirectButton = styled.div`
   display: flex;
   gap: 10px;
+  align-self: flex-start;
 `

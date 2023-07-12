@@ -9,16 +9,16 @@ export const HomeWrap = styled.div`
   width: 100%;
   display: flex;
   justify-content: space-between;
-  gap: 20px;
 `
 
 export const LeftWrap = styled.div`
   width: 50%;
   height: 100%;
+  min-height: 700px;
   display: flex;
-  justify-content: flex-start;
   flex-direction: column;
-  max-width: 500px;
+  justify-content: space-between;
+  max-width: 450px;
   gap: 20px;
 `
 

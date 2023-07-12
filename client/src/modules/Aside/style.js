@@ -2,7 +2,7 @@ import styled from "styled-components"
 
 export const AsideWrapper = styled.div`
   height: 100%;
-  grid-column: 1 / 3;
+  grid-column: 1 / 6;
   grid-row: 1 / 13;
   margin-right: 20px;
 `
