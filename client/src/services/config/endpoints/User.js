@@ -1,5 +1,6 @@
-const user = {
-  register: `localhost:3000/user`
-}
-
+ const user = {
+  register: `http://localhost:8001/users`,
+  login : `http://localhost:8001/login`
+} 
 export default user
+

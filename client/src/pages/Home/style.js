@@ -8,18 +8,22 @@ export const HomeWrapper = styled.div`
 export const HomeWrap = styled.div`
   width: 100%;
   display: flex;
+  justify-content: space-between;
+  gap: 20px;
 `
 
 export const LeftWrap = styled.div`
   width: 50%;
+  height: 100%;
   display: flex;
   justify-content: flex-start;
   flex-direction: column;
-  align-items: center;
+  max-width: 500px;
+  gap: 20px;
 `
 
 export const RigthWrap = styled.div`
   width: 50%;
   display: flex;
-  justify-content: flex-start;
+  max-width: 630px;
 `

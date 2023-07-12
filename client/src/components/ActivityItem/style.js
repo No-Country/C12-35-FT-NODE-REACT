@@ -22,12 +22,13 @@ export const ActivityItemWrap = styled.li`
 export const IconActivity = styled.div`
   width: 50px;
   height: 50px;
-  background-color: #e5e5e5;
-  border-radius: 50%;
+  background-color: var(--background-icon);
+  border-radius: var(--radius-full);
   display: flex;
   justify-content: center;
   align-items: center;
   font-size: 24px;
+  color: var(--text-primary);
 `
 export const GroupDetail = styled.div`
   display: flex;
