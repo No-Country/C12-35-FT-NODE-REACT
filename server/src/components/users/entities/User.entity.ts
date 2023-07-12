@@ -45,6 +45,9 @@ export class User {
   @Column()
   last_name!: string;
 
+  @Column()
+  verified_phone!: string;
+
   @Column({ default: false })
   verified!: boolean;
 
