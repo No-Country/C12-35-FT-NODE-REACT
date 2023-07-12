@@ -1,9 +1,10 @@
 import React from "react";
+import { Submit } from "./style";
 
 function FormButtonSubmit({msg}) {
 
 
-  return <button type="submit">{msg}</button>
+  return <Submit type="submit">{msg}</Submit>
 
 
 }

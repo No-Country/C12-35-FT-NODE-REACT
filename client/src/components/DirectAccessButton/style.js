@@ -7,9 +7,9 @@ export const Button = styled(Link)`
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 15px;
-  background-color: white;
-  box-shadow: 1px 1px 20px 1px rgba(0, 0, 0, 0.15);
+  border-radius: var(--radius-button);
+  background-color: var(--background-card);
+  box-shadow: var(--shadow-primary);
   font-size: 1.8rem;
-  color: #808080;
+  color: var(--text-primary);
 `
