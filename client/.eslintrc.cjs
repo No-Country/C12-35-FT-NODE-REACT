@@ -3,7 +3,11 @@ module.exports = {
     browser: true,
     es2021: true
   },
-  extends: ["eslint:recommended", "plugin:react/recommended"],
+  extends: [
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "plugin:react-hooks/recommended"
+  ],
   overrides: [
     {
       env: {
@@ -21,10 +25,10 @@ module.exports = {
   },
   plugins: ["react"],
   rules: {
+    "react/prop-types": "off",
     indent: ["error", 2],
     avoidEscape: true,
     allowTemplateLiterals: true,
-    "react/react-in-jsx-scope": "off",
     semi: ["error", "never"]
   }
 }
