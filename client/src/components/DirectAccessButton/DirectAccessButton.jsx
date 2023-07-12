@@ -1,6 +1,6 @@
 import React from "react"
-import { Button } from "./style"
+import { CustomButton } from "./style"
 
 export default function DirectAccessButton({ link, children }) {
-  return <Button to={link}>{children}</Button>
+  return <CustomButton to={link}>{children}</CustomButton>
 }
