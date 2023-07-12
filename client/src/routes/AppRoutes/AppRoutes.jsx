@@ -12,8 +12,6 @@ const AppRoutes = () => {
         <Routes>
           {/* Public routes */}
           <Route path='/' element={<Landing />} />
-          <Route path='/srv' element={<RegisterForm />} />
-          <Route path='/srv/login' element={<LoginForm />} />
 
           {/* Error routes */}
           <Route path='*' element={<div>ERROR PAGE</div>} />
