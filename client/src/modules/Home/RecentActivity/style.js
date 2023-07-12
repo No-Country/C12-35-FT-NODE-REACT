@@ -8,10 +8,11 @@ export const Wrapper = styled.div`
 export const Wrap = styled.div`
   width: 100%;
   height: 100%;
-  border-radius: 20px;
+  border-radius: var(--radius-cards);
   padding: 0 20px;
   overflow: hidden;
-  box-shadow: 1px 1px 20px 1px rgba(0, 0, 0, 0.15);
+  box-shadow: var(--shadow-primary);
+  background-color: var(--background-card);
 `
 export const ListActivity = styled.ul`
   width: 100%;
