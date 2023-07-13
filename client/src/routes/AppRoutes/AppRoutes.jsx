@@ -10,6 +10,7 @@ const AppRoutes = () => {
       <MainContainer>
         <Routes>
           {/* Public routes */}
+          <Route path='/' element={<div>Landing...</div>} />
 
           {/* Error routes */}
           <Route path='*' element={<div>ERROR PAGE</div>} />

@@ -1,2 +1,2 @@
-export { default as Account } from './Account';
-export * from './style';
+export { default as Account } from "./Account"
+export * from "./style"
