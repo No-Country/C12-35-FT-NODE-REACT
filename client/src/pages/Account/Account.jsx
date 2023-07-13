@@ -1,8 +1,6 @@
 import React from "react";
 import { FormWrap } from "./style";
-
-import {Register} from "@/modules/Forms/Register";
-import {Login} from "@/modules/Forms/Login";
+import { Register, Login } from "@/modules/Forms";
 
 function Account({type}) {
 
