@@ -10,25 +10,25 @@ export const FeatsTitle = styled.h1`
   color: #4BFFB3;
   font-family: "Inter";
   font-weight: 600;
+  margin: 100px;
 `
 
 export const FeatsGrid = styled.div`
   display: grid;
-  grid-template-columns: repeat(12, fr);
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: repeat(2, 1fr)
 `
 
 export const Features = styled.div`
-  grid-column: 3 / span 8;
+  grid-column: 4 / span 6;
   display: flex;
   justify-content: space-evenly;
   flex-wrap: wrap;
 `
 
-export const Feature = styled.div`
-  border-radius: 20px;
-  min-height: 250px;
-  min-width: 220px;
-  padding: 5px;
-  background-color: #3D3D3D;
-  color: #CDCDCD;
+export const FeaturesTwo = styled.div`
+  grid-column: 3 / span 8;
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
 `
