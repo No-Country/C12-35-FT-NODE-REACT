@@ -8,7 +8,7 @@ export const HeaderWrapper = styled.div`
   padding: 0 5%;
   width: 100%;
   height: 80px;
-  grid-column: 3 / 13;
+  grid-column: 6 / 25;
   grid-row: 1 / 2;
 `
 
@@ -37,6 +37,7 @@ export const NavItem = styled.span`
 export const GroupDirectButton = styled.div`
   display: flex;
   gap: 10px;
+  align-self: flex-start;
 `
 
 export const IngresarButton = styled.div`

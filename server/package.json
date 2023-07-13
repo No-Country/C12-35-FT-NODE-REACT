@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon",
+    "start": "ts-node app.ts",
+    "dev": "nodemon",
     "build": "tsc",
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "eslint src/**/*.ts",
@@ -20,6 +21,7 @@
     "@types/jsonwebtoken": "^9.0.2",
     "@types/morgan": "^1.9.4",
     "@types/nodemailer": "^6.4.8",
+    "@types/qrcode": "^1.5.1",
     "@typescript-eslint/eslint-plugin": "^5.60.1",
     "@typescript-eslint/parser": "^5.60.1",
     "eslint": "^8.44.0",
@@ -43,7 +45,9 @@
     "jsonwebtoken": "^9.0.1",
     "morgan": "^1.10.0",
     "nodemailer": "^6.9.3",
+    "otplib": "^12.0.1",
     "pg": "^8.11.1",
+    "qrcode": "^1.5.3",
     "typeorm": "^0.3.17"
   }
 }

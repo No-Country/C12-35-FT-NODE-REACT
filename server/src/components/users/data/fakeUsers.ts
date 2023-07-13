@@ -16,7 +16,8 @@ export const user1: User = {
   first_name: "John",
   last_name: "Doe",
   accounts: [],
-  verified: false
+  verified: false,
+  verified_phone: ""
 };
 
 export const user2: User = {
@@ -35,5 +36,6 @@ export const user2: User = {
   first_name: "Jane",
   last_name: "Smith",
   accounts: [],
-  verified: false
+  verified: false,
+  verified_phone: ""
 };

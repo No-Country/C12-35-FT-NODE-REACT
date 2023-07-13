@@ -2,12 +2,12 @@ import styled from "styled-components"
 
 export const Wrapper = styled.div`
   display: grid;
-  grid-template-columns: repeat(12, 1fr);
+  grid-template-columns: repeat(24, 1fr);
   height: 100%;
 `
 
 export const Wrap = styled.div`
   margin-top: 20px;
-  grid-column: 3 / 13;
-  grid-row: 3 / 2;
+  grid-column: 6 / 25;
+  grid-row: 6 / 2;
 `
