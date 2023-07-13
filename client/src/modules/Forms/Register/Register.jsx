@@ -6,7 +6,7 @@ import React, { useState } from "react"
 import FormStage from "./FormStage"
 import { ButtonWrap, FormStyle, Container } from "./style"
 
-import {FormErrorResponse} from "@/components/FormComponents/FormErrorResponse"
+import { FormErrorResponse } from "@/components"
 
 
 
