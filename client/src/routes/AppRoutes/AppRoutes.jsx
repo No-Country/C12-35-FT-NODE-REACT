@@ -3,7 +3,8 @@ import { Route, Routes } from "react-router-dom"
 import { AuthRequire, RejectIsAuthenticated } from "@/layouts"
 import { Home } from "@/pages"
 import { Main, MainContainer } from "./style"
-import { Login, Register } from "@/modules"
+
+import {Account} from '@/pages/Account'
 
 const AppRoutes = () => {
   return (
@@ -22,8 +23,8 @@ const AppRoutes = () => {
 
           {/* Not passing if authenticated routes */}
           <Route path='/srv' element={<RejectIsAuthenticated />}>
-            <Route index element={<Register />} />
-            <Route path='/srv/login' element={<Login />} />
+            <Route index element={<Account type='Register' />} />
+            <Route path='/srv/login' element={<Account type='Login' />} />
           </Route>
         </Routes>
       </MainContainer>

@@ -45,7 +45,7 @@ export class User {
   @Column()
   last_name!: string;
 
-  @Column()
+  @Column({ default: false })
   verified_phone!: string;
 
   @Column({ default: false })
