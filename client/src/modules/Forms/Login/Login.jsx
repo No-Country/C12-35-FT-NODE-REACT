@@ -1,12 +1,19 @@
 import { FormInput, FormSubmit } from "@/components"
 import { useFormik } from "formik"
-import React from "react"
-import { loginConfig } from "../../../services/global/FormikConfig/login"
-import { loginUser } from "../../../services/queries/User"
+import React, { useState } from "react"
+import { loginConfig } from "@@/global/FormikConfig/login"
+import { loginUser } from "@@/queries/User"
 import { FormStyle } from "./style"
 
+import { FormErrorResponse } from "@/components/FormComponents/FormErrorResponse"
+
 function Login() {
-  const formik = useFormik(loginConfig(loginUser))
+
+  const [error, setError] = useState('');
+
+
+  const formik = useFormik(loginConfig(loginUser, setError));
+
   console.log(formik.values)
 
   return (
@@ -21,6 +28,9 @@ function Login() {
       />
 
       <FormSubmit msg={"Acceder"} />
+
+      {error && <FormErrorResponse error={error}/>}
+      
     </FormStyle>
   )
 }

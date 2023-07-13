@@ -1,7 +1,8 @@
 import * as yup from 'yup';
 
 
-export const registerConfig =(registerUser)=>{ 
+
+export const registerConfig =(registerUser, errorFunc)=>{ 
     
     
     return{
@@ -22,24 +23,24 @@ export const registerConfig =(registerUser)=>{
         },
         validationSchema: yup.object().shape({
 
-            first_name: yup.string().required('Campo requerido'),
-            last_name: yup.string().required('Campo requerido'),
-            email: yup.string().matches(/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/, 'Email invalido').required(),
-            phone_number: yup.string().min(9, 'Numero de telefono Invalido').max(15,'Numero de Telefono Invalido').required('Campo requerido'),
-            password: yup.string().min(6, 'Debe tener un minimo de 6 caracteres').matches(/^(?=.*\d)(?=.*[\u0021-\u002b\u003c-\u0040])(?=.*[A-Z])(?=.*[a-z])\S{6,10}$/, 'Contraseña Invalida, debe contener Dígitos, minúsculas, mayúsculas y símbolos').required('Campo requerido'),
-            country: yup.string().required('Campo requerido'),
-            document_type: yup.string().required('Campo requerido'),
-            document_number: yup.string().min(8, 'Documento invalido').required('Campo requerido'),
-            //date
-            address: yup.string().required('Campo requerido'),
-            local_address: yup.string().required('Campo requerido'),
-            postal_code: yup.string().required('Campo requerido')
+            first_name: yup.string().required('Campo Requerido'),
+            last_name: yup.string().required('Campo Requerido'),
+            email: yup.string().matches(/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/, 'Email invalido').required('Campo Requerido'),
+            phone_number: yup.string().min(9, 'Número de Teléfono Inválido').max(15,'Numero de Telefono Invalido').required('Campo Requerido'),
+            password: yup.string().min(6, 'Debe tener un mínimo de 6 caracteres').matches(/^(?=.*\d)(?=.*[\u0021-\u002b\u003c-\u0040])(?=.*[A-Z])(?=.*[a-z])\S{6,10}$/, 'Contraseña Invalida, debe contener Dígitos, minúsculas, mayúsculas y símbolos').required('Campo Requerido'),
+            country: yup.string().required('Campo Requerido'),
+            document_type: yup.string().required('Campo Requerido'),
+            document_number: yup.string().min(8, 'Documento Inválido').required('Campo Requerido'),
+            birthdate: yup.date().max(new Date('2005-01-01'), 'Debes Ser mayor de edad').required('Campo Requerido'),
+            address: yup.string().required('Campo Requerido'),
+            local_address: yup.string().required('Campo Requerido'),
+            postal_code: yup.string().required('Campo Requerido')
 
         }),
         onSubmit: values =>{
 
             console.log(values)
-            registerUser(values)
+            registerUser(values, errorFunc)
 
         }
     }
@@ -58,9 +59,9 @@ export const stagesEstructure =  [
     {
         label: "Etapa 2",
         fields: [
-            {label: 'Pais',id: 'country', type: 'text'},
+            {label: 'País',id: 'country', type: 'text'},
             {label: 'Tipo de Documento',id: 'document_type', type: 'text'},
-            {label: 'Numero de Documento',id: 'document_number', type: 'text'},
+            {label: 'Número de Documento',id: 'document_number', type: 'text'},
             {label: 'Fecha de Nacimiento',id: 'birthdate', type: 'date'}
         ]
         
@@ -68,8 +69,8 @@ export const stagesEstructure =  [
     {
         label: "Etapa 3",
         fields: [
-            {label: 'Direccion',id: 'address', type: 'text'},
-            {label: 'Direccion Local',id: 'local_address', type: 'text'},
+            {label: 'Dirección',id: 'address', type: 'text'},
+            {label: 'Dirección Local',id: 'local_address', type: 'text'},
             {label: 'Codigo Postal',id: 'postal_code', type: 'text'}
         ]
     },
@@ -77,7 +78,7 @@ export const stagesEstructure =  [
         label: "Etapa 4",
         fields: [
             {label: 'Email', id: 'email', type: 'email'},
-            {label: 'Numero de Telefono',id: 'phone_number', type: 'text'},
+            {label: 'Número de Teléfono',id: 'phone_number', type: 'text'},
         ]
     }
 ]
