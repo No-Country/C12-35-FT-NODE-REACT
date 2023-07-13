@@ -1,4 +1,5 @@
-import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
+import { Column, Entity, PrimaryGeneratedColumn, OneToOne, Unique } from "typeorm";
+import { Account } from "../../accounts/entities/Account.entity";
 
 @Entity()
 export class User {
@@ -43,4 +44,13 @@ export class User {
 
   @Column()
   last_name!: string;
+
+  @Column()
+  verified_phone!: string;
+
+  @Column({ default: false })
+  verified!: boolean;
+
+  @OneToOne(() => Account, (account) => account.id)
+  accounts!: Account[];
 }

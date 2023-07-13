@@ -1,0 +1,57 @@
+[
+    {
+        "id": 1,
+        "type": "Visa",
+        "bank_branding": "Bank A",
+        "card_number": 1234567890123456,
+        "cardholder_name": "Jhon Doe",
+        "expiration_date": "12/25",
+        "cvv": 123,
+        "payment_network": "Visa",
+        "account_id": 1
+      },
+      {
+        "id": 2,
+        "type": "MasterCard",
+        "bank_branding": "Bank B",
+        "card_number": 9876543210987654,
+        "cardholder_name": "Jane Smith",
+        "expiration_date": "06/24",
+        "cvv": 456,
+        "payment_network": "Mastercard",
+        "account_id": 2
+      },
+      {
+        "id": 3,
+        "type": "Visa",
+        "bank_branding": "Bank C",
+        "card_number": 5678901234567890,
+        "cardholder_name": "Jhon Doe",
+        "expiration_date": "09/23",
+        "cvv": 789,
+        "payment_network": "American Express",
+        "account_id": 1
+      },
+      {
+        "id": 4,
+        "type": "Visa",
+        "bank_branding": "Bank D",
+        "card_number": 4321098765432109,
+        "cardholder_name": "Jane Smith",
+        "expiration_date": "03/27",
+        "cvv": 321,
+        "payment_network": "Discover",
+        "account_id": 2
+      },
+      {
+        "id": 5,
+        "type": "MasterCard",
+        "bank_branding": "Bank E",
+        "card_number": 9999999999999999,
+        "cardholder_name": "Jhon Doe",
+        "expiration_date": "11/26",
+        "cvv": 555,
+        "payment_network": "Visa",
+        "account_id": 1
+      }
+]

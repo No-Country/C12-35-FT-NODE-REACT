@@ -1,18 +1,33 @@
 import React from "react"
 import { Route, Routes } from "react-router-dom"
-
-
-
-import { RegisterForm } from "@/pages/RegisterForm"
-import { LoginForm } from "../../pages/LoginForm"
+import { AuthRequire, RejectIsAuthenticated } from "@/layouts"
+import { Home } from "@/pages"
+import { Main, MainContainer } from "./style"
+import { Login, Register } from "@/modules"
 
 const AppRoutes = () => {
   return (
-    <Routes>
-      <Route path='/' element={<RegisterForm/>} />
-      <Route path="/login" element={<LoginForm/>} />
-      <Route path='*' element={<div>ERROR PAGE</div>} />
-    </Routes>
+    <Main>
+      <MainContainer>
+        <Routes>
+          {/* Public routes */}
+
+          {/* Error routes */}
+          <Route path='*' element={<div>ERROR PAGE</div>} />
+
+          {/* Auth required routes */}
+          <Route path='/app' element={<AuthRequire />}>
+            <Route index element={<Home />} />
+          </Route>
+
+          {/* Not passing if authenticated routes */}
+          <Route path='/srv' element={<RejectIsAuthenticated />}>
+            <Route index element={<Register />} />
+            <Route path='/srv/login' element={<Login />} />
+          </Route>
+        </Routes>
+      </MainContainer>
+    </Main>
   )
 }
 

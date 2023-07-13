@@ -1,0 +1,45 @@
+:root {
+  --background: #262626;
+  --background-light: #3a3a3a;
+  --background-card: #3f3f3f;
+  --background-button: #fcfcfc;
+  --background-icon: #808080;
+  --background-primary: #fcfcfc;
+  --text-primary: #fcfcfc;
+  --shadow-primary: 1px 1px 20px 1px rgba(0, 0, 0, 0.15);
+  --shadow-text: 0px 1px 2px rgba(0, 0, 0, 1);
+  --radius-cards: 20px;
+  --radius-button: 15px;
+  --radius-light: 10px;
+  --radius-full: 50%;
+}
+
+* {
+  margin: 0%;
+  padding: 0%;
+  box-sizing: border-box;
+}
+
+a,
+li {
+  text-decoration: none;
+  list-style: none;
+  color: inherit;
+}
+
+input,
+button,
+textarea {
+  outline: none;
+  border: none;
+  background: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+body {
+  color: var(--text-primary);
+  background-color: var(--background);
+}

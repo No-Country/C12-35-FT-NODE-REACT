@@ -1,5 +1,5 @@
-import validationCharacter from "./validationCharacter.middelware";
+import validateToken from "./validateToken.middelware";
 
 export default {
-  validationCharacter
+  validateToken
 };
