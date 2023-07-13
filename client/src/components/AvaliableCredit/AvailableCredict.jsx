@@ -9,7 +9,7 @@ import {
 } from "./style";
 import { AiOutlineEye } from "react-icons/Ai";
 
-function AvailableCredict({ handleClickEye, handleClickCvc, state }) {
+function AvailableCredict({ handleClickEye, handleClickCvc, state, isVisible }) {
   return (
     <DivGeneric $padding="1rem" $width="300px" $fDireccion="column">
       <HeaderGeneric $justifyC="space-between" $aItems="center">
@@ -27,9 +27,9 @@ function AvailableCredict({ handleClickEye, handleClickCvc, state }) {
       </HeaderGeneric>
       <DivGeneric>
         <DivGeneric>
-          <Text $fontSize="2.3rem" $margin="0" $width="7rem">
+          {isVisible && <Text $fontSize="2.3rem" $margin="0" $width="7rem">
             {state || "$ 0,00"}
-          </Text>
+          </Text>}
           <DivGeneric
             $width="30%"
             $aItems="center"

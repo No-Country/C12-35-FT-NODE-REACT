@@ -1,6 +1,6 @@
 import { useState } from "react";
-import { AvailableCredict, ModalCvc } from "@/components";
 import useAccountFund from "./useAccountFund";
+import { AvailableCredict, ModalCvc } from "../../components";
 
 function AccountFunt() {
   const {
