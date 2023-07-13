@@ -1,6 +1,6 @@
 import React from 'react';
 import { LandingWrapper, Background, SVGWrapper, PathWrapper } from './style';
-import { LandHeader, LandHero, LandFeats, LandAbout } from "@/modules/";
+import { LandHeader, LandHero, LandFeats, LandAbout, LandForm } from "@/modules/";
 
 export default function Landing() {
   return (
@@ -43,6 +43,7 @@ export default function Landing() {
       <div style={{minHeight:'100vh'}} />
       <LandFeats />
       <LandAbout />
+      <LandForm />
     </LandingWrapper>
   )
 }
