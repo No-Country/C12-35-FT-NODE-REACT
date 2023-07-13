@@ -1,10 +1,8 @@
 import React from "react"
 import { Route, Routes } from "react-router-dom"
 import { AuthRequire, RejectIsAuthenticated } from "@/layouts"
-import { Home } from "@/pages"
+import { Home, Account } from "@/pages"
 import { Main, MainContainer } from "./style"
-
-import {Account} from '@/pages/Account'
 
 const AppRoutes = () => {
   return (
