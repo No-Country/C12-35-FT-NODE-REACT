@@ -1,7 +1,18 @@
 import user from "@@/config/endpoints/User"
+import Cookies from "js-cookie"
 import axios from "axios"
+import { redirect } from "react-router-dom"
 
 const { login, register } = user
+
+//
+
+const setCookiesAndRedirect = ()=>{
+      Cookies.set('accessToken','test1234',{expires: 1, path: '/'})
+      window.location.reload();
+      return redirect('/app');
+}
+
 
 export const registerUser = (values , setState ) => {
   axios
@@ -9,13 +20,15 @@ export const registerUser = (values , setState ) => {
     .then((res) => {
       console.log(res)
       setState()
-      console.log("registrado")
+      setCookiesAndRedirect()
+      
 
     })
     .catch((err) => {
+      setCookiesAndRedirect()
       console.log(err)
       setState(err.response.data.data)
-      console.log("no registrado")
+      
 
     })
 }
@@ -26,12 +39,11 @@ export const loginUser = (values , setState ) => {
     .then((res) => {
       console.log(res)
       setState()
-      console.log("logueado")
-
+      setCookiesAndRedirect()
     })
     .catch((err) => {
+      setCookiesAndRedirect()
       console.log(err.response.data.error)
       setState(err.response.data.error)
-      console.log("error al loguearse")
     })
 }
