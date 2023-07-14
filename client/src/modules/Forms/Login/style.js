@@ -5,4 +5,5 @@ export const FormStyle = styled.form`
   border-radius: var(--radius-cards);
   padding: 20px;
   margin: 20px;
+
 `

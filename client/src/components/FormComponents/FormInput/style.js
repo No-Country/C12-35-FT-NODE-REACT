@@ -3,7 +3,7 @@ import styled from "styled-components"
 export const InputWrap = styled.div`
   display: flex;
   flex-direction: column;
-  height: 75px;
+  height: 100px;
   width: 175px;
 `
 
@@ -13,14 +13,15 @@ export const Label = styled.label`
 `
 
 export const Input = styled.input`
+  background-color: grey;
   margin: 5px;
   padding: 5px;
-  border: 2px solid black;
+  border: 3px solid black;
   border-radius: var(--radius-button);
 `
 
 export const SpanError = styled.span`
-  margin-left: 5px;
+  margin-left: 15px;
   color: red;
   font-weight: bold;
 `

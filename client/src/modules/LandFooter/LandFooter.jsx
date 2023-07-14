@@ -1,5 +1,5 @@
 import React from 'react';
-import { FooterItems, FooterWrapper, ItemGroup, Items, Logo } from './style';
+import { FooterItems, FooterWrapper, Item, ItemGroup, Items, Logo } from './style';
 import logo from "@/assets/images/logos/Imagotipo.svg";
 
 export default function LandFooter() {
@@ -9,16 +9,16 @@ export default function LandFooter() {
         <Logo src={logo} />
         <Items>
             <ItemGroup>
-                <div>Beneficios</div>
-                <div>Accesibilidad</div>
+                <Item>Beneficios</Item>
+                <Item>Accesibilidad</Item>
             </ItemGroup>
             <ItemGroup>
-                <div>Nosotros</div>
-                <div>Cookies</div>
+                <Item>Nosotros</Item>
+                <Item>Cookies</Item>
             </ItemGroup>
             <ItemGroup>
-                <div>Ayuda</div>
-                <div>Legal</div>
+                <Item>Ayuda</Item>
+                <Item>Legal</Item>
             </ItemGroup>
         </Items>
         <div style={{width:'20%'}} />

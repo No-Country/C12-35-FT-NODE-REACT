@@ -1,34 +1,46 @@
-import user from "@@/config/endpoints/User"
+import { User } from "@@/config/endpoints"
+import Cookies from "js-cookie"
 import axios from "axios"
+import { redirect } from "react-router-dom"
 
-const { login, register } = user
+const { login, register } = User
 
-export const registerUser = (values /* , setState */) => {
+//
+
+const setCookiesAndRedirect = (accessTokenValue = "test1234") => {
+  Cookies.set("accessToken", accessTokenValue, { expires: 1, path: "/" })
+  window.location.reload()
+  return redirect("/app")
+}
+
+export const registerUser = (values, setState) => {
   axios
     .post(register, values)
     .then((res) => {
       console.log(res)
-      console.log("registrado")
-      //setState(res.data)
-      //location.replace("/")
+      setState()
+      setCookiesAndRedirect()
     })
     .catch((err) => {
+      //eliminar al deployar el back
+      setCookiesAndRedirect()
       console.log(err)
-      console.log("no registrado")
-      //setError(true)
+      setState(err.response.data.data)
     })
 }
 
-export const loginUser = (values /* , setState */) => {
+export const loginUser = (values, setState) => {
   axios
     .post(login, values)
     .then((res) => {
       console.log(res)
-      console.log("logueado")
-      //location.replace("/")
+      setState()
+      setCookiesAndRedirect()
     })
     .catch((err) => {
-      console.log(err.response)
-      console.log("error al loguearse")
+      //eliminar al deplyar el back
+      setCookiesAndRedirect()
+      console.log(err.response.data.error)
+      setState(err.response.data.error)
     })
 }

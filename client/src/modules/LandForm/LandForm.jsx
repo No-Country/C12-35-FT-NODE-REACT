@@ -1,5 +1,6 @@
 import React from 'react';
 import { FormButton, FormCaptcha, FormEmail, FormFoot, FormGrid, FormHeading, FormMess, FormNom, FormTitle, FormWrapper, LandFormWrap } from './style';
+import ReCAPTCHA from "react-google-recaptcha";
 
 export default function LandForm() {
   return (
@@ -12,8 +13,10 @@ export default function LandForm() {
           <FormEmail type="email" placeholder="Correo electrónico"></FormEmail>
           <FormMess placeholder="¿En qué podemos ayudarte?"></FormMess>
           <FormFoot>
-            <FormCaptcha></FormCaptcha>
-            <FormButton></FormButton>
+            <FormCaptcha>
+              <ReCAPTCHA sitekey="6LdPAxYnAAAAALMxjIC-HASynpBTfLihpPTZGaMw" />
+            </FormCaptcha>
+            <FormButton type='submit' value="Solicitar" />
           </FormFoot>
         </LandFormWrap>
       </FormGrid>

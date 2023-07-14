@@ -7,7 +7,7 @@ export default function ManageFunds() {
     <ManageFundsWrapper>
       <ManageFundsWrap>
         <Button>Ingresar dinero</Button>
-        <Button>Transferir dinero</Button>
+        <Button secondary>Transferir dinero</Button>
       </ManageFundsWrap>
     </ManageFundsWrapper>
   )

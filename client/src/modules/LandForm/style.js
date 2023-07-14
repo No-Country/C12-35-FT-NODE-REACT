@@ -89,8 +89,17 @@ export const FormFoot = styled.div`
 
 export const FormCaptcha = styled.div`
   background-color: #fff;
+  height: 60px;
 `
 
 export const FormButton = styled.input`
   background-color: #fff;
+  border-radius: 10px;
+  height: 60px;
+  width: 350px;
+  font-family: "Poppins";
+  font-weight: 600;
+  font-size: 1.2rem;
+  color: #2E2E2E;
+  background: linear-gradient(to right, #4B7DFF, #4BFFB3);
 `

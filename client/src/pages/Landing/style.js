@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const LandingWrapper = styled.div`
   margin: 0;
   width: 100%;
-  height: 750vh;
+  height: 600vh;
   overflow: hidden;
   position: absolute;
   top: 0;

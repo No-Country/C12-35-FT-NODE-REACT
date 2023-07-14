@@ -24,6 +24,7 @@ export const Logo = styled.img`
 export const Items = styled.div`
   font-family: "Poppins";
   font-weight: 500;
+  color: #D9D9D9;
   width: 30%;
   height: 300px;
   padding: 5%;
@@ -35,4 +36,8 @@ export const Items = styled.div`
 export const ItemGroup = styled.div`
   display: flex;
   justify-content: space-between;
+`
+
+export const Item = styled.div`
+  width: 10%;
 `

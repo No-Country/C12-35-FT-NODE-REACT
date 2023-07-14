@@ -39,6 +39,7 @@ export const GroupDirectButton = styled.div`
   gap: 10px;
   align-self: flex-start;
 `
+<<<<<<< HEAD
 
 export const IngresarButton = styled.div`
   font-size: .9rem;
@@ -59,4 +60,17 @@ export const CrearButton = styled.div`
   padding: .5rem 2rem;
   display: flex;
   align-items: center;
+=======
+export const CustomButton = styled.button`
+  height: 80px;
+  aspect-ratio: 1 / 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-button);
+  background-color: var(--background-card);
+  box-shadow: var(--shadow-primary);
+  font-size: 2rem;
+  color: var(--text-primary);
+>>>>>>> 9e04aa40ac5787710f9d8c6378c3b888d100d3a5
 `

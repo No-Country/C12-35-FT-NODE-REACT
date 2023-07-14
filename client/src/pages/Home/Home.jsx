@@ -1,13 +1,14 @@
 import React from "react"
 import { RecentActivity, News, MyCards, ManageFunds } from "@/modules/Home"
 import { HomeWrap, HomeWrapper, LeftWrap, RigthWrap } from "./style"
+import { AvailableCredict } from "@/components"
 
 export default function Home() {
   return (
     <HomeWrapper>
       <HomeWrap>
         <LeftWrap>
-          <MyCards />
+          <AvailableCredict />
           <ManageFunds />
           <MyCards />
           <News />
