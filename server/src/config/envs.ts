@@ -1,7 +1,7 @@
 import dotenv from "dotenv";
 dotenv.config();
 
-//port
+//Port
 export const PORT = process.env.PORT || "8000";
 
 //JWT
