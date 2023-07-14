@@ -1,6 +1,6 @@
 import React from 'react';
 import { LandingWrapper, Background, SVGWrapper, PathWrapper } from './style';
-import { LandHeader, LandHero, LandFeats, LandAbout, LandForm } from "@/modules/";
+import { LandHeader, LandHero, LandFeats, LandAbout, LandForm, LandFooter } from "@/modules/";
 
 export default function Landing() {
   return (
@@ -44,6 +44,7 @@ export default function Landing() {
       <LandFeats />
       <LandAbout />
       <LandForm />
+      <LandFooter />
     </LandingWrapper>
   )
 }
