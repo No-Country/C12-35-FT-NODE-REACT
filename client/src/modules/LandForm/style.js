@@ -90,6 +90,7 @@ export const FormFoot = styled.div`
 export const FormCaptcha = styled.div`
   background-color: #fff;
   height: 60px;
+  margin: 0 5px 0 0;
 `
 
 export const FormButton = styled.input`
@@ -101,5 +102,6 @@ export const FormButton = styled.input`
   font-weight: 600;
   font-size: 1.2rem;
   color: #2E2E2E;
+  margin: 0 0 0 5px;
   background: linear-gradient(to right, #4B7DFF, #4BFFB3);
 `

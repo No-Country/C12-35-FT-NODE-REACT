@@ -41,3 +41,10 @@ export const ItemGroup = styled.div`
 export const Item = styled.div`
   width: 10%;
 `
+
+export const Copyright = styled.div`
+  font-family: 'Poppins';
+  font-weight: 400;
+  color: #888;
+  margin: -40px 0 20px 0;
+`

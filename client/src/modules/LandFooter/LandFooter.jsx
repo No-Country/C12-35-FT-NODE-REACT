@@ -1,5 +1,5 @@
 import React from 'react';
-import { FooterItems, FooterWrapper, Item, ItemGroup, Items, Logo } from './style';
+import { Copyright, FooterItems, FooterWrapper, Item, ItemGroup, Items, Logo } from './style';
 import logo from "@/assets/images/logos/Imagotipo.svg";
 
 export default function LandFooter() {
@@ -23,6 +23,7 @@ export default function LandFooter() {
         </Items>
         <div style={{width:'20%'}} />
       </FooterItems>
+      <Copyright>Copyright © 2023 FundWave S.R.L., Ciudad Autónoma de Buenos Aires, Argentina</Copyright>
     </FooterWrapper>
   )
 }
