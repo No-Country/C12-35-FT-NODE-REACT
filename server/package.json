@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "ts-node app.ts",
-    "dev": "nodemon",
+    "start": "node dist/app.js",
+    "dev": "nodemon src/app.ts --exec ts-node",
     "build": "tsc",
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "eslint src/**/*.ts",

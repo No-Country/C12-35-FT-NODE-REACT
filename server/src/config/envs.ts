@@ -1,6 +1,9 @@
 import dotenv from "dotenv";
 dotenv.config();
 
+//port
+export const PORT = process.env.PORT || "8000";
+
 //JWT
 export const SECRET = process.env.SECRET || "";
 
