@@ -2,10 +2,14 @@ import dotenv from "dotenv";
 dotenv.config();
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 //Port
 export const PORT = process.env.PORT || "8000";
 =======
 //port
+=======
+//Port
+>>>>>>> d4ec42e (deploy 2.0)
 export const PORT = process.env.PORT || "8001";
 >>>>>>> cf67f95 (transfer money (partial) +routes  & estructure cards reusables)
 
