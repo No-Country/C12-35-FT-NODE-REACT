@@ -1,7 +1,7 @@
 import React from "react"
 import { Route, Routes } from "react-router-dom"
 import { AuthRequire, RejectIsAuthenticated } from "@/layouts"
-import { Home, Account } from "@/pages"
+import { Landing, Home, Account } from "@/pages"
 import { Main, MainContainer } from "./style"
 
 const AppRoutes = () => {
@@ -10,7 +10,7 @@ const AppRoutes = () => {
       <MainContainer>
         <Routes>
           {/* Public routes */}
-          <Route path='/' element={<div>Landing...</div>} />
+          <Route path='/' element={<Landing />} />
 
           {/* Error routes */}
           <Route path='*' element={<div>ERROR PAGE</div>} />
