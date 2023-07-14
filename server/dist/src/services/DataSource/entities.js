@@ -1,5 +1,10 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.entities = void 0;
-const User_entity_1 = require("@/components/users/entities/User.entity");
-exports.entities = [User_entity_1.User];
+const User_entity_1 = require("../../components/users/entities/User.entity");
+const Account_entity_1 = require("../../components/accounts/entities/Account.entity");
+const Transaction_entity_1 = require("../../components/transactions/entities/Transaction.entity");
+const TransactionHistory_entity_1 = require("../../components/transactionHistories/entities/TransactionHistory.entity");
+const PaymentGateway_entity_1 = require("../../components/paymentGateways/entities/PaymentGateway.entity");
+const Card_entity_1 = require("../../components/cards/entities/Card.entity");
+exports.entities = [User_entity_1.User, Account_entity_1.Account, Card_entity_1.Card, Transaction_entity_1.Transaction, TransactionHistory_entity_1.TransactionHistory, PaymentGateway_entity_1.PaymentGateway];

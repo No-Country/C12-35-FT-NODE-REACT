@@ -15,7 +15,10 @@ exports.user1 = {
     document_number: "AB123456",
     birthdate: new Date(1990, 0, 1),
     first_name: "John",
-    last_name: "Doe"
+    last_name: "Doe",
+    accounts: [],
+    verified: false,
+    verified_phone: ""
 };
 exports.user2 = {
     id: 2,
@@ -31,5 +34,8 @@ exports.user2 = {
     document_number: "CD987654",
     birthdate: new Date(1985, 5, 15),
     first_name: "Jane",
-    last_name: "Smith"
+    last_name: "Smith",
+    accounts: [],
+    verified: false,
+    verified_phone: ""
 };

@@ -12,7 +12,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const response_1 = __importDefault(require("@/utils/response"));
+const response_1 = __importDefault(require("../../../utils/response"));
 const services_1 = __importDefault(require("../services"));
 exports.default = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     const data = yield services_1.default.getUsers();
