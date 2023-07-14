@@ -27,3 +27,15 @@ export const GroupDirectButton = styled.div`
   gap: 10px;
   align-self: flex-start;
 `
+export const CustomButton = styled.button`
+  height: 80px;
+  aspect-ratio: 1 / 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-button);
+  background-color: var(--background-card);
+  box-shadow: var(--shadow-primary);
+  font-size: 2rem;
+  color: var(--text-primary);
+`

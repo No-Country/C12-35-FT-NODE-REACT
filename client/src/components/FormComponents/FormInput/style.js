@@ -4,19 +4,21 @@ export const InputWrap = styled.div`
   display: flex;
   flex-direction: column;
   height: 100px;
-  width: 175px;
+  width: 100%;
 `
 
 export const Label = styled.label`
+  color: #D9D9D9;
+  font-weight: bold;
   margin: 5px;
   font-weight: bold;
 `
 
 export const Input = styled.input`
-  background-color: grey;
-  margin: 5px;
-  padding: 5px;
-  border: 3px solid black;
+  background-color: #545454;
+  height: 50px;
+  width: 100%;
+
   border-radius: var(--radius-button);
 `
 
