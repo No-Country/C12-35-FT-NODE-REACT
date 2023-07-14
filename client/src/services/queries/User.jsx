@@ -7,12 +7,11 @@ const { login, register } = user
 
 //
 
-const setCookiesAndRedirect = ()=>{
-      Cookies.set('accessToken','test1234',{expires: 1, path: '/'})
+const setCookiesAndRedirect = (accessTokenValue ='test1234')=>{
+      Cookies.set('accessToken',accessTokenValue,{expires: 1, path: '/'})
       window.location.reload();
       return redirect('/app');
 }
-
 
 export const registerUser = (values , setState ) => {
   axios
@@ -20,16 +19,15 @@ export const registerUser = (values , setState ) => {
     .then((res) => {
       console.log(res)
       setState()
-      setCookiesAndRedirect()
-      
+      setCookiesAndRedirect()     
 
     })
     .catch((err) => {
+      //eliminar al deployar el back
       setCookiesAndRedirect()
       console.log(err)
       setState(err.response.data.data)
       
-
     })
 }
 
@@ -42,6 +40,7 @@ export const loginUser = (values , setState ) => {
       setCookiesAndRedirect()
     })
     .catch((err) => {
+      //eliminar al deplyar el back
       setCookiesAndRedirect()
       console.log(err.response.data.error)
       setState(err.response.data.error)
