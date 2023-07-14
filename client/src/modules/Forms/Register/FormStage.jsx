@@ -4,18 +4,17 @@ import { Stage } from "./style"
 
 function FormStage({ fields, formObject }) {
   return (
-    <>
-      {fields.map((field, index) => (
-        <Stage key={index}>
-          <FormInput
-            label={field.label}
-            id={field.id}
-            type={field.type}
-            formik={formObject}
-          />
-        </Stage>
+    <Stage>
+      {fields.map(({ id, label, type }) => (
+        <FormInput
+          id={id}
+          key={id}
+          type={type}
+          formik={formObject}
+          placeholder={label}
+        />
       ))}
-    </>
+    </Stage>
   )
 }
 
