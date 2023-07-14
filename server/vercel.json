@@ -4,12 +4,20 @@
       {
           "src": "build/index.js",
           "use": "@vercel/node",
+<<<<<<< HEAD
           "config": { "includeFiles": ["build/**"] }
+=======
+          "config": { "includeFiles": ["build/*"] }
+>>>>>>> c96bc0d (dasds)
       }
   ],
   "routes": [
       {
+<<<<<<< HEAD
           "src": "/(.*)",
+=======
+          "src": "build/(.*)",
+>>>>>>> c96bc0d (dasds)
           "dest": "build/index.js"
       }
   ]
