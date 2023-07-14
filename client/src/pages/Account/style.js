@@ -2,11 +2,12 @@ import styled from "styled-components"
 
 export const PageStyle = styled.section`
   height: 100%;
-  min-height: 100vh;
+  min-height: calc(100vh - 100px);
   width: 100%;
   position: relative;
   overflow: hidden;
   z-index: 1;
+  margin: 100px 0 0 0;
 `
 
 export const FormWrap = styled.div`
