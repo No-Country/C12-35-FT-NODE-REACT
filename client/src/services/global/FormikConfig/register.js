@@ -46,9 +46,34 @@ export const registerConfig =(registerUser, errorFunc)=>{
     }
 }
 
+
+/* 
+    icons:
+    GiPadlock "react-icons/gi", candado,
+    
+    email:
+    MdLock,"react-icons/md"
+    MdMarkEmailUnread, "react-icons/md" 
+    MdEmail
+
+
+    person
+    IoPersonCircle, "react-icons/io5"
+
+
+
+*/
+
+
+
 export const stagesEstructure =  [
     {   
         label: "Etapa 1",
+        text: {
+            title: 'Necesitamos tu correo',
+            message: 'Asegurate de ingresar tu correo personal, es importante para que puedas recuperar tu cuenta'
+        },
+        icon: "MdMarkEmailUnread" ,
         fields:[
             {label: 'Nombre', id: 'first_name', type:'text'},
             {label: 'Apellido', id: 'last_name', type: 'text'},
@@ -58,6 +83,11 @@ export const stagesEstructure =  [
     },
     {
         label: "Etapa 2",
+        text: {
+            title: 'Necesitamos tus datos personales',
+            message: 'Necesitamos tus datos para continuar con el registro'
+        },
+        icon: "IoPersonCircle" ,
         fields: [
             {label: 'País',id: 'country', type: 'text'},
             {label: 'Tipo de Documento',id: 'document_type', type: 'text'},
@@ -68,6 +98,11 @@ export const stagesEstructure =  [
     },
     {
         label: "Etapa 3",
+        text: {
+            title: '',
+            message: ""
+        },
+        icon: "" ,
         fields: [
             {label: 'Dirección',id: 'address', type: 'text'},
             {label: 'Dirección Local',id: 'local_address', type: 'text'},
@@ -76,6 +111,11 @@ export const stagesEstructure =  [
     },
     {
         label: "Etapa 4",
+        text: {
+            title: 'Creá tu contraseña',
+            message: 'Último paso! Creá tu contraseña para completar el registro.'
+        },
+        icon: "MdLock" ,
         fields: [
             {label: 'Email', id: 'email', type: 'email'},
             {label: 'Número de Teléfono',id: 'phone_number', type: 'text'},

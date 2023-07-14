@@ -45,8 +45,8 @@ export default function LandHeader() {
           })
           :
           <>
-            <IngresarButton>Ingresar</IngresarButton>
-            <CrearButton>Crear cuenta</CrearButton>
+            <IngresarButton to={'/srv/login'}>Ingresar</IngresarButton>
+            <CrearButton to={'/srv/'}>Crear cuenta</CrearButton>
           </>
           }
         </GroupDirectButton>
