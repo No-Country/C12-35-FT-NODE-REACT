@@ -3,7 +3,9 @@ import { useFormik } from "formik"
 import React, { useState } from "react"
 import { loginConfig } from "@@/global/FormikConfig/login"
 import { loginUser } from "@@/queries/User"
-import { FormStyle } from "./style"
+import { FormStyle, FormWrap, Message, SectionForm, Title, IconLog } from "./style"
+
+import image from '@/assets/images/logos/Bienvenidaemoji.png'
 
 import { FormErrorResponse } from "@/components/FormComponents/FormErrorResponse"
 
@@ -16,22 +18,37 @@ function Login() {
 
   console.log(formik.values)
 
-  return (
-    <FormStyle onSubmit={formik.handleSubmit}>
-      <FormInput label={"Email"} id={"email"} type={"text"} formik={formik} />
+  return (<FormWrap>
+    <SectionForm>
+     
+        <IconLog>
+          <img src={image} alt='logo'/>
+        </IconLog>
+        <Title>¡Bienvenido de vuelta!</Title>
+        <Message>Ingresá tus datos para iniciar sesión nuevamnete.</Message>
 
-      <FormInput
-        label={"Contraseña"}
-        id={"password"}
-        type={"text"}
-        formik={formik}
-      />
+    </SectionForm>
 
-      <FormSubmit msg={"Acceder"} />
+        <FormStyle onSubmit={formik.handleSubmit}>
+        
 
-      {error && <FormErrorResponse error={error}/>}
-      
-    </FormStyle>
+        <FormInput label={"Email"} id={"email"} type={"text"} formik={formik} />
+
+        <FormInput
+          label={"Contraseña"}
+          id={"password"}
+          type={"text"}
+          formik={formik}
+        />
+
+        <FormSubmit msg={"Acceder"} />
+
+        {error && <FormErrorResponse error={error}/>}
+        
+      </FormStyle>
+
+  </FormWrap>
+    
   )
 }
 

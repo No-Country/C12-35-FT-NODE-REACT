@@ -1,9 +1,11 @@
 import styled from "styled-components"
 
 export const Submit = styled.button`
-  padding: 10px;
-  color: var(--text-primary);
   border-radius: var(--radius-button);
-  background-color: skyblue;
-  margin: 10px;
+  color: #406D5A;
+  font-weight: bold;
+  background-color: #4BFFB3;
+
+  height: 50px;
+  width: 100%;
 `
