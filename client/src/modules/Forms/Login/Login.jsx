@@ -1,54 +1,63 @@
 import { FormInput, FormSubmit } from "@/components"
-import { useFormik } from "formik"
-import React, { useState } from "react"
 import { loginConfig } from "@@/global/FormikConfig/login"
 import { loginUser } from "@@/queries/User"
-import { FormStyle, FormWrap, Message, SectionForm, Title, IconLog } from "./style"
-
-import image from '@/assets/images/logos/Bienvenidaemoji.png'
+import { useFormik } from "formik"
+import React, { useState } from "react"
+import {
+  ForgotPassword,
+  FormStyle,
+  FormWrap,
+  Message,
+  SectionForm,
+  Title,
+  WelcomeLogo
+} from "./style"
+import women from "@/assets/images/illustrations/women.svg"
 
 import { FormErrorResponse } from "@/components/FormComponents/FormErrorResponse"
 
 function Login() {
+  const [error, setError] = useState("")
 
-  const [error, setError] = useState('');
-
-
-  const formik = useFormik(loginConfig(loginUser, setError));
+  const formik = useFormik(loginConfig(loginUser, setError))
 
   console.log(formik.values)
 
-  return (<FormWrap>
-    <SectionForm>
-     
-        <IconLog>
-          <img src={image} alt='logo'/>
-        </IconLog>
+  return (
+    <FormWrap>
+      <SectionForm>
+        <WelcomeLogo>
+          <img src={women} alt='' />
+        </WelcomeLogo>
         <Title>¡Bienvenido de vuelta!</Title>
-        <Message>Ingresá tus datos para iniciar sesión nuevamnete.</Message>
+        <Message>Ingresá tus datos para iniciar sesión nuevamente.</Message>
+      </SectionForm>
 
-    </SectionForm>
-
-        <FormStyle onSubmit={formik.handleSubmit}>
-        
-
-        <FormInput label={"Email"} id={"email"} type={"text"} formik={formik} />
+      <FormStyle onSubmit={formik.handleSubmit}>
+        <FormInput
+          register={true}
+          label={"Email"}
+          id={"email"}
+          type={"text"}
+          formik={formik}
+          placeholder='Ingresá tu correo'
+        />
 
         <FormInput
+          register={true}
           label={"Contraseña"}
           id={"password"}
           type={"text"}
           formik={formik}
+          placeholder='Contraseña'
         />
+        <ForgotPassword>¿Olvidaste tu contraseña?</ForgotPassword>
 
-        <FormSubmit msg={"Acceder"} />
+        <FormSubmit msg={"Ingresar"} />
 
-        {error && <FormErrorResponse error={error}/>}
-        
+        {error && <FormErrorResponse error={error} />}
       </FormStyle>
-
-  </FormWrap>
-    
+    </FormWrap>
   )
 }
 
