@@ -1,27 +1,20 @@
-import React from "react";
-import { Background, BackgroundBlur, FormWrap, PageStyle,} from "./style";
-import { Register, Login } from "@/modules/Forms";
-import  NavForm  from "@/modules/Forms/Header/NavForm";
+import React from "react"
+import { BackGroundImage, BackgroundBlur, FormWrap, PageStyle } from "./style"
+import { Register, Login } from "@/modules/Forms"
+import { LandHeader } from "@/modules"
+import wavesBg from "@/assets/images/illustrations/waves.svg"
 
-import background from '@/assets/images/utils/backGround-image.jpg'
-
-function Account({type}) {
-    
-    return(<PageStyle>
-                  <NavForm/> 
-
-                <Background>
-                    <img src={background} alt=''  />
-                </Background> 
-                {/* <BackgroundBlur/> */}
-                <FormWrap>
-                        {                           
-                            type ==='Register' ? <Register/> : <Login/>
-                        }
-                </FormWrap>       
-        </PageStyle>)
-
-    
+function Account({ type }) {
+  return (
+    <>
+      <LandHeader />
+      <PageStyle>
+        <BackGroundImage src={wavesBg} />
+        <BackgroundBlur />
+        <FormWrap>{type === "Register" ? <Register /> : <Login />}</FormWrap>
+      </PageStyle>
+    </>
+  )
 }
 
-export default Account;
+export default Account
