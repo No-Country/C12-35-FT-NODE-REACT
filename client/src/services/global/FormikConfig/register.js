@@ -34,10 +34,11 @@ export const registerConfig = (registerUser, errorFunc) => {
         .required("Campo Requerido"),
       password: yup
         .string()
-        .min(6, "Debe tener un mínimo de 6 caracteres")
+        .min(8, "Debe tener un mínimo de 8 caracteres")
+        .max(24, "Debe tener como maximo 20 caracteres")
         .matches(
-          /^(?=.*\d)(?=.*[\u0021-\u002b\u003c-\u0040])(?=.*[A-Z])(?=.*[a-z])\S{6,10}$/,
-          "Contraseña Invalida, debe contener Dígitos, minúsculas, mayúsculas y símbolos"
+          /^(?=.*\d)(?=.*[\u0021-\u002b\u003c-\u0040])(?=.*[A-Z])(?=.*[a-z])\S{8,24}$/,
+          "Debe contener dígitos, minúsculas, mayúsculas y símbolos"
         )
         .required("Campo Requerido"),
       country: yup.string().required("Campo Requerido"),
@@ -67,8 +68,8 @@ export const registerConfig = (registerUser, errorFunc) => {
     
     email:
     MdLock,"react-icons/md"
-    MdMarkEmailUnread, "react-icons/md" 
     MdEmail
+    MdMarkEmailUnread, "react-icons/md" 
 
 
     person
@@ -82,38 +83,37 @@ export const stagesEstructure = [
   {
     label: "Etapa 1",
     text: {
-      title: "Necesitamos tu correo",
-      message:
-        "Asegurate de ingresar tu correo personal, es importante para que puedas recuperar tu cuenta"
+      title: "Necesitamos tus datos personales",
+      message: "Necesitamos tus datos para continuar con el registro",
+      icon: "IoPersonCircle",
     },
-    icon: "MdMarkEmailUnread",
     fields: [
-      { placeholder: "Nombre", id: "first_name", type: "text" },
+      { label: "Nombre", id: "first_name", type: "text" },
       { label: "Apellido", id: "last_name", type: "text" },
-      { label: "Contraseña", id: "password", type: "text" }
+      { label: "Fecha de Nacimiento", id: "birthdate", type: "date" }
     ]
   },
   {
     label: "Etapa 2",
     text: {
       title: "Necesitamos tus datos personales",
-      message: "Necesitamos tus datos para continuar con el registro"
+      message: "Necesitamos tus datos para continuar con el registro",
+      icon: "IoPersonCircle",
     },
-    icon: "IoPersonCircle",
     fields: [
       { label: "País", id: "country", type: "text" },
-      { label: "Tipo de Documento", id: "document_type", type: "text" },
+      { label: "Tipo de Documento", id: "document_type", type: "DropDown", data:["(DNI) Documento Nacional de Identidad", "Pasaporte", "(CI) Cédula de Identidad"] },
       { label: "Número de Documento", id: "document_number", type: "text" },
-      { label: "Fecha de Nacimiento", id: "birthdate", type: "date" }
+      
     ]
   },
   {
     label: "Etapa 3",
     text: {
-      title: "",
-      message: ""
+      title: "Necesitamos tus datos personales",
+      message: "Necesitamos tus datos para continuar con el registro",
+      icon: "IoPersonCircle",
     },
-    icon: "",
     fields: [
       { label: "Dirección", id: "address", type: "text" },
       { label: "Dirección Local", id: "local_address", type: "text" },
@@ -123,13 +123,14 @@ export const stagesEstructure = [
   {
     label: "Etapa 4",
     text: {
-      title: "Creá tu contraseña",
-      message: "Último paso! Creá tu contraseña para completar el registro."
+      title: "Últimos pasos!!!",
+      message: "Ya estás cerca de finalizar el proceso de registro.",
+      icon: ["MdLock", "MdEmail" ],
     },
-    icon: "MdLock",
     fields: [
       { label: "Email", id: "email", type: "email" },
-      { label: "Número de Teléfono", id: "phone_number", type: "text" }
+      { label: "Número de Teléfono", id: "phone_number", type: "text" },
+      { label: "Contraseña", id: "password", type: "text" }
     ]
   }
 ]

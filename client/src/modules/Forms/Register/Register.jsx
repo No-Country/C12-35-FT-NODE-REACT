@@ -12,9 +12,10 @@ import {
   Message,
   SectionForm,
   Title,
-  WelcomeLogo
+  WelcomeLogo,
 } from "./style"
-import { IoPersonCircle } from "react-icons/io5"
+import { IoPersonCircle } from "react-icons/io5";
+
 
 import { FormErrorResponse } from "@/components"
 
@@ -29,17 +30,23 @@ function Register() {
 
   const formik = useFormik(registerConfig(registerUser, setError))
 
-  console.log(!!formik.values.birthdate && !formik.errors.birthdate)
+  console.log(formik.values)
   return (
     <FormWrap>
       <SectionForm>
-        <WelcomeLogo>
-          <IoPersonCircle />
-        </WelcomeLogo>
-        <Title>Necesitamos tus datos personales</Title>
-        <Message>
-          Necesitamos tus datos personales para continuar con el registro.
-        </Message>
+        {
+
+          stagesEstructure[stageIndex] ? <>
+              <WelcomeLogo>
+              <IoPersonCircle />
+              </WelcomeLogo>
+              <Title>{stagesEstructure[stageIndex].text.title}</Title>
+              <Message>
+                {stagesEstructure[stageIndex].text.message}
+              </Message>
+          </> : null
+
+        }
       </SectionForm>
       <FormStyle onSubmit={formik.handleSubmit}>
         {stagesEstructure.map((stage, index) => (
@@ -54,12 +61,13 @@ function Register() {
           !formik.errors.first_name &&
           !!formik.values.last_name &&
           !formik.errors.last_name &&
-          !!formik.values.password &&
-          !formik.errors.password &&
+          !formik.errors.birthdate &&
+          !!formik.values.birthdate &&
+
           stageIndex === 0 ? (
-            <FormButton id='btnStageOne' handler={handleNextStage} />
+            <FormButton id='btnStageOne' handler={handleNextStage} msg='Siguiente' />
           ) : (
-            stageIndex === 0 && <FormButton disabled></FormButton>
+            stageIndex === 0 && <FormButton disabled msg='Siguiente'/>
           )}
           {!!formik.values.country &&
           !formik.errors.country &&
@@ -67,12 +75,11 @@ function Register() {
           !formik.errors.document_type &&
           !!formik.values.document_number &&
           !formik.errors.document_number &&
-          !formik.errors.birthdate &&
-          !!formik.values.birthdate &&
+          
           stageIndex === 1 ? (
-            <FormButton id='btnStageTwo' handler={handleNextStage} />
+            <FormButton id='btnStageTwo' handler={handleNextStage} msg='Siguiente' />
           ) : stageIndex === 1 ? (
-            <FormButton disabled></FormButton>
+            <FormButton disabled msg='Siguiente' />
           ) : null}
           {!!formik.values.address &&
           !formik.errors.address &&
@@ -81,22 +88,29 @@ function Register() {
           !!formik.values.postal_code &&
           !formik.errors.postal_code &&
           stageIndex === 2 ? (
-            <FormButton id='btnStageThree' handler={handleNextStage} />
+            <FormButton id='btnStageThree' handler={handleNextStage} msg='Siguiente'/>
           ) : (
-            stageIndex === 2 && <FormButton disabled></FormButton>
+            stageIndex === 2 && <FormButton disabled msg='Siguiente' />
           )}
           {!!formik.values.email &&
             !formik.errors.email &&
             !!formik.values.phone_number &&
-            !formik.errors.phone_number && (
+            !formik.errors.phone_number &&
+            !!formik.values.password &&
+            !formik.errors.password && (
               <ContainerError>
-                <FormSubmit msg={"Registrar"} />
-                {error && <FormErrorResponse error={error} />}
+                  <FormSubmit msg={"Registrar"} />
+                  {error && <FormErrorResponse error={error} />}
               </ContainerError>
-            )}
+            ) ||( stageIndex === 3 ? <FormButton disabled msg='Registrar'/> : null) 
+          }
         </ButtonWrap>
       </FormStyle>
     </FormWrap>
   )
 }
 export default Register
+
+
+
+// Refactorizar Logia de botones
