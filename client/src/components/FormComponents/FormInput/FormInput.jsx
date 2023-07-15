@@ -12,6 +12,7 @@ export default function FormInput({ id, type, formik, placeholder, register }) {
         onChange={formik.handleChange}
         onBlur={formik.handleBlur}
         value={formik.values[id]}
+        autoComplete="off"
       />
       {formik.errors[id] && <SpanError>{formik.errors[id]}</SpanError>}
     </InputWrap>

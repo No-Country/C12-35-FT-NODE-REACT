@@ -25,6 +25,7 @@ export const FormStyle = styled.form`
   display: flex;
   flex-direction: column;
   justify-content: center;
+  gap: 20px;
 `
 
 export const WelcomeLogo = styled.div`
@@ -58,7 +59,7 @@ export const Message = styled.span`
 `
 
 export const ForgotPassword = styled(Link)`
-  margin: 8px;
+  margin: 10px;
   align-self: center;
   font-size: 14px;
   color: var(--primary);
