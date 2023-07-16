@@ -11,4 +11,6 @@ export * from './FormComponents/FormButton';
 export * from './FormComponents/FormErrorResponse';
 export * from './FormComponents/FormInput';
 export * from './FormComponents/FormSubmit';
+export * from './FormComponents';
+export * from './InputPasswordCustom';
 export * from './ShowMore';
