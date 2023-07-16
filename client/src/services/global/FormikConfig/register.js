@@ -81,7 +81,7 @@ export const registerConfig = (registerUser, errorFunc) => {
 
 export const stagesEstructure = [
   {
-    label: "Etapa 1",
+    stage: 0,
     text: {
       title: "Necesitamos tus datos personales",
       message: "Necesitamos tus datos para continuar con el registro",
@@ -94,7 +94,7 @@ export const stagesEstructure = [
     ]
   },
   {
-    label: "Etapa 2",
+    stage: 1,
     text: {
       title: "Necesitamos tus datos personales",
       message: "Necesitamos tus datos para continuar con el registro",
@@ -108,7 +108,7 @@ export const stagesEstructure = [
     ]
   },
   {
-    label: "Etapa 3",
+    stage: 2,
     text: {
       title: "Necesitamos tus datos personales",
       message: "Necesitamos tus datos para continuar con el registro",
@@ -121,7 +121,7 @@ export const stagesEstructure = [
     ]
   },
   {
-    label: "Etapa 4",
+    stage: 3,
     text: {
       title: "Últimos pasos!!!",
       message: "Ya estás cerca de finalizar el proceso de registro.",

@@ -19,6 +19,7 @@
   --border-white: 2px solid var(--white);
   --border-transparent: 2px solid transparent;
   --background-blur-layout: rgba(46, 46, 46, 0.3);
+  --background-disabled: #428166;
 }
 
 * {
