@@ -3,6 +3,7 @@ import React from "react"
 import { Stage } from "./style"
 
 import {DropDown} from "@/components"
+import { InputPasswordCustom } from "@/components"
 
 
 function FormStage({ fields, formObject }) {
@@ -10,16 +11,30 @@ function FormStage({ fields, formObject }) {
     <Stage>
       {fields.map(({ id, label, type, data }) => (
 
-        type !== "DropDown" ?
+        type !== "DropDown" && id !== 'password' ?
         <FormInput
-          id={id}
           key={id}
+          id={id}
           type={type}
           formik={formObject}
           placeholder={label}
         />
-        :
-        <DropDown key={id} options={data} label={label} id={id} formik={formObject} />
+        : type === 'DropDown' ?
+        <DropDown 
+          key={id} 
+          options={data} 
+          label={label} 
+          id={id} 
+          formik={formObject} 
+        />
+        : <InputPasswordCustom
+           key={id} 
+           id={id}
+           type={type} 
+           formik={formObject} 
+           placeholder={label} 
+           
+        />
       ))}
     </Stage>
   )
