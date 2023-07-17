@@ -11,7 +11,7 @@ export const Button = styled.button`
   margin: 50px 0px 10px 0px;
 
   &:disabled {
-    opacity: 0.4;
+    background-color: var(--background-disabled);
     cursor: not-allowed;
   }
 `
