@@ -1,9 +1,10 @@
-
+import React, { useState } from "react"
+import { useFormik } from "formik"
+import { useDispatch } from "react-redux"
 import { registerConfig, stagesEstructure } from "@@/global/FormikConfig"
 import { registerUser } from "@@/queries"
-import { useFormik } from "formik"
-import React, { useState } from "react"
 import FormStage from "./FormStage"
+
 import {
   ButtonWrap,
   FormStyle,
@@ -22,14 +23,19 @@ function Register() {
 
   const [error, setError] = useState()
 
+  const dispatch = useDispatch()
+
   const handleNextStage = () => {
     setStageIndex(stageIndex + 1)
   }
+  const onSubmit = (values) => {
+      
+    dispatch(registerUser(values, setError))
+  } 
 
-  const formik = useFormik(registerConfig(registerUser, setError))
+  const formik = useFormik({...registerConfig(), onSubmit})
+
   
-
-  console.log(formik.errors)
   return (
     <FormWrap>
       <SectionForm>
@@ -63,7 +69,3 @@ function Register() {
   )
 }
 export default Register
-
-
-
-// Refactorizar Logia de botones

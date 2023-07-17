@@ -1,8 +1,12 @@
-import { FormInput, FormSubmit } from "@/components"
+import React, { useState } from "react"
+import { useFormik } from "formik"
+import {useDispatch} from "react-redux";
+
+import { InputPasswordCustom } from "@/components";
+import { FormInput, FormSubmit, FormButton } from "@/components"
 import { loginConfig } from "@@/global/FormikConfig/login"
 import { loginUser } from "@@/queries/User"
-import { useFormik } from "formik"
-import React, { useState } from "react"
+import { FormErrorResponse } from "@/components/FormComponents/FormErrorResponse"
 import {
   ForgotPassword,
   FormStyle,
@@ -14,14 +18,18 @@ import {
 } from "./style"
 import women from "@/assets/images/illustrations/women.svg"
 
-import { FormErrorResponse } from "@/components/FormComponents/FormErrorResponse"
 
 function Login() {
   const [error, setError] = useState("")
+  const dispatch = useDispatch()
 
-  const formik = useFormik(loginConfig(loginUser, setError))
+  const onSubmit = (values)=>{
+    
+    dispatch(loginUser(values, setError))
+  }
+  
+  const formik = useFormik({...loginConfig(), onSubmit})
 
-  console.log(formik.values)
 
   return (
     <FormWrap>
@@ -42,20 +50,23 @@ function Login() {
           formik={formik}
           placeholder='Ingresá tu correo'
         />
-
-        <FormInput
+        <InputPasswordCustom 
           register={true}
-          label={"Contraseña"}
           id={"password"}
           type={"text"}
           formik={formik}
-          placeholder='Contraseña'
+          label={"Contraseña"}
         />
-        <ForgotPassword>¿Olvidaste tu contraseña?</ForgotPassword>
-
-        <FormSubmit msg={"Ingresar"} />
-
+        {
+          formik.values.password && formik.values.email && !Object.keys(formik.errors).length
+                ? 
+                <FormSubmit msg={"Ingresar"} />
+                :
+                <FormButton disabled={true} msg={"Ingresar"} />
+        }
         {error && <FormErrorResponse error={error} />}
+
+        <ForgotPassword>¿Olvidaste tu contraseña?</ForgotPassword>
       </FormStyle>
     </FormWrap>
   )

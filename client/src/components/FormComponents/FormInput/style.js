@@ -40,7 +40,7 @@ export const Input = styled.input`
 export const SpanError = styled.span`
   height: 0.0001px;
   margin-left: 15px;
-
-  color: red;
-  font-weight: bold;
+  font-size: 0.7rem;
+  color: var(--color-error);
+  font-weight: 400;
 `
