@@ -9,31 +9,31 @@ import { InputPasswordCustom } from "@/components"
 function FormStage({ fields, formObject }) {
   return (
     <Stage>
-      {fields.map(({ id, label, type, data }) => (
+      {fields.map(({ id, label, type, data }, index) => (
 
         type !== "DropDown" && id !== 'password' ?
         <FormInput
-          key={id}
+          key={index}
           id={id}
           type={type}
           formik={formObject}
           placeholder={label}
         />
-        : type === 'DropDown' ?
+        /* : type === 'DropDown' ?
         <DropDown 
           key={id} 
           options={data} 
           label={label} 
           id={id} 
           formik={formObject} 
-        />
+        /> */
         : <InputPasswordCustom
-           key={id} 
+           key={index} 
+           register={true}
            id={id}
-           type={type} 
+           type={"text"} 
            formik={formObject} 
-           placeholder={label} 
-           
+           label={label}    
         />
       ))}
     </Stage>
