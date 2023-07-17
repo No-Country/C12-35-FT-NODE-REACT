@@ -1,13 +1,16 @@
 import * as yup from "yup"
 
-export const registerConfig = (registerUser, errorFunc) => {
+
+//NO ELIMINAR LO COMENTADO.
+
+export const registerConfig = () => {
   return {
     initialValues: {
       first_name: "",
       last_name: "",
       password: "",
       email: "",
-      address: "",
+      /* address: "",
       local_address: "",
       postal_code: "",
       phone_number: "",
@@ -15,7 +18,7 @@ export const registerConfig = (registerUser, errorFunc) => {
       document_type: "",
       document_number: "",
       birthdate: "",
-      profile_picture: "holamundo"
+      profile_picture: "holamundo" */
     },
     validationSchema: yup.object().shape({
       first_name: yup.string().required("Campo Requerido"),
@@ -27,11 +30,6 @@ export const registerConfig = (registerUser, errorFunc) => {
           "Email invalido"
         )
         .required("Campo Requerido"),
-      phone_number: yup
-        .string()
-        .min(9, "Número de Teléfono Inválido")
-        .max(15, "Numero de Telefono Invalido")
-        .required("Campo Requerido"),
       password: yup
         .string()
         .min(8, "Debe tener un mínimo de 8 caracteres")
@@ -39,7 +37,12 @@ export const registerConfig = (registerUser, errorFunc) => {
         .matches(
           /^(?=.*\d)(?=.*[\u0021-\u002b\u003c-\u0040])(?=.*[A-Z])(?=.*[a-z])\S{8,24}$/,
           "Debe contener dígitos, minúsculas, mayúsculas y símbolos"
-        )
+          )
+          .required("Campo Requerido"),
+      /* phone_number: yup
+        .string()
+        .min(9, "Número de Teléfono Inválido")
+        .max(15, "Numero de Telefono Invalido")
         .required("Campo Requerido"),
       country: yup.string().required("Campo Requerido"),
       document_type: yup.string().required("Campo Requerido"),
@@ -53,12 +56,8 @@ export const registerConfig = (registerUser, errorFunc) => {
         .required("Campo Requerido"),
       address: yup.string().required("Campo Requerido"),
       local_address: yup.string().required("Campo Requerido"),
-      postal_code: yup.string().required("Campo Requerido")
-    }),
-    onSubmit: (values) => {
-      console.log(values)
-      registerUser(values, errorFunc)
-    }
+      postal_code: yup.string().required("Campo Requerido") */
+    })
   }
 }
 
@@ -90,23 +89,24 @@ export const stagesEstructure = [
     fields: [
       { label: "Nombre", id: "first_name", type: "text" },
       { label: "Apellido", id: "last_name", type: "text" },
-      { label: "Fecha de Nacimiento", id: "birthdate", type: "date" }
+     // { label: "Fecha de Nacimiento", id: "birthdate", type: "date" }
     ]
   },
   {
     stage: 1,
     text: {
-      title: "Necesitamos tus datos personales",
-      message: "Necesitamos tus datos para continuar con el registro",
-      icon: "IoPersonCircle",
+      title: "Últimos pasos!!!",
+      message: "Ya estás cerca de finalizar el proceso de registro.",
+      icon: ["MdLock", "MdEmail" ],
     },
     fields: [
-      { label: "País", id: "country", type: "text" },
-      { label: "Tipo de Documento", id: "document_type", type: "DropDown", data:["(DNI) Documento Nacional de Identidad", "Pasaporte", "(CI) Cédula de Identidad"] },
-      { label: "Número de Documento", id: "document_number", type: "text" },
-      
+      { label: "Email", id: "email", type: "email" },
+    // { label: "Número de Teléfono", id: "phone_number", type: "text" },
+      { label: "Contraseña", id: "password", type: "text" }
     ]
-  },
+  }
+
+/*     ,
   {
     stage: 2,
     text: {
@@ -123,14 +123,15 @@ export const stagesEstructure = [
   {
     stage: 3,
     text: {
-      title: "Últimos pasos!!!",
-      message: "Ya estás cerca de finalizar el proceso de registro.",
-      icon: ["MdLock", "MdEmail" ],
+      title: "Necesitamos tus datos personales",
+      message: "Necesitamos tus datos para continuar con el registro",
+      icon: "IoPersonCircle",
     },
     fields: [
-      { label: "Email", id: "email", type: "email" },
-      { label: "Número de Teléfono", id: "phone_number", type: "text" },
-      { label: "Contraseña", id: "password", type: "text" }
+      { label: "País", id: "country", type: "text" },
+      { label: "Tipo de Documento", id: "document_type", type: "DropDown", data:["(DNI) Documento Nacional de Identidad", "Pasaporte", "(CI) Cédula de Identidad"] },
+      { label: "Número de Documento", id: "document_number", type: "text" },
+      
     ]
-  }
-]
+  } */
+]   

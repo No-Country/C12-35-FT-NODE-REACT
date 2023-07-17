@@ -3,7 +3,7 @@ import { FaEye, FaEyeSlash } from 'react-icons/fa';
 import {FormInput} from "@/components/FormComponents"
 import { InputWrap, ErrorWrap, Icon } from "./style";
 
-function InputPasswordCustom({id, type, formik, palceholder, register, error}) {
+function InputPasswordCustom({id, type, formik, label, register, error}) {
     const [showPassword, setShowPassword] = useState(false);
 
     const handleShowPassword= ()=>{
@@ -14,7 +14,7 @@ function InputPasswordCustom({id, type, formik, palceholder, register, error}) {
     <InputWrap>
         <FormInput
             register={register}
-            palceholder={palceholder}
+            placeholder={label}
             id={id}
             type={showPassword ? type : 'password'}
             formik={formik}
@@ -31,3 +31,7 @@ function InputPasswordCustom({id, type, formik, palceholder, register, error}) {
 }
 
 export default InputPasswordCustom;
+
+
+//pensar como reemplazar los errores de formik para acercarlo lo mas posible al diseño
+// se tendria que desabilitar las validacioness de yup
