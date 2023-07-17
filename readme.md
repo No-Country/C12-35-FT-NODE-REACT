@@ -3,7 +3,7 @@
 
 FundWave es una aplicación web diseñada para facilitar las transacciones, permitiendo a los usuarios ingresar dinero a la cuenta desde diversos métodos y llevar un registro completo de su historial financiero. La aplicación ofrece una interfaz intuitiva y amigable para que los usuarios puedan gestionar sus transacciones de manera eficiente.
 
-![App Screenshot](https://i.postimg.cc/DzvYPKDm/screen-landing-fundwave.png)
+![App Screenshot](https://cdn.discordapp.com/attachments/1122198776799563866/1130535592686518352/screen_landing_fundwave.png)
 
 ## Objetivos del proyecto
 
