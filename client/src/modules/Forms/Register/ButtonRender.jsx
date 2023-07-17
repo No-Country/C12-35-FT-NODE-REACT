@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { ButtonWrap, ContainerError } from "./style";
-import { FormErrorResponse } from "@/components";
-import {FormButton, FormSubmit} from "@/components";
+import {FormButton, FormSubmit, FormErrorResponse} from "@/components";
 
 function ButtonRender({formik, index, setIndex, fields, error, lastStage}) {
 
