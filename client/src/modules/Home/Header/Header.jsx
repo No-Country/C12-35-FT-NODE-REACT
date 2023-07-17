@@ -1,19 +1,14 @@
 import { DirectAccessButton } from "@/components"
 import React from "react"
+import { BiSolidBell } from "react-icons/bi"
+import { IoPersonCircle } from "react-icons/io5"
 import {
   GroupDirectButton,
   HeaderWrap,
   HeaderWrapper,
   WelcomeMessage,
-  WelcomeUser,
-  CustomButton
+  WelcomeUser
 } from "./style"
-import { BiSolidBell } from "react-icons/bi"
-import { IoPersonCircle } from "react-icons/io5"
-import { BiSolidLogOut } from "react-icons/bi"
-
-import Cookies from "js-cookie"
-import { redirect } from "react-router-dom"
 
 export default function Header() {
   //constants
