@@ -1,37 +1,74 @@
-import { FormInput, FormSubmit } from "@/components"
-import { useFormik } from "formik"
 import React, { useState } from "react"
+import { useFormik } from "formik"
+import {useDispatch} from "react-redux";
+
+import { InputPasswordCustom } from "@/components";
+import { FormInput, FormSubmit, FormButton } from "@/components"
 import { loginConfig } from "@@/global/FormikConfig/login"
 import { loginUser } from "@@/queries/User"
-import { FormStyle } from "./style"
-
 import { FormErrorResponse } from "@/components/FormComponents/FormErrorResponse"
+import {
+  ForgotPassword,
+  FormStyle,
+  FormWrap,
+  Message,
+  SectionForm,
+  Title,
+  WelcomeLogo
+} from "./style"
+import women from "@/assets/images/illustrations/women.svg"
+
 
 function Login() {
+  const [error, setError] = useState("")
+  const dispatch = useDispatch()
 
-  const [error, setError] = useState('');
+  const onSubmit = (values)=>{
+    
+    dispatch(loginUser(values, setError))
+  }
+  
+  const formik = useFormik({...loginConfig(), onSubmit})
 
-
-  const formik = useFormik(loginConfig(loginUser, setError));
-
-  console.log(formik.values)
 
   return (
-    <FormStyle onSubmit={formik.handleSubmit}>
-      <FormInput label={"Email"} id={"email"} type={"text"} formik={formik} />
+    <FormWrap>
+      <SectionForm>
+        <WelcomeLogo>
+          <img src={women} alt='' />
+        </WelcomeLogo>
+        <Title>¡Bienvenido de vuelta!</Title>
+        <Message>Ingresá tus datos para iniciar sesión nuevamente.</Message>
+      </SectionForm>
 
-      <FormInput
-        label={"Contraseña"}
-        id={"password"}
-        type={"text"}
-        formik={formik}
-      />
+      <FormStyle onSubmit={formik.handleSubmit}>
+        <FormInput
+          register={true}
+          label={"Email"}
+          id={"email"}
+          type={"text"}
+          formik={formik}
+          placeholder='Ingresá tu correo'
+        />
+        <InputPasswordCustom 
+          register={true}
+          id={"password"}
+          type={"text"}
+          formik={formik}
+          label={"Contraseña"}
+        />
+        {
+          formik.values.password && formik.values.email && !Object.keys(formik.errors).length
+                ? 
+                <FormSubmit msg={"Ingresar"} />
+                :
+                <FormButton disabled={true} msg={"Ingresar"} />
+        }
+        {error && <FormErrorResponse error={error} />}
 
-      <FormSubmit msg={"Acceder"} />
-
-      {error && <FormErrorResponse error={error}/>}
-      
-    </FormStyle>
+        <ForgotPassword>¿Olvidaste tu contraseña?</ForgotPassword>
+      </FormStyle>
+    </FormWrap>
   )
 }
 

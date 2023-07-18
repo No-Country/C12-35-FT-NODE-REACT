@@ -37,7 +37,10 @@ export const GroupDetail = styled.div`
 `
 
 export const ActivityDetail = styled.h4`
-  font-weight: 400;
+  font-weight: 300;
+  font-size: 15px;
 `
 
-export const Date = styled.span``
+export const Date = styled.span`
+  font-size: 14px;
+`

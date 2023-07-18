@@ -4,7 +4,7 @@ import { ShortCut, Title } from "./style"
 
 export default function ShowMore({ title, link, little, light }) {
   //constants
-  const SIZE = little ? "1rem" : "1.3rem"
+  const SIZE = little ? "1rem" : "1.2rem"
   const isLittle = little ? true : false
   const isLight = light ? true : false
 

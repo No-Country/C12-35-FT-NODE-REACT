@@ -1,13 +1,20 @@
-import React from "react";
-import { InputWrap, Label, Input, SpanError } from "./style";
+import React from "react"
+import { Input, InputWrap, SpanError } from "./style"
 
-export default function FormInput({id, label, type, formik}) {
-
+export default function FormInput({ id, type, formik, placeholder, register }) {
   return (
-    <InputWrap>
-        <Label htmlFor={id}>{label}</Label>
-        <Input id={id} name={id} type={type} onChange={formik.handleChange} onBlur={formik.handleBlur} value={formik.values[id]} />
-        {formik.errors[id] ? <SpanError>{formik.errors[id]}</SpanError> : <></>}
+    <InputWrap $register={register}>
+      <Input
+        placeholder={placeholder}
+        id={id}
+        name={id}
+        type={type}
+        onChange={formik.handleChange}
+        onBlur={formik.handleBlur}
+        value={formik.values[id]}
+        autoComplete="off"
+      />
+      {formik.errors[id] && <SpanError>{formik.errors[id]}</SpanError>}
     </InputWrap>
   )
 }
