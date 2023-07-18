@@ -8,7 +8,8 @@ import {
   NavWrapper,
   NavItem,
   IngresarButton,
-  CrearButton
+  CrearButton,
+  BurgerMenu
 } from "./style";
 import imagotipo from '@/assets/images/logos/Imagotipo.svg';
 
@@ -50,6 +51,7 @@ export default function LandHeader() {
           </>
           }
         </GroupDirectButton>
+        <BurgerMenu>&#x2630;</BurgerMenu>
       </HeaderWrap>
     </HeaderWrapper>
   )

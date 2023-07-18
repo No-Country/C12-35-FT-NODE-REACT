@@ -16,9 +16,9 @@ export default function LandHero() {
         <Tag>Transferencias</Tag>
         <Tag>Débito</Tag>
         <Tag>Crédito</Tag>
-        <span style={{width: '50px'}}></span>
         <Tag>Actividad</Tag>
         <Tag>Actividad</Tag>
+        <div style={{width: '20px'}} />
       </TagsGroup>
     </Hero>
   )
