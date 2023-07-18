@@ -1,5 +1,5 @@
 import getAccounts from "./getAccount.controller";
-import createAccount from "./getAccount.controller";
+import createAccount from "./createAccount.controller";
 import updateAccount from "./updateAccount.controller";
 import deleteAccount from "./deleteAccount.controller";
 import getAccountById from "./getAccountById.controller";
