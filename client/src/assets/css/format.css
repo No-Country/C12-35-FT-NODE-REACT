@@ -1,5 +1,8 @@
 :root {
   --primary: #4bffb3;
+  --primary-dark: #00a86b;
+  --primary-light: #aaffd5;
+  --primary-opacity: rgba(75, 255, 179, 0.26);
   --background: #262626;
   --background-light: #545454;
   --background-card: #3f3f3f;
@@ -8,6 +11,7 @@
   --background-icon: #808080;
   --background-primary: #fcfcfc;
   --text-primary: #fcfcfc;
+  --text-primary-light: #808080;
   --text-secondary: rgba(252, 252, 252, 0.589);
   --text-tertiary: #3d3d3d;
   --shadow-primary: 1px 1px 20px 1px rgba(0, 0, 0, 0.15);
