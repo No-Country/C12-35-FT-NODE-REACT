@@ -4,7 +4,7 @@ export const DetailFundWrapper = styled.div`
   display: flex;
   align-items: center;
   gap: 20px;
-  font-size: 1.5rem;
+  font-size: 1.4rem;
 `
 
 export const Fund = styled.h4`
@@ -12,4 +12,7 @@ export const Fund = styled.h4`
   font-weight: 400;
 `
 
-export const Icon = styled.div``
+export const Icon = styled.div`
+  display: flex;
+  align-items: center;
+`
