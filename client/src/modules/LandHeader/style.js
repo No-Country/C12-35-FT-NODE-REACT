@@ -10,6 +10,10 @@ export const HeaderWrapper = styled.div`
   margin: 0;
   width: 100%;
   height: 100px;
+
+  @media (max-width: 600px) {
+    height: 80px;
+  }
 `
 
 export const HeaderWrap = styled.div`
@@ -25,6 +29,11 @@ export const LogoWrapper = styled.img`
   grid-column: 2 / span 3;
   translate: -30px 0;
   align-self: center;
+
+  @media (max-width: 600px) {
+    translate: -30px -10px;
+    height: 50%;
+  }
 `
 
 export const NavWrapper = styled.h2`
@@ -32,6 +41,10 @@ export const NavWrapper = styled.h2`
   display: flex;
   justify-content: space-evenly;
   align-items: center;
+
+  @media (max-width: 600px) {
+    display: none;
+  }
 `
 
 export const NavItem = styled(Link)`
@@ -45,6 +58,10 @@ export const GroupDirectButton = styled.div`
   justify-content: flex-end;
   align-items: center;
   gap: 10px;
+
+  @media (max-width: 600px) {
+    display: none;
+  }
 `
 
 export const IngresarButton = styled(Link)`
@@ -68,4 +85,16 @@ export const CrearButton = styled(Link)`
   padding: .5rem 2rem;
   display: flex;
   align-items: center;
+`
+
+export const BurgerMenu = styled.div`
+  display: none;
+  text-align: right;
+  align-self: center;
+  font-size: 2rem;
+  translate: 0 -10px;
+  @media (max-width: 600px) {
+    display: block;
+    grid-column: 9 / span 3;
+  }
 `
