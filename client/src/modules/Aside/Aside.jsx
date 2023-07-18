@@ -1,12 +1,18 @@
 import React from "react"
 import { BsCollectionFill, BsFillCreditCardFill } from "react-icons/bs"
-import { IoHomeSharp, IoHelpCircle, IoPersonCircle } from "react-icons/io5"
-import { Link } from "react-router-dom"
+import {
+  IoHomeSharp,
+  IoHelpCircle,
+  IoPersonCircle,
+  IoExit
+} from "react-icons/io5"
 import {
   AsideTitle,
   AsideWrap,
   AsideWrapper,
+  GoTo,
   Icon,
+  Logout,
   NavItem,
   NavRoutes,
   NavShortcuts
@@ -15,7 +21,7 @@ import {
 export default function Aside() {
   //constants
   const NAV_ROUTE_ITEMS = [
-    { id: 1, name: "Inicio", icon: <IoHomeSharp />, link: "/srv/home" },
+    { id: 1, name: "Inicio", icon: <IoHomeSharp />, link: "/app" },
     {
       id: 2,
       name: "Mi perfil",
@@ -43,23 +49,34 @@ export default function Aside() {
   return (
     <AsideWrapper>
       <AsideWrap>
-        <AsideTitle>FundWave</AsideTitle>
-        <NavRoutes>
-          {NAV_ROUTE_ITEMS.map(({ id, name, icon, link }) => (
-            <NavItem key={id}>
-              <Icon>{icon}</Icon>
-              <Link to={link}>{name}</Link>
-            </NavItem>
-          ))}
-        </NavRoutes>
-        <NavShortcuts>
-          {NAV_SHORTCUT_ITEMS.map(({ id, name, icon, link }) => (
-            <NavItem key={id}>
-              <Icon>{icon}</Icon>
-              <Link to={link}>{name}</Link>
-            </NavItem>
-          ))}
-        </NavShortcuts>
+        <div>
+          <AsideTitle>FundWave</AsideTitle>
+
+          <NavRoutes>
+            {NAV_ROUTE_ITEMS.map(({ id, name, icon, link }) => (
+              <NavItem key={id}>
+                <GoTo to={link}>
+                  <Icon>{icon}</Icon> {name}
+                </GoTo>
+              </NavItem>
+            ))}
+          </NavRoutes>
+          <NavShortcuts>
+            {NAV_SHORTCUT_ITEMS.map(({ id, name, icon, link }) => (
+              <NavItem key={id}>
+                <GoTo to={link}>
+                  <Icon>{icon}</Icon> {name}
+                </GoTo>
+              </NavItem>
+            ))}
+          </NavShortcuts>
+        </div>
+        <Logout>
+          <Icon>
+            <IoExit />
+          </Icon>
+          Salir
+        </Logout>
       </AsideWrap>
     </AsideWrapper>
   )

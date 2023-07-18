@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react"
-import { IoEyeOffOutline, IoEyeOutline } from "react-icons/io5"
+import { BsEyeFill, BsEyeSlashFill } from "react-icons/bs"
 import { DetailFundWrapper, Fund, Icon } from "./style"
 import useFormatFund from "./hooks"
 
@@ -7,8 +7,8 @@ export default function DetailFund({ funds }) {
   //constants
   const isHide = localStorage.getItem("hfiad") === "true" ? true : false
   const ICON = {
-    true: <IoEyeOutline />,
-    false: <IoEyeOffOutline />
+    true: <BsEyeFill />,
+    false: <BsEyeSlashFill />
   }
 
   //states
