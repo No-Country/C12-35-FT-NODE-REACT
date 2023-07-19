@@ -11,7 +11,7 @@ export const LandingWrapper = styled.div`
   background-color: #2e2e2e;
 
   @media (max-width: 600px) {
-    height: 800vh;
+    height: 550vh;
   }
 `
 export const Background = styled.div`

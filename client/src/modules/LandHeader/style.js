@@ -8,6 +8,7 @@ export const HeaderWrapper = styled.div`
   background-color: #2e2e2e;
   color: #fff;
   margin: 0;
+  padding: 0;
   width: 100%;
   height: 100px;
 
@@ -29,6 +30,7 @@ export const LogoWrapper = styled.img`
   grid-column: 2 / span 3;
   translate: -30px 0;
   align-self: center;
+  cursor: pointer;
 
   @media (max-width: 600px) {
     translate: -30px -10px;
@@ -89,12 +91,32 @@ export const CrearButton = styled(Link)`
 
 export const BurgerMenu = styled.div`
   display: none;
-  text-align: right;
+  text-align: center;
   align-self: center;
   font-size: 2rem;
-  translate: 0 -10px;
+  margin: -30px;
+  translate: 42px -15px;
+  max-height: 40px;
+
   @media (max-width: 600px) {
     display: block;
     grid-column: 9 / span 3;
+    overflow: hidden;
+    width: 120%;
+
+    &.open {
+      max-height: 400px;
+      padding-top: 20px;
+      padding-bottom: 20px;
+      translate: 42px 46px;
+      background-color: rgba(0,0,0,.75);
+    }
   }
+`
+
+export const DDItem = styled(Link)`
+  display: block;
+  font-size: .8rem;
+  margin: 5px 0 0 10px;
+  width: 80%;
 `
