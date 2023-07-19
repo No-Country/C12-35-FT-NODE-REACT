@@ -9,6 +9,10 @@ export const LandingWrapper = styled.div`
   top: 0;
   left: 0;
   background-color: #2e2e2e;
+
+  @media (max-width: 600px) {
+    height: 550vh;
+  }
 `
 export const Background = styled.div`
   margin: 0;

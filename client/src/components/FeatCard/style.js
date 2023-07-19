@@ -10,6 +10,11 @@ export const CardWrapper = styled.div`
   font-family: "Inter";
   margin: 0 0 200px 0;
   position: relative;
+
+  @media (max-width: 600px) {
+    transform: scale(.75);
+    margin: 0 0 -20px 0;
+  }
 `
 
 export const CardTitle = styled.h3`
