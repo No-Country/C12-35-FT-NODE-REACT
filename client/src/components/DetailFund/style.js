@@ -15,4 +15,6 @@ export const Fund = styled.h4`
 export const Icon = styled.div`
   display: flex;
   align-items: center;
+  cursor: pointer;
+  color: var(--text-primary-light);
 `
