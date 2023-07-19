@@ -1,7 +1,7 @@
 import { NavLink } from "react-router-dom"
 import styled from "styled-components"
 
-export const AsideWrapper = styled.div`
+export const AsideWrapper = styled.aside`
   height: 100%;
   grid-column: 1 / 6;
   grid-row: 1 / 13;
