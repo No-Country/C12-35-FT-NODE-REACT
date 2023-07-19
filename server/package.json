@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node build/index.js",
-    "dev": "nodemon src/index.ts --exec ts-node",
+    "dev": "nodemon ./index.ts --exec ts-node",
     "tsc": "tsc",
     "build": "npm install; tsc",
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -38,6 +38,7 @@
   },
   "dependencies": {
     "@types/dotenv": "^8.2.0",
+    "axios": "^1.4.0",
     "bcryptjs": "^2.4.3",
     "cors": "^2.8.5",
     "dotenv": "^16.3.1",
@@ -48,7 +49,7 @@
     "otplib": "^12.0.1",
     "pg": "^8.11.1",
     "qrcode": "^1.5.3",
-    "typeorm": "^0.3.17",
-    "ts-node": "^10.9.1"
+    "ts-node": "^10.9.1",
+    "typeorm": "^0.3.17"
   }
 }

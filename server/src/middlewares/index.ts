@@ -1,5 +1,7 @@
-import validateToken from "./validateToken.middelware";
+import ensureToken from "./ensureToken.middleware";
+import validateToken from "./validateToken.middleware";
 
 export default {
+  ensureToken,
   validateToken
 };
