@@ -12,8 +12,8 @@ export const CardWrapper = styled.div`
   position: relative;
 
   @media (max-width: 600px) {
-    transform: scale(.8);
-    margin: 0 0 50px 0;
+    transform: scale(.75);
+    margin: 0 0 -20px 0;
   }
 `
 

@@ -7,7 +7,6 @@ export const Hero = styled.div`
   position: absolute;
   top: 0;
   z-index: 2;
-  font-family: "Inter";
   color: white;
 `
 
@@ -16,9 +15,14 @@ export const StyledTitle = styled.div`
   grid-row: 3 / span 1;
   font-size: 2.5rem;
   font-weight: 900;
+  line-height: 35px;
 
   @media (max-width: 600px) {
+    grid-column: 2 / span 10;
     grid-row: 2 / span 1;
+    font-size: 1.5rem;
+    line-height: 35px;
+    translate: 0 20px;
   }
 `
 
@@ -29,6 +33,9 @@ export const StyledSub = styled.div`
   font-weight: 600;
 
   @media (max-width: 600px) {
+    grid-row: 3 / span 1;
+    font-size: 0.9rem;
+    line-height: 20px;
     translate: 0 -10px;
   }
 `
@@ -43,7 +50,8 @@ export const TagsGroup = styled.div`
 
   @media (max-width: 600px) {
     grid-column: 2 / span 8;
-    translate: -10px 20px;
+    grid-row: 4 / span 1;
+    translate: -10px -40px;
   }
 `
 export const Tag = styled.div`
