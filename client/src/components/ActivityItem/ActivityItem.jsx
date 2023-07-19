@@ -1,6 +1,7 @@
+import { useIcons } from "@@/global/customIcons"
 import React from "react"
 import { IoIosExit } from "react-icons/io"
-import { IoCashSharp, IoPaperPlaneSharp } from "react-icons/io5"
+
 import {
   ActivityDetail,
   ActivityItemWrap,
@@ -10,6 +11,8 @@ import {
 } from "./style"
 
 export default function ActivityItem({ type, time, id }) {
+  //icons
+  const { MoneyBillTransfer, MoneyBillAddsFund } = useIcons()
   //constants
   const messageTransfer = {
     transfer: "Recibiste una transferencia",
@@ -17,14 +20,14 @@ export default function ActivityItem({ type, time, id }) {
     send: "Enviaste dinero a"
   }
   const iconTransfer = {
-    transfer: <IoCashSharp />,
+    transfer: MoneyBillTransfer(),
     payment: <IoIosExit />,
-    send: <IoPaperPlaneSharp />
+    send: MoneyBillAddsFund()
   }
   return (
     <ActivityItemWrap>
       <GroupDetail>
-        <IconActivity>{iconTransfer[type]}</IconActivity>
+        <IconActivity type={type}>{iconTransfer[type]}</IconActivity>
         <ActivityDetail>{messageTransfer[type]}</ActivityDetail>
       </GroupDetail>
       <Date>{time}</Date>

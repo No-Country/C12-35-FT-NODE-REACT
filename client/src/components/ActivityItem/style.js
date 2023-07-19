@@ -1,4 +1,9 @@
 import styled from "styled-components"
+const typeTransfer = {
+  transfer: { width: "50%", color: "var(--secondary)" },
+  payment: { width: "100%", color: "var(--text-primary)" },
+  send: { width: "65%", color: "var(--primary)" }
+}
 
 export const ActivityItemWrap = styled.li`
   width: 100%;
@@ -8,7 +13,8 @@ export const ActivityItemWrap = styled.li`
   position: relative;
   align-items: center;
 
-  &::after {
+  //posiblemente se implemente, en caso de que no se implemente, borraré
+  /* &::after {
     content: "";
     width: 100%;
     height: 1.5px;
@@ -16,7 +22,7 @@ export const ActivityItemWrap = styled.li`
     position: absolute;
     bottom: 0;
     left: 0;
-  }
+  } */
 `
 
 export const IconActivity = styled.div`
@@ -29,6 +35,12 @@ export const IconActivity = styled.div`
   align-items: center;
   font-size: 24px;
   color: var(--text-primary);
+
+  & svg {
+    width: ${({ type }) => typeTransfer[type] && typeTransfer[type].width};
+    object-fit: contain;
+    color: ${({ type }) => typeTransfer[type] && typeTransfer[type].color};
+  }
 `
 export const GroupDetail = styled.div`
   display: flex;

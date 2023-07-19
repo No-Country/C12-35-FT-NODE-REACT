@@ -13,8 +13,10 @@ export default function Home() {
     <HomeWrapper>
       <HomeWrap>
         <LeftWrap>
-          <AccountFund />
-          <ManageFunds />
+          <div>
+            <AccountFund />
+            <ManageFunds />
+          </div>
           <MyCards />
           <News />
         </LeftWrap>

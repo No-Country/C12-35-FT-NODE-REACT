@@ -25,4 +25,5 @@ export const Header = styled.div`
 export const Title = styled.h6`
   font-size: 1rem;
   font-weight: 400;
+  color: var(--text-primary-light);
 `
