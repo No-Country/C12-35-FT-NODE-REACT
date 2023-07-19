@@ -20,6 +20,12 @@ export const LeftWrap = styled.div`
   justify-content: space-between;
   max-width: 450px;
   gap: 20px;
+
+  & > div {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
 `
 
 export const RigthWrap = styled.div`
