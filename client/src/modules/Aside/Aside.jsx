@@ -1,5 +1,6 @@
 import React from "react"
 import { BsCollectionFill, BsFillCreditCardFill } from "react-icons/bs"
+import { logoutUser } from "@@/queries"
 import {
   IoHomeSharp,
   IoHelpCircle,
@@ -71,7 +72,7 @@ export default function Aside() {
             ))}
           </NavShortcuts>
         </div>
-        <Logout>
+        <Logout onClick={logoutUser}>
           <Icon>
             <IoExit />
           </Icon>
