@@ -7,7 +7,7 @@ export const ShortCut = styled(Link)`
   justify-content: space-between;
   align-items: center;
   padding: 15px 0;
-  opacity: ${(props) => (props.$light ? "0.7" : "0.9")};
+  color: var(--text-primary-light);
 `
 
 export const Title = styled.h3`

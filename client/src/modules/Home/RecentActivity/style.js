@@ -16,4 +16,10 @@ export const Wrap = styled.div`
 `
 export const ListActivity = styled.ul`
   width: 100%;
+  overflow-y: scroll;
+  height: 90%;
+  scrollbar-width: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
 `

@@ -1,7 +1,6 @@
 import styled from "styled-components"
 const typeTransfer = {
   transfer: { width: "50%", color: "var(--secondary)" },
-  payment: { width: "100%", color: "var(--text-primary)" },
   send: { width: "65%", color: "var(--primary)" }
 }
 
@@ -45,14 +44,40 @@ export const IconActivity = styled.div`
 export const GroupDetail = styled.div`
   display: flex;
   align-items: center;
-  gap: 25px;
+  gap: 20px;
 `
 
 export const ActivityDetail = styled.h4`
   font-weight: 300;
   font-size: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  & :first-child {
+    opacity: 0.7;
+  }
+
+  & :nth-child(2) {
+    color: var(--text-primary-light);
+    font-size: 14px;
+    font-weight: 400;
+  }
 `
 
 export const Date = styled.span`
   font-size: 14px;
+  color: var(--text-primary-light);
+`
+
+export const Amount = styled.span`
+  font-size: 14px;
+  color: ${({ type }) =>
+    type === "send" ? typeTransfer[type].color : "var(--text-primary)"};
+`
+export const RightData = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
 `

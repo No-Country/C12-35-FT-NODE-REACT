@@ -5,7 +5,7 @@ import { Card, Carousel, ShowMore } from "@/components"
 export default function MyCards() {
   return (
     <StyledMyCards>
-      <ShowMore little light title='Tarjetas' link='/Cards' />
+      <ShowMore little title='Tarjetas' link='/Cards' />
       <Carousel>
         <Card
           width='150px'
