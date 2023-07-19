@@ -1,4 +1,5 @@
 import { TransactionHistory } from "../entities/TransactionHistory.entity";
+import { ITransactionHistory } from "../models/TransactionsHistory";
 import getTransactionsHistory from "./getTransactionsHistory.service";
 import createTransactionHistory from "./createTransactionHistory.service";
 import getTransactionsHistoryById from "./getTransactionsHistoryById.service";
@@ -14,7 +15,7 @@ class TransactionHistoryService {
     const transactionHistory = await getTransactionsHistoryById(id);
     return transactionHistory;
   }
-  async createTransactionHistory(newTransactionHistory: TransactionHistory) {
+  async createTransactionHistory(newTransactionHistory: ITransactionHistory) {
     const transactionHistoryCreated = await createTransactionHistory(newTransactionHistory);
     return transactionHistoryCreated;
   }

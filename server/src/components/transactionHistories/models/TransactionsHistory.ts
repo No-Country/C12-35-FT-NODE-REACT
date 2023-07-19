@@ -1,6 +1,5 @@
 export interface ITransactionHistory {
-  id: number;
-  date: string;
+  date: Date;
   accountsId: number;
   transactionId: number;
 }
