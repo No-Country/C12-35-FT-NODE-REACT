@@ -1,6 +1,6 @@
+import { User } from "src/components/users/entities/User.entity";
 import db from "../data";
 
 export default async (id: number) => {
-  const accounts = await db.getById(id);
-  return accounts;
+  return await db.getById(id);
 };

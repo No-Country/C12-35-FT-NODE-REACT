@@ -15,8 +15,9 @@ import { Card } from "../../cards/entities/Card.entity";
 @Entity()
 export class Account {
   @PrimaryGeneratedColumn()
-  id!: number;
+  id: number;
 
+<<<<<<< HEAD
   @Column({ default: 0 })
   balance!: number;
 
@@ -26,10 +27,32 @@ export class Account {
   @OneToOne(() => User, (user) => user.accounts)
   @JoinColumn()
   user!: User;
+=======
+  @Column()
+  email: string;
 
-  @OneToMany(() => Transaction, (transaction) => transaction.id)
-  transactions!: Transaction[];
+  @Column()
+  password: string;
 
+  @Column()
+  balance: number;
+
+  @Column()
+  date_created: Date;
+
+  @Column()
+  type: string;
+
+  @OneToOne(() => User)
+  @JoinColumn()
+  user: User;
+>>>>>>> b822c13 (.)
+
+  @OneToOne(() => TransactionHistory)
+  @JoinColumn()
+  transaction_history: TransactionHistory;
+
+<<<<<<< HEAD
   @OneToMany(() => TransactionHistory, (transactionHistory) => transactionHistory.id)
   transactionHistory!: TransactionHistory[];
 
@@ -41,4 +64,9 @@ export class Account {
 
   @UpdateDateColumn()
   updated_at!: Date;
+=======
+  @OneToMany(() => Card, (card) => card.account)
+  // @JoinColumn({ name: "card_id" })
+  cards: Card[];
+>>>>>>> b822c13 (.)
 }

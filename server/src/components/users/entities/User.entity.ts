@@ -1,9 +1,14 @@
+<<<<<<< HEAD
 import { Column, Entity, PrimaryGeneratedColumn, OneToOne } from "typeorm";
+=======
+import { Column, Entity, PrimaryGeneratedColumn, OneToOne, Unique, JoinColumn } from "typeorm";
+>>>>>>> b822c13 (.)
 import { Account } from "../../accounts/entities/Account.entity";
 
 @Entity()
 export class User {
   @PrimaryGeneratedColumn()
+<<<<<<< HEAD
   id!: number;
 
   @Column()
@@ -17,6 +22,9 @@ export class User {
 
   @Column()
   last_name!: string;
+=======
+  id: number;
+>>>>>>> b822c13 (.)
 
   @Column({ nullable: true })
   address!: string;
@@ -46,11 +54,8 @@ export class User {
   birthdate!: Date;
 
   @Column({ default: false })
-  verified_phone!: string;
+  verified_phone: string;
 
   @Column({ default: false })
-  verified!: boolean;
-
-  @OneToOne(() => Account, (account) => account.id)
-  accounts!: Account[];
+  verified: boolean;
 }

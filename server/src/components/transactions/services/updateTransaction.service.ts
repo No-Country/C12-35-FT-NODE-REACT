@@ -1,7 +1,7 @@
 import db from "../data";
-import { Transaction } from "../entities/Transaction.entity";
+import { ITransaction } from "../models/Transactions";
 
-export default async (id: number, transaction: Transaction) => {
+export default async (id: number, transaction: ITransaction) => {
   const updatedTransaction = await db.update(id, transaction);
   return updatedTransaction;
 };

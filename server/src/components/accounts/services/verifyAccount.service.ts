@@ -1,4 +1,4 @@
-import db from "../data";
+import db from "../../users/data";
 
 export default async (id: number) => {
   const currentUser = await db.getById(id);
