@@ -18,7 +18,7 @@ export default class DB implements DBInterface {
 
   async getById(id: number) {
     try {
-      const user = await AppDataSource.getRepository(this.model).findBy({ id });
+      const user = await AppDataSource.getRepository(this.model).findOneBy({ id });
       return user;
     } catch (error: any) {
       throw new Error(error);
@@ -63,6 +63,13 @@ export default class DB implements DBInterface {
     try {
       const userUpdated = AppDataSource.getRepository(this.model).delete({ id });
       return userUpdated;
+    } catch (error: any) {
+      throw new Error(error);
+    }
+  }
+  async getRepository() {
+    try {
+      return await AppDataSource.getRepository(this.model);
     } catch (error: any) {
       throw new Error(error);
     }

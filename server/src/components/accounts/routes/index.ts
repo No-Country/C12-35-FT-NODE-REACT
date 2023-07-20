@@ -6,6 +6,8 @@ const router = Router();
 
 router.get("/", ctrl.getAccounts);
 
+router.get("/balance/:id", ctrl.getAccountBalance);
+
 router.get("/:id", ctrl.getAccountById);
 
 router.post("/", middlewares.validateDuplicate, middlewares.encryptPassword, ctrl.createAccount);

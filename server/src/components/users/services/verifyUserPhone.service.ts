@@ -3,7 +3,7 @@ import MobileAuthenticator from "../../../services/2FA/index";
 
 export default async (id: number, secret: string, token: string) => {
   const currentUser = await db.getById(id);
-  const userToUpdate = { ...currentUser[0] };
+  const userToUpdate = { ...currentUser };
   const userVerificationBoolean = await MobileAuthenticator.verify(secret, token);
   if (!userVerificationBoolean) {
     throw new Error("Invalid token");

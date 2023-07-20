@@ -3,6 +3,7 @@ import createAccount from "./createAccount.controller";
 import updateAccount from "./updateAccount.controller";
 import deleteAccount from "./deleteAccount.controller";
 import getAccountById from "./getAccountById.controller";
+import getAccountBalance from "./getAccountBalance.controller";
 import utils from "../../../utils";
 
 export default {
@@ -10,5 +11,6 @@ export default {
   createAccount: utils.catched(createAccount),
   updateAccount: utils.catched(updateAccount),
   deleteAccount: utils.catched(deleteAccount),
-  getAccountById: utils.catched(getAccountById)
+  getAccountById: utils.catched(getAccountById),
+  getAccountBalance: utils.catched(getAccountBalance)
 };
