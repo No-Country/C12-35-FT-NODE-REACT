@@ -73,11 +73,4 @@ export default class DB {
       throw new Error(error);
     }
   }
-  async getRepository() {
-    try {
-      return await AppDataSource.getRepository(this.model);
-    } catch (error: any) {
-      throw new Error(error);
-    }
-  }
 }

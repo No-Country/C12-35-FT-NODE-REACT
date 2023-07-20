@@ -20,11 +20,12 @@ router.use("/cards", cardRouter);
 router.use("/login", LoginRoutes);
 router.post("/checkout", async (req, res) => {
   const algo = await MercadoPago.createPreference(req.body.amount, req.body.email);
-  console.log(algo);
+  //console.log(algo);
   res.send(algo);
 });
 router.get("/algo", async (req, res) => {
-  const otro = await MercadoPago.getPreference("1298391875-b893d11b-15f5-4568-83c2-9fda913e9b3d");
+  const otro = await MercadoPago.getPreference("1298391875-267b65e2-c940-4a16-8414-b359a8654d5f");
+  console.log(otro);
   res.send(otro);
 });
 // router.get("/success", (req, res) => {res.send("Success");});
