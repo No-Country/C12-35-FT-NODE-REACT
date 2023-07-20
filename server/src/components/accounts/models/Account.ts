@@ -1,7 +1,7 @@
 export interface IAccount {
-  id: number;
+  password: string;
+  email: string;
   balance: number;
   type: string;
-  date_created: string;
-  usersId: number;
+  date_created: Date;
 }

@@ -1,4 +1,4 @@
-import { IAccount } from "../models/Accounts";
+import { IAccount } from "../models/Account";
 import { Request, Response } from "express";
 import response from "../../../utils/response";
 import AccountService from "../services";

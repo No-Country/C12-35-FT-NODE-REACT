@@ -1,24 +1,26 @@
-import { Column, Entity, PrimaryGeneratedColumn, ManyToOne, OneToMany } from "typeorm";
-import { Account } from "../../accounts/entities/Account.entity";
+import { Column, Entity, PrimaryGeneratedColumn, ManyToOne, JoinColumn } from "typeorm";
 import { PaymentGateway } from "../../paymentGateways/entities/PaymentGateway.entity";
+import { TransactionHistory } from "../../transactionHistories/entities/TransactionHistory.entity";
 
 @Entity()
 export class Transaction {
   @PrimaryGeneratedColumn()
-  id!: number;
+  id: number;
 
   @Column()
-  type!: string;
+  type: string;
 
   @Column()
-  amount!: number;
+  amount: number;
 
   @Column()
-  date!: Date;
+  date: Date;
 
-  @ManyToOne(() => Account, (account) => account.id)
-  accounts!: Account[];
+  @ManyToOne(() => TransactionHistory, (transaction_history) => transaction_history.id)
+  // @JoinColumn({ name: "trasaction_transactionhistory" })
+  transaction_history: TransactionHistory;
 
-  @OneToMany(() => PaymentGateway, (paymentGateway) => paymentGateway.id)
-  paymentGateway!: PaymentGateway[];
+  @ManyToOne(() => PaymentGateway, (paymentGateway) => paymentGateway.id)
+  // @JoinColumn({ name: "trasaction_payment" })
+  payment: PaymentGateway;
 }

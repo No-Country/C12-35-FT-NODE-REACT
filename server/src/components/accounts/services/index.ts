@@ -4,6 +4,9 @@ import createAccount from "./createAccount.service";
 import updateAccount from "./updateAccount.service";
 import deleteAccount from "./deleteAccount.service";
 import getAccountById from "./getAccountById.service";
+import createAccountPhoneVerification from "./createAccountPhoneVerification.service";
+import verifyAccountPhone from "./verifyAccountPhone.service";
+import verifyAccount from "./verifyAccount.service";
 
 class AccountService {
   async getAccounts() {
@@ -11,12 +14,10 @@ class AccountService {
     return accounts;
   }
   async getAccountById(id: number) {
-    const account = await getAccountById(id);
-    return account;
+    return await getAccountById(id);
   }
   async createAccount(newAccount: Account) {
-    const accountCreated = await createAccount(newAccount);
-    return accountCreated;
+    return await createAccount(newAccount);
   }
   async updateAccount(id: number, account: Account) {
     const accountUpdated = await updateAccount(id, account);
@@ -25,6 +26,18 @@ class AccountService {
   async deleteAccount(id: number) {
     const accountDeleted = await deleteAccount(id);
     return accountDeleted;
+  }
+  async createAccountPhoneVerification(id: number) {
+    const account = await createAccountPhoneVerification(id);
+    return account;
+  }
+  async verifyAccountPhone(id: number, secret: string, token: string) {
+    const account = await verifyAccountPhone(id, secret, token);
+    return account;
+  }
+  async verifyAccount(id: number) {
+    const account = await verifyAccount(id);
+    return account;
   }
 }
 

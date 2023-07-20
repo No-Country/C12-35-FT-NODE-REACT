@@ -1,34 +1,36 @@
-import { Column, Entity, PrimaryGeneratedColumn, JoinColumn, ManyToOne } from "typeorm";
+import { Column, Entity, PrimaryGeneratedColumn, JoinColumn, ManyToOne, ManyToMany } from "typeorm";
 import { Account } from "../../accounts/entities/Account.entity";
+import { PaymentGateway } from "../../paymentGateways/entities/PaymentGateway.entity";
 
 @Entity()
 export class Card {
   @PrimaryGeneratedColumn()
-  id!: number;
+  id: number;
 
   @Column()
-  type!: string;
+  type: string;
 
   @Column()
-  bank_branding!: string;
+  bank_branding: string;
 
   @Column({ type: "varchar" })
-  card_number!: number;
+  card_number: number;
 
   @Column()
-  cardholder_name!: string;
+  cardholder_name: string;
 
   @Column()
-  expiration_date!: string;
+  expiration_date: string;
 
   @Column()
-  cvv!: number;
+  cvv: number;
 
-  @Column()
-  payment_network!: string;
+  @ManyToOne(() => Account, (account) => account.cards)
+  // @JoinColumn({ name: "card_account" })
+  account: Account;
 
-  @ManyToOne(() => Account, (account) => account.id)
-  @JoinColumn({ name: "account_id" })
-  account_id!: number;
+  @ManyToMany(() => PaymentGateway)
+  @JoinColumn()
+  payments: PaymentGateway[];
 }
 //agegar la relacion con acounts obtener el account id

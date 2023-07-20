@@ -1,14 +1,14 @@
 import { NextFunction, Response } from "express";
-import { ClientError } from "../utils/errors";
 import Auth from "../services/Auth";
+import response from "../utils/response";
 
-export default async (req: any, _res: Response, next: NextFunction) => {
+export default async (req: any, res: Response, next: NextFunction) => {
   try {
-    const encoded = await Auth.validateToken(req.token);
+    const encoded: any = await Auth.validateToken(req.token);
     console.log(encoded);
-    // req.userId = encoded.userId;
+    req.userId = encoded.id;
     next();
   } catch (error: any) {
-    throw new ClientError(error.message, 403);
+    response(res, 403, error.message, true);
   }
 };
