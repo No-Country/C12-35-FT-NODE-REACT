@@ -4,7 +4,7 @@ import ReCAPTCHA from "react-google-recaptcha";
 
 export default function LandForm() {
   return (
-    <FormWrapper>
+    <FormWrapper id="ayuda">
       <FormTitle>¿Necesitas ayuda?</FormTitle>
       <FormGrid>
         <FormHeading>Ingresá los siguientes datos para comunicarnos con vos.</FormHeading>

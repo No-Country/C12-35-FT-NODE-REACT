@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import { LandingWrapper, Background, SVGWrapper, PathWrapper } from './style';
 import { LandHeader, LandHero, LandFeats, LandAbout, LandForm, LandFooter } from "@/modules/";
 
