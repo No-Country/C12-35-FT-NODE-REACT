@@ -1,7 +1,8 @@
+import { User } from "src/components/users/entities/User.entity";
+
 export interface ITransaction {
-  id: number;
   amount: number;
   type: string;
-  date: string;
-  accountsId: number;
+  date: Date;
+  user?: User;
 }

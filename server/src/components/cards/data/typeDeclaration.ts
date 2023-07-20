@@ -1,8 +1,8 @@
 import cards from "./fakeCards.json";
-import { Card } from "../entities/Card.entity";
+import { ICard } from "../models/Card";
 
-const fakeCards: Card[] = cards.map((obj) => {
-  const card: Card = {
+const fakeCards: ICard[] = cards.map((obj) => {
+  const card: ICard = {
     ...obj
   };
 

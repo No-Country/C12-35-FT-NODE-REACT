@@ -1,6 +1,7 @@
+import { IAccount } from "src/components/accounts/models/Account";
+
 export interface ITransactionHistory {
-  id: number;
-  date: string;
-  accountsId: number;
+  date: Date;
+  account: IAccount;
   transactionId: number;
 }

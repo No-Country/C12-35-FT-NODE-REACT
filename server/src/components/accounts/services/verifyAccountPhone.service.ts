@@ -1,4 +1,4 @@
-import db from "../data";
+import db from "../../users/data";
 import MobileAuthenticator from "../../../services/2FA/index";
 
 export default async (id: number, secret: string, token: string) => {

@@ -1,4 +1,4 @@
-import db from "../data";
+import db from "../../users/data";
 import MobileAuthenticator from "../../../services/2FA/index";
 
 export default async (id: number) => {
@@ -7,7 +7,6 @@ export default async (id: number) => {
   const verificationObject = await MobileAuthenticator.generate(userToUpdate.phone);
   const verificationObjectJSON = JSON.stringify(verificationObject);
   userToUpdate.verified_phone = verificationObjectJSON;
-  console.log(verificationObjectJSON);
   await db.update(id, userToUpdate);
   return userToUpdate;
 };

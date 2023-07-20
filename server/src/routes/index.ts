@@ -14,8 +14,8 @@ const router = Router();
 router.use("/users", userRouter);
 router.use("/accounts", accountsRouter);
 router.use("/transactions", transactionRouter);
-router.use("/transactionHistory", transactionHistoryRouter);
-router.use("/paymentGateway", paymentGatewayRouter);
+router.use("/transaction-history", transactionHistoryRouter);
+router.use("/payment-gateway", paymentGatewayRouter);
 router.use("/cards", cardRouter);
 router.use("/login", LoginRoutes);
 router.post("/checkout", async (req, res) => {
