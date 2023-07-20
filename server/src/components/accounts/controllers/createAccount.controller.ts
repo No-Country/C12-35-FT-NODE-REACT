@@ -16,13 +16,15 @@ export default async (req: any, res: Response) => {
   const newAccount = new Account();
   const newHistory = new History();
 
+  // newUser.first_name = first_name;
+
   newAccount.password = password;
   newAccount.email = email;
   newAccount.balance = 0;
   newAccount.type = type;
   newAccount.date_created = new Date();
   newAccount.user = newUser;
-  newAccount.transaction_history = newHistory;
+  newAccount.history = newHistory;
 
   await UserService.createUser(newUser);
   await TransactionHistoryService.createTransactionHistory(newHistory);

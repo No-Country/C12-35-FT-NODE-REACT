@@ -11,8 +11,25 @@ class AccountDB extends DB {
     try {
       const users = await AppDataSource.getRepository(Account).find({
         relations: {
-          transaction_history: true,
-          cards: true
+          history: true,
+          cards: true,
+          user: true
+        }
+      });
+      return users;
+    } catch (error: any) {
+      throw new Error(error);
+    }
+  }
+
+  async getPopulateAccountById(id: number) {
+    try {
+      const users = await AppDataSource.getRepository(Account).findOne({
+        where: { id: id },
+        relations: {
+          history: true,
+          cards: true,
+          user: true
         }
       });
       return users;
