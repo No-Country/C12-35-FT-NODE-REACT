@@ -10,13 +10,26 @@ import { User } from "../../../components/users/entities/User.entity";
 import UserService from "../../users/services";
 
 export default async (req: any, res: Response) => {
-  const { password, email, type } = req.body;
+  const {
+    password,
+    email,
+    type,
+    address,
+    local_address,
+    phone_number,
+    postal_code,
+    profile_picture,
+    country,
+    document_type,
+    document_number,
+    birthdate,
+    first_name,
+    last_name
+  } = req.body;
 
   const newUser = new User();
   const newAccount = new Account();
   const newHistory = new History();
-
-  // newUser.first_name = first_name;
 
   newAccount.password = password;
   newAccount.email = email;
