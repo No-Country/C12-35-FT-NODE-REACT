@@ -1,41 +1,32 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { ButtonWrap, ContainerError } from "./style";
-import {FormButton, FormSubmit, FormErrorResponse} from "@/components";
+import { FormButton, FormSubmit, FormErrorResponse } from "@/components";
 
-function ButtonRender({formik, index, setIndex, fields, error, lastStage}) {
+function ButtonRender({ formik, index, setIndex, fields, error, lastStage }) {
+  const { errors, values } = formik;
+  const fieldsId = fields.map((obj) => obj.id);
 
-    const errors = formik.errors
+  // Simplified conditional rendering
+  const isAllFieldsFilled = fieldsId.every((field) => !!values[field]);
+  const isAllFieldsValid = fieldsId.every((field) => !errors[field]);
+  const isLastStage = index === lastStage;
 
-    const values = formik.values
-
-    const fieldsId = [...fields.map(obj => obj.id)]
-
-
-
-    console.log(errors)
   return (
     <ButtonWrap>
-        {
-            fieldsId.map(field=> !!values[field]).every(el=> el === true) && 
-            fieldsId.map(field=> !errors[field]).every(el=> el === true) && (
-                index !== lastStage ? 
-                <FormButton id='btnStageTwo' handler={setIndex} msg='Siguiente' />
-                :
-                (
-                    <ContainerError>
-                    <FormSubmit msg={"Registrar"} />
-                    {error && <FormErrorResponse error={error} />}
-                    </ContainerError>
-                )
-            ) || (
-                index !== lastStage ?
-                <FormButton disabled={true} msg='Siguiente'/>
-                :
-                <FormButton disabled={true} msg='Registrar'/>
-            )
-        }
+      {isAllFieldsFilled && isAllFieldsValid ? (
+        isLastStage ? (
+          <ContainerError>
+            <FormSubmit msg={"Registrar"} />
+            {error && <FormErrorResponse error={error} />}
+          </ContainerError>
+        ) : (
+          <FormButton id="btnStageTwo" handler={setIndex} msg="Siguiente" />
+        )
+      ) : (
+        <FormButton disabled={true} msg={isLastStage ? "Registrar" : "Siguiente"} />
+      )}
     </ButtonWrap>
-  )
+  );
 }
 
 export default ButtonRender;

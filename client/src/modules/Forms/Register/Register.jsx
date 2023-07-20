@@ -1,9 +1,10 @@
-import React, { useState } from "react"
-import { useFormik } from "formik"
-import { useDispatch } from "react-redux"
-import { registerConfig, stagesEstructure } from "@@/global/FormikConfig"
-import { registerUser } from "@@/queries"
-import FormStage from "./FormStage"
+import React, { useState } from "react";
+import { useFormik } from "formik";
+import { useDispatch } from "react-redux";
+import { registerConfig, stagesEstructure } from "@/services/global/FormikConfig";
+import { registerUser } from "@/services/queries";
+import FormStage from "./FormStage";
+import ButtonRender from "./ButtonRender";
 
 import {
   ButtonWrap,
@@ -13,59 +14,60 @@ import {
   SectionForm,
   Title,
   WelcomeLogo,
-} from "./style"
+} from "./style";
 import { IoPersonCircle } from "react-icons/io5";
-import { ButtonRender } from "./"
-
 
 function Register() {
-  const [stageIndex, setStageIndex] = useState(0)
+  const [stageIndex, setStageIndex] = useState(0);
+  const [error, setError] = useState();
 
-  const [error, setError] = useState()
-
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
 
   const handleNextStage = () => {
-    setStageIndex(stageIndex + 1)
-  }
+    setStageIndex(stageIndex + 1);
+  };
+
   const onSubmit = (values) => {
-      
-    dispatch(registerUser(values, setError))
-  } 
+    dispatch(registerUser(values, setError));
+  };
 
-  const formik = useFormik({...registerConfig(), onSubmit})
+  const formik = useFormik({ ...registerConfig(), onSubmit });
 
-  
   return (
     <FormWrap>
       <SectionForm>
-        {
-
-          stagesEstructure[stageIndex] ? <>
-              <WelcomeLogo>
+        {stagesEstructure[stageIndex] && (
+          <>
+            <WelcomeLogo>
               <IoPersonCircle />
-              </WelcomeLogo>
-              <Title>{stagesEstructure[stageIndex].text.title}</Title>
-              <Message>
-                {stagesEstructure[stageIndex].text.message}
-              </Message>
-          </> : null
-
-        }
+            </WelcomeLogo>
+            <Title>{stagesEstructure[stageIndex].text.title}</Title>
+            <Message>{stagesEstructure[stageIndex].text.message}</Message>
+          </>
+        )}
       </SectionForm>
       <FormStyle onSubmit={formik.handleSubmit}>
         {stagesEstructure.map((stage, index) => (
           <div
             key={index}
-            style={{ display: index === stageIndex ? "block" : "none" }}>
+            style={{ display: index === stageIndex ? "block" : "none" }}
+          >
             <FormStage fields={stage.fields} formObject={formik} />
           </div>
         ))}
         <ButtonWrap>
-          <ButtonRender formik={formik} index={stageIndex} setIndex={handleNextStage} fields={stagesEstructure[stageIndex].fields} error={error} lastStage={stagesEstructure.length - 1} />
+          <ButtonRender
+            formik={formik}
+            index={stageIndex}
+            setIndex={handleNextStage}
+            fields={stagesEstructure[stageIndex].fields}
+            error={error}
+            lastStage={stagesEstructure.length - 1}
+          />
         </ButtonWrap>
       </FormStyle>
     </FormWrap>
-  )
+  );
 }
-export default Register
+
+export default Register;
