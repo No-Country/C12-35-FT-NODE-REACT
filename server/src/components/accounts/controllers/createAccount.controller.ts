@@ -51,6 +51,7 @@ export default async (req: any, res: Response) => {
   const newAccount = new Account();
   const newHistory = new History();
 
+<<<<<<< HEAD
   newUser.address = address;
   newUser.local_address = local_address;
   newUser.phone_number = phone_number;
@@ -63,6 +64,9 @@ export default async (req: any, res: Response) => {
   newUser.birthdate = birthdate;
   newUser.first_name = first_name;
   newUser.last_name = last_name;
+=======
+  // newUser.first_name = first_name;
+>>>>>>> fa131e0 (sddsds)
 
   newAccount.password = password;
   newAccount.email = email;
@@ -70,7 +74,7 @@ export default async (req: any, res: Response) => {
   newAccount.type = type;
   newAccount.date_created = new Date();
   newAccount.user = newUser;
-  newAccount.transaction_history = newHistory;
+  newAccount.history = newHistory;
 
   await UserService.createUser(newUser);
   await TransactionHistoryService.createTransactionHistory(newHistory);

@@ -41,7 +41,7 @@ export class Account {
 
   @OneToOne(() => History)
   @JoinColumn()
-  transaction_history: History;
+  history: History;
 
 <<<<<<< HEAD
   @OneToMany(() => TransactionHistory, (transactionHistory) => transactionHistory.id)
