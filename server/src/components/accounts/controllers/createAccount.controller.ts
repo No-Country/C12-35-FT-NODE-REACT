@@ -52,6 +52,9 @@ export default async (req: any, res: Response) => {
   const newHistory = new History();
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 6ede9f3 (.)
   newUser.address = address;
   newUser.local_address = local_address;
   newUser.phone_number = phone_number;
@@ -64,9 +67,12 @@ export default async (req: any, res: Response) => {
   newUser.birthdate = birthdate;
   newUser.first_name = first_name;
   newUser.last_name = last_name;
+<<<<<<< HEAD
 =======
   // newUser.first_name = first_name;
 >>>>>>> fa131e0 (sddsds)
+=======
+>>>>>>> 6ede9f3 (.)
 
   newAccount.password = password;
   newAccount.email = email;
