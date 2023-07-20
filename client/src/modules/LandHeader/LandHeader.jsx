@@ -14,13 +14,43 @@ import {
   DDItem
 } from "./style";
 import imagotipo from '@/assets/images/logos/Imagotipo.svg';
-import { useNavigate } from "react-router-dom";
+import { BrowserRouter as Router, Route, Link as RouterLink, useLocation, useNavigate } from "react-router-dom";
 
 export default function LandHeader() {
+  const location = useLocation();
   const navigationRef = useRef(null);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const user = null; //placeholder para la llamada a la redux store y verificación del user
   const navigate = useNavigate();
+
+  const smoothScrollToSection = (sectionId) => {
+    const section = document.getElementById(sectionId);
+    const targetY = section.getBoundingClientRect().top + window.pageYOffset;
+    const startingY = window.pageYOffset;
+    const distance = targetY - startingY;
+    const duration = 1000; // Adjust the duration as desired
+    let start;
+
+    const step = (timestamp) => {
+      if (!start) start = timestamp;
+      const elapsed = timestamp - start;
+      const progress = Math.min(elapsed / duration, 1);
+      const easeInOutCubic = (t) => t < 0.5 ? 4 * t ** 3 : 1 - ((-2 * t + 2) ** 3) / 2;
+      window.scrollTo(0, startingY + distance * easeInOutCubic(progress));
+
+      if (elapsed < duration) {
+        window.requestAnimationFrame(step);
+      }
+    };
+
+    window.requestAnimationFrame(step);
+  };
+
+
+  const scrollToSection = (sectionId) => {
+    navigate('/', {replace: true});
+    smoothScrollToSection(sectionId);
+  };
 
   const logButtons = [
     {
@@ -63,9 +93,18 @@ export default function LandHeader() {
       <HeaderWrap>
         <LogoWrapper src={imagotipo} id='toHome' onClick={goHome} />
         <NavWrapper>
-          <NavItem to='/'>Beneficios</NavItem>
-          <NavItem to='/'>Nosotros</NavItem>
-          <NavItem to='/'>Ayuda</NavItem>
+          <NavItem onClick={(e) => {
+            e.preventDefault();
+            scrollToSection('beneficios');
+          }}>Beneficios</NavItem>
+          <NavItem onClick={(e) => {
+            e.preventDefault();
+            scrollToSection('nosotros')
+          }}>Nosotros</NavItem>
+          <NavItem onClick={(e) => {
+            e.preventDefault();
+            scrollToSection('ayuda')
+          }}>Ayuda</NavItem>
         </NavWrapper>
         <GroupDirectButton>
           {user ? directAccess.map(({ id, slug, icon }) => {
@@ -93,9 +132,18 @@ export default function LandHeader() {
           </div><br />
           <DDItem to='/srv/login'>Ingresar</DDItem>
           <DDItem to='/srv/'>Crear cuenta</DDItem>
-          <DDItem to='/'>Beneficios</DDItem>
-          <DDItem to='/'>Nosotros</DDItem>
-          <DDItem to='/'>Ayuda</DDItem>
+          <DDItem  onClick={(e) => {
+            e.preventDefault();
+            scrollToSection('beneficios');
+          }}>Beneficios</DDItem>
+          <DDItem onClick={(e) => {
+            e.preventDefault();
+            scrollToSection('nosotros')
+          }}>Nosotros</DDItem>
+          <DDItem onClick={(e) => {
+            e.preventDefault();
+            scrollToSection('ayuda')
+          }}>Ayuda</DDItem>
         </BurgerMenu>
       </HeaderWrap>
     </HeaderWrapper>

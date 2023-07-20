@@ -4,7 +4,7 @@ import about from '@/assets/images/Sobrenosotros.png';
 
 export default function LandAbout() {
   return (
-    <AboutWrapper>
+    <AboutWrapper id="nosotros">
       <AboutTitle>Sobre nosotros</AboutTitle>
       <AboutGrid>
         <AboutHero>
