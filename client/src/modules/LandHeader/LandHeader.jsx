@@ -1,5 +1,6 @@
 import { DirectAccessButton } from "@/components";
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
+import styles from './NavIcon.module.css';
 import {
   GroupDirectButton,
   HeaderWrap,
@@ -13,9 +14,10 @@ import {
   DDItem
 } from "./style";
 import imagotipo from '@/assets/images/logos/Imagotipo.svg';
-import { Navigate, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 export default function LandHeader() {
+  const navigationRef = useRef(null);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const user = null; //placeholder para la llamada a la redux store y verificación del user
   const navigate = useNavigate();
@@ -31,12 +33,29 @@ export default function LandHeader() {
     }
   ]
 
+  useEffect(() => {
+    // Attach the event listener when the component mounts
+    document.addEventListener('click', handleClickOutside);
+
+    // Clean up the event listener when the component unmounts
+    return () => {
+      document.removeEventListener('click', handleClickOutside);
+    };
+  }, []);
+
+  const handleClickOutside = (event) => {
+    if (navigationRef.current && !navigationRef.current.contains(event.target)) {
+      setIsMenuOpen(false);
+    }
+  };
+
   const goHome = () => {
     navigate('/', {replace: true});
   }
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
+    navigationRef.current.classList.toggle('open');
   };
 
   return (
@@ -67,7 +86,11 @@ export default function LandHeader() {
           onClick={toggleMenu}
           className={isMenuOpen ? "open" : ""}
         >
-          &#x2630;<br />
+          <div ref={navigationRef} id='navicon' className={styles.navicon5}>
+            <span />
+            <span />
+            <span />
+          </div><br />
           <DDItem to='/srv/login'>Ingresar</DDItem>
           <DDItem to='/srv/'>Crear cuenta</DDItem>
           <DDItem to='/'>Beneficios</DDItem>
