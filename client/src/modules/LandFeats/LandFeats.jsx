@@ -8,7 +8,7 @@ import transferencia from '@/assets/images/Transferencia.png';
 
 export default function LandFeats() {
   return (
-    <FeatsWrapper>
+    <FeatsWrapper id="beneficios">
       <FeatsTitle>¿Qué puedo hacer con FundWave?</FeatsTitle>
       <FeatsGrid>
         <Features>
