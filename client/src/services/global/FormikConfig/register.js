@@ -33,10 +33,10 @@ export const registerConfig = () => {
       password: yup
         .string()
         .min(8, "Debe tener un mínimo de 8 caracteres")
-        .max(24, "Debe tener como maximo 20 caracteres")
+        .max(20, "Debe tener como maximo 20 caracteres")
         .matches(
-          /^(?=.*\d)(?=.*[\u0021-\u002b\u003c-\u0040])(?=.*[A-Z])(?=.*[a-z])\S{8,24}$/,
-          "Debe contener dígitos, minúsculas, mayúsculas y símbolos"
+          /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[\W_]).+$/,
+          "Debe contener una minúscula, mayúscula, número y símbolo"
           )
           .required("Campo Requerido"),
       /* phone_number: yup
