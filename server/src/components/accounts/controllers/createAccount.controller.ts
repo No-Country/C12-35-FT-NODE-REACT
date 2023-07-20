@@ -31,6 +31,19 @@ export default async (req: any, res: Response) => {
   const newAccount = new Account();
   const newHistory = new History();
 
+  newUser.address = address;
+  newUser.local_address = local_address;
+  newUser.phone_number = phone_number;
+  newUser.postal_code = postal_code;
+  newUser.phone_number = phone_number;
+  newUser.profile_picture = profile_picture;
+  newUser.country = country;
+  newUser.document_type = document_type;
+  newUser.document_number = document_number;
+  newUser.birthdate = birthdate;
+  newUser.first_name = first_name;
+  newUser.last_name = last_name;
+
   newAccount.password = password;
   newAccount.email = email;
   newAccount.balance = 0;
