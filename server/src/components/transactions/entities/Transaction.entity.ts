@@ -1,6 +1,6 @@
 import { Column, Entity, PrimaryGeneratedColumn, ManyToOne, JoinColumn, PrimaryColumn, Generated } from "typeorm";
 import { PaymentGateway } from "../../paymentGateways/entities/PaymentGateway.entity";
-import { TransactionHistory } from "../../transactionHistories/entities/TransactionHistory.entity";
+import { History } from "../../transactionHistories/entities/History.entity";
 
 enum CurrencyEnum {
   ARS = "ARS",
@@ -26,6 +26,6 @@ export class Transaction {
   @Column()
   date: Date;
 
-  @ManyToOne(() => TransactionHistory, (history) => history.transactions)
-  history: TransactionHistory;
+  @ManyToOne(() => History, (history) => history.transactions)
+  history: History;
 }
