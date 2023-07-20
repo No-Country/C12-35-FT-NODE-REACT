@@ -29,7 +29,7 @@ export class Account {
 
   @OneToOne(() => History)
   @JoinColumn()
-  transaction_history: History;
+  history: History;
 
   @OneToMany(() => Card, (card) => card.account)
   // @JoinColumn({ name: "card_id" })
