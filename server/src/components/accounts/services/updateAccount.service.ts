@@ -1,7 +1,7 @@
 import db from "../data";
-import { Account } from "../entities/Account.entity";
+import { IAccount } from "../models/Account";
 
-export default async (id: number, account: Account) => {
+export default async (id: number, account: IAccount) => {
   const accountUpdated = await db.update(id, account);
   return accountUpdated;
 };

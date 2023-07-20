@@ -1,22 +1,10 @@
-import { Column, Entity, PrimaryGeneratedColumn, OneToOne } from "typeorm";
+import { Column, Entity, PrimaryGeneratedColumn, OneToOne, Unique, JoinColumn } from "typeorm";
 import { Account } from "../../accounts/entities/Account.entity";
 
 @Entity()
 export class User {
   @PrimaryGeneratedColumn()
-  id!: number;
-
-  @Column()
-  password!: string;
-
-  @Column()
-  email!: string;
-
-  @Column()
-  first_name!: string;
-
-  @Column()
-  last_name!: string;
+  id: number;
 
   @Column({ nullable: true })
   address!: string;
@@ -46,11 +34,8 @@ export class User {
   birthdate!: Date;
 
   @Column({ default: false })
-  verified_phone!: string;
+  verified_phone: string;
 
   @Column({ default: false })
-  verified!: boolean;
-
-  @OneToOne(() => Account, (account) => account.id)
-  accounts!: Account[];
+  verified: boolean;
 }

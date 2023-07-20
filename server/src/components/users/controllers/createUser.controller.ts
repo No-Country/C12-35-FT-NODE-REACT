@@ -1,8 +1,8 @@
 import { Request, Response } from "express";
 import response from "../../../utils/response";
-import UserService from "../services";
+import UserServices from "../services";
 
 export default async (req: Request, res: Response) => {
-  const newUser = await UserService.createUsers(req.body);
+  const newUser = await UserServices.createUser(req.body);
   return response(res, 200, newUser);
 };

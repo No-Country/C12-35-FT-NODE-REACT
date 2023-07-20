@@ -3,7 +3,7 @@ import { SECRET } from "../../config/envs";
 import { ClientError } from "../../utils/errors";
 
 class AuthService {
-  async saveToken(id: string) {
+  async saveToken(id: number) {
     try {
       if (!SECRET) throw new ClientError("Debe configurarse un secret de authentificación");
       const token = jwt.sign({ id }, SECRET, {
