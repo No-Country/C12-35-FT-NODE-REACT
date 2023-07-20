@@ -14,9 +14,16 @@ export default async (req: any, res: Response) => {
   newTransaction.amount = amount;
   newTransaction.date = new Date();
   newTransaction.transaction_history = transactionHistory;
+<<<<<<< HEAD
   newTransaction.payment = payment;
   newTransaction.type = type;
   await TransactionHistoryService.addTransaction(req.userId, newTransaction);
+=======
+  newTransaction.payment = newPayment;
+
+  transactionHistory.categories.push(newTransaction);
+  await transactionHistory.save(newTransaction);
+>>>>>>> 43ff90e (.)
 
   return response(res, 200, newTransaction);
 };
