@@ -24,6 +24,32 @@ class TransactionHistoryDB extends DB {
       throw new Error(error.message);
     }
   }
+
+  async getPopulateHistory() {
+    try {
+      const history = await AppDataSource.getRepository(TransactionHistory).find({
+        relations: {
+          transactions: true
+        }
+      });
+      return history;
+    } catch (error: any) {
+      throw new Error(error);
+    }
+  }
+  async getPopulateHistoryById(id: number) {
+    try {
+      const history = await AppDataSource.getRepository(TransactionHistory).findOne({
+        where: { id: id },
+        relations: {
+          transactions: true
+        }
+      });
+      return history;
+    } catch (error: any) {
+      throw new Error(error);
+    }
+  }
 }
 
 export default new TransactionHistoryDB();

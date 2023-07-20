@@ -10,10 +10,6 @@ export class PaymentGateway {
   @Column()
   name: string;
 
-  @OneToMany(() => Transaction, (transaction) => transaction.payment)
-  // @JoinColumn({ name: "payment_transaction" })
-  transactions: Transaction[];
-
   @ManyToMany(() => Card, (card) => card.payments)
   // @JoinColumn({ name: "payment_card" })
   cards: Card;

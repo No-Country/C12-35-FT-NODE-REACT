@@ -1,4 +1,4 @@
-import { Column, Entity, PrimaryGeneratedColumn, ManyToOne, JoinColumn } from "typeorm";
+import { Column, Entity, PrimaryGeneratedColumn, ManyToOne, JoinColumn, PrimaryColumn, Generated } from "typeorm";
 import { PaymentGateway } from "../../paymentGateways/entities/PaymentGateway.entity";
 import { TransactionHistory } from "../../transactionHistories/entities/TransactionHistory.entity";
 
@@ -9,8 +9,9 @@ enum CurrencyEnum {
 
 @Entity()
 export class Transaction {
-  @PrimaryGeneratedColumn()
-  id: number;
+  @PrimaryColumn({ type: "uuid" })
+  @Generated("uuid")
+  id: string;
 
   @Column()
   amount: number;
@@ -25,11 +26,6 @@ export class Transaction {
   @Column()
   date: Date;
 
-  @ManyToOne(() => TransactionHistory, (transaction_history) => transaction_history.transactions)
-  // @JoinColumn({ name: "trasaction_transactionhistory" })
-  transaction_history: TransactionHistory;
-
-  @ManyToOne(() => PaymentGateway, (paymentGateway) => paymentGateway.transactions)
-  // @JoinColumn({ name: "trasaction_payment" })
-  payment: PaymentGateway;
+  @ManyToOne(() => TransactionHistory, (history) => history.transactions)
+  history: TransactionHistory;
 }

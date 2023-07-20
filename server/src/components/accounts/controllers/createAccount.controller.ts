@@ -17,8 +17,6 @@ export default async (req: any, res: Response) => {
   const newAccount = new Account();
   const newHistory = new TransactionHistory();
 
-  newHistory.date = new Date();
-  newHistory.transactions = [];
   newAccount.password = password;
   newAccount.email = email;
   newAccount.balance = 0;
