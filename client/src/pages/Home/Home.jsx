@@ -1,15 +1,22 @@
 import React from "react"
-import { RecentActivity, News, MyCards, ManageFunds } from "@/modules/Home"
+import {
+  RecentActivity,
+  News,
+  MyCards,
+  ManageFunds,
+  AccountFund
+} from "@/modules/Home"
 import { HomeWrap, HomeWrapper, LeftWrap, RigthWrap } from "./style"
-import { AvailableCredict } from "@/components"
 
 export default function Home() {
   return (
     <HomeWrapper>
       <HomeWrap>
         <LeftWrap>
-          <AvailableCredict />
-          <ManageFunds />
+          <div>
+            <AccountFund />
+            <ManageFunds />
+          </div>
           <MyCards />
           <News />
         </LeftWrap>

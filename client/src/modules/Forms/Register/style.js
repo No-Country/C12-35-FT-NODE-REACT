@@ -4,7 +4,8 @@ import styled from "styled-components"
 export const FormWrap = styled.div`
   width: 100%;
   height: 100%;
-  max-width: 500px;
+  max-width: 400px;
+
   border-radius: var(--radius-cards);
   padding: 20px;
   background-color: var(--background-card);

@@ -1,4 +1,13 @@
-import { Column, Entity, PrimaryGeneratedColumn, OneToMany, OneToOne, JoinColumn } from "typeorm";
+import {
+  Column,
+  Entity,
+  PrimaryGeneratedColumn,
+  OneToMany,
+  OneToOne,
+  JoinColumn,
+  CreateDateColumn,
+  UpdateDateColumn
+} from "typeorm";
 import { User } from "../../users/entities/User.entity";
 import { Transaction } from "../../transactions/entities/Transaction.entity";
 import { TransactionHistory } from "../../transactionHistories/entities/TransactionHistory.entity";

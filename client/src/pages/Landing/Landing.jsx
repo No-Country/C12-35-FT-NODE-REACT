@@ -40,7 +40,7 @@ export default function Landing() {
       <Background />
       <LandHeader />
       <LandHero />
-      <div style={{minHeight:'100vh'}} />
+      <div style={{minHeight:'75vh'}} />
       <LandFeats />
       <LandAbout />
       <LandForm />

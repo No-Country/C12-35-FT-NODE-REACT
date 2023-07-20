@@ -1,6 +1,7 @@
 import DB from "../../../services/DataSource";
 import { TransactionHistory } from "../entities/TransactionHistory.entity";
 import { AppDataSource } from "../../../services/DataSource/config";
+import { Transaction } from "../../../components/transactions/entities/Transaction.entity";
 
 class TransactionHistoryDB extends DB {
   constructor() {
@@ -9,10 +10,16 @@ class TransactionHistoryDB extends DB {
 
   async addTransaction(id: number, newTransaction: any) {
     try {
-      const history: any = await AppDataSource.getRepository(TransactionHistory).findBy({ id: 1 });
+      const history: any = await AppDataSource.getRepository(TransactionHistory).findBy({ id });
       if (!history) throw new Error("No se ha encontrado un historial");
       console.log(history);
-      history.transactions = [...history.transactions, newTransaction];
+      await AppDataSource.createQueryBuilder()
+        .update(TransactionHistory)
+        .set({ transactions: newTransaction })
+        .where("id = :id", { id })
+        .execute();
+
+      return history;
     } catch (error: any) {
       throw new Error(error.message);
     }

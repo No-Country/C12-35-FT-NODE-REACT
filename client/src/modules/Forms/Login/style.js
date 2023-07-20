@@ -4,7 +4,8 @@ import { Link } from "react-router-dom"
 export const FormWrap = styled.div`
   width: 100%;
   height: 100%;
-  max-width: 500px;
+  max-width: 400px;
+
   border-radius: var(--radius-cards);
   padding: 20px;
   background-color: var(--background-card);
@@ -25,7 +26,7 @@ export const FormStyle = styled.form`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: 20px;
+
 `
 
 export const WelcomeLogo = styled.div`

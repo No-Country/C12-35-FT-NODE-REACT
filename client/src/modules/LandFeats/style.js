@@ -11,6 +11,14 @@ export const FeatsTitle = styled.h1`
   font-family: "Inter";
   font-weight: 600;
   margin: 100px;
+
+  @media (max-width: 600px) {
+    font-size: 1.5rem;
+
+    @media (max-width: 600px) {
+      margin: 50px;
+    }
+  }
 `
 
 export const FeatsGrid = styled.div`
@@ -24,11 +32,8 @@ export const Features = styled.div`
   display: flex;
   justify-content: space-evenly;
   flex-wrap: wrap;
-`
 
-export const FeaturesTwo = styled.div`
-  grid-column: 3 / span 8;
-  display: flex;
-  justify-content: space-evenly;
-  flex-wrap: wrap;
+  @media (max-width: 600px) {
+    grid-column: 2 / span 10;
+  }
 `

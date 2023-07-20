@@ -11,6 +11,10 @@ export const FormTitle = styled.h1`
   color: #4BFFB3;
   font-family: "Inter";
   font-weight: 600;
+
+  @media (max-width: 600px) {
+    font-size: 1.5rem;
+  }
 `
 
 export const FormGrid = styled.div`
@@ -27,6 +31,12 @@ export const FormHeading = styled.h3`
   font-family: "Poppins";
   font-weight: 400;
   margin: 50px;
+
+  @media (max-width: 600px) {
+    grid-column: 2 / span 10;
+    font-size: 0.8rem;
+    margin: 20px;
+  }
 `
 
 export const LandFormWrap = styled.form`
@@ -35,6 +45,11 @@ export const LandFormWrap = styled.form`
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
+  translate: 0 -70px;
+
+  @media (max-width: 600px) {
+    grid-column: 2 / span 10;
+  }
 `
 
 export const FormNom = styled.input`
@@ -85,12 +100,19 @@ export const FormFoot = styled.div`
   align-items: center;
   flex-basis: 100%;
   margin: 10px;
+  overflow: hidden;
 `
 
 export const FormCaptcha = styled.div`
   background-color: #fff;
   height: 60px;
   margin: 0 5px 0 0;
+  overflow: hidden;
+
+  @media (max-width: 600px) {
+    height: 40px;
+    width: 48%;
+  }
 `
 
 export const FormButton = styled.input`
@@ -104,4 +126,10 @@ export const FormButton = styled.input`
   color: #2E2E2E;
   margin: 0 0 0 5px;
   background: linear-gradient(to right, #4B7DFF, #4BFFB3);
+
+  @media (max-width: 600px) {
+    height: 40px;
+    width: 48%;
+    font-size: 1rem;
+  }
 `

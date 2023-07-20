@@ -11,7 +11,7 @@ import UserService from "../../users/services";
 import { AppDataSource } from "../../../services/DataSource/config";
 
 export default async (req: any, res: Response) => {
-  const { password, email, balance, type } = req.body;
+  const { password, email, type } = req.body;
 
   const newUser = new User();
   const newAccount = new Account();
@@ -21,7 +21,7 @@ export default async (req: any, res: Response) => {
   newHistory.transactions = [];
   newAccount.password = password;
   newAccount.email = email;
-  newAccount.balance = balance;
+  newAccount.balance = 0;
   newAccount.type = type;
   newAccount.date_created = new Date();
   newAccount.user = newUser;

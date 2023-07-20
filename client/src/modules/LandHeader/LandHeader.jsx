@@ -1,5 +1,5 @@
 import { DirectAccessButton } from "@/components";
-import React from "react";
+import React, { useState } from "react";
 import {
   GroupDirectButton,
   HeaderWrap,
@@ -8,12 +8,17 @@ import {
   NavWrapper,
   NavItem,
   IngresarButton,
-  CrearButton
+  CrearButton,
+  BurgerMenu,
+  DDItem
 } from "./style";
 import imagotipo from '@/assets/images/logos/Imagotipo.svg';
+import { Navigate, useNavigate } from "react-router-dom";
 
 export default function LandHeader() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const user = null; //placeholder para la llamada a la redux store y verificación del user
+  const navigate = useNavigate();
 
   const logButtons = [
     {
@@ -26,14 +31,22 @@ export default function LandHeader() {
     }
   ]
 
+  const goHome = () => {
+    navigate('/', {replace: true});
+  }
+
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
+
   return (
     <HeaderWrapper>
       <HeaderWrap>
-        <LogoWrapper src={imagotipo} />
+        <LogoWrapper src={imagotipo} id='toHome' onClick={goHome} />
         <NavWrapper>
-          <NavItem>Beneficios</NavItem>
-          <NavItem>Nosotros</NavItem>
-          <NavItem>Ayuda</NavItem>
+          <NavItem to='/'>Beneficios</NavItem>
+          <NavItem to='/'>Nosotros</NavItem>
+          <NavItem to='/'>Ayuda</NavItem>
         </NavWrapper>
         <GroupDirectButton>
           {user ? directAccess.map(({ id, slug, icon }) => {
@@ -50,6 +63,17 @@ export default function LandHeader() {
           </>
           }
         </GroupDirectButton>
+        <BurgerMenu
+          onClick={toggleMenu}
+          className={isMenuOpen ? "open" : ""}
+        >
+          &#x2630;<br />
+          <DDItem to='/srv/login'>Ingresar</DDItem>
+          <DDItem to='/srv/'>Crear cuenta</DDItem>
+          <DDItem to='/'>Beneficios</DDItem>
+          <DDItem to='/'>Nosotros</DDItem>
+          <DDItem to='/'>Ayuda</DDItem>
+        </BurgerMenu>
       </HeaderWrap>
     </HeaderWrapper>
   )

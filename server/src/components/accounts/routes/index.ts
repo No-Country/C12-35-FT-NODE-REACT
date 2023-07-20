@@ -10,7 +10,7 @@ router.get("/:id", ctrl.getAccountById);
 
 router.post("/", middlewares.validateDuplicate, middlewares.encryptPassword, ctrl.createAccount);
 
-router.put("/:id", ctrl.updateAccount);
+router.put("/:id", middlewares.encryptPassword, ctrl.updateAccount);
 
 router.delete("/:id", ctrl.deleteAccount);
 
