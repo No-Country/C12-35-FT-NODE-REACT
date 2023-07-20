@@ -58,4 +58,10 @@ export class User {
 
   @Column({ default: false })
   verified: boolean;
+
+  @Column({ nullable: true })
+  first_name!: string;
+
+  @Column({ nullable: true })
+  last_name!: string;
 }

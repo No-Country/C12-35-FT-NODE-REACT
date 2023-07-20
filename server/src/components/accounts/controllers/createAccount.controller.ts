@@ -26,11 +26,43 @@ import { User } from "../../../components/users/entities/User.entity";
 import UserService from "../../users/services";
 
 export default async (req: any, res: Response) => {
+<<<<<<< HEAD
   const { password, email, balance, type } = req.body;
+=======
+  const {
+    password,
+    email,
+    type,
+    address,
+    local_address,
+    phone_number,
+    postal_code,
+    profile_picture,
+    country,
+    document_type,
+    document_number,
+    birthdate,
+    first_name,
+    last_name
+  } = req.body;
+>>>>>>> a488121 (..)
 
   const newUser = new User();
   const newAccount = new Account();
   const newHistory = new History();
+
+  newUser.address = address;
+  newUser.local_address = local_address;
+  newUser.phone_number = phone_number;
+  newUser.postal_code = postal_code;
+  newUser.phone_number = phone_number;
+  newUser.profile_picture = profile_picture;
+  newUser.country = country;
+  newUser.document_type = document_type;
+  newUser.document_number = document_number;
+  newUser.birthdate = birthdate;
+  newUser.first_name = first_name;
+  newUser.last_name = last_name;
 
   newAccount.password = password;
   newAccount.email = email;
