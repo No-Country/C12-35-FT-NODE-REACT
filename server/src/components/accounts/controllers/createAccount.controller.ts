@@ -5,20 +5,17 @@ import Mailer from "../../../services/Mailer";
 import { HOST } from "../../../config/envs";
 import TransactionHistoryService from "../../transactionHistories/services";
 import { Account } from "../entities/Account.entity";
-import { TransactionHistory } from "../../../components/transactionHistories/entities/TransactionHistory.entity";
+import { History } from "../../transactionHistories/entities/History.entity";
 import { User } from "../../../components/users/entities/User.entity";
 import UserService from "../../users/services";
-import { AppDataSource } from "../../../services/DataSource/config";
 
 export default async (req: any, res: Response) => {
   const { password, email, type } = req.body;
 
   const newUser = new User();
   const newAccount = new Account();
-  const newHistory = new TransactionHistory();
+  const newHistory = new History();
 
-  newHistory.date = new Date();
-  newHistory.transactions = [];
   newAccount.password = password;
   newAccount.email = email;
   newAccount.balance = 0;
