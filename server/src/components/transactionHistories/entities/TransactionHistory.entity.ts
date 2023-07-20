@@ -7,14 +7,6 @@ export class TransactionHistory {
   @PrimaryGeneratedColumn()
   id: number;
 
-  @Column()
-  date: Date;
-
-  @OneToOne(() => Account, (account) => account.id)
-  // @JoinColumn({ name: "transactionhistory_account" })
-  account: Account;
-
-  @OneToMany(() => Transaction, (transaction) => transaction.id)
-  // @JoinColumn({ name: "transactionhistory_transaction" })
+  @OneToMany(() => Transaction, (transaction) => transaction.history)
   transactions: Transaction[];
 }

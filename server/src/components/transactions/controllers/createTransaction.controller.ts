@@ -2,6 +2,7 @@ import { Request, Response } from "express";
 import response from "../../../utils/response";
 import TransactionHistoryService from "../../transactionHistories/services";
 import { Transaction } from "../entities/Transaction.entity";
+<<<<<<< HEAD
 
 export default async (req: any, res: Response) => {
   const { amount, type, payment } = req.body;
@@ -24,6 +25,37 @@ export default async (req: any, res: Response) => {
   transactionHistory.categories.push(newTransaction);
   await transactionHistory.save(newTransaction);
 >>>>>>> 43ff90e (.)
+=======
+import TransactionService from "../../../components/transactions/services";
+import { AppDataSource } from "../../../services/DataSource/config";
+import { TransactionHistory } from "../../../components/transactionHistories/entities/TransactionHistory.entity";
+import { Account } from "../../../components/accounts/entities/Account.entity";
+import AccountService from "../../../components/accounts/services";
+
+export default async (req: any, res: Response) => {
+  const { amount } = req.body;
+
+  const account = await AccountService.getAccountById(req.userId);
+
+  if (!account) throw new Error("no se ha encontrado el usuario");
+
+  const newTransaction = new Transaction();
+  newTransaction.amount = amount;
+  newTransaction.date = new Date();
+
+  await TransactionService.createTransaction(newTransaction);
+
+  await AppDataSource.createQueryBuilder()
+    .relation(TransactionHistory, "transactions")
+    .of(req.userId)
+    .add(newTransaction);
+
+  await AppDataSource.createQueryBuilder()
+    .update(Account)
+    .set({ balance: account.balance + amount })
+    .where("id = :id", { id: req.userId })
+    .execute();
+>>>>>>> 0f31e4f (transaciones)
 
   return response(res, 200, newTransaction);
 };
