@@ -27,20 +27,3 @@ class TransactionHistoryDB extends DB {
 }
 
 export default new TransactionHistoryDB();
-// import { DBInterface } from "./interface";
-// import { EntitySchema } from "typeorm";
-
-// export default class DB {
-//   private entity: any;
-//   constructor(entity: any) {
-//     this.entity = entity;
-//   }
-
-//   async getAll() {
-//     try {
-//       const users = await AppDataSource.getRepository(this.entity).find();
-//       return users;
-//     } catch (error: any) {
-//       throw new Error(error);
-//     }
-//   }

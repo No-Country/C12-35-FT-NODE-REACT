@@ -21,7 +21,6 @@ export default async (req: any, res: Response) => {
 
   transactionHistory.categories.push(newTransaction);
   await transactionHistory.save(newTransaction);
-  // await TransactionHistoryService.addTransaction(req.userId, newTransaction);
 
   return response(res, 200, newTransaction);
 };
