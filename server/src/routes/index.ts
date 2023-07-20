@@ -7,6 +7,7 @@ import paymentGatewayRouter from "../components/paymentGateways/routes";
 import cardRouter from "../components/cards/routes";
 import authRoutes from "../services/Auth/routes";
 import LoginRoutes from "../services/Login/routes";
+import MercadoPago from "../services/MercadoPago/index";
 
 const router = Router();
 
@@ -17,6 +18,22 @@ router.use("/transactionHistory", transactionHistoryRouter);
 router.use("/paymentGateway", paymentGatewayRouter);
 router.use("/cards", cardRouter);
 router.use("/login", LoginRoutes);
+router.post("/checkout", async (req, res) => {
+  const algo = await MercadoPago.createPreference(req.body.amount, req.body.email);
+  console.log(algo);
+  res.send(algo);
+});
+router.get("/algo", async (req, res) => {
+  const otro = await MercadoPago.getPreference("1298391875-b893d11b-15f5-4568-83c2-9fda913e9b3d");
+  res.send(otro);
+});
+// router.get("/success", (req, res) => {res.send("Success");});
+// router.get("/pending", (req, res) => {res.send("Pending");});
+// router.post("/webhook", async (req, res) => {
+//   console.log(req.body);
+//   await MercadoPago.webhook(req.body);
+//   res.send("ok");
+// });
 
 // la ruta /auth es únicamente para el testeo y entendimiento de tokens
 router.use("/auth", authRoutes);

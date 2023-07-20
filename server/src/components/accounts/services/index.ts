@@ -4,6 +4,7 @@ import createAccount from "./createAccount.service";
 import updateAccount from "./updateAccount.service";
 import deleteAccount from "./deleteAccount.service";
 import getAccountById from "./getAccountById.service";
+import getAccountBalance from "./getAccountBalance.service";
 
 class AccountService {
   async getAccounts() {
@@ -25,6 +26,10 @@ class AccountService {
   async deleteAccount(id: number) {
     const accountDeleted = await deleteAccount(id);
     return accountDeleted;
+  }
+  async getAccountBalance(id: number) {
+    const balance = await getAccountBalance(id);
+    return balance;
   }
 }
 
