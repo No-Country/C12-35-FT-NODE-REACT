@@ -5,16 +5,16 @@ mercadopago.configure({
   access_token
 });
 class MercadoPago {
-  async createPayment(orderId: string, amount: number, description: string) {
+  async createPayment(amount: number, description: string) {
     const payload = {
       transaction_amount: amount,
       description: description,
       payment_method_id: "visa",
-      external_reference: orderId,
       installments: 1,
       payer: {
         email: "hola@hotmail.com"
-      }
+      },
+      token: "ff8080814c11e237014c1ff593b57b4a"
     };
     return await mercadopago.payment.save(payload);
   }
