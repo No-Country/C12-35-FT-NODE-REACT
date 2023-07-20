@@ -108,7 +108,7 @@ export const BurgerMenu = styled.div`
       max-height: 400px;
       padding-top: 20px;
       padding-bottom: 20px;
-      translate: 42px 46px;
+      translate: 42px 52px;
       background-color: rgba(0,0,0,.75);
     }
   }
