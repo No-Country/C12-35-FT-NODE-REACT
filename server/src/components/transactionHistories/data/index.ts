@@ -1,18 +1,31 @@
 import DB from "../../../services/DataSource";
-import { TransactionHistory } from "../entities/TransactionHistory.entity";
+import { History } from "../entities/History.entity";
 import { AppDataSource } from "../../../services/DataSource/config";
 
-class TransactionHistoryDB extends DB {
+class HistoryDB extends DB {
   constructor() {
-    super(TransactionHistory);
+    super(History);
   }
 
   async addTransaction(id: number, newTransaction: any) {
     try {
+<<<<<<< HEAD
       const history: any = await AppDataSource.getRepository(TransactionHistory).findBy({ id: 1 });
       if (!history) throw new Error("No se ha encontrado un historial");
       console.log(history);
       history.transactions = [...history.transactions, newTransaction];
+=======
+      const history: any = await AppDataSource.getRepository(History).findBy({ id });
+      if (!history) throw new Error("No se ha encontrado un historial");
+      console.log(history);
+      await AppDataSource.createQueryBuilder()
+        .update(History)
+        .set({ transactions: newTransaction })
+        .where("id = :id", { id })
+        .execute();
+
+      return history;
+>>>>>>> 3147737 (.)
     } catch (error: any) {
       throw new Error(error.message);
     }
@@ -20,7 +33,7 @@ class TransactionHistoryDB extends DB {
 
   async getPopulateHistory() {
     try {
-      const history = await AppDataSource.getRepository(TransactionHistory).find({
+      const history = await AppDataSource.getRepository(History).find({
         relations: {
           transactions: true
         }
@@ -30,9 +43,10 @@ class TransactionHistoryDB extends DB {
       throw new Error(error);
     }
   }
+
   async getPopulateHistoryById(id: number) {
     try {
-      const history = await AppDataSource.getRepository(TransactionHistory).findOne({
+      const history = await AppDataSource.getRepository(History).findOne({
         where: { id: id },
         relations: {
           transactions: true
@@ -45,4 +59,4 @@ class TransactionHistoryDB extends DB {
   }
 }
 
-export default new TransactionHistoryDB();
+export default new HistoryDB();

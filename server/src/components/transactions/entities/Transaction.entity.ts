@@ -1,6 +1,6 @@
 import { Column, Entity, PrimaryGeneratedColumn, ManyToOne, JoinColumn, PrimaryColumn, Generated } from "typeorm";
 import { PaymentGateway } from "../../paymentGateways/entities/PaymentGateway.entity";
-import { TransactionHistory } from "../../transactionHistories/entities/TransactionHistory.entity";
+import { History } from "../../transactionHistories/entities/History.entity";
 
 @Entity()
 export class Transaction {
@@ -18,6 +18,7 @@ export class Transaction {
   date: Date;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
   @ManyToOne(() => TransactionHistory, (transaction_history) => transaction_history.id)
   // @JoinColumn({ name: "trasaction_transactionhistory" })
   transaction_history: TransactionHistory;
@@ -29,4 +30,8 @@ export class Transaction {
   @ManyToOne(() => TransactionHistory, (history) => history.transactions)
   history: TransactionHistory;
 >>>>>>> 0f31e4f (transaciones)
+=======
+  @ManyToOne(() => History, (history) => history.transactions)
+  history: History;
+>>>>>>> 3147737 (.)
 }

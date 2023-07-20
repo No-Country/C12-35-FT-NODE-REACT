@@ -1,9 +1,8 @@
-import { Column, Entity, PrimaryGeneratedColumn, ManyToOne, OneToOne, OneToMany, JoinColumn } from "typeorm";
-import { Account } from "../../accounts/entities/Account.entity";
+import { Entity, PrimaryGeneratedColumn, OneToMany } from "typeorm";
 import { Transaction } from "../../transactions/entities/Transaction.entity";
 
 @Entity()
-export class TransactionHistory {
+export class History {
   @PrimaryGeneratedColumn()
   id: number;
 

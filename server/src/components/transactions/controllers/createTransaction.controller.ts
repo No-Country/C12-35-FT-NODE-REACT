@@ -28,7 +28,7 @@ export default async (req: any, res: Response) => {
 =======
 import TransactionService from "../../../components/transactions/services";
 import { AppDataSource } from "../../../services/DataSource/config";
-import { TransactionHistory } from "../../../components/transactionHistories/entities/TransactionHistory.entity";
+import { History } from "../../transactionHistories/entities/History.entity";
 import { Account } from "../../../components/accounts/entities/Account.entity";
 import AccountService from "../../../components/accounts/services";
 
@@ -45,10 +45,7 @@ export default async (req: any, res: Response) => {
 
   await TransactionService.createTransaction(newTransaction);
 
-  await AppDataSource.createQueryBuilder()
-    .relation(TransactionHistory, "transactions")
-    .of(req.userId)
-    .add(newTransaction);
+  await AppDataSource.createQueryBuilder().relation(History, "transactions").of(req.userId).add(newTransaction);
 
   await AppDataSource.createQueryBuilder()
     .update(Account)
