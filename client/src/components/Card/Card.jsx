@@ -36,13 +36,13 @@ export default function Card(props) {
       </div>
       <div style={{display:'flex', justifyContent:'space-between', letterSpacing:'2px'}}>
         <span>
-          {num.slice(0, 4)}
+          ****
         </span>
         <span>
-          {num.slice(4, 8)}
+          ****
         </span>
         <span>
-          {num.slice(8, 12)}
+          ****
         </span>
         <span>
           {num.slice(12, 16)}

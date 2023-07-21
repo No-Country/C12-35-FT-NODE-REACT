@@ -12,7 +12,7 @@ function AccountFund() {
           <Title>Dinero disponible</Title>
           <ModalDetailAccount />
         </Header>
-        <DetailFund funds={userData?.balance} />
+        <DetailFund funds={userData.balance?.balance} />
       </Wrap>
     </Wrapper>
   )
