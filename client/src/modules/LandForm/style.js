@@ -126,10 +126,15 @@ export const FormButton = styled.input`
   color: #2E2E2E;
   margin: 0 0 0 5px;
   background: linear-gradient(to right, #4B7DFF, #4BFFB3);
+  cursor: pointer;
 
   @media (max-width: 600px) {
     height: 40px;
     width: 48%;
     font-size: 1rem;
   }
+`
+
+export const FormMessage = styled.div`
+  color: var(--color-error);
 `

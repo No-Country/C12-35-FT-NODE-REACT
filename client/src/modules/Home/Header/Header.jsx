@@ -29,7 +29,7 @@ export default function Header() {
     <HeaderWrapper>
       <HeaderWrap>
         <WelcomeMessage>
-          Hola <WelcomeUser>Pepito</WelcomeUser>!
+          <WelcomeUser></WelcomeUser>
         </WelcomeMessage>
         <GroupDirectButton>
           {directAccess.map(({ id, slug, icon }) => {

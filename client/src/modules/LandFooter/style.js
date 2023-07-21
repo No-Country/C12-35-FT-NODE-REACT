@@ -53,6 +53,7 @@ export const ItemGroup = styled.div`
 
 export const Item = styled.div`
   width: 10%;
+  cursor: pointer;
 
   @media (max-width: 600px) {
     width: 0;
