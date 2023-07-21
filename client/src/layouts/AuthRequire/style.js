@@ -7,6 +7,7 @@ export const Wrapper = styled.div`
   height: 100%;
   max-width: 1280px;
   margin: 50px auto;
+  margin-top: 160px;
 `
 
 export const Wrap = styled.div`
