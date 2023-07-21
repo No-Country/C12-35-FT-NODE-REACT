@@ -1,6 +1,6 @@
 import React from 'react';
 import { Copyright, FooterItems, FooterWrapper, Item, ItemGroup, Items, Logo } from './style';
-import logo from "@/assets/images/logos/Imagotipo.svg";
+import logo from "@/assets/images/logos/ITTransparente.svg";
 import { useNavigate } from "react-router-dom";
 
 export default function LandFooter() {
@@ -31,8 +31,8 @@ export default function LandFooter() {
 
 
   const scrollToSection = (sectionId) => {
+    setTimeout(() => { smoothScrollToSection(sectionId) }, 250);
     navigate('/', {replace: true});
-    smoothScrollToSection(sectionId);
   };
 
   return (

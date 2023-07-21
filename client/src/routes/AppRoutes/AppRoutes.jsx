@@ -13,7 +13,7 @@ const AppRoutes = () => {
           <Route path='/' element={<Landing />} />
 
           {/* Error routes */}
-          <Route path='*' element={<div>ERROR PAGE</div>} />
+          <Route path='*' element={<Landing />} />
 
           {/* Auth required routes */}
           <Route path='/app/' element={<AuthRequire />}>

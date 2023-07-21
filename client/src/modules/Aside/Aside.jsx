@@ -16,9 +16,11 @@ import {
   NavItem,
   NavRoutes,
   NavShortcuts
-} from "./style"
+} from "./style";
+import { useDispatch } from "react-redux";
 
 export default function Aside() {
+  const dispatch = useDispatch();
   //constants
   const NAV_ROUTE_ITEMS = [
     { id: 1, name: "Inicio", icon: <IoHomeSharp />, link: "/app/" },
@@ -46,6 +48,10 @@ export default function Aside() {
     }
   ]
 
+  const handleLogout = () => {
+    logoutUser(dispatch);
+  }
+
   return (
     <AsideWrapper>
       <AsideWrap>
@@ -69,7 +75,7 @@ export default function Aside() {
             ))}
           </NavShortcuts>
         </div>
-        <Logout onClick={logoutUser}>
+        <Logout onClick={handleLogout}>
           <Icon>
             <IoExit />
           </Icon>
