@@ -60,6 +60,5 @@ https://fundwave.vercel.app/
 | `UX/UI Designer` | Julieta Sosa [@julicsosa](https://www.behance.net/julicsosa) |  
 | `QA Test` | David dos Santos [@DdSDavid](https://github.com/DdSDavid) | 
 | `Full Stack Developer` | Juan José Farina [@JuanJFarina](https://www.github.com/JuanJFarina) |  
-| `Full Stack Developer` | Ignacio Funes [@EmanFun](https://www.github.com/EmanFun) |  
 | `Frontend Developer` | Guillermo Rodriguez [@Guille-web-dev](https://www.github.com/Guille-web-dev) |  
 | `Backend Developer` | Santiago Volentiera [@volentiera](https://www.github.com/volentiera) |  
