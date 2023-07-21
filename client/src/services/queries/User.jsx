@@ -1,18 +1,19 @@
 import Cookies from "js-cookie"
 import axios from "axios"
-import { redirect } from "react-router-dom"
+import { Navigate, redirect } from "react-router-dom"
 import { createAsyncThunk } from "@reduxjs/toolkit"
-
+import { setAuth, setAuthUserId } from "@/store/features/authSlice"
 import { User } from "@@/config/endpoints"
 
-const { login, register } = User
+const { login, register, verify } = User
 
-const setCookiesAndRedirect = createAsyncThunk(
+export const setCookiesAndRedirect = createAsyncThunk(
   "set/cookies",
-  (accessTokenValue = "test1234") => {
+  ({ accessTokenValue, id }) => {
+    console.log({ accessTokenValue, id })
     Cookies.set("accessToken", accessTokenValue, { expires: 1, path: "/" })
-    window.location.reload() // eliminar reload al obtener tokens del back
-    return redirect("/app")
+    Cookies.set("userId", id)
+    // return location.replace("/app/")
   }
 )
 
@@ -40,8 +41,14 @@ export const loginUser = createAsyncThunk(
       const response = await axios.post(login, values)
 
       const data = await response.data
-
-      dispatch(setCookiesAndRedirect())
+      console.log(data)
+      dispatch(setAuthUserId(data))
+      dispatch(
+        setCookiesAndRedirect({
+          accessTokenValue: data.token,
+          id: data?.user?.id
+        })
+      )
       return data
     } catch (error) {
       dispatch(setCookiesAndRedirect())
@@ -56,3 +63,27 @@ export const logoutUser = () => {
   Cookies.remove("accessToken")
   window.location.replace("/")
 }
+
+export const verifyUser = createAsyncThunk(
+  "get/accounts",
+  async (_, { dispatch }) => {
+    const accessToken = Cookies.get("accessToken")
+    const id = Cookies.get("userId")
+    try {
+      const response = await axios.get(verify + id, {
+        headers: {
+          "access-token": accessToken
+        }
+      })
+
+      const data = await response.data
+      dispatch(setAuth(data))
+
+      console.log({ dataVerify: data })
+
+      return data
+    } catch (error) {
+      return error
+    }
+  }
+)

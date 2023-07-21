@@ -9,6 +9,7 @@ import {
   ProfileWrapper,
   UserTools
 } from "./style"
+import { useSelector } from "react-redux"
 
 export default function Profile() {
   //constants
@@ -27,26 +28,12 @@ export default function Profile() {
     }
   ]
 
+  const userData = useSelector((state) => state.auth)
   const fakeUser = {
-    email: "santiagovolentiera@gmail.com",
-    address: "123 Main St",
-    local_address: "Apt 4B",
-    postal_code: "12345",
-    phone_number: "555-1111",
-    profile_picture: "user1.jpg",
-    country: "USA",
-    document_type: "Passport",
-    document_number: "AB123456",
-    birthdate: "1990-01-01T00:00:00.000Z",
-    first_name: "John",
-    last_name: "Doe",
-    verified: false,
-    verified_Phone: "",
     account: {
       id: 1,
       cvu: "0000003100068949510855",
-      alias: "asd.asdasd22.fw",
-      balance: 0
+      alias: "asd.asdasd22.fw"
     }
   }
 
@@ -57,7 +44,7 @@ export default function Profile() {
           <span>
             <FaUserCircle />
           </span>
-          <h3>¡Hola {fakeUser.first_name}!</h3>
+          <h3>¡Hola {userData.user.first_name}!</h3>
         </ProfileHeader>
         <AccountInfo>
           <CopyAccountInfo title='CVU' value={fakeUser.account.cvu} />

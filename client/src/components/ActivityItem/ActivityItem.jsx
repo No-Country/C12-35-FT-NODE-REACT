@@ -19,8 +19,14 @@ export default function ActivityItem({ type, time, id, amount }) {
   //constants
   const messageTransfer = {
     transfer: "Recibiste una transferencia",
-    send: "Enviaste dinero a"
+    send: "Enviaste dinero"
   }
+
+  const pronounTransfer = {
+    transfer: "de",
+    send: "a"
+  }
+
   const iconTransfer = {
     transfer: MoneyBillTransfer(),
     send: MoneyBillAddsFund()
@@ -34,7 +40,7 @@ export default function ActivityItem({ type, time, id, amount }) {
           <span>{messageTransfer[type]}</span>
           {/* el nombre del usuario que envio o recibio la transferencia, después
           se va a cambiar por el nombre real de la api */}
-          <span>De Juan Sosa</span>
+          <span>{pronounTransfer[type]} Juan Sosa</span>
         </ActivityDetail>
       </GroupDetail>
       <RightData>
