@@ -12,7 +12,13 @@ import {
   RightData
 } from "./style"
 
-export default function ActivityItem({ type, time, id, amount }) {
+export default function ActivityItem({
+  type,
+  time,
+  id,
+  amount,
+  userDestination
+}) {
   //hooks
   const { MoneyBillTransfer, MoneyBillAddsFund } = useIcons()
   const { formatterSign, formatterDate } = useFormatInfo()
@@ -40,7 +46,9 @@ export default function ActivityItem({ type, time, id, amount }) {
           <span>{messageTransfer[type]}</span>
           {/* el nombre del usuario que envio o recibio la transferencia, después
           se va a cambiar por el nombre real de la api */}
-          <span>{pronounTransfer[type]} Juan Sosa</span>
+          <span>
+            {pronounTransfer[type]} {userDestination}
+          </span>
         </ActivityDetail>
       </GroupDetail>
       <RightData>
