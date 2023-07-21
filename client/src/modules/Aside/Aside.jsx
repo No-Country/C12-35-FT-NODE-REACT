@@ -49,7 +49,7 @@ export default function Aside() {
   ]
 
   const handleLogout = () => {
-    logoutUser(dispatch);
+    logoutUser()
   }
 
   return (
