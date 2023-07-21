@@ -1,10 +1,10 @@
-import React, { useState, useEffect } from "react";
-import { StyledMyCards } from "./style";
-import { Card, Carousel, ShowMore } from "@/components";
-import { useSelector } from 'react-redux';
+import React, { useState, useEffect } from "react"
+import { StyledMyCards } from "./style"
+import { Card, Carousel, ShowMore } from "@/components"
+import { useSelector } from "react-redux"
 
 export default function MyCards() {
-  const userData = useSelector((state) => state.auth);
+  const userData = useSelector((state) => state.auth)
 
   return (
     <StyledMyCards>
@@ -13,10 +13,10 @@ export default function MyCards() {
         <Card
           width='150px'
           num='4123432123148365'
-          nom={userData.user.first_name + ' ' + userData.user.last_name}
+          nom={userData.user?.first_name + " " + userData.user?.last_name}
           fec='01/28'
         />
       </Carousel>
     </StyledMyCards>
-  );
+  )
 }

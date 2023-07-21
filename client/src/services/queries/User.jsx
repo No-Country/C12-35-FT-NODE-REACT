@@ -1,9 +1,8 @@
 import Cookies from "js-cookie"
 import axios from "axios"
-import { Navigate, redirect } from "react-router-dom"
 import { createAsyncThunk } from "@reduxjs/toolkit"
 import { setAuth, setAuthUserId, logout } from "@/store/features/authSlice"
-import { User } from "@@/config/endpoints";
+import { User } from "@@/config/endpoints"
 
 const { login, register, verify } = User
 
@@ -13,7 +12,7 @@ export const setCookiesAndRedirect = createAsyncThunk(
     console.log({ accessTokenValue, id })
     Cookies.set("accessToken", accessTokenValue, { expires: 1, path: "/" })
     Cookies.set("userId", id)
-    // return location.replace("/app/")
+    return location.replace("/app/")
   }
 )
 
@@ -58,11 +57,12 @@ export const loginUser = createAsyncThunk(
 )
 
 //functions
-export const logoutUser = (dispatch) => {
+export const logoutUser = (dispatcherData) => {
   Cookies.set("accessToken", "")
   Cookies.remove("accessToken")
-  //window.location.replace("/")
-  dispatch(logout());
+  Cookies.remove("userId")
+  dispatcherData
+  window.location.replace("/")
 }
 
 export const verifyUser = createAsyncThunk(
