@@ -1,6 +1,6 @@
 const useFormatFund = (showFunds, setShowFunds) => {
   const formatter = (value) => {
-    value === false ? (value = "****") : ((value = new Intl.NumberFormat().format(value)) > 0 ? value : value = '0')
+    !value ? (value = "****") : ((value = new Intl.NumberFormat().format(value)) > 0 ? value : value = '0')
     return `$ ${value}`
   }
 
