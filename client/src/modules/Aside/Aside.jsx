@@ -16,11 +16,12 @@ import {
   NavItem,
   NavRoutes,
   NavShortcuts
-} from "./style";
-import { useDispatch } from "react-redux";
+} from "./style"
+import { useDispatch } from "react-redux"
+import { setAuth } from "@/store/features/authSlice"
 
 export default function Aside() {
-  const dispatch = useDispatch();
+  const dispatch = useDispatch()
   //constants
   const NAV_ROUTE_ITEMS = [
     { id: 1, name: "Inicio", icon: <IoHomeSharp />, link: "/app/" },
@@ -49,7 +50,11 @@ export default function Aside() {
   ]
 
   const handleLogout = () => {
-    logoutUser()
+    dispatch(
+      logoutUser(() => {
+        dispatch(setAuth({}))
+      })
+    )
   }
 
   return (
@@ -75,7 +80,7 @@ export default function Aside() {
             ))}
           </NavShortcuts>
         </div>
-        <Logout onClick={handleLogout}>
+        <Logout onClick={logoutUser}>
           <Icon>
             <IoExit />
           </Icon>

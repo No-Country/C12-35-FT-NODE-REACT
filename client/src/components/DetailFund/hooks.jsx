@@ -1,6 +1,11 @@
 const useFormatFund = (showFunds, setShowFunds) => {
   const formatter = (value) => {
-    !value ? (value = "****") : ((value = new Intl.NumberFormat().format(value)) > 0 ? value : value = '0')
+    value === false || undefined
+      ? (value = "****")
+      : (value = new Intl.NumberFormat({
+          minimumFractionDigits: 2,
+          maximumFractionDigits: 2
+        }).format(value))
     return `$ ${value}`
   }
 
