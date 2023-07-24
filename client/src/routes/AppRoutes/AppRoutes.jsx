@@ -1,8 +1,9 @@
-import React from "react"
-import { Route, Routes } from "react-router-dom"
-import { AuthRequire, RejectIsAuthenticated } from "@/layouts"
-import { Landing, Home, Account } from "@/pages"
-import { Main, MainContainer } from "./style"
+import React from "react";
+import { Route, Routes } from "react-router-dom";
+import { AuthRequire, RejectIsAuthenticated } from "@/layouts";
+import { Landing, Home, Account } from "@/pages";
+import { Main, MainContainer } from "./style";
+import { Cards } from "@/pages";
 
 const AppRoutes = () => {
   return (
@@ -10,25 +11,27 @@ const AppRoutes = () => {
       <MainContainer>
         <Routes>
           {/* Public routes */}
-          <Route path='/' element={<Landing />} />
+          <Route path="/" element={<Landing />} />
 
           {/* Error routes */}
-          <Route path='*' element={<div>ERROR PAGE</div>} />
+          <Route path="*" element={<div>ERROR PAGE</div>} />
 
           {/* Auth required routes */}
-          <Route path='/app' element={<AuthRequire />}>
+          <Route path="/app" element={<AuthRequire />}>
             <Route index element={<Home />} />
+            <Route path="/app/cards" element={<Cards/>}>
+          </Route>
           </Route>
 
           {/* Not passing if authenticated routes */}
-          <Route path='/srv' element={<RejectIsAuthenticated />}>
-            <Route index element={<Account type='Register' />} />
-            <Route path='/srv/login' element={<Account type='Login' />} />
+          <Route path="/srv" element={<RejectIsAuthenticated />}>
+            <Route index element={<Account type="Register" />} />
+            <Route path="/srv/login" element={<Account type="Login" />} />
           </Route>
         </Routes>
       </MainContainer>
     </Main>
-  )
-}
+  );
+};
 
-export default AppRoutes
+export default AppRoutes;
