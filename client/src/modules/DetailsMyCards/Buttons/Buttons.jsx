@@ -1,19 +1,25 @@
 import React from "react";
 import { ButtonWraper } from "./style";
-import { useState } from "react";
 import { ButtonLink } from "@/components";
+import { IoIosAddCircle } from "react-icons/io";
 
 function Buttons() {
-  const [buttonName, setButtonName] = useState("");
-  const handleClick = (e) => {
-    setButtonName(e.target.name);
-  };
   return (
     <ButtonWraper>
-      <ButtonLink handleClick={handleClick} buttonName={buttonName} width="50%">
+      <ButtonLink
+        path="/app/cards/addCard"
+        backgroundColor="var(--primary-opacity)"
+        color="var(--primary)"
+        width="50%"
+      >
+        <IoIosAddCircle size="2rem" />
         Agregar tarjetas
       </ButtonLink>
-      <ButtonLink handleClick={handleClick} buttonName={buttonName} width="50%">
+      <ButtonLink
+        backgroundColor="var(--background-light)"
+        color="var(--primary-opacity)"
+        width="50%"
+      >
         Modificar Tarjetas
       </ButtonLink>
     </ButtonWraper>

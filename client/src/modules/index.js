@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 export * from "./Aside"
 export * from "./EstructureCards"
 export * from "./Forms/Login"
@@ -18,6 +19,9 @@ export * from "./LandForm"
 export * from "./LandHeader"
 export * from "./LandHero"
 =======
+=======
+export * from './AddCards/AddCardsForm';
+>>>>>>> 4f6a669 (adding add cards form)
 export * from './Aside';
 export * from './DetailsMyCards/Buttons';
 export * from './DetailsMyCards/CardsSlider/hook';

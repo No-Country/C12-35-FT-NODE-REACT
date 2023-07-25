@@ -4,11 +4,12 @@ import { Link } from "react-router-dom";
 export const LinkWrapper = styled(Link)`
   display: flex;
   justify-content: center;
+  align-items:center;
+  gap:.8rem;
   width: ${(props) => (props.$width ? props.$width : "")};
   border-radius: var(--radius-light);
   padding: 0.7rem;
-  color: ${(props) =>
-    props.$isActive ? "var(--primary)" : "var(--primary-opacity)"};
+  color: ${(props) => (props.$color ? props.$color : "")};
   background-color: ${(props) =>
-    props.$isActive ? "var(--primary-opacity)" : "var(--background-light)"};
+    props.$backgroundColor ? props.$backgroundColor : ""};
 `;
