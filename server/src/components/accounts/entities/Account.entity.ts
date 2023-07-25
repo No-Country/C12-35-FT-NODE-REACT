@@ -32,7 +32,13 @@ export class Account {
   date_created: Date;
 
   @Column()
-  type: string;
+  cvu: string;
+
+  @Column()
+  alias: string;
+
+  @Column({ default: true })
+  valid: boolean;
 
   @OneToOne(() => User)
   @JoinColumn()

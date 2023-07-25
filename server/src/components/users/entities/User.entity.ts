@@ -1,9 +1,13 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 import { Column, Entity, PrimaryGeneratedColumn, OneToOne } from "typeorm";
 =======
 import { Column, Entity, PrimaryGeneratedColumn, OneToOne, Unique, JoinColumn } from "typeorm";
 >>>>>>> b822c13 (.)
 import { Account } from "../../accounts/entities/Account.entity";
+=======
+import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
+>>>>>>> 2cc9266 (.)
 
 @Entity()
 export class User {
@@ -27,10 +31,13 @@ export class User {
 >>>>>>> b822c13 (.)
 
   @Column({ nullable: true })
-  address!: string;
+  first_name!: string;
 
   @Column({ nullable: true })
-  local_address!: string;
+  last_name!: string;
+
+  @Column({ nullable: true })
+  address!: string;
 
   @Column({ nullable: true })
   postal_code!: string;
@@ -50,18 +57,12 @@ export class User {
   @Column({ nullable: true })
   document_number!: string;
 
-  @Column({ nullable: true })
-  birthdate!: Date;
-
   @Column({ default: false })
   verified_phone: string;
 
   @Column({ default: false })
   verified: boolean;
 
-  @Column({ nullable: true })
-  first_name!: string;
-
-  @Column({ nullable: true })
-  last_name!: string;
+  @Column({ default: true })
+  valid: boolean;
 }

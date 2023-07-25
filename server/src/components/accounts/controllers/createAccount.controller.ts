@@ -24,8 +24,11 @@ import { Account } from "../entities/Account.entity";
 import { History } from "../../transactionHistories/entities/History.entity";
 import { IUserFullName } from "../../../components/users/models/IUser";
 import UserService from "../../users/services";
+import { generateRandomCVU } from "../../../utils/generateRandomCVU";
+import { generateAlias } from "../../../utils/generateAlias";
 
 export default async (req: any, res: Response) => {
+<<<<<<< HEAD
 <<<<<<< HEAD
   const { password, email, balance, type } = req.body;
 =======
@@ -38,6 +41,9 @@ export default async (req: any, res: Response) => {
     last_name
   } = req.body;
 >>>>>>> a488121 (..)
+=======
+  const { password, email, first_name, last_name } = req.body;
+>>>>>>> 2cc9266 (.)
 
   const newAccount = new Account();
   const newHistory = new History();
@@ -75,11 +81,17 @@ export default async (req: any, res: Response) => {
 
   newAccount.password = password;
   newAccount.email = email;
+<<<<<<< HEAD
   newAccount.balance = balance;
   newAccount.type = type;
+=======
+  newAccount.balance = 0;
+>>>>>>> 2cc9266 (.)
   newAccount.date_created = new Date();
   newAccount.user = createdUser;
   newAccount.history = newHistory;
+  newAccount.cvu = generateRandomCVU();
+  newAccount.alias = generateAlias();
 
   await TransactionHistoryService.createTransactionHistory(newHistory);
   await AccountService.createAccount(newAccount);
