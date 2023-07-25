@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 import React from "react"
 import { ManageFundsWrap, ManageFundsWrapper } from "./style"
 import { Button } from "@/components"
@@ -9,6 +10,12 @@ import { ManageFundsWrap, ManageFundsWrapper } from "./style";
 import { Button } from "@/components";
 import { useNavigate } from "react-router-dom";
 >>>>>>> a2b13d5 (first version addMoney)
+=======
+import React from "react";
+import { ManageFundsWrap, ManageFundsWrapper } from "./style";
+import { Button } from "@/components";
+import { useNavigate, Link } from "react-router-dom";
+>>>>>>> d8ceb41 (progressing)
 
 export default function ManageFunds() {
   const navigate = useNavigate();
@@ -18,12 +25,13 @@ export default function ManageFunds() {
   }
 
   const sendMoney = () => {
-    navigate('./send-money', {replace: false});
+    navigate('./transf', {replace: false});
   }
 
   return (
     <ManageFundsWrapper>
       <ManageFundsWrap>
+<<<<<<< HEAD
 <<<<<<< HEAD
         <Button>Ingresar dinero</Button>
         <Button secondary>
@@ -33,6 +41,10 @@ export default function ManageFunds() {
         <Button onClick={addMoney}>Ingresar dinero</Button>
         <Button secondary onClick={sendMoney}>Transferir dinero</Button>
 >>>>>>> a2b13d5 (first version addMoney)
+=======
+        <Button onClick={addMoney}>Ingresar dinero</Button>
+        <Button secondary onClick={sendMoney}>Transferir dinero</Button>
+>>>>>>> d8ceb41 (progressing)
       </ManageFundsWrap>
     </ManageFundsWrapper>
   )
