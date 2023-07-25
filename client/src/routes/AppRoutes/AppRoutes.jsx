@@ -4,6 +4,7 @@ import { AuthRequire, RejectIsAuthenticated } from "@/layouts";
 import { Landing, Home, Account } from "@/pages";
 import { Main, MainContainer } from "./style";
 import { Cards } from "@/pages";
+import { AddCardsForm } from "@/modules";
 
 const AppRoutes = () => {
   return (
@@ -19,7 +20,8 @@ const AppRoutes = () => {
           {/* Auth required routes */}
           <Route path="/app" element={<AuthRequire />}>
             <Route index element={<Home />} />
-            <Route path="/app/cards" element={<Cards/>}>
+            <Route path="/app/cards" element={<Cards/>}/>            
+            <Route path="/app/cards/addCard" element={<AddCardsForm/>}>            
           </Route>
           </Route>
 

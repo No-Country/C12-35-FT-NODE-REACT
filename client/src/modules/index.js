@@ -1,3 +1,4 @@
+export * from './AddCards/AddCardsForm';
 export * from './Aside';
 export * from './DetailsMyCards/Buttons';
 export * from './DetailsMyCards/CardsSlider/hook';

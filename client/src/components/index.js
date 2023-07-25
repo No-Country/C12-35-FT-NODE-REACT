@@ -1,6 +1,7 @@
 export * from './ActivityItem';
 export * from './Button';
 export * from './ButtonLink';
+export * from './ButtonSubmit';
 export * from './Card';
 export * from './CardPageMyCards';
 export * from './Carousel';
@@ -14,6 +15,7 @@ export * from './FormComponents/FormInput';
 export * from './FormComponents/FormSubmit';
 export * from './FormComponents';
 export * from './HeaderPageCards';
+export * from './InputForm';
 export * from './InputPasswordCustom';
 export * from './ModalDetailAccount';
 export * from './ShowMore';
