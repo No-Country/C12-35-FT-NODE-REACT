@@ -1,4 +1,5 @@
 import { User } from "../../../components/users/entities/User.entity";
+import { IUser, IUserFullName } from "../models/IUser";
 import getUsers from "./getUsers.service";
 import createUser from "./createUser.service";
 import getUserById from "./getUsersById.service";
@@ -17,7 +18,7 @@ class UserService {
     const user = await getUserById(id);
     return user;
   }
-  async createUser(newUser: User) {
+  async createUser(newUser: IUserFullName) {
     const userCreated = await createUser(newUser);
     return userCreated;
   }
@@ -25,7 +26,7 @@ class UserService {
     const userDeleted = await deleteUser(id);
     return userDeleted;
   }
-  async updateUser(id: number, user: User) {
+  async updateUser(id: number, user: Partial<IUser>) {
     const userUpdated = await updateUser(id, user);
     return userUpdated;
   }

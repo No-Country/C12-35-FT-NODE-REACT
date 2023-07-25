@@ -21,3 +21,9 @@ export const HOST = process.env.HOST || "http://localhost:8001";
 export const MAILER_PORT = process.env.MAILER_PORT || "465";
 export const MAILER_USER = process.env.MAILER_USER || "";
 export const MAILER_PASS = process.env.MAILER_PASS || "";
+
+//PayPal
+export const PAYPAL_CLIENT_ID = process.env.PAYPAL_CLIENT_ID || "";
+export const PAYPAL_SECRET_KEY = process.env.PAYPAL_SECRET_KEY || "";
+
+export const PAYPAL_API = process.env.PAYPAL_API || "";
