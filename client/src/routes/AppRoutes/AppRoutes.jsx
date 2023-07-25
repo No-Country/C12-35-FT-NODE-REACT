@@ -1,5 +1,5 @@
 import { AuthRequire, RejectIsAuthenticated } from "@/layouts"
-import { Account, Home, Landing, Profile, AddMoney } from "@/pages"
+import { Account, Home, Landing, Profile, AddMoney, TransferMoney } from "@/pages"
 import React from "react"
 import { Route, Routes } from "react-router-dom"
 import { Main, MainContainer } from "./style"
@@ -20,6 +20,7 @@ const AppRoutes = () => {
             <Route index element={<Home />} />
             <Route path='profile' element={<Profile />} />
             <Route path='add-money' element={<AddMoney />} />
+            <Route path='transf' element={<TransferMoney />} />
           </Route>
 
           {/* Not passing if authenticated routes */}

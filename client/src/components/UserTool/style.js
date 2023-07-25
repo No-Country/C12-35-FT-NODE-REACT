@@ -9,7 +9,7 @@ export const Tool = styled(Link)`
   border-radius: var(--radius-cards);
   transition: all 0.3s ease-in-out;
 
-  & div {
+  & > div {
     display: flex;
     align-items: center;
     gap: 30px;
@@ -41,4 +41,20 @@ export const Icon = styled.i`
   align-items: center;
   font-size: 1.1rem;
   color: var(--text-primary-light);
+`
+
+export const Title = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  & h3 {
+    font-weight: 500;
+  }
+
+  & h4 {
+    font-size: 0.8rem;
+    font-weight: 400;
+    color: var(--text-secondary);
+  }
 `

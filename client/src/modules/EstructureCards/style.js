@@ -39,12 +39,12 @@ export const Header = styled.div`
 `
 
 export const Content = styled.div`
-  padding: 30px;
   border-radius: var(--radius-cards);
   background-color: var(--background-card);
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 30px;
+  padding: 20px 10px;
 `
 
 export const Additions = styled.div`
