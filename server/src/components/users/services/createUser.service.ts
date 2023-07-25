@@ -8,7 +8,6 @@ export default async (user: IUserFullName) => {
   const newUser: User = new User();
 
   newUser.address = "";
-  newUser.local_address = "";
   newUser.phone_number = "";
   newUser.postal_code = "";
   newUser.phone_number = "";
@@ -16,7 +15,6 @@ export default async (user: IUserFullName) => {
   newUser.country = "";
   newUser.document_type = "";
   newUser.document_number = "";
-  newUser.birthdate = new Date();
   newUser.first_name = first_name;
   newUser.last_name = last_name;
 
