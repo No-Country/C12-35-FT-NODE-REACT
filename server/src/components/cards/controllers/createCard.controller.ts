@@ -6,7 +6,7 @@ import AccountService from "../../../components/accounts/services";
 import { User } from "src/components/users/entities/User.entity";
 
 export default async (req: any, res: Response) => {
-  const { type, bank_branding, card_number, cardholder_name, expiration_date, cvv } = req.body;
+  const { type, bank_branding, card_number, cardholder_name, expiration_date } = req.body;
 
   const user: any = await AccountService.getAccountById(req.userId);
   const newCard = new Card();
@@ -16,7 +16,6 @@ export default async (req: any, res: Response) => {
   newCard.card_number = card_number;
   newCard.cardholder_name = cardholder_name;
   newCard.expiration_date = expiration_date;
-  newCard.cvv = cvv;
   newCard.payments = [];
 
   await CardService.createCard(newCard);
