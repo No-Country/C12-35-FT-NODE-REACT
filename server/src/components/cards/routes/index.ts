@@ -4,14 +4,14 @@ import globalMiddleware from "../../../middlewares";
 
 const router = Router();
 
-router.get("/", ctrl.getCards);
+router.get("/", globalMiddleware.ensureToken, globalMiddleware.validateToken, ctrl.getCards);
 
-router.get("/:id", ctrl.getCardById);
+router.get("/:id", globalMiddleware.ensureToken, globalMiddleware.validateToken, ctrl.getCardById);
 
 router.post("/", globalMiddleware.ensureToken, globalMiddleware.validateToken, ctrl.createCard);
 
-router.put("/:id", ctrl.updateCard);
+router.put("/:id", globalMiddleware.ensureToken, globalMiddleware.validateToken, ctrl.updateCard);
 
-router.delete("/:id", ctrl.deleteCard);
+router.delete("/:id", globalMiddleware.ensureToken, globalMiddleware.validateToken, ctrl.deleteCard);
 
 export default router;

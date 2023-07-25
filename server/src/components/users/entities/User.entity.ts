@@ -1,5 +1,4 @@
-import { Column, Entity, PrimaryGeneratedColumn, OneToOne, Unique, JoinColumn } from "typeorm";
-import { Account } from "../../accounts/entities/Account.entity";
+import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
 
 @Entity()
 export class User {
@@ -7,10 +6,13 @@ export class User {
   id: number;
 
   @Column({ nullable: true })
-  address!: string;
+  first_name!: string;
 
   @Column({ nullable: true })
-  local_address!: string;
+  last_name!: string;
+
+  @Column({ nullable: true })
+  address!: string;
 
   @Column({ nullable: true })
   postal_code!: string;
@@ -30,18 +32,12 @@ export class User {
   @Column({ nullable: true })
   document_number!: string;
 
-  @Column({ nullable: true })
-  birthdate!: Date;
-
   @Column({ default: false })
   verified_phone: string;
 
   @Column({ default: false })
   verified: boolean;
 
-  @Column({ nullable: true })
-  first_name!: string;
-
-  @Column({ nullable: true })
-  last_name!: string;
+  @Column({ default: true })
+  valid: boolean;
 }
