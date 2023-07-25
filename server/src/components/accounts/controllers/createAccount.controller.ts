@@ -22,7 +22,7 @@ import { HOST } from "../../../config/envs";
 import TransactionHistoryService from "../../transactionHistories/services";
 import { Account } from "../entities/Account.entity";
 import { History } from "../../transactionHistories/entities/History.entity";
-import { User } from "../../../components/users/entities/User.entity";
+import { IUserFullName } from "../../../components/users/models/IUser";
 import UserService from "../../users/services";
 
 export default async (req: any, res: Response) => {
@@ -33,24 +33,20 @@ export default async (req: any, res: Response) => {
     password,
     email,
     type,
-    address,
-    local_address,
-    phone_number,
-    postal_code,
-    profile_picture,
-    country,
-    document_type,
-    document_number,
-    birthdate,
+
     first_name,
     last_name
   } = req.body;
 >>>>>>> a488121 (..)
 
-  const newUser = new User();
   const newAccount = new Account();
   const newHistory = new History();
+  const newUser: IUserFullName = {
+    first_name,
+    last_name
+  };
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 =======
@@ -73,16 +69,18 @@ export default async (req: any, res: Response) => {
 >>>>>>> fa131e0 (sddsds)
 =======
 >>>>>>> 6ede9f3 (.)
+=======
+  const createdUser = await UserService.createUser(newUser);
+>>>>>>> bedfc8d (config de paypal, y restructuracion de la creacion de usuario)
 
   newAccount.password = password;
   newAccount.email = email;
   newAccount.balance = balance;
   newAccount.type = type;
   newAccount.date_created = new Date();
-  newAccount.user = newUser;
+  newAccount.user = createdUser;
   newAccount.history = newHistory;
 
-  await UserService.createUser(newUser);
   await TransactionHistoryService.createTransactionHistory(newHistory);
   await AccountService.createAccount(newAccount);
 
