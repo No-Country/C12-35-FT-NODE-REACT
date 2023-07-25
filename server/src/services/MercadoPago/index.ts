@@ -1,26 +1,28 @@
 import mercadopago from "mercadopago";
+import { MERCADOPAGO_TOKEN } from "../../config/envs";
+import { HOST } from "../../config/envs";
 
-const access_token = "TEST-855293887125103-020701-4dc0d814b9aeb712ae30c7a14acfd4b1-1298391875";
+const access_token = MERCADOPAGO_TOKEN;
 mercadopago.configure({
   access_token
 });
 class MercadoPago {
-  async createPayment(amount: number, description: string) {
+  async createPayment(amount: number, description: string, email: string, token: string) {
     const payload = {
       transaction_amount: amount,
       description: description,
       payment_method_id: "visa",
       installments: 1,
       payer: {
-        email: "hola@hotmail.com"
+        email
       },
-      token: "ff8080814c11e237014c1ff593b57b4a"
+      token
     };
     return await mercadopago.payment.save(payload);
   }
 
-  async getPayment(paymentId: number) {
-    return await mercadopago.payment.get(paymentId);
+  async getPayment(paymentId: any) {
+    return await mercadopago.payment.get(parseInt(paymentId));
   }
   async getPaymentByOrderId(orderId: string) {
     return await mercadopago.payment.search({
@@ -53,24 +55,26 @@ class MercadoPago {
     return await mercadopago.preferences.create({
       items: [
         {
+          id: "1",
           title: "Transferencia a cuenta",
           unit_price: amount,
           quantity: 1,
           currency_id: "ARS"
         }
-      ]
-      // payer: {
-      //   email: email
-      // },
-      // payment_methods: {
-      //   installments: 1
-      // }
-      // back_urls: {
-      //   success: "http://localhost:8000/success",
-      //   failure: "http://localhost:8000/failure",
-      //   pending: "http://localhost:8000/pending"
-      // },
-      // notification_url: "http://localhost:8000/webhook"
+      ],
+      payer: {
+        email: email
+      },
+      payment_methods: {
+        installments: 1
+      },
+      back_urls: {
+        success: `${HOST}/mercadopago/success`,
+        failure: `${HOST}/mercadopago/failure`,
+        pending: `${HOST}/mercadopago/pending`
+      },
+      auto_return: "approved",
+      notification_url: `${HOST}/mercadopago/webhook`
     });
   }
   async getPreference(preferenceId: string) {
@@ -82,8 +86,5 @@ class MercadoPago {
       items
     });
   }
-  // async webhook(body: any) {
-  //   return await mercadopago.webhook.parse(body);
-  // }
 }
 export default new MercadoPago();
