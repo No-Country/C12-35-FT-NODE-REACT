@@ -25,5 +25,4 @@ export const MAILER_PASS = process.env.MAILER_PASS || "";
 //PayPal
 export const PAYPAL_CLIENT_ID = process.env.PAYPAL_CLIENT_ID || "";
 export const PAYPAL_SECRET_KEY = process.env.PAYPAL_SECRET_KEY || "";
-
 export const PAYPAL_API = process.env.PAYPAL_API || "";

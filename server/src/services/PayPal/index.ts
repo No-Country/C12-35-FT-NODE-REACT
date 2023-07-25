@@ -21,24 +21,23 @@ class PayPalService {
     }
   }
 
-  async createOrder(currency: string, amount: string, description?: string) {
+  async createOrder(currency: string, amount: string) {
     try {
       const token = await this.getToken();
-      // console.log("Token: " + token);
+      console.log(token);
       const headers = {
         "Content-Type": "application/json",
         Authorization: `Bearer ${token}`
       };
-      // console.log("Headers: " + headers.Authorization);
-      const order = {
+
+      const data = {
         intent: "CAPTURE",
         purchase_units: [
           {
             amount: {
               currency_code: currency,
               value: amount
-            },
-            description: description || ""
+            }
           }
         ],
         application_context: {
@@ -50,8 +49,23 @@ class PayPalService {
         }
       };
 
-      const response = await axios.post(`${PAYPAL_API}/v2/checkout/orders`, order, { headers });
-      console.log(response.data);
+      const response = await axios.post(`${PAYPAL_API}/v2/checkout/orders`, data, { headers });
+
+      return response.data;
+    } catch (error: any) {
+      throw new Error(error.message);
+    }
+  }
+
+  async captureOrder(url: string) {
+    try {
+      const token = await this.getToken();
+      const headers = {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`
+      };
+      const response = await axios.post(url, {}, { headers });
+
       return response.data;
     } catch (error: any) {
       throw new Error(error.message);
