@@ -1,16 +1,17 @@
 import { Router } from "express";
 import ctrl from "../controllers";
+import globalMiddleware from "../../../middlewares";
 
 const router = Router();
 
 router.get("/", ctrl.getsHistory);
 
-router.get("/:id", ctrl.getHistoryById);
+router.get("/:id", globalMiddleware.ensureToken, globalMiddleware.validateToken, ctrl.getHistoryById);
 
 router.post("/", ctrl.createHistory);
 
-router.put("/:id", ctrl.updateHistory);
+router.put("/:id", globalMiddleware.ensureToken, globalMiddleware.validateToken, ctrl.updateHistory);
 
-router.delete("/:id", ctrl.deleteHistory);
+router.delete("/:id", globalMiddleware.ensureToken, globalMiddleware.validateToken, ctrl.deleteHistory);
 
 export default router;

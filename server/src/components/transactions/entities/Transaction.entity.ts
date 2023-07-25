@@ -1,5 +1,4 @@
-import { Column, Entity, PrimaryGeneratedColumn, ManyToOne, JoinColumn, PrimaryColumn, Generated } from "typeorm";
-import { PaymentGateway } from "../../paymentGateways/entities/PaymentGateway.entity";
+import { Column, Entity, ManyToOne, PrimaryColumn, Generated } from "typeorm";
 import { History } from "../../transactionHistories/entities/History.entity";
 
 enum CurrencyEnum {
