@@ -1,16 +1,19 @@
 import React from "react"
-import { Icon, Tool } from "./style"
+import { Icon, Title, Tool } from "./style"
 import { IoIosArrowForward } from "react-icons/io"
 
 export default function UserTool({ data }) {
   //constants
-  const { icon, title, link } = data
+  const { icon, title, link, subtitle } = data
 
   return (
     <Tool to={link}>
       <div>
         <span>{icon}</span>
-        <h3>{title}</h3>
+        <Title>
+          <h3>{title}</h3>
+          {subtitle && <h4>{subtitle}</h4>}
+        </Title>
       </div>
       <Icon>
         <IoIosArrowForward />

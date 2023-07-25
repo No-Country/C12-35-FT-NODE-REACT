@@ -5,17 +5,18 @@ export default function EstructureCards({
   icon,
   firstName,
   children,
-  additions
+  additions,
+  title
 }) {
   return (
     <Wrapper>
       <Wrap>
         <Header>
           <span>{icon}</span>
-          <h3>¡Hola {firstName}!</h3>
+          {firstName ? <h3>¡Hola {firstName}!</h3> : <h3>{title}</h3>}
         </Header>
         <Content>{children}</Content>
-        <Additions>{additions}</Additions>
+        {additions && <Additions>{additions}</Additions>}
       </Wrap>
     </Wrapper>
   )
