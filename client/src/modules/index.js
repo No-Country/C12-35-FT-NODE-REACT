@@ -1,4 +1,5 @@
 export * from "./Aside"
+export * from "./EstructureCards"
 export * from "./Forms/Login"
 export * from "./Forms/Register"
 export * from "./Forms"
