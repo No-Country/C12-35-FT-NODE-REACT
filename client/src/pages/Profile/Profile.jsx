@@ -1,14 +1,8 @@
 import { CopyAccountInfo, UserTool } from "@/components"
+import { EstructureCards } from "@/modules"
 import React from "react"
 import { FaUser, FaUserCircle } from "react-icons/fa"
 import { IoShieldCheckmark } from "react-icons/io5"
-import {
-  AccountInfo,
-  ProfileHeader,
-  ProfileWrap,
-  ProfileWrapper,
-  UserTools
-} from "./style"
 import { useSelector } from "react-redux"
 
 export default function Profile() {
@@ -37,25 +31,17 @@ export default function Profile() {
     }
   }
 
+  const UserToolsItems = toolData.map((tool) => {
+    return <UserTool key={tool.id} data={tool} />
+  })
+
   return (
-    <ProfileWrapper>
-      <ProfileWrap>
-        <ProfileHeader>
-          <span>
-            <FaUserCircle />
-          </span>
-          <h3>¡Hola {userData.user.first_name}!</h3>
-        </ProfileHeader>
-        <AccountInfo>
-          <CopyAccountInfo title='CVU' value={fakeUser.account.cvu} />
-          <CopyAccountInfo title='Alias' value={fakeUser.account.alias} />
-        </AccountInfo>
-        <UserTools>
-          {toolData.map((tool) => {
-            return <UserTool key={tool.id} data={tool} />
-          })}
-        </UserTools>
-      </ProfileWrap>
-    </ProfileWrapper>
+    <EstructureCards
+      icon={<FaUserCircle />}
+      firstName={userData.user?.first_name}
+      additions={UserToolsItems}>
+      <CopyAccountInfo title='CVU' value={fakeUser.account.cvu} />
+      <CopyAccountInfo title='Alias' value={fakeUser.account.alias} />
+    </EstructureCards>
   )
 }
