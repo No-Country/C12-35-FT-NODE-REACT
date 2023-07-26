@@ -1,17 +1,15 @@
 import { User } from "../../../components/users/entities/User.entity";
-import { user1, user2 } from "../data/fakeUsers";
+import { IUser, IUserFullName } from "../models/IUser";
 import getUsers from "./getUsers.service";
-import createUsers from "./createUser.service";
+import createUser from "./createUser.service";
 import getUserById from "./getUsersById.service";
-import verifyUser from "./verifyUser.service";
+import verifyUser from "../../accounts/services/verifyAccount.service";
 import deleteUser from "./deleteUser.service";
 import updateUser from "./updateUser.service";
-import createUserPhoneVerification from "./createUserPhoneVerification.service";
-import verifyUserPhone from "./verifyUserPhone.service";
+import createUserPhoneVerification from "../../accounts/services/createAccountPhoneVerification.service";
+import verifyUserPhone from "../../accounts/services/verifyAccountPhone.service";
 
 class UserService {
-  private fakeUsers: User[] = [user1, user2];
-
   async getUsers() {
     const users = await getUsers();
     return users;
@@ -20,29 +18,17 @@ class UserService {
     const user = await getUserById(id);
     return user;
   }
-  async createUsers(newUser: User) {
-    const userCreated = await createUsers(newUser);
+  async createUser(newUser: IUserFullName) {
+    const userCreated = await createUser(newUser);
     return userCreated;
-  }
-  async verifyUser(id: number) {
-    const verifiedUser = await verifyUser(id);
-    return verifiedUser;
   }
   async deleteUser(id: number) {
     const userDeleted = await deleteUser(id);
     return userDeleted;
   }
-  async updateUser(id: number, user: User) {
+  async updateUser(id: number, user: Partial<IUser>) {
     const userUpdated = await updateUser(id, user);
     return userUpdated;
-  }
-  async createUserPhoneVerification(id: number) {
-    const user = await createUserPhoneVerification(id);
-    return user;
-  }
-  async verifyUserPhone(id: number, secret: string, token: string) {
-    const user = await verifyUserPhone(id, secret, token);
-    return user;
   }
 }
 export default new UserService();

@@ -1,8 +1,8 @@
-import React from "react";
-import { Route, Routes } from "react-router-dom";
-import { AuthRequire, RejectIsAuthenticated } from "@/layouts";
-import { Landing, Home, Account,Cards, AddCard} from "@/pages";
-import { Main, MainContainer } from "./style";
+import { AuthRequire, RejectIsAuthenticated } from "@/layouts"
+import { Account, Home, Landing, Profile, TransferMoney, AddCard, Cards } from "@/pages"
+import React from "react"
+import { Route, Routes } from "react-router-dom"
+import { Main, MainContainer } from "./style"
 
 const AppRoutes = () => {
   return (
@@ -14,13 +14,14 @@ const AppRoutes = () => {
 
           {/* Error routes */}
           <Route path="*" element={<div>ERROR PAGE</div>} />
-
+                                   
           {/* Auth required routes */}
-          <Route path="/app" element={<AuthRequire />}>
+          <Route path='/app/' element={<AuthRequire />}>
             <Route index element={<Home />} />
-            <Route path="/app/cards" element={<Cards/>}/>            
-            <Route path="/app/cards/addCard" element={<AddCard/>}>            
-          </Route>
+            <Route path='profile' element={<Profile />} />
+            <Route path='transf' element={<TransferMoney />} />
+            <Route path="cards" element={<Cards />} />            
+            <Route path="cards/addCard" element={<AddCard />} />   
           </Route>
 
           {/* Not passing if authenticated routes */}
@@ -34,4 +35,4 @@ const AppRoutes = () => {
   );
 };
 
-export default AppRoutes;
+export default AppRoutes

@@ -1,44 +1,43 @@
-import {
-  Column,
-  Entity,
-  PrimaryGeneratedColumn,
-  OneToMany,
-  OneToOne,
-  JoinColumn,
-  CreateDateColumn,
-  UpdateDateColumn
-} from "typeorm";
+import { Column, Entity, PrimaryGeneratedColumn, OneToMany, OneToOne, JoinColumn } from "typeorm";
 import { User } from "../../users/entities/User.entity";
-import { Transaction } from "../../transactions/entities/Transaction.entity";
-import { TransactionHistory } from "../../transactionHistories/entities/TransactionHistory.entity";
+import { History } from "../../transactionHistories/entities/History.entity";
 import { Card } from "../../cards/entities/Card.entity";
+
 @Entity()
 export class Account {
   @PrimaryGeneratedColumn()
-  id!: number;
+  id: number;
 
-  @Column({ default: 0 })
-  balance!: number;
+  @Column()
+  email: string;
 
-  @Column({ default: "ARS" })
-  type!: string;
+  @Column()
+  password: string;
 
-  @OneToOne(() => User, (user) => user.accounts)
+  @Column()
+  balance: number;
+
+  @Column()
+  date_created: Date;
+
+  @Column()
+  cvu: string;
+
+  @Column()
+  alias: string;
+
+  @Column({ default: true })
+  valid: boolean;
+
+  @OneToOne(() => User)
   @JoinColumn()
-  user!: User;
+  user: User;
 
-  @OneToMany(() => Transaction, (transaction) => transaction.id)
-  transactions!: Transaction[];
+  @OneToOne(() => History)
+  @JoinColumn()
+  history: History;
 
-  @OneToMany(() => TransactionHistory, (transactionHistory) => transactionHistory.id)
-  transactionHistory!: TransactionHistory[];
-
-  @OneToMany(() => Card, (card) => card.id)
-  cards!: Card[];
-
-  @CreateDateColumn()
-  created_at!: Date;
-
-  @UpdateDateColumn()
-  updated_at!: Date;
+  @OneToMany(() => Card, (card) => card.account)
+  // @JoinColumn({ name: "card_id" })
+  cards: Card[];
 }

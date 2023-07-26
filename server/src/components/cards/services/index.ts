@@ -1,5 +1,4 @@
 import { Card } from "../entities/Card.entity";
-import fakeCards from "../data/typeDeclaration";
 import getCards from "./getCards.service";
 import createCard from "./createCard.service";
 import updateCard from "./updateCard.service";
@@ -7,8 +6,6 @@ import getCardById from "./getCardById.service";
 import deleteCard from "./deleteCard.service";
 
 class CardService {
-  private fakeCards: Card[] = fakeCards;
-
   async getCards() {
     const creditCards = await getCards();
     return creditCards;

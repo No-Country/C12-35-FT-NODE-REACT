@@ -1,10 +1,10 @@
 import { NavLink } from "react-router-dom"
 import styled from "styled-components"
 
-export const AsideWrapper = styled.div`
+export const AsideWrapper = styled.aside`
   height: 100%;
   grid-column: 1 / 6;
-  grid-row: 1 / 13;
+  grid-row: 2 / 13;
   margin-right: 20px;
   color: var(--text-primary-light);
 `
@@ -15,11 +15,6 @@ export const AsideWrap = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-`
-
-export const AsideTitle = styled.h4`
-  font-size: 32px;
-  margin-bottom: 60px;
 `
 
 export const NavRoutes = styled.ul`

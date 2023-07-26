@@ -1,15 +1,16 @@
 import { AppDataSource } from "../DataSource/config";
 import { DBInterface } from "./interface";
+import { EntitySchema } from "typeorm";
 
-export default class DB implements DBInterface {
-  private model: any;
-  constructor(model: any) {
-    this.model = model;
+export default class DB {
+  private entity: any;
+  constructor(entity: any) {
+    this.entity = entity;
   }
 
   async getAll() {
     try {
-      const users = await AppDataSource.getRepository(this.model).find();
+      const users = await AppDataSource.getRepository(this.entity).find();
       return users;
     } catch (error: any) {
       throw new Error(error);
@@ -18,7 +19,7 @@ export default class DB implements DBInterface {
 
   async getById(id: number) {
     try {
-      const user = await AppDataSource.getRepository(this.model).findBy({ id });
+      const user = await AppDataSource.getRepository(this.entity).findOne({ where: { id } });
       return user;
     } catch (error: any) {
       throw new Error(error);
@@ -27,7 +28,7 @@ export default class DB implements DBInterface {
 
   async findBy(data: any) {
     try {
-      return await AppDataSource.getRepository(this.model).findBy(data);
+      return await AppDataSource.getRepository(this.entity).findBy(data);
     } catch (error: any) {
       throw new Error(error);
     }
@@ -35,15 +36,16 @@ export default class DB implements DBInterface {
 
   async findOne(data: any) {
     try {
-      return await AppDataSource.getRepository(this.model).findOne({ where: data });
+      return await AppDataSource.getRepository(this.entity).findOne({ where: data });
     } catch (error: any) {
       throw new Error(error);
     }
   }
 
-  async save(entity: any) {
+  async save(model: any) {
     try {
-      const newUser = AppDataSource.getRepository(this.model).save(entity);
+      console.log(model);
+      const newUser = AppDataSource.getRepository(this.entity).save(model);
       return newUser;
     } catch (error: any) {
       throw new Error(error);
@@ -52,7 +54,7 @@ export default class DB implements DBInterface {
 
   async update(id: number, data: any) {
     try {
-      const userUpdated = AppDataSource.getRepository(this.model).update({ id }, data);
+      const userUpdated = AppDataSource.getRepository(this.entity).update({ id }, data);
       return userUpdated;
     } catch (error: any) {
       throw new Error(error);
@@ -61,7 +63,7 @@ export default class DB implements DBInterface {
 
   async delete(id: number) {
     try {
-      const userUpdated = AppDataSource.getRepository(this.model).delete({ id });
+      const userUpdated = AppDataSource.getRepository(this.entity).delete({ id });
       return userUpdated;
     } catch (error: any) {
       throw new Error(error);

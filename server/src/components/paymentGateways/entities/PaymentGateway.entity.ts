@@ -1,14 +1,23 @@
-import { Column, Entity, PrimaryGeneratedColumn, ManyToOne } from "typeorm";
-import { Transaction } from "../../transactions/entities/Transaction.entity";
+import { Column, Entity, PrimaryGeneratedColumn, ManyToMany } from "typeorm";
+import { Card } from "../../cards/entities/Card.entity";
+
+enum PaymentEnum {
+  MercadoPago = "MercadoPago",
+  PayPal = "PayPal"
+}
 
 @Entity()
 export class PaymentGateway {
   @PrimaryGeneratedColumn()
-  id!: number;
+  id: number;
 
-  @Column()
-  type!: string;
+  @Column({
+    type: "enum",
+    enum: PaymentEnum
+  })
+  name: string;
 
-  @ManyToOne(() => Transaction, (transaction) => transaction.id)
-  transaction!: Transaction[];
+  @ManyToMany(() => Card, (card) => card.payments)
+  // @JoinColumn({ name: "payment_card" })
+  cards: Card;
 }

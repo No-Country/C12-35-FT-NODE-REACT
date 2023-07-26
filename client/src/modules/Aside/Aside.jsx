@@ -1,13 +1,13 @@
+import { logoutUser } from "@@/queries"
 import React from "react"
 import { BsCollectionFill, BsFillCreditCardFill } from "react-icons/bs"
 import {
-  IoHomeSharp,
+  IoExit,
   IoHelpCircle,
-  IoPersonCircle,
-  IoExit
+  IoHomeSharp,
+  IoPersonCircle
 } from "react-icons/io5"
 import {
-  AsideTitle,
   AsideWrap,
   AsideWrapper,
   GoTo,
@@ -17,11 +17,14 @@ import {
   NavRoutes,
   NavShortcuts
 } from "./style"
+import { useDispatch } from "react-redux"
+import { setAuth } from "@/store/features/authSlice"
 
 export default function Aside() {
+  const dispatch = useDispatch()
   //constants
   const NAV_ROUTE_ITEMS = [
-    { id: 1, name: "Inicio", icon: <IoHomeSharp />, link: "/app" },
+    { id: 1, name: "Inicio", icon: <IoHomeSharp />, link: "/app/" },
     {
       id: 2,
       name: "Mi perfil",
@@ -46,12 +49,18 @@ export default function Aside() {
     }
   ]
 
+  const handleLogout = () => {
+    dispatch(
+      logoutUser(() => {
+        dispatch(setAuth({}))
+      })
+    )
+  }
+
   return (
     <AsideWrapper>
       <AsideWrap>
         <div>
-          <AsideTitle>FundWave</AsideTitle>
-
           <NavRoutes>
             {NAV_ROUTE_ITEMS.map(({ id, name, icon, link }) => (
               <NavItem key={id}>
@@ -71,7 +80,7 @@ export default function Aside() {
             ))}
           </NavShortcuts>
         </div>
-        <Logout>
+        <Logout onClick={logoutUser}>
           <Icon>
             <IoExit />
           </Icon>

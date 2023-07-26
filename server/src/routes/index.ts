@@ -7,18 +7,21 @@ import paymentGatewayRouter from "../components/paymentGateways/routes";
 import cardRouter from "../components/cards/routes";
 import authRoutes from "../services/Auth/routes";
 import LoginRoutes from "../services/Login/routes";
+import paypalRoutes from "../services/PayPal/routes";
+import docRoutes from "./documentation.routes";
+import mercadopagoRoutes from "../services/MercadoPago/routes";
 
 const router = Router();
 
 router.use("/users", userRouter);
 router.use("/accounts", accountsRouter);
 router.use("/transactions", transactionRouter);
-router.use("/transactionHistory", transactionHistoryRouter);
-router.use("/paymentGateway", paymentGatewayRouter);
+router.use("/transaction-history", transactionHistoryRouter);
+router.use("/payment-gateway", paymentGatewayRouter);
 router.use("/cards", cardRouter);
 router.use("/login", LoginRoutes);
-
-// la ruta /auth es únicamente para el testeo y entendimiento de tokens
-router.use("/auth", authRoutes);
+router.use("/paypal", paypalRoutes);
+router.use("/doc", docRoutes);
+router.use("/mercadopago", mercadopagoRoutes);
 
 export default router;

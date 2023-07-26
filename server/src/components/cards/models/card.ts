@@ -1,4 +1,4 @@
-export interface Card {
+export interface ICard {
   id: number;
   type: string;
   bank_branding: string;

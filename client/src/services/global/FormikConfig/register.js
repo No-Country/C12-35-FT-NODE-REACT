@@ -1,6 +1,5 @@
 import * as yup from "yup"
 
-
 //NO ELIMINAR LO COMENTADO.
 
 export const registerConfig = () => {
@@ -9,7 +8,7 @@ export const registerConfig = () => {
       first_name: "",
       last_name: "",
       password: "",
-      email: "",
+      email: ""
       /* address: "",
       local_address: "",
       postal_code: "",
@@ -23,22 +22,16 @@ export const registerConfig = () => {
     validationSchema: yup.object().shape({
       first_name: yup.string().required("Campo Requerido"),
       last_name: yup.string().required("Campo Requerido"),
-      email: yup
-        .string()
-        .matches(
-          /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
-          "Email invalido"
-        )
-        .required("Campo Requerido"),
+      email: yup.string().email("Email inválido").required("Campo Requerido"),
       password: yup
         .string()
         .min(8, "Debe tener un mínimo de 8 caracteres")
-        .max(24, "Debe tener como maximo 20 caracteres")
+        .max(20, "Debe tener como maximo 20 caracteres")
         .matches(
-          /^(?=.*\d)(?=.*[\u0021-\u002b\u003c-\u0040])(?=.*[A-Z])(?=.*[a-z])\S{8,24}$/,
-          "Debe contener dígitos, minúsculas, mayúsculas y símbolos"
-          )
-          .required("Campo Requerido"),
+          /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[\W_]).+$/,
+          "Debe contener una minúscula, mayúscula, número y símbolo"
+        )
+        .required("Campo Requerido")
       /* phone_number: yup
         .string()
         .min(9, "Número de Teléfono Inválido")
@@ -84,12 +77,12 @@ export const stagesEstructure = [
     text: {
       title: "Necesitamos tus datos personales",
       message: "Necesitamos tus datos para continuar con el registro",
-      icon: "IoPersonCircle",
+      icon: "IoPersonCircle"
     },
     fields: [
       { label: "Nombre", id: "first_name", type: "text" },
-      { label: "Apellido", id: "last_name", type: "text" },
-     // { label: "Fecha de Nacimiento", id: "birthdate", type: "date" }
+      { label: "Apellido", id: "last_name", type: "text" }
+      // { label: "Fecha de Nacimiento", id: "birthdate", type: "date" }
     ]
   },
   {
@@ -97,16 +90,16 @@ export const stagesEstructure = [
     text: {
       title: "Últimos pasos!!!",
       message: "Ya estás cerca de finalizar el proceso de registro.",
-      icon: ["MdLock", "MdEmail" ],
+      icon: ["MdLock", "MdEmail"]
     },
     fields: [
       { label: "Email", id: "email", type: "email" },
-    // { label: "Número de Teléfono", id: "phone_number", type: "text" },
+      // { label: "Número de Teléfono", id: "phone_number", type: "text" },
       { label: "Contraseña", id: "password", type: "text" }
     ]
   }
 
-/*     ,
+  /*     ,
   {
     stage: 2,
     text: {
@@ -134,4 +127,4 @@ export const stagesEstructure = [
       
     ]
   } */
-]   
+]

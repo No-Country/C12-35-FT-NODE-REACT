@@ -5,6 +5,7 @@ export * from './ButtonLink';
 export * from './ButtonSubmit';
 export * from './Card';
 export * from './CardPageMyCards';
+export * from "./CopyAccountInfo"
 export * from './Carousel';
 export * from './DetailFund';
 export * from './DirectAccessButton';
@@ -21,4 +22,5 @@ export * from './InputForm';
 export * from './InputPasswordCustom';
 export * from './ModalDetailAccount';
 export * from './ShowMore';
+export * from "./UserTool"
 export * from './index';

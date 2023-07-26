@@ -1,24 +1,30 @@
-import { Column, Entity, PrimaryGeneratedColumn, ManyToOne, OneToMany } from "typeorm";
-import { Account } from "../../accounts/entities/Account.entity";
-import { PaymentGateway } from "../../paymentGateways/entities/PaymentGateway.entity";
+import { Column, Entity, ManyToOne, PrimaryColumn, Generated } from "typeorm";
+import { History } from "../../transactionHistories/entities/History.entity";
+
+enum CurrencyEnum {
+  ARS = "ARS",
+  USD = "USD"
+}
 
 @Entity()
 export class Transaction {
-  @PrimaryGeneratedColumn()
-  id!: number;
+  @PrimaryColumn({ type: "uuid" })
+  @Generated("uuid")
+  id: string;
 
   @Column()
-  type!: string;
+  amount: number;
+
+  @Column({
+    type: "enum",
+    enum: CurrencyEnum,
+    default: CurrencyEnum.ARS
+  })
+  currency: CurrencyEnum;
 
   @Column()
-  amount!: number;
+  date: Date;
 
-  @Column()
-  date!: Date;
-
-  @ManyToOne(() => Account, (account) => account.id)
-  accounts!: Account[];
-
-  @OneToMany(() => PaymentGateway, (paymentGateway) => paymentGateway.id)
-  paymentGateway!: PaymentGateway[];
+  @ManyToOne(() => History, (history) => history.transactions)
+  history: History;
 }
