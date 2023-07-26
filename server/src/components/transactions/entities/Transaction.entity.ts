@@ -1,6 +1,20 @@
-import { Column, Entity, ManyToOne, PrimaryColumn, Generated } from "typeorm";
+import { Column, Entity, ManyToOne, PrimaryColumn, Generated, OneToOne, JoinColumn } from "typeorm";
 import { History } from "../../transactionHistories/entities/History.entity";
+import { PaymentGateway } from "../../../components/paymentGateways/entities/PaymentGateway.entity";
 
+<<<<<<< HEAD
+=======
+enum CurrencyEnum {
+  ARS = "ARS",
+  USD = "USD"
+}
+
+enum typeEnum {
+  TRANSFER = "TRANSFER",
+  ADD = "ADD"
+}
+
+>>>>>>> f9b3515 (transactions)
 @Entity()
 export class Transaction {
   @PrimaryColumn({ type: "uuid" })
@@ -10,8 +24,23 @@ export class Transaction {
   @Column()
   type: string;
 
+<<<<<<< HEAD
   @Column()
   amount: number;
+=======
+  @Column({
+    type: "enum",
+    enum: typeEnum
+  })
+  type: string;
+
+  @Column({
+    type: "enum",
+    enum: CurrencyEnum,
+    default: CurrencyEnum.ARS
+  })
+  currency: CurrencyEnum;
+>>>>>>> f9b3515 (transactions)
 
   @Column()
   date: Date;
@@ -32,5 +61,12 @@ export class Transaction {
 =======
   @ManyToOne(() => History, (history) => history.transactions)
   history: History;
+<<<<<<< HEAD
 >>>>>>> 3147737 (.)
+=======
+
+  @OneToOne(() => PaymentGateway)
+  @JoinColumn()
+  paymentGateway: PaymentGateway;
+>>>>>>> f9b3515 (transactions)
 }

@@ -3,14 +3,19 @@ import { ClientError } from "../../../utils/errors";
 import response from "../../../utils/response";
 import Exchange from "../../../services/Exchange";
 
-export default async (req: Request, res: Response, next: NextFunction) => {
+export default async (req: any, res: Response, next: NextFunction) => {
   try {
-    const { amount, type } = req.body;
-    if (type === "USD") {
+    const { amount, currency } = req.body;
+    if (currency === "USD") {
       let dolarPrice = await Exchange.getDolarPrice();
       dolarPrice = dolarPrice.venta.split(",")[0];
-      req.body.amount = Number(dolarPrice) * amount;
-      req.body.type = "ARS";
+      req.amount = Number(dolarPrice) * amount;
+      console.log("Conversion: " + amount + " - " + req.amount);
+      req.currency = "ARS";
+      req.body.currency = "ARS";
+    }
+    if (currency === "ARS") {
+      req.amount = req.body.amount;
     }
     next();
   } catch (error: any) {

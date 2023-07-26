@@ -1,7 +1,15 @@
 import dolarExchanger from "./dolarExchanger.middleware";
-// import registerTransaction from "./registerTransaction.middleware";
+import startTransaction from "./startTransaction.middleware";
+import checkBalance from "./checkBalance.middleware";
+import findAccount from "./findAccount.middleware";
+import setAmount from "./setAmount.middleware";
+import addType from "./addType.middleware";
 
 export default {
-  dolarExchanger
-  // registerTransaction
+  dolarExchanger,
+  startTransaction,
+  checkBalance,
+  findAccount,
+  setAmount,
+  addType
 };

@@ -10,7 +10,11 @@ import getAccountBalance from "./getAccountBalance.service";
 import createAccountPhoneVerification from "./createAccountPhoneVerification.service";
 import verifyAccountPhone from "./verifyAccountPhone.service";
 import verifyAccount from "./verifyAccount.service";
+<<<<<<< HEAD
 >>>>>>> b822c13 (.)
+=======
+import findOneAccount from "./findOneAccount.service";
+>>>>>>> f9b3515 (transactions)
 
 class AccountService {
   async getAccounts() {
@@ -48,6 +52,9 @@ class AccountService {
     const account = await verifyAccount(id);
     return account;
 >>>>>>> b822c13 (.)
+  }
+  async findOneAccount(data: any) {
+    return await findOneAccount(data);
   }
 }
 

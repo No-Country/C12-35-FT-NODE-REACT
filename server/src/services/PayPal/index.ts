@@ -2,7 +2,7 @@ import { PAYPAL_CLIENT_ID, PAYPAL_SECRET_KEY, HOST, PAYPAL_API } from "../../con
 import axios from "axios";
 
 class PayPalService {
-  async getToken(): Promise<string | null> {
+  private async getToken(): Promise<string | null> {
     try {
       const url = "https://api-m.sandbox.paypal.com/v1/oauth2/token";
       const auth = Buffer.from(`${PAYPAL_CLIENT_ID}:${PAYPAL_SECRET_KEY}`).toString("base64");

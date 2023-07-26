@@ -5,24 +5,24 @@ import { ClientError } from "../../utils/errors";
 class AuthService {
   async saveToken(id: number) {
     try {
-      if (!SECRET) throw new ClientError("Debe configurarse un secret de authentificación");
+      if (!SECRET) throw new ClientError(401, "Debe configurarse un secret de authentificación");
       const token = jwt.sign({ id }, SECRET, {
         expiresIn: 60 * 60 * 24
       });
       return token;
     } catch (error: any) {
-      throw new ClientError(error);
+      throw new ClientError(error.statusCode, error.message);
     }
   }
 
   async validateToken(token: any) {
     // espera recibir el req.headers["access-token"]
     try {
-      if (!token) throw new ClientError("No se proporcionó un token", 404);
+      if (!token) throw new ClientError(404, "No se proporcionó un token");
       const decoded = jwt.verify(token, SECRET);
       return decoded;
     } catch (error: any) {
-      throw new ClientError(error, 404);
+      throw new ClientError(error.statusCode, error.message);
     }
   }
 
@@ -31,7 +31,7 @@ class AuthService {
     if (typeof bearer !== "undefined") {
       return bearer;
     } else {
-      throw new Error("usuario no autorizado");
+      throw new ClientError(401, "usuario no autorizado");
     }
   }
 }

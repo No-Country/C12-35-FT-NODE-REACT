@@ -20,6 +20,7 @@ export class PaymentGateway {
     enum: PaymentEnum
   })
   name: string;
+<<<<<<< HEAD
 >>>>>>> 2cc9266 (.)
 
 <<<<<<< HEAD
@@ -33,4 +34,6 @@ export class PaymentGateway {
 >>>>>>> 0f31e4f (transaciones)
   // @JoinColumn({ name: "payment_card" })
   cards!: Card;
+=======
+>>>>>>> f9b3515 (transactions)
 }
