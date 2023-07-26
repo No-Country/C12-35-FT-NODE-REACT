@@ -25,6 +25,7 @@ module.exports = {
   },
   plugins: ["react"],
   rules: {
+    "import/no-cycle": "error",
     "react/prop-types": "off",
     indent: ["error", 2],
     avoidEscape: true,
