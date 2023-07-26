@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
 import { BackArrow } from './styles';
 import { useNavigate } from 'react-router-dom';
-import { UserTool } from "@/components"
+import { UserTool, AmountCard } from "@/components"
 import { EstructureCards } from '@/modules';
 import { FaUserCircle } from "react-icons/fa";
 import { useSelector } from "react-redux";
 import {
+  MdCurrencyBitcoin,
   MdOutlineAccountBalanceWallet,
   MdOutlinePermContactCalendar
 } from "react-icons/md"
@@ -13,6 +14,7 @@ import {
 export default function AddMoney() {
   const userData = useSelector((state) => state.auth);
   const [step, setStep] = useState(0);
+  const [currAmount, setCurrAmount] = useState(0);
   const navigate = useNavigate();
 
   const goBack = () => {
@@ -77,7 +79,22 @@ export default function AddMoney() {
           />}
         </>;
       case 2:
-        return 'Seleccionar monto';
+        return <AmountCard
+                  data={{
+                    back: goBack,
+                    title: "Ingresá el monto que deseas ingresar",
+                    amount: currAmount,
+                    amountHandler: amountHandler,
+                    add1: add1,
+                    amo1: '500',
+                    add2: add2,
+                    amo2: '1000',
+                    add3: add3,
+                    amo3: '1500',
+                    buttonText: 'Siguiente',
+                    next: addMoney
+                  }}
+                />;
       case 3:
         return 'Resultado de la operación';
       default:
@@ -93,15 +110,39 @@ export default function AddMoney() {
     setStep((step + 1));
   }
 
+  const amountHandler = (e) => {
+    const regex = /^[0-9]+$/;
+    if(regex.test(e.target.value)) {
+      setCurrAmount(e.target.value);
+    }
+  }
+
+  const add1 = () => {
+    setCurrAmount(parseInt(currAmount) + 500);
+  }
+
+  const add2 = () => {
+    setCurrAmount(parseInt(currAmount) + 1000);
+  }
+
+  const add3 = () => {
+    setCurrAmount(parseInt(currAmount) + 1500);
+  }
+
+  const addMoney = () => {
+    setStep((step + 1));
+  }
+
   return (
     <div>
         <BackArrow onClick={goBack}>{'<-'}</BackArrow>
-        <EstructureCards 
+        {step != 2 ? <EstructureCards 
           icon={<FaUserCircle />}
           title={getTitle(step)}
         >
           {showContent(step)}
         </EstructureCards>
+        : showContent(step)}
     </div>
   )
 }
