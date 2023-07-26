@@ -9,6 +9,8 @@ router.get("/", ctrl.getAccounts);
 
 router.get("/:id", ctrl.getAccountById);
 
+router.post("/info", ctrl.accountInfo);
+
 router.post("/", middlewares.validateDuplicate, middlewares.encryptPassword, ctrl.createAccount);
 
 router.put(

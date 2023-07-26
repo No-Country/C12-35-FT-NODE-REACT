@@ -5,6 +5,7 @@ import deleteAccount from "./deleteAccount.controller";
 import getAccountById from "./getAccountById.controller";
 import verifyAccountPhone from "./verifyAccountPhone.controller";
 import verifyAccount from "./verifyAccount.controller";
+import accountInfo from "./accountInfo.controller";
 import createAccountPhoneVerification from "./createAccountPhoneVerification.controller";
 import utils from "../../../utils";
 
@@ -16,5 +17,6 @@ export default {
   getAccountById: utils.catched(getAccountById),
   verifyAccountPhone: utils.catched(verifyAccountPhone),
   verifyAccount: utils.catched(verifyAccount),
-  createAccountPhoneVerification: utils.catched(createAccountPhoneVerification)
+  createAccountPhoneVerification: utils.catched(createAccountPhoneVerification),
+  accountInfo: utils.catched(accountInfo)
 };
