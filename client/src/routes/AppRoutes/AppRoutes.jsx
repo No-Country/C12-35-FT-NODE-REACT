@@ -4,13 +4,13 @@ import {
   Home,
   Landing,
   Profile,
+  AddMoney,
   TransferMoney,
   TransferInto,
   TransactionAmount,
   AddCard,
   Cards
 } from "@/pages"
-
 import React from "react"
 import { Route, Routes } from "react-router-dom"
 import { Main, MainContainer } from "./style"
@@ -30,6 +30,7 @@ const AppRoutes = () => {
           <Route path='/app/' element={<AuthRequire />}>
             <Route index element={<Home />} />
             <Route path='profile' element={<Profile />} />
+            <Route path='add-money' element={<AddMoney />} />
             <Route path='transf' element={<TransferMoney />} />
             <Route path='transf/int' element={<TransferInto />} />
             <Route

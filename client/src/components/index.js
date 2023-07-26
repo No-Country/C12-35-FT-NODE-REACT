@@ -19,9 +19,12 @@ export * from "./FormComponents/FormSubmit"
 export * from "./FormComponents"
 export * from "./FormControl"
 export * from "./FormControlNumber"
+export * from "./FormCard"
 export * from "./InputPasswordCustom"
 export * from "./LoadingButton"
 export * from "./ModalDetailAccount"
 export * from "./ShowMore"
 export * from "./UserTool"
-export * from './index';
+export * from "./AmountCard"
+export * from './InputForm'
+export * from "./HeaderPageCards"
