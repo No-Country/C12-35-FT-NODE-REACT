@@ -12,7 +12,7 @@ enum CurrencyEnum {
 enum typeEnum {
   ADD = "ADD",
   SEND = "SEND",
-  RECEIVE = "RECEIVE"
+  TRANSFER = "TRANSFER"
 }
 
 >>>>>>> f9b3515 (transactions)
