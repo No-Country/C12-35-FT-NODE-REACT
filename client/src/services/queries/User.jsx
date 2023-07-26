@@ -4,7 +4,7 @@ import { createAsyncThunk } from "@reduxjs/toolkit"
 import { setAuth, setAuthUserId, logout } from "@/store/features/authSlice"
 import { User } from "@@/config/endpoints"
 
-const { login, register, verify } = User
+const { login, register, verify, addMoney } = User
 
 export const setCookiesAndRedirect = createAsyncThunk(
   "set/cookies",
@@ -84,6 +84,23 @@ export const verifyUser = createAsyncThunk(
 
       return data
     } catch (error) {
+      return error
+    }
+  }
+)
+
+export const add = createAsyncThunk(
+  "post/transactions",
+  async (values, {dispatch }) => {
+    try {
+      const response = await axios.post(addMoney, values)
+
+      const data = await response.data
+
+      dispatch(setCookiesAndRedirect())
+      return data
+    } catch (error) {
+      dispatch(setCookiesAndRedirect())
       return error
     }
   }

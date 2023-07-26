@@ -9,13 +9,16 @@ import {
   MdCurrencyBitcoin,
   MdOutlineAccountBalanceWallet,
   MdOutlinePermContactCalendar
-} from "react-icons/md"
+} from "react-icons/md";
+import { add } from "@@/queries/User";
+import { useDispatch } from "react-redux";
 
 export default function AddMoney() {
   const userData = useSelector((state) => state.auth);
   const [step, setStep] = useState(0);
   const [currAmount, setCurrAmount] = useState(0);
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   const goBack = () => {
     step > 0 ? setStep((step-1)) : navigate(-1);
@@ -131,6 +134,10 @@ export default function AddMoney() {
 
   const addMoney = () => {
     setStep((step + 1));
+    console.log(userData);
+    dispatch(add({
+      'amount': currAmount
+    }));
   }
 
   return (

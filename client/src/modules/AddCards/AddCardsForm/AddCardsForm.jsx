@@ -60,7 +60,7 @@ function AddCardsForm() {
               >
                 Fecha de vencimiento
               </InputForm>
-              <DateFormat>Formato:DD/AA</DateFormat>
+              <DateFormat>Formato:MM/AA</DateFormat>
             </InputWrap>
             <InputWrap $width="50%">
               <InputForm
