@@ -8,9 +8,9 @@ export default function ManageFunds() {
     <ManageFundsWrapper>
       <ManageFundsWrap>
         <Button>Ingresar dinero</Button>
-        <Button secondary>
-          <Link to='/app/transf'>Transferir dinero</Link>
-        </Button>
+        <Link to='/app/transf'>
+          <Button secondary>Transferir dinero</Button>
+        </Link>
       </ManageFundsWrap>
     </ManageFundsWrapper>
   )
