@@ -23,5 +23,8 @@ export * from './index';
 export * from "./TransactionAmount"
 export * from "./TransferInto"
 export * from "./TransferMoney"
+<<<<<<< HEAD
 export * from "./TransferOut"
 >>>>>>> cf67f95 (transfer money (partial) +routes  & estructure cards reusables)
+=======
+>>>>>>> e4afeb1 (Update index.js)
