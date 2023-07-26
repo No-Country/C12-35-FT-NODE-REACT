@@ -14,8 +14,14 @@ import {
   Profile,
   TransferMoney,
   TransferInto,
+<<<<<<< HEAD
   TransferOut,
   TransactionAmount
+=======
+  TransactionAmount,
+  AddCard,
+  Cards
+>>>>>>> fef9757 (Update AppRoutes.jsx)
 } from "@/pages"
 >>>>>>> cf67f95 (transfer money (partial) +routes  & estructure cards reusables)
 import React from "react"
