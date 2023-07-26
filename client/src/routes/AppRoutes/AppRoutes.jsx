@@ -6,7 +6,6 @@ import {
   Profile,
   TransferMoney,
   TransferInto,
-  TransferOut,
   TransactionAmount,
   AddCard,
   Cards
