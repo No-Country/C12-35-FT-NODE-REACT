@@ -18,8 +18,8 @@ export default async (req: any, res: Response) => {
   if (!receive)
     throw new Error("Está intentando relizar un pago a una cuenta que no está registrada o está inhabilitada");
 
-  await TransactionService.subtractAmount(payer, req.amount, req.transaction);
-  await TransactionService.addAmount(receive, req.amount, req.transaction);
+  await TransactionService.subtractAmount(payer, req.amount);
+  await TransactionService.addAmount(receive, req.amount, req.type);
 
   return response(res, 200, { payer, receive });
 };

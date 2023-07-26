@@ -18,7 +18,6 @@ router.post(
   middlewares.findAccount,
   middlewares.setAmount,
   middlewares.checkBalance,
-  middlewares.startTransaction,
   ctrl.transfer
 );
 
@@ -30,7 +29,6 @@ router.post(
   middlewares.findAccount,
   middlewares.setAmount,
   middlewares.dolarExchanger,
-  middlewares.startTransaction,
   ctrl.addAmount
 );
 

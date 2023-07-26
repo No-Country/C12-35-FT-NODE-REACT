@@ -8,8 +8,9 @@ enum CurrencyEnum {
 }
 
 enum typeEnum {
-  TRANSFER = "TRANSFER",
-  ADD = "ADD"
+  ADD = "ADD",
+  SEND = "SEND",
+  RECEIVE = "RECEIVE"
 }
 
 @Entity()
