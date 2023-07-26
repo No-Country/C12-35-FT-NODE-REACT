@@ -28,11 +28,11 @@ class TransactionService {
   async deleteTransaction(id: number) {
     return await deleteTransaction(id);
   }
-  async addAmount(account: Account, amount: number, transaction: Transaction) {
-    return await addAmount(account, amount, transaction);
+  async addAmount(account: Account, amount: number, type?: string) {
+    return await addAmount(account, amount, type);
   }
-  async subtractAmount(account: Account, amount: number, transaction: Transaction) {
-    return await subtractAmount(account, amount, transaction);
+  async subtractAmount(account: Account, amount: number) {
+    return await subtractAmount(account, amount);
   }
 }
 
