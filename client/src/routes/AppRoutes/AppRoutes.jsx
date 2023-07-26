@@ -1,10 +1,8 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
 import { AuthRequire, RejectIsAuthenticated } from "@/layouts";
-import { Landing, Home, Account } from "@/pages";
+import { Landing, Home, Account,Cards, AddCard} from "@/pages";
 import { Main, MainContainer } from "./style";
-import { Cards } from "@/pages";
-import { AddCardsForm } from "@/modules";
 
 const AppRoutes = () => {
   return (
@@ -21,7 +19,7 @@ const AppRoutes = () => {
           <Route path="/app" element={<AuthRequire />}>
             <Route index element={<Home />} />
             <Route path="/app/cards" element={<Cards/>}/>            
-            <Route path="/app/cards/addCard" element={<AddCardsForm/>}>            
+            <Route path="/app/cards/addCard" element={<AddCard/>}>            
           </Route>
           </Route>
 

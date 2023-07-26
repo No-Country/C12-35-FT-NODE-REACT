@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit"
 
 export const initialState = {
-  username: ""
+  username: "",
 }
 
 export const authSlice = createSlice({
@@ -18,10 +18,11 @@ export const authSlice = createSlice({
         ...state.auth,
         username: action.payload.username
       })
-    }
+    },
+    
   }
 })
 
 export default authSlice.reducer
 
-export const { setAuth, updateAuth } = authSlice.actions
+export const { setAuth, updateAuth, setCards } = authSlice.actions
