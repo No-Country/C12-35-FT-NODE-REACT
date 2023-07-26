@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const Input = styled.input`
-  border-radius: var(--radius-superlight);
+  border-radius: var(--radius-light);
   background-color: ${(props) =>
     props.$error ? "#5B4040" : "var(--background-light)"};
   border: ${(props) => (props.$error ? "2px solid var(--color-error)" : "")};

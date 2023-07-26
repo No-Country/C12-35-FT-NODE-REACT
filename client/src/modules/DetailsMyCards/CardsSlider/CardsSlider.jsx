@@ -1,12 +1,13 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Slider, SliderWrapper } from "./style";
 import { CardPageMyCards } from "@/components";
 import { useCards } from "./hook";
 
 function CardsSlider() {
-  const arrayUsers = [1, 2, 3, 4, 5, 6, 7, 8, 9];
-  const { handleMouseDown, handleMouseLeave, handleMouseUp, handleMouseMove } =
-    useCards();
+  const { handleMouseDown, handleMouseLeave, handleMouseUp, handleMouseMove } = useCards();
+  
+  const [cards, setCards] = useState([]);
+  
   return (
     <SliderWrapper
       onMouseDown={handleMouseDown}
@@ -15,7 +16,7 @@ function CardsSlider() {
       onMouseMove={handleMouseMove}
     >
       <Slider>
-        {arrayUsers.map((el) => (
+        {cards.map((el) => (
           <CardPageMyCards key={el} />
         ))}
       </Slider>

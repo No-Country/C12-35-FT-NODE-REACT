@@ -1,6 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit"
 
 export const initialState = {
+<<<<<<< HEAD
   auth: false,
   user: {
     id: 0,
@@ -28,6 +29,9 @@ export const initialState = {
   id: 0,
   email: "",
   password: ""
+=======
+  username: "",
+>>>>>>> 5211a70 (added validations)
 }
 
 export const authSlice = createSlice({
@@ -63,6 +67,7 @@ export const authSlice = createSlice({
         (state.password = action.payload.data.password)
     },
     updateAuth: (state, action) => {
+<<<<<<< HEAD
       // state.auth.push({
       //   auth: action.payload.auth,
       //   user: {
@@ -91,9 +96,21 @@ export const authSlice = createSlice({
     logout: (state) => {
       return initialState;
     },
+=======
+      state.auth.push({
+        ...state.auth,
+        username: action.payload.username
+      })
+    },
+    
+>>>>>>> 5211a70 (added validations)
   }
 });
 
 export default authSlice.reducer
 
+<<<<<<< HEAD
 export const { setAuth, updateAuth, setAuthUserId, logout } = authSlice.actions;
+=======
+export const { setAuth, updateAuth, setCards } = authSlice.actions
+>>>>>>> 5211a70 (added validations)

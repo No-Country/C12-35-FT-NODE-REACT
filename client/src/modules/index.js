@@ -21,7 +21,11 @@ export * from "./LandHero"
 =======
 =======
 export * from './AddCards/AddCardsForm';
+<<<<<<< HEAD
 >>>>>>> 4f6a669 (adding add cards form)
+=======
+export * from './AddCards/CardForm';
+>>>>>>> 5211a70 (added validations)
 export * from './Aside';
 export * from './DetailsMyCards/Buttons';
 export * from './DetailsMyCards/CardsSlider/hook';

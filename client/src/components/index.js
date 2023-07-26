@@ -8,6 +8,7 @@ export * from './Card';
 export * from './Carousel';
 =======
 export * from './ActivityItem';
+export * from './BackButton';
 export * from './Button';
 export * from './ButtonLink';
 export * from './ButtonSubmit';
@@ -19,6 +20,7 @@ export * from './DetailFund';
 export * from './DirectAccessButton';
 export * from './DropDown';
 export * from './FeatCard';
+export * from './FormCard';
 export * from './FormComponents/FormButton';
 export * from './FormComponents/FormErrorResponse';
 export * from './FormComponents/FormInput';

@@ -15,21 +15,38 @@ function AddCardsForm() {
 
   return (
     <Formik
-      initialValues={{ numberCard: "", lastName: "", email: "" }}
+      initialValues={{
+        card_number: "",
+        cardholder_name: "",
+        expiration_date: "",
+        cvv: "",
+      }}
       validationSchema={Yup.object({
-        numberCard: Yup.number()
-          .max(16, "numero de tarjeta invalido")
-          .min(16, "numero de tarjeta invalido")
-          .positive()
-          .required("Required"),
-        nameCard: Yup.string().required("Required"),
-        expDate: Yup.date().required("Required"),
-        securityCode: Yup.number().required("Required").positive(),
+        card_number: Yup.string()
+          .matches(/^\d{16,16}$/, "El número de tarjeta no es válido") // Entre 16 y 19 dígitos numéricos
+          .required("El número de tarjeta es obligatorio"),
+        cardholder_name: Yup.string()
+          .matches(/^[a-zA-Z ]+$/, "El nombre del titular no es válido") // Solo letras y espacios permitidos
+          .required("El nombre del titular es obligatorio"),
+        expiration_date: Yup.string()
+        .matches(/^(0[1-9]|1[0-2])\/\d{2}$/, 'Fecha de vencimiento no válida') // Formato válido: MM/AA y mes entre 01 y 12
+        .test('is-valid-date', 'La fecha de vencimiento es inválida', function (value) {
+          if (!value) return false;
+    
+          const [month, year] = value.split('/');
+          const currentDate = new Date();
+          const expirationDate = new Date(parseInt('20' + year, 10), parseInt(month, 10) - 1);
+    
+          return expirationDate > currentDate;
+        })
+        .required('La fecha de vencimiento es obligatoria'),
+        cvv: Yup.string()
+          .matches(/^\d{3}$/, "CVV no válido") // Exactamente 3 dígitos numéricos
+          .required("El CVV es obligatorio"),
       })}
-      onSubmit={(values, { setSubmitting }) => {
+      onSubmit={(values) => {
         setTimeout(() => {
           alert(JSON.stringify(values, null, 2));
-          setSubmitting(false);
         }, 400);
       }}
     >
@@ -37,36 +54,36 @@ function AddCardsForm() {
         <FormWrapper onSubmit={formik.handleSubmit}>
           <InputForm
             formik={formik}
-            id="numberCard"
+            id="card_number"
             isFocused={isFocused}
             setIsFocused={setIsFocused}
             composeEventHandlers={composeEventHandlers}
-            touched={formik.touched.numberCard}
-            error={formik.errors.numberCard}
+            touched={formik.touched.card_number}
+            error={formik.errors.card_number}
           >
             Numero de tarjeta
           </InputForm>
           <InputForm
             formik={formik}
-            id="nameCard"
+            id="cardholder_name"
             isFocused={isFocused}
             setIsFocused={setIsFocused}
             composeEventHandlers={composeEventHandlers}
-            touched={formik.touched.nameCard}
-            error={formik.errors.nameCard}
+            touched={formik.touched.cardholder_name}
+            error={formik.errors.cardholder_name}
           >
             Nombre de tarjeta
           </InputForm>
-          <InputWrap $padding="0" $display="flex" $gap="1rem" $width="100%">
+          <InputWrap $padding="0" $display="flex" $gap="3rem" $width="100%">
             <InputWrap $width="50%">
               <InputForm
                 formik={formik}
-                id="expDate"
+                id="expiration_date"
                 isFocused={isFocused}
                 setIsFocused={setIsFocused}
                 composeEventHandlers={composeEventHandlers}
-                touched={formik.touched.expDate}
-                error={formik.errors.expDate}
+                touched={formik.touched.expiration_date}
+                error={formik.errors.expiration_date}
               >
                 Fecha de vencimiento
               </InputForm>
@@ -75,12 +92,12 @@ function AddCardsForm() {
             <InputWrap $width="50%">
               <InputForm
                 formik={formik}
-                id="securityCode"
+                id="cvv"
                 isFocused={isFocused}
                 setIsFocused={setIsFocused}
                 composeEventHandlers={composeEventHandlers}
-                touched={formik.touched.securityCode}
-                error={formik.errors.securityCode}
+                touched={formik.touched.cvv}
+                error={formik.errors.cvv}
               >
                 Codigo de seguridad
               </InputForm>
@@ -94,3 +111,9 @@ function AddCardsForm() {
 }
 
 export default AddCardsForm;
+/* validationSchema={Yup.object({
+        card_number: Yup.number().positive().required("Required"),
+        cardholder_name: Yup.string().required("Required"),
+        expiration_date: Yup.date().required("Required"),
+        cvv: Yup.number().required("Required").positive(),
+      })} */
