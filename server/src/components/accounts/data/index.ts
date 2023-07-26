@@ -24,7 +24,7 @@ class AccountDB extends DB {
 
   async getPopulateAccountById(id: number) {
     try {
-      const users = await AppDataSource.getRepository(Account).findOne({
+      const user = await AppDataSource.getRepository(Account).findOne({
         where: { id: id },
         relations: {
           history: true,
@@ -32,7 +32,7 @@ class AccountDB extends DB {
           user: true
         }
       });
-      return users;
+      return user;
     } catch (error: any) {
       throw new Error(error);
     }

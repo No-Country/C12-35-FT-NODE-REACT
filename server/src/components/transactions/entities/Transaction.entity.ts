@@ -1,9 +1,15 @@
-import { Column, Entity, ManyToOne, PrimaryColumn, Generated } from "typeorm";
+import { Column, Entity, ManyToOne, PrimaryColumn, Generated, OneToOne, JoinColumn } from "typeorm";
 import { History } from "../../transactionHistories/entities/History.entity";
+import { PaymentGateway } from "../../../components/paymentGateways/entities/PaymentGateway.entity";
 
 enum CurrencyEnum {
   ARS = "ARS",
   USD = "USD"
+}
+
+enum typeEnum {
+  TRANSFER = "TRANSFER",
+  ADD = "ADD"
 }
 
 @Entity()
@@ -17,6 +23,12 @@ export class Transaction {
 
   @Column({
     type: "enum",
+    enum: typeEnum
+  })
+  type: string;
+
+  @Column({
+    type: "enum",
     enum: CurrencyEnum,
     default: CurrencyEnum.ARS
   })
@@ -27,4 +39,8 @@ export class Transaction {
 
   @ManyToOne(() => History, (history) => history.transactions)
   history: History;
+
+  @OneToOne(() => PaymentGateway)
+  @JoinColumn()
+  paymentGateway: PaymentGateway;
 }

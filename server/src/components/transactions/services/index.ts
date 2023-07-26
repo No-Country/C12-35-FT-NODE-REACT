@@ -1,30 +1,38 @@
 import { Transaction } from "../entities/Transaction.entity";
+import { Account } from "../../../components/accounts/entities/Account.entity";
 import getTransactions from "./getTransactions.service";
 import createTransaction from "./createTransaction.service";
 import updateTransaction from "./updateTransaction.service";
 import deleteTransaction from "./deleteTransaction.service";
 import getTransactionById from "./getTransactionById.service";
+import addAmount from "./addAmount.service";
+import subtractAmount from "./subtractAmount.service";
+import findOneTransaction from "./findOneTransaction.service";
 
 class TransactionService {
   async getTransactions() {
-    const transactions = await getTransactions();
-    return transactions;
+    return await getTransactions();
   }
   async getTransactionById(id: number) {
-    const transaction = await getTransactionById(id);
-    return transaction;
+    return await getTransactionById(id);
+  }
+  async findOneTransaction(data: any) {
+    return await findOneTransaction(data);
   }
   async createTransaction(newTransaction: Transaction) {
-    const transactionCreated = await createTransaction(newTransaction);
-    return transactionCreated;
+    return await createTransaction(newTransaction);
   }
   async updateTransaction(id: number, transaction: Transaction) {
-    const transactionUpdated = await updateTransaction(id, transaction);
-    return transactionUpdated;
+    return await updateTransaction(id, transaction);
   }
   async deleteTransaction(id: number) {
-    const transactionDeleted = await deleteTransaction(id);
-    return transactionDeleted;
+    return await deleteTransaction(id);
+  }
+  async addAmount(account: Account, amount: number, transaction: Transaction) {
+    return await addAmount(account, amount, transaction);
+  }
+  async subtractAmount(account: Account, amount: number, transaction: Transaction) {
+    return await subtractAmount(account, amount, transaction);
   }
 }
 

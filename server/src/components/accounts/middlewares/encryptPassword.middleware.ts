@@ -6,7 +6,7 @@ import response from "../../../utils/response";
 export default async (req: Request, res: Response, next: NextFunction) => {
   try {
     const { password } = req.body;
-    if (!password) throw new ClientError("debe ingresarse una contraseña", 404);
+    if (!password) throw new ClientError(404, "debe ingresarse una contraseña");
     req.body.password = await Encryp.encrypt(password);
     next();
   } catch (error: any) {
