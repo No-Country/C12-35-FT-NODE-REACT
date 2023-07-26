@@ -1,5 +1,5 @@
 import React from "react";
-import { AiOutlineArrowLeft } from "react-icons/Ai";
+import { AiOutlineArrowLeft } from "react-icons/ai";
 import { BackTextIconWrapper, WrapperBackIcon } from "./style";
 
 function BackButton() {
