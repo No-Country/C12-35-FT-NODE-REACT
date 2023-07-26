@@ -34,6 +34,7 @@ export default function ManageFunds() {
 <<<<<<< HEAD
 <<<<<<< HEAD
         <Button>Ingresar dinero</Button>
+<<<<<<< HEAD
         <Button secondary>
           <Link to='/app/transf'>Transferir dinero</Link>
         </Button>
@@ -45,6 +46,11 @@ export default function ManageFunds() {
         <Button onClick={addMoney}>Ingresar dinero</Button>
         <Button secondary onClick={sendMoney}>Transferir dinero</Button>
 >>>>>>> d8ceb41 (progressing)
+=======
+        <Link to='/app/transf'>
+          <Button secondary>Transferir dinero</Button>
+        </Link>
+>>>>>>> cf67f95 (transfer money (partial) +routes  & estructure cards reusables)
       </ManageFundsWrap>
     </ManageFundsWrapper>
   )

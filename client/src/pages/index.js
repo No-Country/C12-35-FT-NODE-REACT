@@ -5,6 +5,7 @@ export * from "./Home"
 export * from "./Landing"
 export * from "./Profile"
 <<<<<<< HEAD
+<<<<<<< HEAD
 export * from "./TransferMoney"
 =======
 export * from "./AddMoney"
@@ -18,3 +19,9 @@ export * from './Home';
 export * from './Landing';
 export * from './index';
 >>>>>>> 4ce0818 (page my Cards finished)
+=======
+export * from "./TransactionAmount"
+export * from "./TransferInto"
+export * from "./TransferMoney"
+export * from "./TransferOut"
+>>>>>>> cf67f95 (transfer money (partial) +routes  & estructure cards reusables)

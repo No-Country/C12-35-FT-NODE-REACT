@@ -18,6 +18,7 @@ export * from "./LandFooter"
 export * from "./LandForm"
 export * from "./LandHeader"
 export * from "./LandHero"
+<<<<<<< HEAD
 =======
 =======
 export * from './AddCards/AddCardsForm';
@@ -48,3 +49,6 @@ export * from './LandHeader';
 export * from './LandHero';
 export * from './index';
 >>>>>>> 4ce0818 (page my Cards finished)
+=======
+export * from "./ReusableForm"
+>>>>>>> cf67f95 (transfer money (partial) +routes  & estructure cards reusables)

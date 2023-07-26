@@ -3,6 +3,11 @@ import styled from "styled-components"
 export const Wrapper = styled.section`
   width: 100%;
   height: 100%;
+
+  & > a > svg {
+    color: var(--text-primary-light);
+    font-size: 1.8rem;
+  }
 `
 
 export const Wrap = styled.article`
@@ -30,8 +35,8 @@ export const Header = styled.div`
   & span {
     display: flex;
     align-items: center;
-    font-size: 2rem;
-    padding: 8px;
+    font-size: 1.8rem;
+    padding: 10px;
     border-radius: var(--radius-full);
     background-color: var(--background-icon);
     color: var(--primary);

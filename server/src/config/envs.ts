@@ -1,8 +1,13 @@
 import dotenv from "dotenv";
 dotenv.config();
 
+<<<<<<< HEAD
 //Port
 export const PORT = process.env.PORT || "8000";
+=======
+//port
+export const PORT = process.env.PORT || "8001";
+>>>>>>> cf67f95 (transfer money (partial) +routes  & estructure cards reusables)
 
 //JWT
 export const SECRET = process.env.SECRET || "12345";

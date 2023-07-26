@@ -1,10 +1,23 @@
 <<<<<<< HEAD
 import { AuthRequire, RejectIsAuthenticated } from "@/layouts"
 <<<<<<< HEAD
+<<<<<<< HEAD
 import { Account, Home, Landing, Profile, TransferMoney } from "@/pages"
 =======
 import { Account, Home, Landing, Profile, AddMoney } from "@/pages"
 >>>>>>> a2b13d5 (first version addMoney)
+=======
+import {
+  Account,
+  Home,
+  Landing,
+  Profile,
+  TransferMoney,
+  TransferInto,
+  TransferOut,
+  TransactionAmount
+} from "@/pages"
+>>>>>>> cf67f95 (transfer money (partial) +routes  & estructure cards reusables)
 import React from "react"
 import { Route, Routes } from "react-router-dom"
 import { Main, MainContainer } from "./style"
@@ -42,6 +55,7 @@ const AppRoutes = () => {
             <Route path='profile' element={<Profile />} />
 <<<<<<< HEAD
             <Route path='transf' element={<TransferMoney />} />
+<<<<<<< HEAD
 =======
             <Route path='add-money' element={<AddMoney />} />
 >>>>>>> a2b13d5 (first version addMoney)
@@ -55,6 +69,13 @@ const AppRoutes = () => {
             <Route path="/app/cards/addCard" element={<AddCard/>}>            
           </Route>
 >>>>>>> 4ce0818 (page my Cards finished)
+=======
+            <Route path='transf/int' element={<TransferInto />} />
+            <Route
+              path='transf/int/:identifier'
+              element={<TransactionAmount />}
+            />
+>>>>>>> cf67f95 (transfer money (partial) +routes  & estructure cards reusables)
           </Route>
 
           {/* Not passing if authenticated routes */}
