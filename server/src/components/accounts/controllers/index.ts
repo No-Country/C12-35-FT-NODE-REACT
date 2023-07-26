@@ -8,6 +8,7 @@ import getAccountBalance from "./getAccountBalance.controller";
 =======
 import verifyAccountPhone from "./verifyAccountPhone.controller";
 import verifyAccount from "./verifyAccount.controller";
+import accountInfo from "./accountInfo.controller";
 import createAccountPhoneVerification from "./createAccountPhoneVerification.controller";
 >>>>>>> b822c13 (.)
 import utils from "../../../utils";
@@ -23,6 +24,11 @@ export default {
 =======
   verifyAccountPhone: utils.catched(verifyAccountPhone),
   verifyAccount: utils.catched(verifyAccount),
+<<<<<<< HEAD
   createAccountPhoneVerification: utils.catched(createAccountPhoneVerification)
 >>>>>>> b822c13 (.)
+=======
+  createAccountPhoneVerification: utils.catched(createAccountPhoneVerification),
+  accountInfo: utils.catched(accountInfo)
+>>>>>>> 1a68848 (.)
 };
