@@ -37,4 +37,8 @@ export * from "./ShowMore"
 >>>>>>> e52ae82 (fundsAccountSHORTCUT done rev 1.0)
 =======
 export * from "./UserTool"
+<<<<<<< HEAD
 >>>>>>> 57ee59c (Profile Page done Rev 1.0)
+=======
+export * from "./AmountCard"
+>>>>>>> 8a78fe1 (progressing further)
