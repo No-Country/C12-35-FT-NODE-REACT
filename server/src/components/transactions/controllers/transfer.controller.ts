@@ -12,8 +12,7 @@ export default async (req: any, res: Response) => {
 
   const payer = await AccountService.getAccountById(req.userId);
   const receive = await AccountService.findOneAccount(search);
-  console.log(payer);
-  // console.log(receive);
+
   if (!payer) throw new Error("Intenta relizar un pago desde una cuenta que no está registrada o está inhabilitada");
   if (!receive)
     throw new Error("Está intentando relizar un pago a una cuenta que no está registrada o está inhabilitada");

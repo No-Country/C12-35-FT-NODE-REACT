@@ -6,6 +6,8 @@ const router = Router();
 
 router.get("/", ctrl.getsHistory);
 
+router.post("/info", ctrl.accountInfo);
+
 router.get("/:id", globalMiddleware.ensureToken, globalMiddleware.validateToken, ctrl.getHistoryById);
 
 router.post("/", ctrl.createHistory);
