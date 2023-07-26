@@ -87,10 +87,10 @@ export const authSlice = createSlice({
     },
     setAuthUserId: (state, action) => {
       state.id = action.payload.user.id
-    },  
-    logout: (state) => {
-      return initialState;
     },
+    logout: () => {//placeholder porque borraron el logout del usuario
+
+    }
   }
 });
 

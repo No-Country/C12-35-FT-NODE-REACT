@@ -4,10 +4,10 @@ import { IoIosArrowForward } from "react-icons/io"
 
 export default function UserTool({ data }) {
   //constants
-  const { icon, title, link, subtitle } = data
+  const { icon, title, link, subtitle, onClick } = data
 
   return (
-    <Tool to={link}>
+    <Tool to={link} onClick={onClick}>
       <div>
         <span>{icon}</span>
         <Title>

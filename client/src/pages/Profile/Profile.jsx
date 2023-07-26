@@ -37,6 +37,7 @@ export default function Profile() {
 
   return (
     <EstructureCards
+      returnRoute='/app/'
       icon={<FaUserCircle />}
       firstName={userData.user?.first_name}
       additions={UserToolsItems}>

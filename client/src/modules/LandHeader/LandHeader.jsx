@@ -1,20 +1,20 @@
-import React, { useState, useEffect, useRef } from "react"
+import imagotipo from "@/assets/images/logos/Imagotipo.svg"
+import React, { useEffect, useRef, useState } from "react"
+import { useSelector } from "react-redux"
+import { useLocation, useNavigate } from "react-router-dom"
 import styles from "./NavIcon.module.css"
 import {
+  BurgerMenu,
+  CrearButton,
+  DDItem,
   GroupDirectButton,
   HeaderWrap,
   HeaderWrapper,
-  LogoWrapper,
-  NavWrapper,
-  NavItem,
   IngresarButton,
-  CrearButton,
-  BurgerMenu,
-  DDItem
+  LogoWrapper,
+  NavItem,
+  NavWrapper
 } from "./style"
-import imagotipo from "@/assets/images/logos/Imagotipo.svg"
-import { useLocation, useNavigate } from "react-router-dom"
-import { useSelector } from "react-redux"
 
 export default function LandHeader() {
   const userData = useSelector((state) => state.auth)
@@ -126,7 +126,6 @@ export default function LandHeader() {
           ) : null}
         </NavWrapper>
         <GroupDirectButton>
-          {console.log(userData.user.first_name)}
           {userData.id ? (
             <IngresarButton to={"/srv/login"}>Mi Perfil</IngresarButton>
           ) : (
