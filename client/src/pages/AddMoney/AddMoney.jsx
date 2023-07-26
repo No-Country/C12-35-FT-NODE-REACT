@@ -134,9 +134,8 @@ export default function AddMoney() {
 
   const addMoney = () => {
     setStep((step + 1));
-    console.log(userData);
     dispatch(add({
-      'amount': currAmount
+      'amount': parseInt(currAmount)
     }));
   }
 
