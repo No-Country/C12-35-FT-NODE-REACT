@@ -26,7 +26,7 @@ const router = Router();
 router.use("/users", userRouter);
 router.use("/accounts", accountsRouter);
 router.use("/transactions", transactionRouter);
-router.use("/transaction-history", transactionHistoryRouter);
+router.use("/history", transactionHistoryRouter);
 router.use("/payment-gateway", paymentGatewayRouter);
 router.use("/cards", cardRouter);
 router.use("/login", LoginRoutes);
