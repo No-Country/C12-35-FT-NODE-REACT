@@ -10,7 +10,7 @@ enum CurrencyEnum {
 enum typeEnum {
   ADD = "ADD",
   SEND = "SEND",
-  RECEIVE = "RECEIVE"
+  TRANSFER = "TRANSFER"
 }
 
 @Entity()
