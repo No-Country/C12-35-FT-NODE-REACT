@@ -13,7 +13,7 @@ export default async (req: any, res: Response) => {
     const transaction = await TransactionService.createTransaction(newTransaction);
     await TransactionService.subtractAmount(req.account, req.amount);
 
-    return response(res, 200, req.transaction);
+    return response(res, 200, transaction);
   } catch (error: any) {
     return response(res, error.statusCode, error.message, true);
   }
