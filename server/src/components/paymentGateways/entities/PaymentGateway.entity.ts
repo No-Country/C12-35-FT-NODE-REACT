@@ -16,8 +16,4 @@ export class PaymentGateway {
     enum: PaymentEnum
   })
   name: string;
-
-  @ManyToMany(() => Card, (card) => card.payments)
-  // @JoinColumn({ name: "payment_card" })
-  cards: Card;
 }

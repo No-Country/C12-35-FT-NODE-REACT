@@ -16,7 +16,6 @@ export default async (req: any, res: Response) => {
   newCard.card_number = card_number;
   newCard.cardholder_name = cardholder_name;
   newCard.expiration_date = expiration_date;
-  newCard.payments = [];
 
   await CardService.createCard(newCard);
   return response(res, 200, newCard);

@@ -7,6 +7,7 @@ import getAccountById from "./getAccountById.service";
 import createAccountPhoneVerification from "./createAccountPhoneVerification.service";
 import verifyAccountPhone from "./verifyAccountPhone.service";
 import verifyAccount from "./verifyAccount.service";
+import findOneAccount from "./findOneAccount.service";
 
 class AccountService {
   async getAccounts() {
@@ -38,6 +39,9 @@ class AccountService {
   async verifyAccount(id: number) {
     const account = await verifyAccount(id);
     return account;
+  }
+  async findOneAccount(data: any) {
+    return await findOneAccount(data);
   }
 }
 

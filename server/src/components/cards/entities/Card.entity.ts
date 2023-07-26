@@ -28,9 +28,5 @@ export class Card {
   @ManyToOne(() => Account, (account) => account.cards)
   // @JoinColumn({ name: "card_account" })
   account: Account;
-
-  @ManyToMany(() => PaymentGateway)
-  @JoinColumn()
-  payments: PaymentGateway[];
 }
 //agegar la relacion con acounts obtener el account id
