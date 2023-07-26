@@ -6,6 +6,7 @@ export * from "./Landing"
 export * from "./Profile"
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 export * from "./TransferMoney"
 =======
 export * from "./AddMoney"
@@ -28,3 +29,9 @@ export * from "./TransferOut"
 >>>>>>> cf67f95 (transfer money (partial) +routes  & estructure cards reusables)
 =======
 >>>>>>> e4afeb1 (Update index.js)
+=======
+export * from "./AddMoney"
+export * from "./TransactionAmount"
+export * from "./TransferInto"
+export * from "./TransferMoney"
+>>>>>>> 1751b2b (minor fixes and changes)

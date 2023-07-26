@@ -24,13 +24,10 @@ export default function ManageFunds() {
     navigate('./add-money', {replace: false});
   }
 
-  const sendMoney = () => {
-    navigate('./transf', {replace: false});
-  }
-
   return (
     <ManageFundsWrapper>
       <ManageFundsWrap>
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
         <Button>Ingresar dinero</Button>
@@ -51,6 +48,12 @@ export default function ManageFunds() {
           <Button secondary>Transferir dinero</Button>
         </Link>
 >>>>>>> cf67f95 (transfer money (partial) +routes  & estructure cards reusables)
+=======
+        <Button onClick={addMoney}>Ingresar dinero</Button>
+        <Link to='/app/transf'>
+          <Button secondary>Transferir dinero</Button>
+        </Link>
+>>>>>>> 1751b2b (minor fixes and changes)
       </ManageFundsWrap>
     </ManageFundsWrapper>
   )

@@ -46,6 +46,7 @@ export * from "./FormComponents/FormSubmit"
 export * from "./FormComponents"
 export * from "./FormControl"
 export * from "./FormControlNumber"
+export * from "./FormCard"
 export * from "./InputPasswordCustom"
 export * from "./LoadingButton"
 export * from "./ModalDetailAccount"
@@ -54,6 +55,7 @@ export * from "./ShowMore"
 >>>>>>> e52ae82 (fundsAccountSHORTCUT done rev 1.0)
 =======
 export * from "./UserTool"
+<<<<<<< HEAD
 <<<<<<< HEAD
 >>>>>>> 57ee59c (Profile Page done Rev 1.0)
 =======
@@ -67,3 +69,8 @@ export * from './ModalDetailAccount';
 export * from './ShowMore';
 export * from './index';
 >>>>>>> 4ce0818 (page my Cards finished)
+=======
+export * from "./AmountCard"
+export * from './InputForm'
+export * from "./HeaderPageCards"
+>>>>>>> 1751b2b (minor fixes and changes)

@@ -1,9 +1,6 @@
 import React from "react"
 import { ButtonWrapper } from "./style"
 
-<<<<<<< HEAD
-export default function Button({ onClick, children, secondary }) {
-=======
 export default function Button({
   children,
   secondary,
@@ -13,15 +10,15 @@ export default function Button({
   disabled,
   type
 }) {
+<<<<<<< HEAD
 >>>>>>> cf67f95 (transfer money (partial) +routes  & estructure cards reusables)
+=======
+>>>>>>> 1751b2b (minor fixes and changes)
   //constants
   const isSecondary = secondary ? true : false
   const isPrimary = primary ? true : false
   const isPrimaryInverse = primaryInverse ? true : false
 
-<<<<<<< HEAD
-  return <ButtonWrapper onClick={onClick} $secondary={isSecondary}>{children}</ButtonWrapper>
-=======
   return (
     <ButtonWrapper
       typeStyle={
@@ -39,5 +36,8 @@ export default function Button({
       {children}
     </ButtonWrapper>
   )
+<<<<<<< HEAD
 >>>>>>> cf67f95 (transfer money (partial) +routes  & estructure cards reusables)
+=======
+>>>>>>> 1751b2b (minor fixes and changes)
 }

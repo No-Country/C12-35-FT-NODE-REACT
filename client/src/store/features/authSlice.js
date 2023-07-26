@@ -92,6 +92,7 @@ export const authSlice = createSlice({
     },
     setAuthUserId: (state, action) => {
       state.id = action.payload.user.id
+<<<<<<< HEAD
     },  
     logout: (state) => {
       return initialState;
@@ -104,13 +105,23 @@ export const authSlice = createSlice({
     },
     
 >>>>>>> 5211a70 (added validations)
+=======
+    },
+    logout: () => {//placeholder porque borraron el logout del usuario
+
+    }
+>>>>>>> 1751b2b (minor fixes and changes)
   }
 });
 
 export default authSlice.reducer
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 export const { setAuth, updateAuth, setAuthUserId, logout } = authSlice.actions;
 =======
 export const { setAuth, updateAuth, setCards } = authSlice.actions
 >>>>>>> 5211a70 (added validations)
+=======
+export const { setAuth, updateAuth, setAuthUserId, logout } = authSlice.actions;
+>>>>>>> 1751b2b (minor fixes and changes)
