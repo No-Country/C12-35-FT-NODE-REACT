@@ -7,9 +7,9 @@ import paymentGatewayRouter from "../components/paymentGateways/routes";
 import cardRouter from "../components/cards/routes";
 import authRoutes from "../services/Auth/routes";
 import LoginRoutes from "../services/Login/routes";
-//import MercadoPago from "../services/MercadoPago/index";
 import paypalRoutes from "../services/PayPal/routes";
 import docRoutes from "./documentation.routes";
+import mercadopagoRoutes from "../services/MercadoPago/routes";
 
 const router = Router();
 
@@ -22,5 +22,6 @@ router.use("/cards", cardRouter);
 router.use("/login", LoginRoutes);
 router.use("/paypal", paypalRoutes);
 router.use("/doc", docRoutes);
+router.use("/mercadopago", mercadopagoRoutes);
 
 export default router;

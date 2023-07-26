@@ -1,3 +1,8 @@
+export * from './BackButton';
+export * from './Button';
+export * from './ButtonLink';
+export * from './ButtonSubmit';
+export * from './CardPageMyCards';
 export * from "./ActivityItem"
 export * from "./Button"
 export * from "./Card"
@@ -19,3 +24,4 @@ export * from "./LoadingButton"
 export * from "./ModalDetailAccount"
 export * from "./ShowMore"
 export * from "./UserTool"
+export * from './index';
