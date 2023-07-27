@@ -1,7 +1,12 @@
 import styled from "styled-components"
-const typeTransfer = {
-  TRANSFER: { width: "50%", color: "var(--secondary)" },
-  SEND: { width: "65%", color: "var(--primary)" }
+const typeTransferIcon = {
+  TRANSFER: { width: "50%", color: "var(--primary)" },
+  SEND: { width: "65%", color: "var(--secondary)" }
+}
+
+const typeTransferText = {
+  TRANSFER: "var(--primary)",
+  SEND: "var(--text-primary)"
 }
 
 export const ActivityItemWrap = styled.li`
@@ -36,9 +41,11 @@ export const IconActivity = styled.div`
   color: var(--text-primary);
 
   & svg {
-    width: ${({ type }) => typeTransfer[type] && typeTransfer[type].width};
+    width: ${({ type }) =>
+      typeTransferIcon[type] && typeTransferIcon[type].width};
     object-fit: contain;
-    color: ${({ type }) => typeTransfer[type] && typeTransfer[type].color};
+    color: ${({ type }) =>
+      typeTransferIcon[type] && typeTransferIcon[type].color};
   }
 `
 export const GroupDetail = styled.div`
@@ -73,7 +80,7 @@ export const Date = styled.span`
 export const Amount = styled.span`
   font-size: 14px;
   color: ${({ type }) =>
-    type === "SEND" ? typeTransfer[type].color : "var(--text-primary)"};
+    type === "SEND" ? typeTransferText[type] : "var(--text-primary)"};
 `
 export const RightData = styled.div`
   display: flex;

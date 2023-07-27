@@ -1,5 +1,6 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 export * from './ActivityItem';
 export * from './AvaliableCredit/ModalCvc';
 export * from './AvaliableCredit';
@@ -30,15 +31,23 @@ export * from './FormComponents';
 export * from './InputPasswordCustom';
 export * from './ShowMore';
 =======
+=======
+>>>>>>> 0fedcda (fix header render, implement 'mis datos' in home shortcut, fix recentActivity)
 export * from "./ActivityItem"
+export * from "./AmountCard"
+export * from "./BackButton"
 export * from "./Button"
+export * from "./ButtonLink"
+export * from "./ButtonSubmit"
 export * from "./Card"
+export * from "./CardPageMyCards"
 export * from "./Carousel"
 export * from "./CopyAccountInfo"
 export * from "./DetailFund"
 export * from "./DirectAccessButton"
 export * from "./DropDown"
 export * from "./FeatCard"
+export * from "./FormCard"
 export * from "./FormComponents/FormButton"
 export * from "./FormComponents/FormErrorResponse"
 export * from "./FormComponents/FormInput"
@@ -46,11 +55,13 @@ export * from "./FormComponents/FormSubmit"
 export * from "./FormComponents"
 export * from "./FormControl"
 export * from "./FormControlNumber"
-export * from "./FormCard"
+export * from "./HeaderPageCards"
+export * from "./InputForm"
 export * from "./InputPasswordCustom"
 export * from "./LoadingButton"
 export * from "./ModalDetailAccount"
 export * from "./ShowMore"
+<<<<<<< HEAD
 <<<<<<< HEAD
 >>>>>>> e52ae82 (fundsAccountSHORTCUT done rev 1.0)
 =======
@@ -74,3 +85,7 @@ export * from "./AmountCard"
 export * from './InputForm'
 export * from "./HeaderPageCards"
 >>>>>>> 1751b2b (minor fixes and changes)
+=======
+export * from "./UserInfoAccount"
+export * from "./UserTool"
+>>>>>>> 0fedcda (fix header render, implement 'mis datos' in home shortcut, fix recentActivity)

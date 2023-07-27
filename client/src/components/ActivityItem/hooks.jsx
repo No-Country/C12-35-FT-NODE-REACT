@@ -1,7 +1,7 @@
 const useFormatInfo = () => {
   const formatterSign = (value, type) => {
     value = new Intl.NumberFormat().format(value)
-    if (type === "TRANSFER") return `-$${value}`
+    if (type === "SEND") return `-$${value}`
     return `$${value}`
   }
 

@@ -78,8 +78,6 @@ export const verifyUser = createAsyncThunk(
       const data = await response.data
       dispatch(setAuth(data))
 
-      console.log({ dataVerify: data })
-
       return data
     } catch (error) {
       return error

@@ -23,3 +23,8 @@ export const ListActivity = styled.ul`
     display: none;
   }
 `
+export const EmptyActivity = styled.span`
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+`

@@ -126,7 +126,7 @@ export default function LandHeader() {
           ) : null}
         </NavWrapper>
         <GroupDirectButton>
-          {userData.id ? (
+          {location?.pathname?.includes("app") ? (
             <IngresarButton to={"/srv/login"}>Mi Perfil</IngresarButton>
           ) : (
             <>
