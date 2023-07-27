@@ -35,6 +35,7 @@
   --toastify-color-success: #20ca82;
   --alert-primary: #20ca82;
   --card-hover: rgba(0, 0, 0, 0.048);
+  --swiper-theme-color: var(--primary) !important;
 }
 
 * {

@@ -6,6 +6,8 @@ import { Provider } from "react-redux"
 import "react-toastify/dist/ReactToastify.css"
 import App from "./App.jsx"
 import { store } from "./store/store.js"
+import "swiper/css"
+import "swiper/css/pagination"
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <Provider store={store}>
