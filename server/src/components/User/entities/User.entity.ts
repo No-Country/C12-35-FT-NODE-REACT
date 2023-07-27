@@ -1,5 +1,6 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 import { Column, Entity, PrimaryGeneratedColumn, OneToOne } from "typeorm";
 =======
 import { Column, Entity, PrimaryGeneratedColumn, OneToOne, Unique, JoinColumn } from "typeorm";
@@ -8,6 +9,10 @@ import { Account } from "../../accounts/entities/Account.entity";
 =======
 import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
 >>>>>>> 2cc9266 (.)
+=======
+import { Account } from "../../../components/Account/entities/Account.entity";
+import { Column, Entity, ManyToOne, PrimaryGeneratedColumn } from "typeorm";
+>>>>>>> 7be6c0a (.)
 
 @Entity()
 export class User {
@@ -65,4 +70,7 @@ export class User {
 
   @Column({ default: true })
   valid: boolean;
+
+  @ManyToOne(() => Account, (account) => account.transactions)
+  account: Account;
 }

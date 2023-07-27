@@ -1,7 +1,7 @@
 import { Column, Entity, PrimaryGeneratedColumn, OneToMany, OneToOne, JoinColumn } from "typeorm";
 import { User } from "../../User/entities/User.entity";
-import { History } from "../../History/entities/History.entity";
 import { Card } from "../../Card/entities/Card.entity";
+import { Transaction } from "../../../components/Transaction/entities/Transaction.entity";
 
 @Entity()
 export class Account {
@@ -19,6 +19,9 @@ export class Account {
   @JoinColumn()
   user!: User;
 =======
+  @Column()
+  name: string;
+
   @Column()
   email: string;
 
@@ -45,6 +48,7 @@ export class Account {
   user: User;
 >>>>>>> b822c13 (.)
 
+<<<<<<< HEAD
   @OneToOne(() => History)
   @JoinColumn()
   history: History;
@@ -62,8 +66,15 @@ export class Account {
   @UpdateDateColumn()
   updated_at!: Date;
 =======
+=======
+>>>>>>> 7be6c0a (.)
   @OneToMany(() => Card, (card) => card.account)
-  // @JoinColumn({ name: "card_id" })
   cards: Card[];
+<<<<<<< HEAD
 >>>>>>> b822c13 (.)
+=======
+
+  @OneToMany(() => Transaction, (transaction) => transaction.account)
+  transactions: Transaction[];
+>>>>>>> 7be6c0a (.)
 }

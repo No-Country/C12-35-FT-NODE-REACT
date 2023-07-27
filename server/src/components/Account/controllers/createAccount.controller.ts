@@ -19,9 +19,7 @@ export default async (req: Request, res: Response) => {
 =======
 import Mailer from "../../../services/Mailer";
 import { HOST } from "../../../config/envs";
-import TransactionHistoryService from "../../History/services";
 import { Account } from "../entities/Account.entity";
-import { History } from "../../History/entities/History.entity";
 import { IUserFullName } from "../../../components/User/models/IUser";
 import UserService from "../../User/services";
 import { generateRandomCVU } from "../../../utils/generateRandomCVU";
@@ -46,7 +44,7 @@ export default async (req: any, res: Response) => {
 >>>>>>> 2cc9266 (.)
 
   const newAccount = new Account();
-  const newHistory = new History();
+
   const newUser: IUserFullName = {
     first_name,
     last_name
@@ -89,11 +87,11 @@ export default async (req: any, res: Response) => {
 >>>>>>> 2cc9266 (.)
   newAccount.date_created = new Date();
   newAccount.user = createdUser;
-  newAccount.history = newHistory;
   newAccount.cvu = generateRandomCVU();
   newAccount.alias = generateAlias();
+  newAccount.transactions = [];
+  newAccount.name = `${first_name} ${last_name}`;
 
-  await TransactionHistoryService.createTransactionHistory(newHistory);
   await AccountService.createAccount(newAccount);
 
   const to = newAccount.email;

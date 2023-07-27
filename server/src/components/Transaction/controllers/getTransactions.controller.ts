@@ -1,8 +1,8 @@
 import { Request, Response } from "express";
 import response from "../../../utils/response";
-import TransactionService from "../services";
+import db from "../data";
 
 export default async (_req: Request, res: Response) => {
-  const data = await TransactionService.getTransactions();
+  const data = await db.getPopulateTransaction();
   return response(res, 200, data);
 };
