@@ -9,7 +9,6 @@ router.get("/", ctrl.getAccounts);
 
 router.get(
   "/:id",
-  middlewares.validateDuplicate,
   middlewares.encryptPassword,
   globalMiddleware.findAccount,
   globalMiddleware.checkAccountValidity,
