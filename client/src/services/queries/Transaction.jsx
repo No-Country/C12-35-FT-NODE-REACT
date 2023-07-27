@@ -26,8 +26,8 @@ export const sendMeMoney = createAsyncThunk(
   }
 )
 
-export const createTransaction = createAsyncThunk(
-  "post/transactions/add",
+export const sendTransfer = createAsyncThunk(
+  "post/transactions",
   async (values, { dispatch }) => {
     const accessToken = Cookies.get("accessToken")
     try {
