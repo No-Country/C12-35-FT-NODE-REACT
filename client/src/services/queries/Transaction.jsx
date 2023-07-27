@@ -7,7 +7,7 @@ const { send, verify, history } = Transaction
 
 //functions
 
-export const createTransaction = createAsyncThunk(
+export const sendTransfer = createAsyncThunk(
   "post/transactions",
   async (values, { dispatch }) => {
     const accessToken = Cookies.get("accessToken")
