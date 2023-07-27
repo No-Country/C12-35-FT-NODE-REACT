@@ -7,8 +7,7 @@ import deleteCard from "./deleteCard.service";
 
 class CardService {
   async getCards() {
-    const creditCards = await getCards();
-    return creditCards;
+    return await getCards();
   }
 
   async createCard(newCreditCard: Card) {
@@ -19,7 +18,7 @@ class CardService {
     const creditCardUpdated = await updateCard(id, updatedCreditCard);
     return creditCardUpdated;
   }
-  async getCardById(id: number) {
+  async getCardById(id: string) {
     const creditCard = await getCardById(id);
     return creditCard;
   }
