@@ -13,7 +13,8 @@ export const LoadingButtonWrapper = styled.button`
 
   &:disabled {
     cursor: not-allowed;
-    background-color: var(--background-disabled-dark);
+    background-color: ${({ error }) =>
+      error ? "var(--color-error)" : "var(--background-disabled-dark)"};
     color: var(--background);
   }
 `

@@ -24,18 +24,18 @@ export default function ActivityItem({
   const { formatterSign, formatterDate } = useFormatInfo()
   //constants
   const messageTransfer = {
-    transfer: "Recibiste una transferencia",
-    send: "Enviaste dinero"
+    TRANSFER: "Recibiste una transferencia",
+    SEND: "Enviaste dinero"
   }
 
   const pronounTransfer = {
-    transfer: "de",
-    send: "a"
+    TRANSFER: "de",
+    SEND: "a"
   }
 
   const iconTransfer = {
-    transfer: MoneyBillTransfer(),
-    send: MoneyBillAddsFund()
+    TRANSFER: MoneyBillTransfer(),
+    SEND: MoneyBillAddsFund()
   }
 
   return (

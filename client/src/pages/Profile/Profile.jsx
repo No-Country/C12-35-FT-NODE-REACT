@@ -23,13 +23,6 @@ export default function Profile() {
   ]
 
   const userData = useSelector((state) => state.auth)
-  const fakeUser = {
-    account: {
-      id: 1,
-      cvu: "0000003100068949510855",
-      alias: "asd.asdasd22.fw"
-    }
-  }
 
   const UserToolsItems = toolData.map((tool) => {
     return <UserTool key={tool.id} data={tool} />
@@ -41,8 +34,8 @@ export default function Profile() {
       icon={<FaUserCircle />}
       firstName={userData.user?.first_name}
       additions={UserToolsItems}>
-      <CopyAccountInfo title='CVU' value={fakeUser.account.cvu} />
-      <CopyAccountInfo title='Alias' value={fakeUser.account.alias} />
+      <CopyAccountInfo title='CVU' value={userData.cvu} />
+      <CopyAccountInfo title='Alias' value={userData.alias} />
     </EstructureCards>
   )
 }
