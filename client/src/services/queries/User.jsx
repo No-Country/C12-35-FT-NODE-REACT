@@ -68,9 +68,8 @@ export const verifyUser = createAsyncThunk(
   "get/accounts",
   async (_, { dispatch }) => {
     const accessToken = Cookies.get("accessToken")
-    const id = Cookies.get("userId")
     try {
-      const response = await axios.get(verify + id, {
+      const response = await axios.get(verify, {
         headers: {
           "access-token": accessToken
         }
