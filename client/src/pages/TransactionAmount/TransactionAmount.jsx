@@ -1,7 +1,7 @@
 import { Button, FormControlNumber } from "@/components"
 import { EstructureCards, ReusableForm } from "@/modules"
 import { useIcons } from "@@/global/customIcons"
-import { createTransaction, verifyUserAccount } from "@@/queries"
+import { sendTransfer, verifyUserAccount } from "@@/queries"
 import React, { useEffect, useState } from "react"
 import { useDispatch, useSelector } from "react-redux"
 import { useParams } from "react-router-dom"
@@ -68,7 +68,7 @@ export default function TransactionAmount() {
     try {
       if (isReady) {
         const data = await dispatch(
-          createTransaction({
+          sendTransfer({
             ...values,
             identifier: identifier.replace(/-/g, ".")
           })
