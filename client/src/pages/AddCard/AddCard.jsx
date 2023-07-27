@@ -1,26 +1,23 @@
-import React from "react";
-import { Wrapper } from "./style";
-import { HeaderPageCard } from "@/components";
-import { CardForm, AddCardsForm } from "@/modules";
+import { AddCardsForm, CardForm, EstructureCards } from "@/modules"
+import React from "react"
+import { Wrapper } from "./style"
+import { BsFillCreditCard2BackFill } from "react-icons/bs"
 
 function addCard() {
   return (
-    <Wrapper>
-      <Wrapper>
-        <Wrapper $marginBottom="1rem">
-          <HeaderPageCard />
-        </Wrapper>
-        <Wrapper
-          $backgroundColor="var(--background-card)"
-          $borderRadius="var(--radius-light)"
-          $padding="1rem"
-        >
-          <CardForm />
-          <AddCardsForm />
-        </Wrapper>
+    <EstructureCards
+      returnRoute='/app/cards'
+      icon={<BsFillCreditCard2BackFill />}
+      title='Añadir tarjeta'>
+      <Wrapper
+        $backgroundColor='var(--background-card)'
+        $borderRadius='var(--radius-light)'
+        $padding='1rem'>
+        <CardForm />
+        <AddCardsForm />
       </Wrapper>
-    </Wrapper>
-  );
+    </EstructureCards>
+  )
 }
 
-export default addCard;
+export default addCard
