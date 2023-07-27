@@ -1,87 +1,88 @@
-import React, { useState } from "react";
-import { Formik } from "formik";
-import { InputForm, ButtonSubmit } from "@/components";
-import { DateFormat, FormWrapper, InputWrap } from "./style";
-import { validateCards } from "../../../services/global/FormikConfig/validateCards";
+import { FormControl, Button } from "@/components"
+import { ReusableForm } from "@/modules"
+import React, { useState } from "react"
+import { validateCards } from "@@/global/FormikConfig/validateCards"
+import { useDispatch } from "react-redux"
+import { AddCard } from "@@/queries"
 
 function AddCardsForm() {
-  const [isFocused, setIsFocused] = useState(false);
+  //redux
+  const dispatch = useDispatch()
 
-  const composeEventHandlers =
-    (...handlers) =>
-    (e) => {
-      handlers.forEach((handler) => handler && handler(e));
-    };
+  //initial values
+  const initialValues = {
+    card_number: "",
+    cardholder_name: "",
+    expiration_date: "",
+    cvv: "",
+    type: "",
+    bank_branding: ""
+  }
+
+  //validation schema
+  const validationSchema = validateCards().validationSchema
+
+  //prop components
+  const submitButtonComp = (disabled) => {
+    return (
+      <Button type='submit' disabled={disabled}>
+        Agregar tarjeta
+      </Button>
+    )
+  }
+
+  //states
+  const [error, setError] = useState(false)
+  const [isFocused, setIsFocused] = useState(false)
+  const [isReady, setIsReady] = useState(true)
+
+  //onsubmit handler
+  const onSubmit = async (values) => {
+    try {
+      const data = await dispatch(AddCard(values))
+      if (data.payload.error === false) {
+        setError(false)
+        return
+      } else {
+        setError(true)
+        return
+      }
+    } catch (error) {
+      setError(true)
+    }
+  }
 
   return (
-    <Formik
-      initialValues={{
-        card_number: "",
-        cardholder_name: "",
-        expiration_date: "",
-        cvv: "",
-      }}
-      validationSchema={validateCards().validationSchema}
-    >
-      {(formik) => (
-        <FormWrapper onSubmit={formik.handleSubmit}>
-          <InputForm
-            formik={formik}
-            id="card_number"
-            isFocused={isFocused}
-            setIsFocused={setIsFocused}
-            composeEventHandlers={composeEventHandlers}
-            touched={formik.touched.card_number}
-            error={formik.errors.card_number}
-          >
-            Numero de tarjeta
-          </InputForm>
-          <InputForm
-            formik={formik}
-            id="cardholder_name"
-            isFocused={isFocused}
-            setIsFocused={setIsFocused}
-            composeEventHandlers={composeEventHandlers}
-            touched={formik.touched.cardholder_name}
-            error={formik.errors.cardholder_name}
-          >
-            Nombre de tarjeta
-          </InputForm>
-          <InputWrap $padding="0" $display="flex" $gap="3rem" $width="100%">
-            <InputWrap $width="50%">
-              <InputForm
-                formik={formik}
-                id="expiration_date"
-                isFocused={isFocused}
-                setIsFocused={setIsFocused}
-                composeEventHandlers={composeEventHandlers}
-                touched={formik.touched.expiration_date}
-                error={formik.errors.expiration_date}
-              >
-                Fecha de vencimiento
-              </InputForm>
-              <DateFormat>Formato:MM/AA</DateFormat>
-            </InputWrap>
-            <InputWrap $width="50%">
-              <InputForm
-                formik={formik}
-                id="cvv"
-                isFocused={isFocused}
-                setIsFocused={setIsFocused}
-                composeEventHandlers={composeEventHandlers}
-                touched={formik.touched.cvv}
-                error={formik.errors.cvv}
-              >
-                Codigo de seguridad
-              </InputForm>
-            </InputWrap>
-          </InputWrap>
-          <ButtonSubmit value="Agregar tarjeta " />
-        </FormWrapper>
-      )}
-    </Formik>
-  );
+    <ReusableForm
+      title='Añadir tarjeta'
+      text='Tarjeta añadida'
+      textOnLoad='Agregando tarjeta...'
+      onSubmitProp={onSubmit}
+      initialValuesProp={initialValues}
+      validationSchemaProp={validationSchema}
+      error={error}
+      isReady={isReady}
+      errorMsg='¡Ups! Algo salió mal.'
+      enableReinitialize>
+      <FormControl required name='card_number' title='Número de tarjeta' />
+      <FormControl required name='cardholder_name' title='Nombre del titular' />
+      <FormControl short required name='type' title='Tipo de tarjeta' />
+      <FormControl
+        short
+        required
+        name='bank_branding'
+        title='Banco proveedor'
+      />
+
+      <FormControl
+        short
+        required
+        name='expiration_date'
+        title='Fecha de expiración'
+      />
+      <FormControl short required name='cvv' title='Código de seguridad' />
+    </ReusableForm>
+  )
 }
 
-export default AddCardsForm;
-
+export default AddCardsForm

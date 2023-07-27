@@ -36,10 +36,7 @@ export const initialState = {
   cvu: "",
   alias: "",
   valid: false,
-  history: {
-    id: 0,
-    valid: false
-  },
+  transactions: [],
   cards: []
 >>>>>>> 14bff1a (transfer money into accounts)
 }
@@ -58,7 +55,7 @@ export const authSlice = createSlice({
       state.cvu = action.payload.data.cvu
       state.alias = action.payload.data.alias
       state.valid = action.payload.data.valid
-      state.history = action.payload.data.history
+      state.transactions = action.payload.data.transactions
       state.cards = action.payload.data.cards
     },
     updateAuth: (state, action) => {
