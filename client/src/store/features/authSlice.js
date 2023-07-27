@@ -1,7 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit"
 
 export const initialState = {
-  auth: false,
   user: {
     id: 0,
     address: "",
@@ -18,16 +17,19 @@ export const initialState = {
     first_name: "",
     last_name: ""
   },
-  cards: [],
-  history: {
-    id: 0
-  },
-  type: "",
-  date_created: "",
-  balance: 0,
   id: 0,
   email: "",
-  password: ""
+  password: "",
+  balance: 0,
+  date_created: "",
+  cvu: "",
+  alias: "",
+  valid: false,
+  history: {
+    id: 0,
+    valid: false
+  },
+  cards: []
 }
 
 export const authSlice = createSlice({
@@ -35,32 +37,17 @@ export const authSlice = createSlice({
   initialState,
   reducers: {
     setAuth: (state, action) => {
-      ;(state.user = {
-        id: action.payload.data.id,
-        address: action.payload.data.user.address,
-        local_address: action.payload.data.user.local_address,
-        postal_code: action.payload.data.user.postal_code,
-        phone_number: action.payload.data.user.phone_number,
-        profile_picture: action.payload.data.user.profile_picture,
-        country: action.payload.data.user.country,
-        document_type: action.payload.data.user.document_type,
-        document_number: action.payload.data.user.document_number,
-        birthdate: action.payload.data.user.birthdate,
-        verified: action.payload.data.user.verified,
-        verified_phone: action.payload.data.user.verified_phone,
-        first_name: action.payload.data.user.first_name,
-        last_name: action.payload.data.user.last_name
-      }),
-        (state.cards = action.payload.data.cards),
-        (state.history = {
-          id: action.payload.data.history.id
-        }),
-        (state.type = action.payload.data.type),
-        (state.date_created = action.payload.data.date_created),
-        (state.balance = action.payload.data.balance),
-        (state.id = action.payload.data.id),
-        (state.email = action.payload.data.email),
-        (state.password = action.payload.data.password)
+      state.user = action.payload.data.user
+      state.id = action.payload.id
+      state.email = action.payload.data.email
+      state.password = action.payload.data.password
+      state.balance = action.payload.data.balance
+      state.date_created = action.payload.data.date_created
+      state.cvu = action.payload.data.cvu
+      state.alias = action.payload.data.alias
+      state.valid = action.payload.data.valid
+      state.history = action.payload.data.history
+      state.cards = action.payload.data.cards
     },
     updateAuth: (state, action) => {
       // state.auth.push({
@@ -88,12 +75,12 @@ export const authSlice = createSlice({
     setAuthUserId: (state, action) => {
       state.id = action.payload.user.id
     },
-    logout: () => {//placeholder porque borraron el logout del usuario
-
+    logout: () => {
+      //placeholder porque borraron el logout del usuario
     }
   }
-});
+})
 
 export default authSlice.reducer
 
-export const { setAuth, updateAuth, setAuthUserId, logout } = authSlice.actions;
+export const { setAuth, updateAuth, setAuthUserId, logout } = authSlice.actions

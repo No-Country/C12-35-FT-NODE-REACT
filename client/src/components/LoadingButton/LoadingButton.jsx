@@ -8,7 +8,14 @@ import {
 } from "./style"
 import { BsFillCheckCircleFill } from "react-icons/bs"
 
-export default function LoadingButton({ title, text, textOnLoad }) {
+export default function LoadingButton({
+  title,
+  text,
+  textOnLoad,
+  type,
+  error,
+  errorMsg
+}) {
   //states
   const [isLoading, setIsLoading] = useState(false)
   const [isLoaded, setIsLoaded] = useState(false)
@@ -24,24 +31,24 @@ export default function LoadingButton({ title, text, textOnLoad }) {
 
   return (
     <LoadingButtonWrapper
-      type='button'
+      type={type}
       className={`${isLoading ? "loading" : ""}`}
       onClick={handleSubmit}
-      disabled={isLoaded}>
+      disabled={isLoaded}
+      error={error}>
       {isLoading ? (
         <>
-          {/* <CheckIcon show={!isLoading && true}>
-            <BsFillCheckCircleFill />
-          </CheckIcon> */}
           <LoadingText>{textOnLoad}</LoadingText>
           <LoadingSlider />
         </>
       ) : (
         <>
-          {isLoaded ? (
+          {isLoaded && !error ? (
             <TextOnLoad show={isLoaded && true}>
               {text} <BsFillCheckCircleFill />
             </TextOnLoad>
+          ) : isLoaded && error ? (
+            errorMsg
           ) : (
             title
           )}

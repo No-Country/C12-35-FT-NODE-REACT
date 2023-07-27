@@ -1,5 +1,6 @@
+import { LoadingButton } from "@/components"
 import { Formik } from "formik"
-import React from "react"
+import React, { useState } from "react"
 import { VerticalFlex } from "./style"
 
 export default function ReusableForm({
@@ -8,21 +9,29 @@ export default function ReusableForm({
   children,
   submitButton,
   submitButtonDisabled,
-  onSubmitProp
+  onSubmitProp,
+  isReady,
+  title,
+  text,
+  textOnLoad,
+  error,
+  errorMsg
 }) {
   //intial values
   const initialValues = {
     ...initialValuesProp
   }
 
+  //states
+  const [isReadyState, setIsReadyState] = useState(isReady)
+
   //validation schema
   const validationSchema = validationSchemaProp
 
   //handler
   const onSubmit = (values) => {
-    onSubmitProp(values)
+    onSubmitProp(values, setIsReadyState)
   }
-
   return (
     <Formik
       onSubmit={onSubmit}
@@ -34,7 +43,21 @@ export default function ReusableForm({
             {React.Children.map(children, (child) => {
               return React.cloneElement(child, { formik })
             })}
-            {!formik?.isSubmitting ? submitButton : submitButtonDisabled}
+            {!formik?.isSubmitting
+              ? submitButton
+              : submitButtonDisabled
+              ? isReadyState
+              : null}
+            {isReadyState && (
+              <LoadingButton
+                error={error}
+                errorMsg={errorMsg}
+                type='submit'
+                title={title}
+                text={text}
+                textOnLoad={textOnLoad}
+              />
+            )}
           </VerticalFlex>
         </form>
       )}

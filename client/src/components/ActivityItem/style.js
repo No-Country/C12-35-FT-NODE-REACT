@@ -1,7 +1,7 @@
 import styled from "styled-components"
 const typeTransfer = {
-  transfer: { width: "50%", color: "var(--secondary)" },
-  send: { width: "65%", color: "var(--primary)" }
+  TRANSFER: { width: "50%", color: "var(--secondary)" },
+  SEND: { width: "65%", color: "var(--primary)" }
 }
 
 export const ActivityItemWrap = styled.li`
@@ -73,7 +73,7 @@ export const Date = styled.span`
 export const Amount = styled.span`
   font-size: 14px;
   color: ${({ type }) =>
-    type === "send" ? typeTransfer[type].color : "var(--text-primary)"};
+    type === "SEND" ? typeTransfer[type].color : "var(--text-primary)"};
 `
 export const RightData = styled.div`
   display: flex;

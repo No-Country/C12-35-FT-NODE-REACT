@@ -1,13 +1,13 @@
 const useFormatInfo = () => {
   const formatterSign = (value, type) => {
     value = new Intl.NumberFormat().format(value)
-    if (type === "transfer") return `-$${value}`
+    if (type === "TRANSFER") return `-$${value}`
     return `$${value}`
   }
 
   const formatterDate = (date) => {
     const currentDate = new Date()
-    currentDate.setHours(currentDate.getHours() - 3)
+    currentDate.setHours(currentDate.getHours())
     const dateActivity = new Date(date)
     const seconds = Math.floor((currentDate - dateActivity) / 1000)
     const minutes = Math.floor(seconds / 60)
