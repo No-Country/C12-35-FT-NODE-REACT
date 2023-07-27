@@ -7,7 +7,17 @@ const router = Router();
 
 router.get("/", ctrl.getAccounts);
 
+<<<<<<< HEAD
 router.get("/me", globalMiddleware.findAccount, globalMiddleware.checkAccountValidity, ctrl.getAccountById);
+=======
+router.get(
+  "/:id",
+  middlewares.encryptPassword,
+  globalMiddleware.findAccount,
+  globalMiddleware.checkAccountValidity,
+  ctrl.getAccountById
+);
+>>>>>>> ab08715 (fix: get account)
 
 router.post("/info", ctrl.accountInfo);
 
