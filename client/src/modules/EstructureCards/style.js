@@ -55,7 +55,8 @@ export const Content = styled.div`
 export const Additions = styled.div`
   padding: 20px 10px;
   border-radius: var(--radius-cards);
-  background-color: var(--background-card);
+  background-color: ${({ $containsBg }) =>
+    $containsBg ? "var(--background-card)" : null};
   display: flex;
   flex-direction: column;
   gap: 10px;
