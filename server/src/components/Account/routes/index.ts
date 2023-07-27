@@ -8,6 +8,7 @@ const router = Router();
 router.get("/", ctrl.getAccounts);
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 router.get("/me", globalMiddleware.findAccount, globalMiddleware.checkAccountValidity, ctrl.getAccountById);
 =======
 router.get(
@@ -18,6 +19,9 @@ router.get(
   ctrl.getAccountById
 );
 >>>>>>> ab08715 (fix: get account)
+=======
+router.get("/:id", globalMiddleware.findAccount, globalMiddleware.checkAccountValidity, ctrl.getAccountById);
+>>>>>>> fa59238 (fix: account error)
 
 router.post("/info", ctrl.accountInfo);
 
