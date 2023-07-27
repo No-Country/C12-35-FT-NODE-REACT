@@ -15,8 +15,7 @@ function AddCardsForm() {
     cardholder_name: "",
     expiration_date: "",
     cvv: "",
-    type: "",
-    bank_branding: ""
+    type: ""
   }
 
   //validation schema

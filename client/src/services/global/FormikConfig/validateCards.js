@@ -31,8 +31,7 @@ export const validateCards = () => {
       cvv: Yup.string()
         .matches(/^\d{3}$/, "CVV no válido") // Exactamente 3 dígitos numéricos
         .required("El CVV es obligatorio"),
-      type: Yup.string().required("El tipo de tarjeta es obligatorio"),
-      bank_branding: Yup.string().required("El proveedor es obligatorio")
+      type: Yup.string().required("El tipo de tarjeta es obligatorio")
     })
   }
 }
