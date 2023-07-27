@@ -9,29 +9,33 @@ router.get("/", ctrl.getAccounts);
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 router.get("/me", globalMiddleware.findAccount, globalMiddleware.checkAccountValidity, ctrl.getAccountById);
 =======
 router.get(
   "/:id",
   middlewares.encryptPassword,
+=======
+router.get(
+  "/me",
+  globalMiddleware.ensureToken,
+  globalMiddleware.validateToken,
+>>>>>>> af02f68 (.)
   globalMiddleware.findAccount,
   globalMiddleware.checkAccountValidity,
   ctrl.getAccountById
 );
+<<<<<<< HEAD
 >>>>>>> ab08715 (fix: get account)
 =======
 router.get("/:id", globalMiddleware.findAccount, globalMiddleware.checkAccountValidity, ctrl.getAccountById);
 >>>>>>> fa59238 (fix: account error)
+=======
+>>>>>>> af02f68 (.)
 
 router.post("/info", ctrl.accountInfo);
 
-router.post(
-  "/",
-  middlewares.validateDuplicate,
-  middlewares.encryptPassword,
-  globalMiddleware.checkAccountValidity,
-  ctrl.createAccount
-);
+router.post("/", middlewares.validateDuplicate, middlewares.encryptPassword, ctrl.createAccount);
 
 router.put(
   "/me",
