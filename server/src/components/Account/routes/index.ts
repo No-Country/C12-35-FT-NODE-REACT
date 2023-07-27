@@ -8,8 +8,8 @@ const router = Router();
 router.get("/", ctrl.getAccounts);
 
 router.get(
-  "/:id",
-  middlewares.encryptPassword,
+  "/me",
+  middlewares.validateDuplicate,
   globalMiddleware.findAccount,
   globalMiddleware.checkAccountValidity,
   ctrl.getAccountById
