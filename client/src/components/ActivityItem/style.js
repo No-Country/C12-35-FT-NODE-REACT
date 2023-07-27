@@ -1,7 +1,7 @@
 import styled from "styled-components"
 const typeTransferIcon = {
-  TRANSFER: { width: "50%", color: "var(--primary)" },
-  SEND: { width: "65%", color: "var(--secondary)" }
+  TRANSFER: { width: "65%", color: "var(--primary)" },
+  SEND: { width: "50%", color: "var(--secondary)" }
 }
 
 const typeTransferText = {
@@ -80,7 +80,7 @@ export const Date = styled.span`
 export const Amount = styled.span`
   font-size: 14px;
   color: ${({ type }) =>
-    type === "SEND" ? typeTransferText[type] : "var(--text-primary)"};
+    type === "SEND" ? typeTransferText[type] : "var(--primary)"};
 `
 export const RightData = styled.div`
   display: flex;
