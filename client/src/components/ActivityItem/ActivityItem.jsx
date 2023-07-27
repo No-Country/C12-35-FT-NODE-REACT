@@ -25,7 +25,7 @@ export default function ActivityItem({
   //constants
   const messageTransfer = {
     TRANSFER: "Recibiste una transferencia",
-    SEND: "Enviaste dinero"
+    SEND: "Realizaste una transferencia"
   }
 
   const pronounTransfer = {
@@ -34,8 +34,8 @@ export default function ActivityItem({
   }
 
   const iconTransfer = {
-    TRANSFER: MoneyBillTransfer(),
-    SEND: MoneyBillAddsFund()
+    TRANSFER: MoneyBillAddsFund(),
+    SEND: MoneyBillTransfer()
   }
 
   return (

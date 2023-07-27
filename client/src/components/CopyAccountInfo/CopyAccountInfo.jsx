@@ -1,7 +1,7 @@
 import React from "react"
-import { Copy, Title, Value, Wrap, Wrapper } from "./style"
 import { IoCopy } from "react-icons/io5"
-import { ToastContainer, toast } from "react-toastify"
+import { toast } from "react-toastify"
+import { Copy, Title, Value, Wrap, Wrapper } from "./style"
 import { toastConfig } from "./toastConfig"
 
 export default function CopyAccountInfo({ title, value }) {
