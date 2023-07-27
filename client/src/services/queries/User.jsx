@@ -87,25 +87,3 @@ export const verifyUser = createAsyncThunk(
     }
   }
 )
-
-export const add = createAsyncThunk(
-  "post/transactions",
-  async (values, { dispatch }) => {
-    const accessToken = Cookies.get("accessToken")
-    try {
-      const response = await axios.post(addMoney, values, {
-        headers: {
-          "access-token": accessToken
-        }
-      })
-
-      const data = await response.data
-
-      dispatch(setCookiesAndRedirect())
-      return data
-    } catch (error) {
-      dispatch(setCookiesAndRedirect())
-      return error
-    }
-  }
-)

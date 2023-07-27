@@ -10,7 +10,7 @@ import {
   MdOutlineAccountBalanceWallet,
   MdOutlinePermContactCalendar
 } from "react-icons/md";
-import { add } from "@@/queries/User";
+import { sendMeMoney } from "@@/queries/Transaction.jsx";
 import { useDispatch } from "react-redux";
 
 export default function AddMoney() {
@@ -134,8 +134,9 @@ export default function AddMoney() {
 
   const addMoney = () => {
     setStep((step + 1));
-    dispatch(add({
-      'amount': parseInt(currAmount)
+    dispatch(sendMeMoney({
+      'amount': parseInt(currAmount),
+      'currency': 'ARS'
     }));
   }
 
