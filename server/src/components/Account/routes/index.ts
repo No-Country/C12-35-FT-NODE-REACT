@@ -7,14 +7,7 @@ const router = Router();
 
 router.get("/", ctrl.getAccounts);
 
-router.get(
-  "/me",
-  middlewares.validateDuplicate,
-  middlewares.encryptPassword,
-  globalMiddleware.findAccount,
-  globalMiddleware.checkAccountValidity,
-  ctrl.getAccountById
-);
+router.get("/me", globalMiddleware.findAccount, globalMiddleware.checkAccountValidity, ctrl.getAccountById);
 
 router.post("/info", ctrl.accountInfo);
 
@@ -27,12 +20,11 @@ router.post(
 );
 
 router.put(
-  "/:id",
+  "/me",
   globalMiddleware.ensureToken,
   globalMiddleware.validateToken,
   globalMiddleware.findAccount,
   globalMiddleware.checkAccountValidity,
-  middlewares.encryptPassword,
   ctrl.updateAccount
 );
 
