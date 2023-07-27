@@ -1,11 +1,10 @@
 import { Router } from "express";
-import userRouter from "../components/users/routes";
-import accountsRouter from "../components/accounts/routes";
-import transactionRouter from "../components/transactions/routes";
-import transactionHistoryRouter from "../components/transactionHistories/routes";
-import paymentGatewayRouter from "../components/paymentGateways/routes";
-import cardRouter from "../components/cards/routes";
-import authRoutes from "../services/Auth/routes";
+import userRouter from "../components/User/routes";
+import accountsRouter from "../components/Account/routes";
+import transactionRouter from "../components/Transaction/routes";
+import transactionHistoryRouter from "../components/History/routes";
+import paymentGatewayRouter from "../components/PaymentGateway/routes";
+import cardRouter from "../components/Card/routes";
 import LoginRoutes from "../services/Login/routes";
 <<<<<<< HEAD
 <<<<<<< HEAD

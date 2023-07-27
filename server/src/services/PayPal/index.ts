@@ -24,7 +24,6 @@ class PayPalService {
   async createOrder(currency: string, amount: string) {
     try {
       const token = await this.getToken();
-      console.log(token);
       const headers = {
         "Content-Type": "application/json",
         Authorization: `Bearer ${token}`
