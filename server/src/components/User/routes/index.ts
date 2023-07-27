@@ -9,7 +9,7 @@ router.get("/", ctrl.getUsers);
 router.post("/", ctrl.createUser);
 
 router.put(
-  "/:id",
+  "/me",
   globalMiddleware.ensureToken,
   globalMiddleware.validateToken,
   globalMiddleware.findAccount,
@@ -17,15 +17,22 @@ router.put(
   ctrl.updateUser
 );
 
-router.delete(
-  "/:id",
+// router.delete(
+//   "/:id",
+//   globalMiddleware.ensureToken,
+//   globalMiddleware.validateToken,
+//   globalMiddleware.findAccount,
+//   globalMiddleware.checkAccountValidity,
+//   ctrl.deleteUser
+// );
+
+router.get(
+  "/me",
   globalMiddleware.ensureToken,
   globalMiddleware.validateToken,
   globalMiddleware.findAccount,
   globalMiddleware.checkAccountValidity,
-  ctrl.deleteUser
+  ctrl.getUserById
 );
-
-router.get("/:id", ctrl.getUserById);
 
 export default router;
