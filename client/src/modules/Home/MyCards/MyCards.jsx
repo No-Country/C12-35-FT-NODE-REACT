@@ -8,7 +8,7 @@ export default function MyCards() {
 
   return (
     <StyledMyCards>
-      <ShowMore little title='Tarjetas' link='/Cards' />
+      <ShowMore little title='Tarjetas' link='/cards' />
       <Carousel>
         <Card
           width='150px'
