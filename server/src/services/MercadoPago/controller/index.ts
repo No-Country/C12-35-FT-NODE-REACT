@@ -16,7 +16,6 @@ export default {
     if (payment.type === "payment") {
       try {
         const response = await MercadoPago.getPayment(payment["data.id"]);
-        console.log(response);
         res.status(200).json({ response });
       } catch (error: any) {
         res.status(404).json({ error: error.message });

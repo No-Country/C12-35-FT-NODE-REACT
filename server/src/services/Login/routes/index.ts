@@ -1,6 +1,6 @@
 import { Router } from "express";
 import EncrypService from "../../Encryp";
-import DBAccount from "../../../components/accounts/data";
+import DBAccount from "../../../components/Account/data";
 import AuthService from "../../Auth";
 
 const router = Router();

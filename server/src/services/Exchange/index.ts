@@ -10,7 +10,6 @@ class ExchangeService {
     try {
       if (dolar === "oficial") {
         const data = await getPrice();
-        console.log(data[1].casa);
         return data[1].casa;
       }
     } catch (err: any) {

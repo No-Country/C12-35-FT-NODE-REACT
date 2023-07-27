@@ -1,6 +1,4 @@
 import { AppDataSource } from "../DataSource/config";
-import { DBInterface } from "./interface";
-import { EntitySchema } from "typeorm";
 
 export default class DB {
   private entity: any;
@@ -44,7 +42,6 @@ export default class DB {
 
   async save(model: any) {
     try {
-      console.log(model);
       const newUser = AppDataSource.getRepository(this.entity).save(model);
       return newUser;
     } catch (error: any) {
