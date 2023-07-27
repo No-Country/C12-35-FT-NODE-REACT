@@ -1,20 +1,24 @@
-import React from "react";
-import { CardsSlider } from "@/modules";
-import { MyCardsWrapper, TitleWrap, Wrapper } from "./style";
-import { HeaderPageCard } from "@/components";
-import { Buttons } from "@/modules";
+import { Buttons, CardsSlider, EstructureCards } from "@/modules"
+import React from "react"
+import { BsFillCreditCard2BackFill } from "react-icons/bs"
+import { TitleWrap, Wrapper } from "./style"
 
 function Cards() {
   return (
-    <MyCardsWrapper>
-      <HeaderPageCard />
-      <Wrapper>
-        <TitleWrap>Tarjetas</TitleWrap>
-        <CardsSlider />
-      </Wrapper>
-      <Buttons />
-    </MyCardsWrapper>
-  );
+    <>
+      <EstructureCards
+        returnRoute='/app/'
+        icon={<BsFillCreditCard2BackFill />}
+        title='Mis tarjetas'
+        additions={<Buttons />}
+        noBackground>
+        <Wrapper>
+          <TitleWrap>Tarjetas</TitleWrap>
+          <CardsSlider />
+        </Wrapper>
+      </EstructureCards>
+    </>
+  )
 }
 
-export default Cards;
+export default Cards

@@ -1,5 +1,4 @@
 import { Account } from "../../Account/entities/Account.entity";
-import { History } from "../../../components/History/entities/History.entity";
 import { AppDataSource } from "../../../services/DataSource/config";
 import { Transaction } from "../entities/Transaction.entity";
 import TransactionService from "../services";
@@ -18,10 +17,11 @@ export default async (account: Account, amount: number) => {
     newTransaction.amount = amount;
     newTransaction.date = new Date();
     newTransaction.type = "SEND";
+    newTransaction.account = account;
 
     const transaction = await TransactionService.createTransaction(newTransaction);
 
-    await AppDataSource.createQueryBuilder().relation(History, "transactions").of(account.id).add(transaction);
+    await AppDataSource.createQueryBuilder().relation(Account, "transactions").of(account.id).add(transaction);
 
     return accountUpdated;
   } catch (error: any) {

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { BackArrow } from './styles';
 import { useNavigate } from 'react-router-dom';
-import { UserTool, AmountCard } from "@/components"
+import { UserTool, AmountCard, AddSuccess } from "@/components"
 import { EstructureCards } from '@/modules';
 import { FaUserCircle } from "react-icons/fa";
 import { useSelector } from "react-redux";
@@ -99,7 +99,10 @@ export default function AddMoney() {
                   }}
                 />;
       case 3:
-        return 'Resultado de la operación';
+        return <AddSuccess
+                  title='¡Listo!'
+                  subtitle='Ingresaste dinero a tu cuenta.'
+                />;
       default:
         return 'working ?';
     }
@@ -142,8 +145,8 @@ export default function AddMoney() {
 
   return (
     <div>
-        <BackArrow onClick={goBack}>{'<-'}</BackArrow>
-        {step != 2 ? <EstructureCards 
+        {step < 2 ? <EstructureCards
+          onClick={goBack}
           icon={<FaUserCircle />}
           title={getTitle(step)}
         >

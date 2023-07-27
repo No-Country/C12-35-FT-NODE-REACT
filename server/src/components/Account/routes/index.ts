@@ -9,7 +9,8 @@ router.get("/", ctrl.getAccounts);
 
 router.get(
   "/me",
-  middlewares.validateDuplicate,
+  globalMiddleware.ensureToken,
+  globalMiddleware.validateToken,
   globalMiddleware.findAccount,
   globalMiddleware.checkAccountValidity,
   ctrl.getAccountById
@@ -21,16 +22,18 @@ router.post(
   "/",
   middlewares.validateDuplicate,
   middlewares.encryptPassword,
-  globalMiddleware.checkAccountValidity,
+  middlewares.validateEmail,
   ctrl.createAccount
 );
 
 router.put(
-  "/:id",
+  "/me",
   globalMiddleware.ensureToken,
   globalMiddleware.validateToken,
   globalMiddleware.findAccount,
   globalMiddleware.checkAccountValidity,
+  middlewares.validateEmail,
+  middlewares.validateDuplicate,
   middlewares.encryptPassword,
   ctrl.updateAccount
 );

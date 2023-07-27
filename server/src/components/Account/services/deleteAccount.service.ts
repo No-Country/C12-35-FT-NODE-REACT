@@ -1,7 +1,6 @@
 import { AppDataSource } from "../../../services/DataSource/config";
 import { Account } from "../entities/Account.entity";
 import { User } from "../../../components/User/entities/User.entity";
-import { History } from "../../../components/History/entities/History.entity";
 
 export default async (id: number) => {
   await AppDataSource.createQueryBuilder()

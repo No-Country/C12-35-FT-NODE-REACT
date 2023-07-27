@@ -6,7 +6,7 @@ export default async (data: any): Promise<Account> => {
     const account = await AppDataSource.getRepository(Account).findOne({
       where: { ...data },
       relations: {
-        history: true,
+        transactions: true,
         cards: true,
         user: true
       }

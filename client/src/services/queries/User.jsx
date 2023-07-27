@@ -9,7 +9,6 @@ const { login, register, verify, addMoney } = User
 export const setCookiesAndRedirect = createAsyncThunk(
   "set/cookies",
   ({ accessTokenValue, id }) => {
-    console.log({ accessTokenValue, id })
     Cookies.set("accessToken", accessTokenValue, { expires: 1, path: "/" })
     Cookies.set("userId", id)
   }
@@ -39,7 +38,6 @@ export const loginUser = createAsyncThunk(
       const response = await axios.post(login, values)
 
       const data = await response.data
-      console.log(data)
       dispatch(setAuthUserId(data))
       dispatch(
         setCookiesAndRedirect({
@@ -68,9 +66,8 @@ export const verifyUser = createAsyncThunk(
   "get/accounts",
   async (_, { dispatch }) => {
     const accessToken = Cookies.get("accessToken")
-    const id = Cookies.get("userId")
     try {
-      const response = await axios.get(verify + id, {
+      const response = await axios.get(verify, {
         headers: {
           "access-token": accessToken
         }
@@ -78,8 +75,6 @@ export const verifyUser = createAsyncThunk(
 
       const data = await response.data
       dispatch(setAuth(data))
-
-      console.log({ dataVerify: data })
 
       return data
     } catch (error) {
