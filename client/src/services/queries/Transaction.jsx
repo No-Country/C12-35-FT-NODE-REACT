@@ -3,12 +3,21 @@ import axios from "axios"
 import Cookies from "js-cookie"
 import { Transaction } from "@@/config/endpoints"
 
+<<<<<<< HEAD
 const { send, verify, create } = Transaction
 
 //functions
 
 export const addMoney = createAsyncThunk(
   "post/transactions",
+=======
+const { create, send, verify, history } = Transaction
+
+//functions
+
+export const sendMeMoney = createAsyncThunk(
+  "post/transactions/add",
+>>>>>>> 61588d3 (trying to fix add money)
   async (values, { dispatch }) => {
     const accessToken = Cookies.get("accessToken")
     try {
@@ -26,8 +35,13 @@ export const addMoney = createAsyncThunk(
   }
 )
 
+<<<<<<< HEAD
 export const sendTransfer = createAsyncThunk(
   "post/transactions",
+=======
+export const createTransaction = createAsyncThunk(
+  "post/transactions/add",
+>>>>>>> 61588d3 (trying to fix add money)
   async (values, { dispatch }) => {
     const accessToken = Cookies.get("accessToken")
     try {
