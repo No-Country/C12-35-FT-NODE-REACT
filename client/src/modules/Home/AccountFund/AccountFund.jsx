@@ -4,7 +4,6 @@ import { DetailFund, ModalDetailAccount } from "@/components"
 
 function AccountFund() {
   const userData = useSelector((state) => state.auth)
-  console.log(userData?.balance)
   return (
     <Wrapper>
       <Wrap>

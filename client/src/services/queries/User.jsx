@@ -12,7 +12,6 @@ export const setCookiesAndRedirect = createAsyncThunk(
     console.log({ accessTokenValue, id })
     Cookies.set("accessToken", accessTokenValue, { expires: 1, path: "/" })
     Cookies.set("userId", id)
-    return location.replace("/app/")
   }
 )
 
@@ -91,7 +90,7 @@ export const verifyUser = createAsyncThunk(
 
 export const add = createAsyncThunk(
   "post/transactions",
-  async (values, {dispatch }) => {
+  async (values, { dispatch }) => {
     const accessToken = Cookies.get("accessToken")
     try {
       const response = await axios.post(addMoney, values, {

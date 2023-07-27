@@ -32,6 +32,9 @@ export default function TransferInto({ formik }) {
 
   //onsubmit handler
   const onSubmit = (values) => {
+    const { identifier } = values
+    values.identifier = identifier.replace(/\./g, "-")
+
     navigate(`${values?.identifier}`)
   }
 
