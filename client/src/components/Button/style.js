@@ -1,23 +1,27 @@
-import styled from "styled-components"
+import styled from "styled-components";
 
 const bgColors = {
   $primary: "var(--primary)",
   $secondary: "var(--background-card)",
-  $primaryInverse: "var(--primary)"
-}
+  $primaryInverse: "var(--primary)",
+};
 
 const bgDisabled = {
   $primary: "var(--primary-opacity)",
   $secondary: "var(--background-card)",
-  $primaryInverse: "var(--primary-opacity)"
-}
+  $primaryInverse: "var(--primary-opacity)",
+};
 
 const textColors = {
   $primary: "var(--primary)",
   $secondary: "var(--primary)",
   null: "var(--primary)",
-  $primaryInverse: "var(--text-tertiary)"
-}
+  $primaryInverse: "var(--text-tertiary)",
+};
+
+const widthStyles = {
+  $primaryInverse: "100%",
+};
 
 export const ButtonWrapper = styled.button`
   padding: 12px 50px;
@@ -29,8 +33,10 @@ export const ButtonWrapper = styled.button`
   color: ${({ typeStyle }) =>
     textColors[typeStyle] || "var(--primary-opacity)"};
 
+  width: ${({ typeStyle }) => widthStyles[typeStyle] || null};
+
   &:disabled {
     background-color: ${({ typeStyle }) =>
       bgDisabled[typeStyle] || "var(--primary-opacity)"};
   }
-`
+`;
