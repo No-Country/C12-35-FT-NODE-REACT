@@ -4,6 +4,11 @@ import { Field } from "formik"
 export const FormControlWrapper = styled.div`
   position: relative;
   margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  width: ${({ $short }) => ($short ? "calc(50% - 20px)" : "100%")};
+  align-items: flex-start;
+  flex-grow: 1;
 `
 
 export const CustomField = styled(Field).attrs({

@@ -6,10 +6,13 @@ import {
   FormControlWrapper
 } from "./style"
 
-export default function FormControl({ name, title, formik, required }) {
+export default function FormControl({ name, title, formik, required, short }) {
+  const isShort = short ? true : false
   return (
-    <FormControlWrapper>
+    <FormControlWrapper $short={isShort}>
       <CustomField
+        className={isShort ? "short" : null}
+        $short={isShort}
         required={required}
         error={formik?.errors[name] && formik?.touched[name]}
         name={name}
