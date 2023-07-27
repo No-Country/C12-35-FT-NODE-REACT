@@ -1,4 +1,4 @@
-import { AuthRequire, RejectIsAuthenticated } from "@/layouts"
+import { AuthRequire, RejectIsAuthenticated } from "@/layouts";
 import {
   Account,
   Home,
@@ -9,11 +9,12 @@ import {
   TransferInto,
   TransactionAmount,
   AddCard,
-  Cards
-} from "@/pages"
-import React from "react"
-import { Route, Routes } from "react-router-dom"
-import { Main, MainContainer } from "./style"
+  Cards,
+  Error
+} from "@/pages";
+import React from "react";
+import { Route, Routes } from "react-router-dom";
+import { Main, MainContainer } from "./style";
 
 const AppRoutes = () => {
   return (
@@ -24,21 +25,21 @@ const AppRoutes = () => {
           <Route path="/" element={<Landing />} />
 
           {/* Error routes */}
-          <Route path="*" element={<div>ERROR PAGE</div>} />
-                                   
+          <Route path="*" element={<Error />} />
+
           {/* Auth required routes */}
-          <Route path='/app/' element={<AuthRequire />}>
+          <Route path="/app/" element={<AuthRequire />}>
             <Route index element={<Home />} />
-            <Route path='profile' element={<Profile />} />
-            <Route path='add-money' element={<AddMoney />} />
-            <Route path='transf' element={<TransferMoney />} />
-            <Route path='transf/int' element={<TransferInto />} />
+            <Route path="profile" element={<Profile />} />
+            <Route path="add-money" element={<AddMoney />} />
+            <Route path="transf" element={<TransferMoney />} />
+            <Route path="transf/int" element={<TransferInto />} />
             <Route
-              path='transf/int/:identifier'
+              path="transf/int/:identifier"
               element={<TransactionAmount />}
             />
-            <Route path="cards" element={<Cards />} />            
-            <Route path="cards/addCard" element={<AddCard />} />   
+            <Route path="cards" element={<Cards />} />
+            <Route path="cards/addCard" element={<AddCard />} />
           </Route>
 
           {/* Not passing if authenticated routes */}
@@ -52,4 +53,4 @@ const AppRoutes = () => {
   );
 };
 
-export default AppRoutes
+export default AppRoutes;
