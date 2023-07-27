@@ -17,7 +17,7 @@ export default async (account: Account, amount: number) => {
     const newTransaction = new Transaction();
     newTransaction.amount = amount;
     newTransaction.date = new Date();
-    newTransaction.type = "RECEIVE";
+    newTransaction.type = "TRANSFER";
 
     const transaction = await TransactionService.createTransaction(newTransaction);
 
