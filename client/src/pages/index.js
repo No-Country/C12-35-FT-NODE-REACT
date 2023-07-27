@@ -43,9 +43,13 @@ export * from "./AddMoney"
 export * from "./TransactionAmount"
 export * from "./TransferInto"
 export * from "./TransferMoney"
+<<<<<<< HEAD
 >>>>>>> 1751b2b (minor fixes and changes)
 =======
 export * from "./TransactionAmount"
 export * from "./TransferInto"
 export * from "./TransferMoney"
 >>>>>>> 43b05c8 (cards implement for add funds)
+=======
+export * from "./Error"
+>>>>>>> 6b213c4 (Error page)

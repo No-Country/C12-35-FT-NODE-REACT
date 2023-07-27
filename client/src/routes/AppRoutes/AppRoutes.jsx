@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 import { AuthRequire, RejectIsAuthenticated } from "@/layouts"
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -7,6 +8,9 @@ import { Account, Home, Landing, Profile, TransferMoney } from "@/pages"
 import { Account, Home, Landing, Profile, AddMoney } from "@/pages"
 >>>>>>> a2b13d5 (first version addMoney)
 =======
+=======
+import { AuthRequire, RejectIsAuthenticated } from "@/layouts";
+>>>>>>> 6b213c4 (Error page)
 import {
   Account,
   Home,
@@ -20,6 +24,7 @@ import {
 =======
   TransactionAmount,
   AddCard,
+<<<<<<< HEAD
 <<<<<<< HEAD
   Cards
 >>>>>>> fef9757 (Update AppRoutes.jsx)
@@ -47,6 +52,14 @@ import { AddCardsForm } from "@/modules";
 >>>>>>> 4f6a669 (adding add cards form)
 =======
 >>>>>>> 5211a70 (added validations)
+=======
+  Cards,
+  Error
+} from "@/pages";
+import React from "react";
+import { Route, Routes } from "react-router-dom";
+import { Main, MainContainer } from "./style";
+>>>>>>> 6b213c4 (Error page)
 
 const AppRoutes = () => {
   return (
@@ -59,14 +72,19 @@ const AppRoutes = () => {
           {/* Error routes */}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
           <Route path='*' element={<Landing />} />
 =======
           <Route path='*' element={<div>ERROR PAGE</div>} />
 >>>>>>> 43b05c8 (cards implement for add funds)
+=======
+          <Route path="*" element={<Error />} />
+>>>>>>> 6b213c4 (Error page)
 
           {/* Auth required routes */}
-          <Route path='/app/' element={<AuthRequire />}>
+          <Route path="/app/" element={<AuthRequire />}>
             <Route index element={<Home />} />
+<<<<<<< HEAD
             <Route path='profile' element={<Profile />} />
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -91,10 +109,17 @@ const AppRoutes = () => {
 >>>>>>> 4ce0818 (page my Cards finished)
 =======
             <Route path='transf/int' element={<TransferInto />} />
+=======
+            <Route path="profile" element={<Profile />} />
+            <Route path="add-money" element={<AddMoney />} />
+            <Route path="transf" element={<TransferMoney />} />
+            <Route path="transf/int" element={<TransferInto />} />
+>>>>>>> 6b213c4 (Error page)
             <Route
-              path='transf/int/:identifier'
+              path="transf/int/:identifier"
               element={<TransactionAmount />}
             />
+<<<<<<< HEAD
 <<<<<<< HEAD
 >>>>>>> cf67f95 (transfer money (partial) +routes  & estructure cards reusables)
 =======
@@ -110,6 +135,10 @@ const AppRoutes = () => {
             <Route path='cards' element={<Cards />} />
             <Route path='cards/addCard' element={<AddCard />} />
 >>>>>>> 43b05c8 (cards implement for add funds)
+=======
+            <Route path="cards" element={<Cards />} />
+            <Route path="cards/addCard" element={<AddCard />} />
+>>>>>>> 6b213c4 (Error page)
           </Route>
 
           {/* Not passing if authenticated routes */}
@@ -124,7 +153,11 @@ const AppRoutes = () => {
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 export default AppRoutes
 =======
 export default AppRoutes;
 >>>>>>> 4ce0818 (page my Cards finished)
+=======
+export default AppRoutes;
+>>>>>>> 6b213c4 (Error page)

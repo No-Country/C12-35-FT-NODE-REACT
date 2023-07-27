@@ -1,5 +1,5 @@
-import React from "react"
-import { ButtonWrapper } from "./style"
+import React from "react";
+import { ButtonWrapper } from "./style";
 
 export default function Button({
   children,
@@ -8,16 +8,16 @@ export default function Button({
   primary,
   primaryInverse,
   disabled,
-  type
+  type,
 }) {
 <<<<<<< HEAD
 >>>>>>> cf67f95 (transfer money (partial) +routes  & estructure cards reusables)
 =======
 >>>>>>> 1751b2b (minor fixes and changes)
   //constants
-  const isSecondary = secondary ? true : false
-  const isPrimary = primary ? true : false
-  const isPrimaryInverse = primaryInverse ? true : false
+  const isSecondary = secondary ? true : false;
+  const isPrimary = primary ? true : false;
+  const isPrimaryInverse = primaryInverse ? true : false;
 
   return (
     <ButtonWrapper
@@ -32,12 +32,17 @@ export default function Button({
       }
       disabled={disabled}
       onClick={onClick}
-      type={type}>
+      type={type}
+    >
       {children}
     </ButtonWrapper>
+<<<<<<< HEAD
   )
 <<<<<<< HEAD
 >>>>>>> cf67f95 (transfer money (partial) +routes  & estructure cards reusables)
 =======
 >>>>>>> 1751b2b (minor fixes and changes)
+=======
+  );
+>>>>>>> 6b213c4 (Error page)
 }
