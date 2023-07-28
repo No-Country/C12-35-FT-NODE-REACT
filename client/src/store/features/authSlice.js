@@ -74,10 +74,23 @@ export const authSlice = createSlice({
     },
     logout: () => {
       //placeholder porque borraron el logout del usuario
+    },
+    incrementFunds: (state, action) => {
+      state.balance = state.balance + action.payload
+    },
+    decrementFunds: (state, action) => {
+      state.balance = state.balance - action.payload
     }
   }
 })
 
 export default authSlice.reducer
 
-export const { setAuth, updateAuth, setAuthUserId, logout } = authSlice.actions
+export const {
+  setAuth,
+  updateAuth,
+  setAuthUserId,
+  logout,
+  incrementFunds,
+  decrementFunds
+} = authSlice.actions

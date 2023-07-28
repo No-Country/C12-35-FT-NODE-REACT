@@ -12,20 +12,15 @@ import {
   RightData
 } from "./style"
 
-export default function ActivityItem({
-  type,
-  time,
-  id,
-  amount,
-  userDestination
-}) {
+export default function ActivityItem({ type, time, id, amount }) {
   //hooks
-  const { MoneyBillTransfer, MoneyBillAddsFund } = useIcons()
+  const { MoneyBillTransfer, MoneyBillAddsFund, MoneyBillTrendUp } = useIcons()
   const { formatterSign, formatterDate } = useFormatInfo()
   //constants
   const messageTransfer = {
     TRANSFER: "Recibiste una transferencia",
-    SEND: "Realizaste una transferencia"
+    SEND: "Realizaste una transferencia",
+    ADD: "Agregaste dinero a tu cuenta"
   }
 
   const pronounTransfer = {
@@ -35,7 +30,8 @@ export default function ActivityItem({
 
   const iconTransfer = {
     TRANSFER: MoneyBillAddsFund(),
-    SEND: MoneyBillTransfer()
+    SEND: MoneyBillTransfer(),
+    ADD: MoneyBillTrendUp()
   }
 
   return (
@@ -44,11 +40,6 @@ export default function ActivityItem({
         <IconActivity type={type}>{iconTransfer[type]}</IconActivity>
         <ActivityDetail>
           <span>{messageTransfer[type]}</span>
-          {/* el nombre del usuario que envio o recibio la transferencia, después
-          se va a cambiar por el nombre real de la api */}
-          {/* <span>
-            {pronounTransfer[type]} {userDestination}
-          </span> */}
         </ActivityDetail>
       </GroupDetail>
       <RightData>

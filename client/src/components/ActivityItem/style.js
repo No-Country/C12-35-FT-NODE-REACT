@@ -1,12 +1,14 @@
 import styled from "styled-components"
 const typeTransferIcon = {
   TRANSFER: { width: "65%", color: "var(--primary)" },
-  SEND: { width: "50%", color: "var(--secondary)" }
+  SEND: { width: "50%", color: "var(--secondary)" },
+  ADD: { width: "50%", color: "var(--text-primary)" }
 }
 
 const typeTransferText = {
   TRANSFER: "var(--primary)",
-  SEND: "var(--text-primary)"
+  SEND: "var(--text-primary)",
+  ADD: "var(--text-primary)"
 }
 
 export const ActivityItemWrap = styled.li`

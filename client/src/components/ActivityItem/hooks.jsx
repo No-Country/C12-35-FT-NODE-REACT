@@ -2,6 +2,7 @@ const useFormatInfo = () => {
   const formatterSign = (value, type) => {
     value = new Intl.NumberFormat().format(value)
     if (type === "SEND") return `-$${value}`
+    if (type === "ADD") return `+$${value}`
     return `$${value}`
   }
 

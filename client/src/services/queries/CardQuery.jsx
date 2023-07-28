@@ -10,7 +10,6 @@ const { addCard } = Cards
 export const AddCard = createAsyncThunk(
   "post/transactions",
   async (values, { dispatch }) => {
-    console.log(values)
     const accessToken = Cookies.get("accessToken")
     try {
       const response = await axios.post(addCard, values, {

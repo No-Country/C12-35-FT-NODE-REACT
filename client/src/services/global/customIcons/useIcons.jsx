@@ -1,5 +1,9 @@
 import React from "react"
-import { MoneyBillAddFundsIcon, MoneyBillTransferIcon } from "@/assets/icons"
+import {
+  MoneyBillAddFundsIcon,
+  MoneyBillTransferIcon,
+  MoneyBillTrendUpIcon
+} from "@/assets/icons"
 
 const useIcons = () => {
   const MoneyBillTransfer = () => {
@@ -10,7 +14,11 @@ const useIcons = () => {
     return <MoneyBillAddFundsIcon />
   }
 
-  return { MoneyBillTransfer, MoneyBillAddsFund }
+  const MoneyBillTrendUp = () => {
+    return <MoneyBillTrendUpIcon />
+  }
+
+  return { MoneyBillTransfer, MoneyBillAddsFund, MoneyBillTrendUp }
 }
 
 export default useIcons

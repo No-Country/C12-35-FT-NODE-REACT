@@ -7,7 +7,6 @@ import { useDispatch, useSelector } from "react-redux"
 export default function RecentActivity() {
   //redux
   const userData = useSelector((state) => state.auth)
-  console.log(userData)
   return (
     <Wrapper>
       <Wrap>
