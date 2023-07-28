@@ -3,9 +3,10 @@ import styled from "styled-components";
 export const CardWrapper = styled.div`
   display: flex;
   align-items: end;
-  width: 15rem;
+  justify-content:center;
+  width: 17rem;
   height: 9rem;
-  background-color: green;
+  background: var(--gradient-visa);
   margin-right: 2rem;
   border-radius: var(--radius-light);
   padding: ${(props) => (props.$padding ? props.$padding : "")};

@@ -1,21 +1,13 @@
 import React from "react";
-import { useEffect, useState } from "react";
 import { CardWrapper, CustomWrap, Img, Span, TextWrap } from "./style";
 import mastercard from "@/assets/images/logos/LogoMastercard.png";
+import visa from "@/assets/images/logos/LogoVisa.png";
 
-function CardPageMyCards() {
-  const [number, setNumber] = useState("");
-  const [lastFourDigits, setLastFourDigits] = useState("");
-
-  const numberCard = "1234567891234567";
+function CardPageMyCards({cards}) {
+  const {bank_branding, card_number, cardholder_name,expiration_date} = cards
   const expresionRegular = /(\d{4})(\d{4})(\d{4})(\d{4})/;
-  const fourDigits = numberCard.match(/\d{4}$/)[0];
-  const newNumber = numberCard.replace(expresionRegular, `xxxx xxxx xxxx `);
-
-  useEffect(() => {
-    setNumber(newNumber);
-    setLastFourDigits(fourDigits);
-  }, []);
+  const fourDigits = card_number.match(/\d{4}$/)[0];
+  const newNumber = card_number.replace(expresionRegular, `xxxx xxxx xxxx `);
 
   return (
     <CardWrapper $padding="1rem">
@@ -25,28 +17,28 @@ function CardPageMyCards() {
         $direction="column"
         $gap="1.3rem"
       >
-        <TextWrap $fontSize="1.4rem">
-          {number}
-          <Span style={{ fontSize: "1rem" }}>{lastFourDigits}</Span>
+        <TextWrap $fontSize="1.6rem">
+          {newNumber}
+          <Span style={{ fontSize: "1.3rem" }}>{fourDigits}</Span>
         </TextWrap>
         <CustomWrap $display="flex" $alignItems="center" $gap="1rem">
           <CustomWrap>
             <TextWrap $fontSize=".5rem">titular</TextWrap>
-            <TextWrap $fontSize=".6rem" $fontWeight="bold">
-              Julieta Carolina Sosa
+            <TextWrap $fontSize=".7rem" $fontWeight="bold">
+              {cardholder_name}
             </TextWrap>
           </CustomWrap>
           <CustomWrap>
             <TextWrap $fontSize=".5rem">Exp</TextWrap>
             <TextWrap $fontSize=".7rem" $fontWeight="bold">
-              10/28
+              {expiration_date}
             </TextWrap>
           </CustomWrap>
           <CustomWrap>
             <Img
               $width="2rem"
               $height="2rem"
-              src={mastercard}
+              src={bank_branding === "MASTERCAD" ? mastercard : visa}
               alt="mastercard logo"
             />
           </CustomWrap>
