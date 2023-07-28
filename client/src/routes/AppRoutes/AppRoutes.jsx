@@ -22,7 +22,7 @@ const AppRoutes = () => {
       <MainContainer>
         <Routes>
           {/* Public routes */}
-          <Route path="/" element={<Landing />} />
+          <Route path='/' element={<Landing />} />
 
           {/* Error routes */}
           <Route path="*" element={<Error />} />
@@ -30,6 +30,11 @@ const AppRoutes = () => {
           {/* Auth required routes */}
           <Route path="/app/" element={<AuthRequire />}>
             <Route index element={<Home />} />
+            <Route path='profile' element={<Profile />} />
+
+            {/* {Transfer money routes} */}
+            <Route path='transf' element={<TransferMoney />} />
+            <Route path='transf/int' element={<TransferInto />} />
             <Route path="profile" element={<Profile />} />
             <Route path="add-money" element={<AddMoney />} />
             <Route path="transf" element={<TransferMoney />} />
@@ -38,19 +43,30 @@ const AppRoutes = () => {
               path="transf/int/:identifier"
               element={<TransactionAmount />}
             />
+
+            {/* {Add money routes} */}
+            <Route path='addfunds' element={<AddMoney />} />
+            <Route path='addfunds/method' element={<AddMoneyMethod />} />
+            {/* <Route
+              path='transf/int/:identifier'
+              element={<TransactionAmount />}
+            /> */}
+
+            <Route path='cards' element={<Cards />} />
+            <Route path='cards/addCard' element={<AddCard />} />
             <Route path="cards" element={<Cards />} />
             <Route path="cards/addCard" element={<AddCard />} />
           </Route>
 
           {/* Not passing if authenticated routes */}
-          <Route path="/srv" element={<RejectIsAuthenticated />}>
-            <Route index element={<Account type="Register" />} />
-            <Route path="/srv/login" element={<Account type="Login" />} />
+          <Route path='/srv' element={<RejectIsAuthenticated />}>
+            <Route index element={<Account type='Register' />} />
+            <Route path='/srv/login' element={<Account type='Login' />} />
           </Route>
         </Routes>
       </MainContainer>
     </Main>
-  );
-};
+  )
+}
 
 export default AppRoutes;
