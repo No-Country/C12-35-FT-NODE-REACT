@@ -54,7 +54,8 @@ import { AddCardsForm } from "@/modules";
 >>>>>>> 5211a70 (added validations)
 =======
   Cards,
-  Error
+  Error,
+  AddMoneyMethod
 } from "@/pages";
 import React from "react";
 import { Route, Routes } from "react-router-dom";
