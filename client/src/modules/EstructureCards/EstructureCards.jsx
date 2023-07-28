@@ -18,7 +18,7 @@ export default function EstructureCards({
 
   return (
     <Wrapper>
-      <Link to={returnRoute}>
+      <Link to={returnRoute} onClick={onClick}>
         <BiLeftArrowAlt />
       </Link>
       <Wrap>

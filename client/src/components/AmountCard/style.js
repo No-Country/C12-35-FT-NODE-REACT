@@ -43,7 +43,9 @@ export const MiddleGroup = styled.div`
 `
 
 export const Amount = styled.input`
-  min-width: 10px;
+  text-align: center;
+  width: auto;
+  font-size: 30px;
   color: var(--white);
 `
 
