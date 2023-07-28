@@ -46,9 +46,9 @@ export default function ActivityItem({
           <span>{messageTransfer[type]}</span>
           {/* el nombre del usuario que envio o recibio la transferencia, después
           se va a cambiar por el nombre real de la api */}
-          <span>
+          {/* <span>
             {pronounTransfer[type]} {userDestination}
-          </span>
+          </span> */}
         </ActivityDetail>
       </GroupDetail>
       <RightData>
