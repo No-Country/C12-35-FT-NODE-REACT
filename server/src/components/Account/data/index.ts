@@ -10,11 +10,7 @@ class AccountDB extends DB {
   async getPopulateAccounts() {
     try {
       const users = await AppDataSource.getRepository(Account).find({
-        relations: {
-          history: true,
-          cards: true,
-          user: true
-        }
+        relations: ["cards", "user", "transactions"]
       });
       return users;
     } catch (error: any) {
@@ -26,11 +22,7 @@ class AccountDB extends DB {
     try {
       const user = await AppDataSource.getRepository(Account).findOne({
         where: { id: id },
-        relations: {
-          history: true,
-          cards: true,
-          user: true
-        }
+        relations: ["cards", "user", "transactions"]
       });
       return user;
     } catch (error: any) {
