@@ -1,5 +1,6 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 import React from "react"
 import { ManageFundsWrap, ManageFundsWrapper } from "./style"
 import { Button } from "@/components"
@@ -16,17 +17,24 @@ import { ManageFundsWrap, ManageFundsWrapper } from "./style";
 import { Button } from "@/components";
 import { useNavigate, Link } from "react-router-dom";
 >>>>>>> d8ceb41 (progressing)
+=======
+import React from "react"
+import { ManageFundsWrap, ManageFundsWrapper } from "./style"
+import { Button } from "@/components"
+import { useNavigate, Link } from "react-router-dom"
+>>>>>>> 43b05c8 (cards implement for add funds)
 
 export default function ManageFunds() {
-  const navigate = useNavigate();
+  const navigate = useNavigate()
 
   const addMoney = () => {
-    navigate('./add-money', {replace: false});
+    navigate("./add-money", { replace: false })
   }
 
   return (
     <ManageFundsWrapper>
       <ManageFundsWrap>
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -50,6 +58,11 @@ export default function ManageFunds() {
 >>>>>>> cf67f95 (transfer money (partial) +routes  & estructure cards reusables)
 =======
         <Button onClick={addMoney}>Ingresar dinero</Button>
+=======
+        <Link to='/app/addfunds'>
+          <Button>Ingresar dinero</Button>
+        </Link>
+>>>>>>> 43b05c8 (cards implement for add funds)
         <Link to='/app/transf'>
           <Button secondary>Transferir dinero</Button>
         </Link>

@@ -20,8 +20,13 @@ import {
 =======
   TransactionAmount,
   AddCard,
+<<<<<<< HEAD
   Cards
 >>>>>>> fef9757 (Update AppRoutes.jsx)
+=======
+  Cards,
+  AddMoneyMethod
+>>>>>>> 43b05c8 (cards implement for add funds)
 } from "@/pages"
 >>>>>>> cf67f95 (transfer money (partial) +routes  & estructure cards reusables)
 import React from "react"
@@ -49,17 +54,26 @@ const AppRoutes = () => {
       <MainContainer>
         <Routes>
           {/* Public routes */}
-          <Route path="/" element={<Landing />} />
+          <Route path='/' element={<Landing />} />
 
           {/* Error routes */}
 <<<<<<< HEAD
+<<<<<<< HEAD
           <Route path='*' element={<Landing />} />
+=======
+          <Route path='*' element={<div>ERROR PAGE</div>} />
+>>>>>>> 43b05c8 (cards implement for add funds)
 
           {/* Auth required routes */}
           <Route path='/app/' element={<AuthRequire />}>
             <Route index element={<Home />} />
             <Route path='profile' element={<Profile />} />
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+
+            {/* {Transfer money routes} */}
+>>>>>>> 43b05c8 (cards implement for add funds)
             <Route path='transf' element={<TransferMoney />} />
 <<<<<<< HEAD
 =======
@@ -81,19 +95,33 @@ const AppRoutes = () => {
               path='transf/int/:identifier'
               element={<TransactionAmount />}
             />
+<<<<<<< HEAD
 >>>>>>> cf67f95 (transfer money (partial) +routes  & estructure cards reusables)
+=======
+
+            {/* {Add money routes} */}
+            <Route path='addfunds' element={<AddMoney />} />
+            <Route path='addfunds/method' element={<AddMoneyMethod />} />
+            {/* <Route
+              path='transf/int/:identifier'
+              element={<TransactionAmount />}
+            /> */}
+
+            <Route path='cards' element={<Cards />} />
+            <Route path='cards/addCard' element={<AddCard />} />
+>>>>>>> 43b05c8 (cards implement for add funds)
           </Route>
 
           {/* Not passing if authenticated routes */}
-          <Route path="/srv" element={<RejectIsAuthenticated />}>
-            <Route index element={<Account type="Register" />} />
-            <Route path="/srv/login" element={<Account type="Login" />} />
+          <Route path='/srv' element={<RejectIsAuthenticated />}>
+            <Route index element={<Account type='Register' />} />
+            <Route path='/srv/login' element={<Account type='Login' />} />
           </Route>
         </Routes>
       </MainContainer>
     </Main>
-  );
-};
+  )
+}
 
 <<<<<<< HEAD
 export default AppRoutes

@@ -1,9 +1,18 @@
 <<<<<<< HEAD
 export * from "./Account"
+<<<<<<< HEAD
+=======
+export * from "./AddCard"
+export * from "./AddMoney"
+export * from "./AddMoneyMethod"
+export * from "./Cards"
+export * from "./Error"
+>>>>>>> 43b05c8 (cards implement for add funds)
 export * from "./GenericRegister"
 export * from "./Home"
 export * from "./Landing"
 export * from "./Profile"
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -35,3 +44,8 @@ export * from "./TransactionAmount"
 export * from "./TransferInto"
 export * from "./TransferMoney"
 >>>>>>> 1751b2b (minor fixes and changes)
+=======
+export * from "./TransactionAmount"
+export * from "./TransferInto"
+export * from "./TransferMoney"
+>>>>>>> 43b05c8 (cards implement for add funds)

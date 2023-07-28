@@ -1,6 +1,16 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+export * from "./AddCards/AddCardsForm"
+export * from "./AddCards/CardForm"
+>>>>>>> 43b05c8 (cards implement for add funds)
 export * from "./Aside"
+export * from "./CardAsMethod"
+export * from "./CardsList"
+export * from "./DetailsMyCards/Buttons"
+export * from "./DetailsMyCards/CardsSlider/hook"
+export * from "./DetailsMyCards/CardsSlider"
 export * from "./EstructureCards"
 export * from "./Forms/Login"
 export * from "./Forms/Register"
@@ -18,6 +28,7 @@ export * from "./LandFooter"
 export * from "./LandForm"
 export * from "./LandHeader"
 export * from "./LandHero"
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 =======
@@ -52,3 +63,6 @@ export * from './index';
 =======
 export * from "./ReusableForm"
 >>>>>>> cf67f95 (transfer money (partial) +routes  & estructure cards reusables)
+=======
+export * from "./ReusableForm"
+>>>>>>> 43b05c8 (cards implement for add funds)

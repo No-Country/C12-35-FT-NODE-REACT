@@ -35,7 +35,21 @@
   --toastify-color-success: #20ca82;
   --alert-primary: #20ca82;
   --card-hover: rgba(0, 0, 0, 0.048);
+  --background-opacity: rgba(0, 0, 0, 0.15);
   --swiper-theme-color: var(--primary) !important;
+  --gradient-mastercard: linear-gradient(
+    -248.59deg,
+    #171b1e 0%,
+    #353432 100.65%
+  );
+  --gradient-visa: linear-gradient(-248.59deg, #796245 0%, #c6a67c 100.65%);
+  --gradient-american-express: linear-gradient(
+    -248.59deg,
+    #214097 0%,
+    #0375da 100.65%
+  );
+  --shadow-card: rgba(0, 0, 0, 0.4) 0px 2px 4px,
+    rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
 }
 
 * {
@@ -67,4 +81,8 @@ button {
 body {
   color: var(--text-primary);
   background-color: var(--background);
+}
+
+.resalt {
+  color: var(--primary) !important;
 }

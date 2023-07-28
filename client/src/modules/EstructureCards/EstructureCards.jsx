@@ -11,7 +11,8 @@ export default function EstructureCards({
   additions,
   title,
   returnRoute,
-  noBackground
+  noBackground,
+  noChildren
 }) {
   const containsBg = noBackground ? false : true
 
@@ -25,7 +26,8 @@ export default function EstructureCards({
           <span>{icon}</span>
           {firstName ? <h3>¡Hola {firstName}!</h3> : <h3>{title}</h3>}
         </Header>
-        <Content>{children}</Content>
+        {noChildren ? null : <Content>{children}</Content>}
+
         {additions && (
           <Additions $containsBg={containsBg}>{additions}</Additions>
         )}
