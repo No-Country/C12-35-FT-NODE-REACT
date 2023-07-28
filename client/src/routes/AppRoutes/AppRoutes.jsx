@@ -1,5 +1,6 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 import { AuthRequire, RejectIsAuthenticated } from "@/layouts"
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -11,6 +12,9 @@ import { Account, Home, Landing, Profile, AddMoney } from "@/pages"
 =======
 import { AuthRequire, RejectIsAuthenticated } from "@/layouts";
 >>>>>>> 6b213c4 (Error page)
+=======
+import { AuthRequire, RejectIsAuthenticated } from "@/layouts"
+>>>>>>> c411a69 (implement add funs to account and refresh transfers and adds)
 import {
   Account,
   Home,
@@ -56,12 +60,21 @@ import { AddCardsForm } from "@/modules";
   Cards,
   Error,
   AddMoneyMethod,
+<<<<<<< HEAD
   FAQ
 } from "@/pages";
 import React from "react";
 import { Route, Routes } from "react-router-dom";
 import { Main, MainContainer } from "./style";
 >>>>>>> 6b213c4 (Error page)
+=======
+  FAQ,
+  AddMoneyAccount
+} from "@/pages"
+import React from "react"
+import { Route, Routes } from "react-router-dom"
+import { Main, MainContainer } from "./style"
+>>>>>>> c411a69 (implement add funs to account and refresh transfers and adds)
 
 const AppRoutes = () => {
   return (
@@ -75,6 +88,7 @@ const AppRoutes = () => {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
           <Route path='*' element={<Landing />} />
 =======
           <Route path='*' element={<div>ERROR PAGE</div>} />
@@ -82,9 +96,12 @@ const AppRoutes = () => {
 =======
           <Route path="*" element={<Error />} />
 >>>>>>> 6b213c4 (Error page)
+=======
+          <Route path='*' element={<Error />} />
+>>>>>>> c411a69 (implement add funs to account and refresh transfers and adds)
 
           {/* Auth required routes */}
-          <Route path="/app/" element={<AuthRequire />}>
+          <Route path='/app/' element={<AuthRequire />}>
             <Route index element={<Home />} />
 <<<<<<< HEAD
             <Route path='profile' element={<Profile />} />
@@ -115,14 +132,21 @@ const AppRoutes = () => {
 >>>>>>> 4ce0818 (page my Cards finished)
 =======
             <Route path='transf/int' element={<TransferInto />} />
+<<<<<<< HEAD
 =======
             <Route path="profile" element={<Profile />} />
             <Route path="add-money" element={<AddMoney />} />
             <Route path="transf" element={<TransferMoney />} />
             <Route path="transf/int" element={<TransferInto />} />
 >>>>>>> 6b213c4 (Error page)
+=======
+            <Route path='profile' element={<Profile />} />
+            <Route path='add-money' element={<AddMoney />} />
+            <Route path='transf' element={<TransferMoney />} />
+            <Route path='transf/int' element={<TransferInto />} />
+>>>>>>> c411a69 (implement add funs to account and refresh transfers and adds)
             <Route
-              path="transf/int/:identifier"
+              path='transf/int/:identifier'
               element={<TransactionAmount />}
             />
 <<<<<<< HEAD
@@ -133,18 +157,20 @@ const AppRoutes = () => {
             {/* {Add money routes} */}
             <Route path='addfunds' element={<AddMoney />} />
             <Route path='addfunds/method' element={<AddMoneyMethod />} />
-            {/* <Route
-              path='transf/int/:identifier'
-              element={<TransactionAmount />}
-            /> */}
+            <Route path='addfunds/method/:card' element={<AddMoneyAccount />} />
 
             <Route path='cards' element={<Cards />} />
             <Route path='cards/addCard' element={<AddCard />} />
+<<<<<<< HEAD
 >>>>>>> 43b05c8 (cards implement for add funds)
 =======
             <Route path="cards" element={<Cards />} />
             <Route path="cards/addCard" element={<AddCard />} />
 >>>>>>> 6b213c4 (Error page)
+=======
+            <Route path='cards' element={<Cards />} />
+            <Route path='cards/addCard' element={<AddCard />} />
+>>>>>>> c411a69 (implement add funs to account and refresh transfers and adds)
           </Route>
 
           {/* Not passing if authenticated routes */}
@@ -160,6 +186,7 @@ const AppRoutes = () => {
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 export default AppRoutes
 =======
 export default AppRoutes;
@@ -167,3 +194,6 @@ export default AppRoutes;
 =======
 export default AppRoutes;
 >>>>>>> 6b213c4 (Error page)
+=======
+export default AppRoutes
+>>>>>>> c411a69 (implement add funs to account and refresh transfers and adds)

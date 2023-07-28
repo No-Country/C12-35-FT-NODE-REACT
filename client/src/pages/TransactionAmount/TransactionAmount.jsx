@@ -74,8 +74,6 @@ export default function TransactionAmount() {
           })
         )
 
-        console.log(data)
-
         if (data.payload.error === false) {
           setError(false)
           return

@@ -4,6 +4,7 @@ export * from "./Account"
 =======
 export * from "./AddCard"
 export * from "./AddMoney"
+export * from "./AddMoneyAccount"
 export * from "./AddMoneyMethod"
 export * from "./Cards"
 export * from "./Error"
@@ -34,6 +35,7 @@ export * from "./TransactionAmount"
 export * from "./TransferInto"
 export * from "./TransferMoney"
 <<<<<<< HEAD
+<<<<<<< HEAD
 export * from "./TransferOut"
 >>>>>>> cf67f95 (transfer money (partial) +routes  & estructure cards reusables)
 =======
@@ -57,3 +59,6 @@ export * from "./Error"
 =======
 export * from "./FAQ"
 >>>>>>> d08ecd3 (faq finished)
+=======
+export * from "./FAQ"
+>>>>>>> c411a69 (implement add funs to account and refresh transfers and adds)

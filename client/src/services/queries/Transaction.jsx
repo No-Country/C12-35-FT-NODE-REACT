@@ -2,6 +2,7 @@ import { createAsyncThunk } from "@reduxjs/toolkit"
 import axios from "axios"
 import Cookies from "js-cookie"
 import { Transaction } from "@@/config/endpoints"
+import { incrementFunds, decrementFunds } from "@/store/features/authSlice"
 
 <<<<<<< HEAD
 const { send, verify, create } = Transaction
@@ -27,6 +28,7 @@ export const sendMeMoney = createAsyncThunk(
         }
       })
       const data = await response.data
+      dispatch(incrementFunds(values.amount))
 
       return data
     } catch (error) {
@@ -51,6 +53,7 @@ export const createTransaction = createAsyncThunk(
         }
       })
       const data = await response.data
+      dispatch(decrementFunds(values.amount))
 
       return data
     } catch (error) {

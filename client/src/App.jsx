@@ -10,7 +10,6 @@ function App() {
   const dispatch = useDispatch()
   const userData = useSelector((state) => state.auth)
   const userId = Cookies.get("userId")
-  console.log()
   //effects
   useEffect(() => {
     userId && dispatch(verifyUser())

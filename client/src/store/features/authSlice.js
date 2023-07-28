@@ -101,6 +101,12 @@ export const authSlice = createSlice({
     },
     logout: () => {
       //placeholder porque borraron el logout del usuario
+    },
+    incrementFunds: (state, action) => {
+      state.balance = state.balance + action.payload
+    },
+    decrementFunds: (state, action) => {
+      state.balance = state.balance - action.payload
     }
 >>>>>>> 1751b2b (minor fixes and changes)
   }
@@ -108,6 +114,7 @@ export const authSlice = createSlice({
 
 export default authSlice.reducer
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -121,3 +128,13 @@ export const { setAuth, updateAuth, setAuthUserId, logout } = authSlice.actions;
 =======
 export const { setAuth, updateAuth, setAuthUserId, logout } = authSlice.actions
 >>>>>>> 14bff1a (transfer money into accounts)
+=======
+export const {
+  setAuth,
+  updateAuth,
+  setAuthUserId,
+  logout,
+  incrementFunds,
+  decrementFunds
+} = authSlice.actions
+>>>>>>> c411a69 (implement add funs to account and refresh transfers and adds)
