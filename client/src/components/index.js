@@ -88,4 +88,9 @@ export * from "./HeaderPageCards"
 =======
 export * from "./UserInfoAccount"
 export * from "./UserTool"
+<<<<<<< HEAD
 >>>>>>> 0fedcda (fix header render, implement 'mis datos' in home shortcut, fix recentActivity)
+=======
+export * from "./AddSuccess"
+export * from "./AccordionItem"
+>>>>>>> d08ecd3 (faq finished)

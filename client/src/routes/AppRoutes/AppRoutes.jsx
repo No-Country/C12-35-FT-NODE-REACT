@@ -55,7 +55,8 @@ import { AddCardsForm } from "@/modules";
 =======
   Cards,
   Error,
-  AddMoneyMethod
+  AddMoneyMethod,
+  FAQ
 } from "@/pages";
 import React from "react";
 import { Route, Routes } from "react-router-dom";
@@ -89,7 +90,11 @@ const AppRoutes = () => {
             <Route path='profile' element={<Profile />} />
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+            <Route path='help' element={<FAQ />} />
+>>>>>>> d08ecd3 (faq finished)
 
             {/* {Transfer money routes} */}
 >>>>>>> 43b05c8 (cards implement for add funds)

@@ -52,4 +52,8 @@ export * from "./TransferMoney"
 >>>>>>> 43b05c8 (cards implement for add funds)
 =======
 export * from "./Error"
+<<<<<<< HEAD
 >>>>>>> 6b213c4 (Error page)
+=======
+export * from "./FAQ"
+>>>>>>> d08ecd3 (faq finished)
