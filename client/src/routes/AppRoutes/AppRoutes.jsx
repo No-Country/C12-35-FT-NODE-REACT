@@ -11,7 +11,8 @@ import {
   AddCard,
   Cards,
   Error,
-  AddMoneyMethod
+  AddMoneyMethod,
+  FAQ
 } from "@/pages";
 import React from "react";
 import { Route, Routes } from "react-router-dom";
@@ -32,6 +33,7 @@ const AppRoutes = () => {
           <Route path="/app/" element={<AuthRequire />}>
             <Route index element={<Home />} />
             <Route path='profile' element={<Profile />} />
+            <Route path='help' element={<FAQ />} />
 
             {/* {Transfer money routes} */}
             <Route path='transf' element={<TransferMoney />} />
