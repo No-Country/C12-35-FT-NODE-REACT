@@ -3,12 +3,12 @@ import axios from "axios"
 import Cookies from "js-cookie"
 import { Transaction } from "@@/config/endpoints"
 
-const { send, verify } = Transaction
+const { send, verify, create } = Transaction
 
 //functions
 
-export const sendMeMoney = createAsyncThunk(
-  "post/transactions/add",
+export const addMoney = createAsyncThunk(
+  "post/transactions",
   async (values, { dispatch }) => {
     const accessToken = Cookies.get("accessToken")
     try {

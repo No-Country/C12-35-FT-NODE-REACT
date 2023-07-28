@@ -1,5 +1,5 @@
-import React from "react"
-import { ButtonWrapper } from "./style"
+import React from "react";
+import { ButtonWrapper } from "./style";
 
 export default function Button({
   children,
@@ -8,12 +8,12 @@ export default function Button({
   primary,
   primaryInverse,
   disabled,
-  type
+  type,
 }) {
   //constants
-  const isSecondary = secondary ? true : false
-  const isPrimary = primary ? true : false
-  const isPrimaryInverse = primaryInverse ? true : false
+  const isSecondary = secondary ? true : false;
+  const isPrimary = primary ? true : false;
+  const isPrimaryInverse = primaryInverse ? true : false;
 
   return (
     <ButtonWrapper
@@ -28,8 +28,9 @@ export default function Button({
       }
       disabled={disabled}
       onClick={onClick}
-      type={type}>
+      type={type}
+    >
       {children}
     </ButtonWrapper>
-  )
+  );
 }

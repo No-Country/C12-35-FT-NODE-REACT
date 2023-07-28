@@ -15,8 +15,7 @@ function AddCardsForm() {
     cardholder_name: "",
     expiration_date: "",
     cvv: "",
-    type: "",
-    bank_branding: ""
+    type: ""
   }
 
   //validation schema
@@ -67,12 +66,6 @@ function AddCardsForm() {
       <FormControl required name='card_number' title='Número de tarjeta' />
       <FormControl required name='cardholder_name' title='Nombre del titular' />
       <FormControl short required name='type' title='Tipo de tarjeta' />
-      <FormControl
-        short
-        required
-        name='bank_branding'
-        title='Banco proveedor'
-      />
 
       <FormControl
         short

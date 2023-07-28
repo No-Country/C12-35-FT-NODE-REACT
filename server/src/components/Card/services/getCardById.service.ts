@@ -1,6 +1,5 @@
 import db from "../data";
 
-export default async (id: number) => {
-  const cards = await db.getById(id);
-  return cards;
+export default async (id: string) => {
+  return await db.getPopulateCardById(id);
 };

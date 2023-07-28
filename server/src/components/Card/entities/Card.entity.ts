@@ -1,16 +1,28 @@
 import { Column, Entity, ManyToOne, PrimaryColumn, Generated } from "typeorm";
 import { Account } from "../../Account/entities/Account.entity";
 
+enum TypeBrand {
+  VISA = "VISA",
+  MASTERCARD = "MASTERCARD",
+  AMERICAN_EXPRESS = "AMERICAN EXPRESS",
+  DINERS_CLUB = "DINERS CLUB"
+}
+
+enum TypeCard {
+  DEBIT = "DEBIT",
+  CREDIT = "CREDIT"
+}
+
 @Entity()
 export class Card {
   @PrimaryColumn({ type: "uuid" })
   @Generated("uuid")
   id: string;
 
-  @Column()
+  @Column({ type: "enum", enum: TypeCard })
   type: string;
 
-  @Column()
+  @Column({ type: "enum", enum: TypeBrand })
   bank_branding: string;
 
   @Column({ type: "varchar" })
