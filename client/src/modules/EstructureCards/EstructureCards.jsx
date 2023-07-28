@@ -12,7 +12,8 @@ export default function EstructureCards({
   title,
   returnRoute,
   noBackground,
-  noChildren
+  noChildren,
+  onClick
 }) {
   const containsBg = noBackground ? false : true
 
