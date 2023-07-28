@@ -71,7 +71,7 @@ function AddCardsForm() {
         short
         required
         name='expiration_date'
-        title='Fecha de expiración'
+        title='Fecha de expiración (MM/AA)'
       />
       <FormControl short required name='cvv' title='Código de seguridad' />
     </ReusableForm>
