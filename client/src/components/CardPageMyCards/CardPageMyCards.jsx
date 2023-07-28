@@ -3,14 +3,12 @@ import { useEffect, useState } from "react";
 import { CardWrapper, CustomWrap, Img, Span, TextWrap } from "./style";
 import mastercard from "@/assets/images/logos/LogoMastercard.png";
 
-function CardPageMyCards() {
-  const [number, setNumber] = useState("");
-  const [lastFourDigits, setLastFourDigits] = useState("");
+function CardPageMyCards({cards}) {
+  
 
-  const numberCard = "1234567891234567";
   const expresionRegular = /(\d{4})(\d{4})(\d{4})(\d{4})/;
-  const fourDigits = numberCard.match(/\d{4}$/)[0];
-  const newNumber = numberCard.replace(expresionRegular, `xxxx xxxx xxxx `);
+  const fourDigits = cards.match(/\d{4}$/)[0];
+  const newNumber = cards.replace(expresionRegular, `xxxx xxxx xxxx `);
 
   useEffect(() => {
     setNumber(newNumber);

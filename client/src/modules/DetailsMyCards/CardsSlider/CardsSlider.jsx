@@ -1,12 +1,12 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { Slider, SliderWrapper } from "./style";
 import { CardPageMyCards } from "@/components";
 import { useCards } from "./hook";
+import { useSelector } from 'react-redux'
 
 function CardsSlider() {
   const { handleMouseDown, handleMouseLeave, handleMouseUp, handleMouseMove } = useCards();
-  
-  const [cards, setCards] = useState([]);
+  const cards = useSelector((state) => state.auth.cards)
   
   return (
     <SliderWrapper
@@ -17,7 +17,7 @@ function CardsSlider() {
     >
       <Slider>
         {cards.map((el) => (
-          <CardPageMyCards key={el} />
+          <CardPageMyCards cards={el} key={el} />
         ))}
       </Slider>
     </SliderWrapper>
