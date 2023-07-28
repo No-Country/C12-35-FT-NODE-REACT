@@ -8,6 +8,20 @@ export class Account {
   @PrimaryGeneratedColumn()
   id: number;
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+  @Column({ default: 0 })
+  balance!: number;
+
+  @Column({ default: "ARS" })
+  type!: string;
+
+  @OneToOne(() => User, (user) => user.accounts)
+  @JoinColumn()
+  user!: User;
+=======
+>>>>>>> main
   @Column()
   name: string;
 
@@ -35,10 +49,44 @@ export class Account {
   @OneToOne(() => User)
   @JoinColumn()
   user: User;
+<<<<<<< HEAD
 
   @OneToMany(() => Card, (card) => card.account)
   cards: Card[];
 
   @OneToMany(() => Transaction, (transaction) => transaction.account)
   transactions: Transaction[];
+=======
+>>>>>>> b822c13 (.)
+
+<<<<<<< HEAD
+  @OneToOne(() => History)
+  @JoinColumn()
+  history: History;
+
+<<<<<<< HEAD
+  @OneToMany(() => TransactionHistory, (transactionHistory) => transactionHistory.id)
+  transactionHistory!: TransactionHistory[];
+
+  @OneToMany(() => Card, (card) => card.id)
+  cards!: Card[];
+
+  @CreateDateColumn()
+  created_at!: Date;
+
+  @UpdateDateColumn()
+  updated_at!: Date;
+=======
+=======
+>>>>>>> 7be6c0a (.)
+  @OneToMany(() => Card, (card) => card.account)
+  cards: Card[];
+<<<<<<< HEAD
+>>>>>>> b822c13 (.)
+=======
+
+  @OneToMany(() => Transaction, (transaction) => transaction.account)
+  transactions: Transaction[];
+>>>>>>> 7be6c0a (.)
+>>>>>>> main
 }

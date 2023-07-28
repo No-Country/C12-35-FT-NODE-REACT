@@ -10,6 +10,13 @@ export default function Button({
   disabled,
   type,
 }) {
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> cf67f95 (transfer money (partial) +routes  & estructure cards reusables)
+=======
+>>>>>>> 1751b2b (minor fixes and changes)
+>>>>>>> main
   //constants
   const isSecondary = secondary ? true : false;
   const isPrimary = primary ? true : false;
@@ -32,5 +39,17 @@ export default function Button({
     >
       {children}
     </ButtonWrapper>
+<<<<<<< HEAD
   );
+=======
+<<<<<<< HEAD
+  )
+<<<<<<< HEAD
+>>>>>>> cf67f95 (transfer money (partial) +routes  & estructure cards reusables)
+=======
+>>>>>>> 1751b2b (minor fixes and changes)
+=======
+  );
+>>>>>>> 6b213c4 (Error page)
+>>>>>>> main
 }

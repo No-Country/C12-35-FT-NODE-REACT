@@ -1,6 +1,14 @@
 import { createSlice } from "@reduxjs/toolkit"
 
 export const initialState = {
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+  auth: false,
+=======
+>>>>>>> 14bff1a (transfer money into accounts)
+>>>>>>> main
   user: {
     id: 0,
     address: "",
@@ -19,6 +27,15 @@ export const initialState = {
   },
   id: 0,
   email: "",
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+  password: ""
+=======
+  username: "",
+>>>>>>> 5211a70 (added validations)
+=======
+>>>>>>> main
   password: "",
   balance: 0,
   date_created: "",
@@ -27,6 +44,10 @@ export const initialState = {
   valid: false,
   transactions: [],
   cards: []
+<<<<<<< HEAD
+=======
+>>>>>>> 14bff1a (transfer money into accounts)
+>>>>>>> main
 }
 
 export const authSlice = createSlice({
@@ -47,6 +68,10 @@ export const authSlice = createSlice({
       state.cards = action.payload.data.cards
     },
     updateAuth: (state, action) => {
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> main
       // state.auth.push({
       //   auth: action.payload.auth,
       //   user: {
@@ -71,6 +96,23 @@ export const authSlice = createSlice({
     },
     setAuthUserId: (state, action) => {
       state.id = action.payload.user.id
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+    },  
+    logout: (state) => {
+      return initialState;
+    },
+=======
+      state.auth.push({
+        ...state.auth,
+        username: action.payload.username
+      })
+    },
+    
+>>>>>>> 5211a70 (added validations)
+=======
+>>>>>>> main
     },
     logout: () => {
       //placeholder porque borraron el logout del usuario
@@ -81,11 +123,30 @@ export const authSlice = createSlice({
     decrementFunds: (state, action) => {
       state.balance = state.balance - action.payload
     }
+>>>>>>> 1751b2b (minor fixes and changes)
   }
 })
 
 export default authSlice.reducer
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+export const { setAuth, updateAuth, setAuthUserId, logout } = authSlice.actions;
+=======
+export const { setAuth, updateAuth, setCards } = authSlice.actions
+>>>>>>> 5211a70 (added validations)
+=======
+export const { setAuth, updateAuth, setAuthUserId, logout } = authSlice.actions;
+>>>>>>> 1751b2b (minor fixes and changes)
+=======
+export const { setAuth, updateAuth, setAuthUserId, logout } = authSlice.actions
+>>>>>>> 14bff1a (transfer money into accounts)
+=======
+>>>>>>> main
 export const {
   setAuth,
   updateAuth,
@@ -94,3 +155,7 @@ export const {
   incrementFunds,
   decrementFunds
 } = authSlice.actions
+<<<<<<< HEAD
+=======
+>>>>>>> c411a69 (implement add funs to account and refresh transfers and adds)
+>>>>>>> main

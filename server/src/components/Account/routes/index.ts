@@ -7,14 +7,40 @@ const router = Router();
 
 router.get("/", ctrl.getAccounts);
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+router.get("/me", globalMiddleware.findAccount, globalMiddleware.checkAccountValidity, ctrl.getAccountById);
+=======
+router.get(
+  "/:id",
+  middlewares.encryptPassword,
+=======
+>>>>>>> main
 router.get(
   "/me",
   globalMiddleware.ensureToken,
   globalMiddleware.validateToken,
+<<<<<<< HEAD
+=======
+>>>>>>> af02f68 (.)
+>>>>>>> main
   globalMiddleware.findAccount,
   globalMiddleware.checkAccountValidity,
   ctrl.getAccountById
 );
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> ab08715 (fix: get account)
+=======
+router.get("/:id", globalMiddleware.findAccount, globalMiddleware.checkAccountValidity, ctrl.getAccountById);
+>>>>>>> fa59238 (fix: account error)
+=======
+>>>>>>> af02f68 (.)
+>>>>>>> main
 
 router.post("/info", ctrl.accountInfo);
 

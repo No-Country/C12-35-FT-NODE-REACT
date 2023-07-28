@@ -1,10 +1,48 @@
+<<<<<<< HEAD
 import { Account } from "../../../components/Account/entities/Account.entity";
 import { Column, Entity, ManyToOne, PrimaryGeneratedColumn } from "typeorm";
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+import { Column, Entity, PrimaryGeneratedColumn, OneToOne } from "typeorm";
+=======
+import { Column, Entity, PrimaryGeneratedColumn, OneToOne, Unique, JoinColumn } from "typeorm";
+>>>>>>> b822c13 (.)
+import { Account } from "../../accounts/entities/Account.entity";
+=======
+import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
+>>>>>>> 2cc9266 (.)
+=======
+import { Account } from "../../../components/Account/entities/Account.entity";
+import { Column, Entity, ManyToOne, PrimaryGeneratedColumn } from "typeorm";
+>>>>>>> 7be6c0a (.)
+>>>>>>> main
 
 @Entity()
 export class User {
   @PrimaryGeneratedColumn()
+<<<<<<< HEAD
   id: number;
+=======
+<<<<<<< HEAD
+  id!: number;
+
+  @Column()
+  password!: string;
+
+  @Column()
+  email!: string;
+
+  @Column()
+  first_name!: string;
+
+  @Column()
+  last_name!: string;
+=======
+  id: number;
+>>>>>>> b822c13 (.)
+>>>>>>> main
 
   @Column({ nullable: true })
   first_name!: string;

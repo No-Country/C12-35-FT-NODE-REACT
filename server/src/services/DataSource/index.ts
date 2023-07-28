@@ -17,7 +17,15 @@ export default class DB {
 
   async getById(id: number) {
     try {
+<<<<<<< HEAD
       const user = await AppDataSource.getRepository(this.entity).findOne({ where: { id } });
+=======
+<<<<<<< HEAD
+      const user = await AppDataSource.getRepository(this.model).findOneBy({ id });
+=======
+      const user = await AppDataSource.getRepository(this.entity).findOne({ where: { id } });
+>>>>>>> b822c13 (.)
+>>>>>>> main
       return user;
     } catch (error: any) {
       throw new Error(error);
