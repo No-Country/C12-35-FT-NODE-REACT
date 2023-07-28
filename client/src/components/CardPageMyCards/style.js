@@ -19,6 +19,7 @@ const borderImage = {
 }
 
 export const CardWrapper = styled.div`
+  box-shadow: var(--shadow-card);
   display: flex;
   align-items: end;
   justify-content: center;

@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react"
 import { StyledMyCards } from "./style"
 import { Card, Carousel, ShowMore } from "@/components"
 import { useSelector } from "react-redux"
+import { CardPageMyCards } from "@/components"
+import { CardsSlider } from "@/modules"
 
 export default function MyCards() {
   const userData = useSelector((state) => state.auth)
@@ -9,14 +11,11 @@ export default function MyCards() {
   return (
     <StyledMyCards>
       <ShowMore little title='Tarjetas' link='/app/cards' />
-      <Carousel>
-        <Card
-          width='150px'
-          num='4123432123148365'
-          nom={userData.user?.first_name + " " + userData.user?.last_name}
-          fec='01/28'
-        />
-      </Carousel>
+      <CardsSlider>
+        {userData.cards?.map((card) => {
+          return <CardPageMyCards key={card?.id} cards={card} />
+        })}
+      </CardsSlider>
     </StyledMyCards>
   )
 }
